@@ -258,3 +258,12 @@ Längeneinheiten. Einfach und präzise." What Google rewards here:
   back + to all siblings. Generator: massstabsrechner/work/
   build_scale_pages.py (idempotent). QA jsdom 432/432 + Chromium
   1280/390 (1:50, 1:1000).
+- **Browser-check fixes (4a1a3bb, 2026-11-06):** the "Alle Maßstäbe"
+  links row had NO CSS, so it ran from the left viewport edge (x=0)
+  instead of the 1050px column — fixed with a .scale-links rule
+  (green semibold links, current page bold) + section padding, mobile
+  included; styles.css v8. Skeleton flash on fast loads: the 150ms
+  timer fired just before the load event — threshold raised to 400ms
+  and gated on document.readyState !== "complete", so on a fast load
+  it never appears; slow loads (>400ms) still get it. All 12 pages.
+  Live browser sweep requested 2026-11-06 15:49 (results pending).

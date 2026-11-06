@@ -173,7 +173,8 @@ h1, h2, h3, p { margin-top: 0; }
 .scale-table tbody tr:nth-child(even) { background: #fafaf5; }
 .scale-table tbody tr:nth-child(even):hover { background: #f1f5e9; }
 /* Length table (per-scale lookup, borrowed from the #1 competitor, own design). */
-.length-tables { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0 32px; }
+.length-tables { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0 32px; max-width: 1050px; margin: 0 auto; }
+.length-tables .table-wrap { margin: 0; width: 100%; }
 .length-table { width: 100%; border-collapse: collapse; font-size: 15px; line-height: 1.5; }
 .length-table th, .length-table td { padding: 14px 16px; text-align: left; white-space: nowrap; }
 .length-table thead th { color: var(--green); font: 600 12px var(--mono); text-transform: uppercase; letter-spacing: .8px; border-bottom: 2px solid #e7e8df; }

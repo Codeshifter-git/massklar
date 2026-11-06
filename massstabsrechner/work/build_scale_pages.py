@@ -17,7 +17,8 @@ Rules the generator enforces:
   values the JS renders (length-table title, result context/formula,
   scale table) use de-DE formatting ("1:1.000"), matching Intl.
 - The compare tool keeps its generic 1:25.000 vs 1:50.000 example.
-- Area/volume guide steps keep their 1:100 example as-is.
+- Area/volume guide steps keep their 1:100 example, framed as
+  "Zum Beispiel bei 1:100" so it can't be misread as the page's scale.
 """
 import html as htmlmod
 import json
