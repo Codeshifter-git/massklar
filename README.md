@@ -298,3 +298,13 @@ Längeneinheiten. Einfach und präzise." What Google rewards here:
   scales had zero measured search volume — a topical-coverage play, not a
   volume play. styles.css v10. QA jsdom 1202/1202 + Chromium 1280/390
   (1:50, 1:87).
+- **Fonts self-hosted (2026-11-06):** user spotted text rendering small
+  then growing — the Google Fonts swap (Bitter arrived ~4–5s after the
+  page). Bitter, DM Sans, DM Mono now live in fonts/ as woff2 (101 KB
+  total; Bitter + DM Sans are variable fonts, one file each covers all
+  weights; DM Mono 600 does not exist — CSS 600 renders as synthesized
+  bold, same as before). No Google Fonts requests anywhere; preloads for
+  Bitter 700 + DM Sans 400 (relative paths per page depth). styles.css
+  v11. QA jsdom 1202/1202 + Chromium 1280/390. Live Slow 3G flash check
+  still to do via browser task (headless Chromium cannot throttle
+  file:// loads).
