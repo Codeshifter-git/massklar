@@ -241,7 +241,10 @@ Längeneinheiten. Einfach und präzise." What Google rewards here:
   two-scale compare, practice tasks, length table, area/volume steps,
   design/speed/mobile, no-JS fallback.
 - **Fonts look AI (user, 2026-11-06):** Manrope + DM Sans + DM Mono is
-  the generic AI-built stack. Fix: serif display with character
-  (Fraunces recommended) + mono only for numbers. Preview artifact built
-  for the font pick; SEO title/meta/H1 + keyword weave + FAQ additions
-  follow the pick.
+  the generic AI-built stack. Fix: serif display with character + mono
+  only for numbers. **User picked Bitter (slab serif, warm) — applied
+  2026-11-06 (e9e90fe):** Bitter for all display text, DM Sans body +
+  DM Mono numbers unchanged, tracking loosened (H1 -1px, H2s/result/
+  brand -0.3px), H1 weight 700. SEO pass applied with it: title, meta,
+  H1 line 2, hero + guide keyword weave, TK25/TK50, FAQ +2. QA jsdom
+  19/19 + Chromium 1280/390, H1 Bitter, no overflow. styles.css v7.
