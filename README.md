@@ -113,3 +113,14 @@ The two QA issues were fixed directly in this build instead:
 - Calculate button: 52px -> 60px, 15px -> 17px bold, added lift shadow
   (deeper on hover) so it stands out from the card.
 - QA: 8/8 checks.
+
+## Update 2026-11-06 — tighter practice gap + orange CTAs
+- Practice -> compare gap: the section still looked stretched (old stylesheet
+  was cached in the browser). Gap cut to 24px + 24px (was 56px + 48px) and
+  the stylesheet link now carries ?v=2 so browsers fetch the new CSS.
+- "Jetzt berechnen" buttons are now orange (the single accent, dark text):
+  header CTA + the big calculator button. Hover goes a touch darker.
+- Also fixed a stale selector from the aria-pressed change: the active
+  segmented button now gets its dark colour again.
+- QA: computed styles verified (both buttons rgb(231,154,98) orange,
+  dark text rgb(25,63,52)); gap measured 24px at 1280px.
