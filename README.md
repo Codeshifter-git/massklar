@@ -142,3 +142,16 @@ Structure (same repo, GitHub Pages):
   source order (caught a 390px overflow this way).
 - Footers carry "Ein Produkt von Hastle Inc." (standing Hastle rule).
 - Next tools in line (from the hub cards): Prozentrechner, BMI, Brutto-Netto.
+
+## Color pass — 2026-11-06 (Niki Aroca rule: one accent)
+Paper + green base, exactly ONE accent: orange. Lime demoted from accent
+to supporting tints only (no lime text left on any page):
+- Logo tile is now orange with dark "mk"; buttons were already orange.
+- Live tool cards pop with an orange top edge + warm icon chip;
+  "Bald da" cards stay flat and quiet. Hero has a soft warm glow.
+- Dark sections carry the accent in orange: guide eyebrow + headline
+  second line, formulas and equations (lighter orange #eda878 so the
+  contrast passes: 5.09:1 / 4.79:1; plain orange on dark is 5.10:1).
+- No new hues, no gradients-for-show (Charles Liu: clean up, improve
+  contrast). Orange text is never used on paper (2.28:1 — unreadable),
+  only dark text on orange (5.10:1) or orange on dark green.
