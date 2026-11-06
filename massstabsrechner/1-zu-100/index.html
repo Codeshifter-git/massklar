@@ -47,7 +47,7 @@
       @keyframes sk-shimmer { to { transform: translateX(100%); } }
       @media (prefers-reduced-motion: reduce) { .sk-bar::after, .sk-card::after { animation: none; } }
     </style>
-    <link rel="stylesheet" href="../../styles.css?v=9">
+    <link rel="stylesheet" href="../../styles.css?v=10">
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -246,6 +246,15 @@
         <div class="quick-title"><span class="eyebrow">Im Alltag</span><h2>Wofür nutzt man den Maßstab 1:100?</h2></div>
         <p class="table-intro">Den Maßstab 1:100 nutzt man für Baupläne und Grundrisse. Alles ist 100-mal kleiner als in echt — eine Wand von 5 m ist auf dem Plan 5 cm lang. So plant man ein ganzes Haus auf einem Blatt.</p>
       </section>
+      <section class="table-section" id="beispiel">
+        <div class="quick-title"><span class="eyebrow">Ein Beispiel aus der Praxis</span><h2>So sieht 1:100 aus.</h2></div>
+        <p class="table-intro">Ein Haus von 10 m × 8 m ist im Maßstab 1:100 nur 10 cm × 8 cm groß auf dem Plan.</p>
+        <div class="diagram">
+          <p class="diagram-size">10 cm × 8 cm auf dem Plan</p>
+          <div class="diagram-box" style="width: 55%; aspect-ratio: 5 / 4;"><span>Haus</span></div>
+          <p class="diagram-real">in echt: 10 m × 8 m</p>
+        </div>
+      </section>
       <section class="quick-examples" id="beispiele">
         <div class="quick-title"><span class="eyebrow">Häufige Maßstäbe</span><h2>Drei Beispiele, die du kennst.</h2></div>
         <p class="examples-hint">Tipp eins an — der Rechner füllt sich von allein aus.</p>
@@ -290,7 +299,7 @@
       <section class="scale-links-section" id="massstaebe">
         <div class="section-heading"><p class="eyebrow">Alle Maßstäbe</p><h2>Andere Maßstäbe.</h2></div>
         <p class="table-intro">Jeder Maßstab hat seine eigene Seite — mit Rechner, Längentabelle und einem Beispiel aus der Praxis. Zurück zum <a href="../">Maßstabsrechner</a>, oder schau dir die <a href="#anleitung">Formeln und Beispiele</a> an.</p>
-        <p class="scale-links"><a href="../1-zu-10/">Maßstab 1:10</a> · <a href="../1-zu-20/">Maßstab 1:20</a> · <a href="../1-zu-25/">Maßstab 1:25</a> · <a href="../1-zu-50/">Maßstab 1:50</a> · <span aria-current="page">Maßstab 1:100</span> · <a href="../1-zu-200/">Maßstab 1:200</a> · <a href="../1-zu-250/">Maßstab 1:250</a> · <a href="../1-zu-500/">Maßstab 1:500</a> · <a href="../1-zu-1000/">Maßstab 1:1000</a></p>
+        <p class="scale-links"><a href="../1-zu-10/">Maßstab 1:10</a> · <a href="../1-zu-20/">Maßstab 1:20</a> · <a href="../1-zu-24/">Maßstab 1:24</a> · <a href="../1-zu-25/">Maßstab 1:25</a> · <a href="../1-zu-35/">Maßstab 1:35</a> · <a href="../1-zu-50/">Maßstab 1:50</a> · <a href="../1-zu-72/">Maßstab 1:72</a> · <a href="../1-zu-87/">Maßstab 1:87</a> · <span aria-current="page">Maßstab 1:100</span> · <a href="../1-zu-200/">Maßstab 1:200</a> · <a href="../1-zu-250/">Maßstab 1:250</a> · <a href="../1-zu-500/">Maßstab 1:500</a> · <a href="../1-zu-1000/">Maßstab 1:1.000</a> · <a href="../1-zu-25000/">Maßstab 1:25.000</a> · <a href="../1-zu-50000/">Maßstab 1:50.000</a></p>
       </section>
       <section class="table-section length-section" id="laengen">
         <div class="quick-title"><span class="eyebrow">Längentabelle</span><h2>Wie lang ist das bei <span id="length-table-scale">1:100</span>?</h2></div>
@@ -372,6 +381,33 @@
         </div>
       </section>
 
+      <section class="table-section" id="rechenbeispiele">
+        <div class="quick-title"><span class="eyebrow">Zwei Rechnungen</span><h2>Rechenbeispiele für 1:100.</h2></div>
+        <p class="table-intro">Einmal vom Plan in die Wirklichkeit — und einmal zurück. Die Rechnung ist immer die gleiche: mal die Maßstabszahl, oder geteilt durch sie.</p>
+        <div class="table-wrap">
+          <table class="scale-table scale-table--static">
+            <thead><tr><th scope="col">Richtung</th><th scope="col">Rechnung</th><th scope="col">Ergebnis</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">Vom Plan in die Wirklichkeit</th><td>8 cm × 100 = 800 cm</td><td>8 m</td></tr>
+              <tr><th scope="row">Von der Wirklichkeit auf den Plan</th><td>800 cm ÷ 100 = 8 cm</td><td>8 cm</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+      <section class="table-section" id="vergleich">
+        <div class="quick-title"><span class="eyebrow">Im Vergleich</span><h2>1:100 oder doch ein anderer Maßstab?</h2></div>
+        <p class="table-intro">Je kleiner die Zahl hinter dem Doppelpunkt ist, desto größer ist der Plan — und desto mehr Details siehst du. So liegt 1:100 zwischen seinen Nachbarn.</p>
+        <div class="table-wrap">
+          <table class="scale-table scale-table--static">
+            <thead><tr><th scope="col">Maßstab</th><th scope="col">1 cm auf dem Plan</th><th scope="col">Wofür?</th></tr></thead>
+            <tbody>
+              <tr><th scope="row"><a href="../1-zu-50/">1:50</a></th><td>50 cm</td><td>Wohnungsgrundrisse</td></tr>
+              <tr><th scope="row">1:100</th><td>1 m</td><td>Baupläne, Grundrisse</td></tr>
+              <tr><th scope="row"><a href="../1-zu-200/">1:200</a></th><td>2 m</td><td>Lagepläne</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
       <section class="practice-section" id="ueben">
         <div class="quick-title"><span class="eyebrow">Zum Ausprobieren</span><h2>Üben wie in der Schule.</h2></div>
         <p class="table-intro">Zwei Aufgaben zum Üben. Tipp auf die Aufgabe, dann siehst du die Lösung.</p>

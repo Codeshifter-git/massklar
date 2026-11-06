@@ -30,7 +30,7 @@ from pathlib import Path
 BASE = Path(__file__).resolve().parent.parent  # massstabsrechner/
 TEMPLATE_HTML = BASE / "index.html"
 TEMPLATE_JS = BASE / "app.js"
-SCALES = [10, 20, 25, 50, 100, 200, 250, 500, 1000]
+SCALES = [10, 20, 24, 25, 35, 50, 72, 87, 100, 200, 250, 500, 1000, 25000, 50000]
 LENGTH_CM = [0.1, 0.2, 0.3, 0.4, 0.5, 0.7, 1, 1.5, 2, 2.5, 3, 4, 5, 6, 7, 8, 9,
              10, 12, 14, 15, 16, 18, 20, 25, 30, 35, 40, 45, 50, 55, 60, 70, 80, 90, 100]
 
@@ -172,9 +172,168 @@ DATA = {
         step3=("Bring beide Längen erst in die gleiche Einheit. Dann teilst du die Länge auf dem Plan durch die echte Länge. 1 cm zu 10 m — das ist 1:1000.",
                "1 cm : 1.000 cm = 1 : 1.000"),
     ),
+    # --- Modellbau-Maßstäbe (neu, 2026-11-06) ---
+    87: dict(
+        one_cm="87 cm", ten_cm="8,7 m",
+        use_line="Für Modelleisenbahn Spur H0.",
+        use_short="Modelleisenbahn H0",
+        map_label="MODELLBAHN H0",
+        meta_on="im Modell",
+        example="Ein Beispiel: Eine Lok ist im Modell 13,8 cm lang — in echt sind das etwa 12 m (13,8 × 87 = 1.200,6 cm).",
+        wofuer="Den Maßstab 1:87 nutzt man für die Modelleisenbahn Spur H0. Alles ist 87-mal kleiner als in echt — eine Lok von 12 m ist im Modell 13,8 cm lang. So passt eine ganze Bahn auf eine Platte.",
+        step1=("Nimm die Länge im Modell mal die Maßstabszahl. Bei 1:87 werden aus 2 cm im Modell 174 cm — also 1,74 m — in echt.",
+               "2 cm × 87 = 174 cm = 1,74 m"),
+        step2=("Teile die echte Länge durch die Maßstabszahl. Ein Wagen, der 1,74 m lang ist, ist im Maßstab 1:87 dann 2 cm lang.",
+               "174 cm ÷ 87 = 2 cm"),
+        step3=("Bring beide Längen erst in die gleiche Einheit. Dann teilst du die Länge im Modell durch die echte Länge. 2 cm zu 1,74 m — das ist 1:87.",
+               "2 cm : 174 cm = 1 : 87"),
+    ),
+    24: dict(
+        one_cm="24 cm", ten_cm="2,4 m",
+        use_line="Für Modellautos und Puppenhäuser.",
+        use_short="Modellautos",
+        map_label="MODELLAUTO",
+        meta_on="im Modell",
+        example="Ein Beispiel: Ein Auto ist im Modell 18,75 cm lang — in echt sind das 4,5 m (18,75 × 24 = 450 cm).",
+        wofuer="Den Maßstab 1:24 nutzt man für Modellautos und Puppenhäuser. Alles ist 24-mal kleiner als in echt — ein Auto von 4,5 m ist im Modell 18,75 cm lang. So baut man Autos und Häuser zum Anfassen nach.",
+        step1=("Nimm die Länge im Modell mal die Maßstabszahl. Bei 1:24 werden aus 3 cm im Modell 72 cm in echt.",
+               "3 cm × 24 = 72 cm"),
+        step2=("Teile die echte Länge durch die Maßstabszahl. Ein Auto, das 4,5 m lang ist, ist im Maßstab 1:24 dann 18,75 cm lang.",
+               "450 cm ÷ 24 = 18,75 cm"),
+        step3=("Bring beide Längen erst in die gleiche Einheit. Dann teilst du die Länge im Modell durch die echte Länge. 3 cm zu 72 cm — das ist 1:24.",
+               "3 cm : 72 cm = 1 : 24"),
+    ),
+    35: dict(
+        one_cm="35 cm", ten_cm="3,5 m",
+        use_line="Für Militärmodelle und Figuren.",
+        use_short="Militärmodelle",
+        map_label="MILITÄRMODELL",
+        meta_on="im Modell",
+        example="Ein Beispiel: Ein Panzer ist im Modell 20 cm lang — in echt sind das 7 m (20 × 35 = 700 cm).",
+        wofuer="Den Maßstab 1:35 nutzt man für Militärmodelle — Panzer, Figuren und Fahrzeuge. Alles ist 35-mal kleiner als in echt — ein Panzer von 7 m ist im Modell 20 cm lang. So baut man Geschichte zum Anfassen nach.",
+        step1=("Nimm die Länge im Modell mal die Maßstabszahl. Bei 1:35 werden aus 3 cm im Modell 105 cm in echt.",
+               "3 cm × 35 = 105 cm"),
+        step2=("Teile die echte Länge durch die Maßstabszahl. Ein Panzer, der 7 m lang ist, ist im Maßstab 1:35 dann 20 cm lang.",
+               "700 cm ÷ 35 = 20 cm"),
+        step3=("Bring beide Längen erst in die gleiche Einheit. Dann teilst du die Länge im Modell durch die echte Länge. 3 cm zu 105 cm — das ist 1:35.",
+               "3 cm : 105 cm = 1 : 35"),
+    ),
+    72: dict(
+        one_cm="72 cm", ten_cm="7,2 m",
+        use_line="Für Flugzeugmodelle.",
+        use_short="Flugzeugmodelle",
+        map_label="FLUGZEUGMODELL",
+        meta_on="im Modell",
+        example="Ein Beispiel: Ein Flugzeug ist im Modell 50 cm lang — in echt sind das 36 m (50 × 72 = 3.600 cm).",
+        wofuer="Den Maßstab 1:72 nutzt man für Flugzeugmodelle. Alles ist 72-mal kleiner als in echt — ein Flugzeug von 36 m ist im Modell 50 cm lang. So passt ein ganzes Flugzeug auf den Tisch.",
+        step1=("Nimm die Länge im Modell mal die Maßstabszahl. Bei 1:72 werden aus 3 cm im Modell 216 cm in echt.",
+               "3 cm × 72 = 216 cm"),
+        step2=("Teile die echte Länge durch die Maßstabszahl. Ein Flugzeug, das 36 m lang ist, ist im Maßstab 1:72 dann 50 cm lang.",
+               "3.600 cm ÷ 72 = 50 cm"),
+        step3=("Bring beide Längen erst in die gleiche Einheit. Dann teilst du die Länge im Modell durch die echte Länge. 3 cm zu 216 cm — das ist 1:72.",
+               "3 cm : 216 cm = 1 : 72"),
+    ),
+    # --- Karten-Maßstäbe (neu, 2026-11-06) ---
+    25000: dict(
+        one_cm="250 m", ten_cm="2,5 km",
+        use_line="Für Wanderkarten (TK25).",
+        use_short="Wanderkarten TK25",
+        map_label="WANDERKARTE",
+        meta_on="auf der Karte",
+        example="Ein Beispiel: Ein Wanderweg ist auf der Karte 20 cm lang — in echt sind das 5 km (20 × 25.000 = 500.000 cm).",
+        wofuer="Den Maßstab 1:25.000 nutzt man für Wanderkarten und topografische Karten (TK25). Alles ist 25.000-mal kleiner als in echt — ein Weg von 5 km ist auf der Karte 20 cm lang. So passt eine ganze Wanderung auf ein Blatt.",
+        step1=("Nimm die Länge auf der Karte mal die Maßstabszahl. Bei 1:25.000 werden aus 3 cm auf der Karte 750 m in echt.",
+               "3 cm × 25.000 = 75.000 cm = 750 m"),
+        step2=("Teile die echte Länge durch die Maßstabszahl. Ein Weg, der 5 km lang ist, ist auf einer Wanderkarte im Maßstab 1:25.000 dann 20 cm lang.",
+               "500.000 cm ÷ 25.000 = 20 cm"),
+        step3=("Bring beide Längen erst in die gleiche Einheit. Dann teilst du die Länge auf der Karte durch die echte Länge. 3 cm zu 750 m — das ist 1:25000.",
+               "3 cm : 75.000 cm = 1 : 25.000"),
+    ),
+    50000: dict(
+        one_cm="500 m", ten_cm="5 km",
+        use_line="Für Radkarten (TK50).",
+        use_short="Radkarten TK50",
+        map_label="RADKARTE",
+        meta_on="auf der Karte",
+        example="Ein Beispiel: Eine Strecke ist auf der Karte 20 cm lang — in echt sind das 10 km (20 × 50.000 = 1.000.000 cm).",
+        wofuer="Den Maßstab 1:50.000 nutzt man für Radkarten und topografische Karten (TK50). Alles ist 50.000-mal kleiner als in echt — eine Strecke von 10 km ist auf der Karte 20 cm lang. So sieht man eine ganze Region auf einmal.",
+        step1=("Nimm die Länge auf der Karte mal die Maßstabszahl. Bei 1:50.000 werden aus 3 cm auf der Karte 1,5 km in echt.",
+               "3 cm × 50.000 = 150.000 cm = 1,5 km"),
+        step2=("Teile die echte Länge durch die Maßstabszahl. Eine Strecke, die 10 km lang ist, ist auf einer Radkarte im Maßstab 1:50.000 dann 20 cm lang.",
+               "1.000.000 cm ÷ 50.000 = 20 cm"),
+        step3=("Bring beide Längen erst in die gleiche Einheit. Dann teilst du die Länge auf der Karte durch die echte Länge. 3 cm zu 1,5 km — das ist 1:50000.",
+               "3 cm : 150.000 cm = 1 : 50.000"),
+    ),
 }
 
 # FAQ answers shared by all scale pages (from the template, unchanged).
+# "Beispiel aus der Praxis" — ein echter Gegenstand im Maßstab, gezeichnet als
+# reines CSS-Rechteck (kein Bild). diag_on: wo der Gegenstand liegt.
+# diag_w: Breite des Rechtecks in % der Diagramm-Fläche; diag_ar: Seitenverhältnis.
+DIAGRAM = {
+    10:    dict(name="Stuhl", real="45 cm × 90 cm", draw="4,5 cm × 9 cm", on="auf dem Plan",
+                w=30, ar="1 / 2",
+                intro="Ein Stuhl von 45 cm × 90 cm ist im Maßstab 1:10 nur 4,5 cm × 9 cm groß auf dem Plan."),
+    20:    dict(name="Treppe", real="3 m × 1 m", draw="15 cm × 5 cm", on="auf dem Plan",
+                w=70, ar="3 / 1",
+                intro="Eine Treppe von 3 m × 1 m ist im Maßstab 1:20 nur 15 cm × 5 cm groß auf dem Plan."),
+    24:    dict(name="Auto", real="4,5 m × 1,8 m", draw="18,75 cm × 7,5 cm", on="im Modell",
+                w=70, ar="5 / 2",
+                intro="Ein Auto von 4,5 m × 1,8 m ist im Maßstab 1:24 nur 18,75 cm × 7,5 cm groß im Modell."),
+    25:    dict(name="Zimmer", real="4 m × 3 m", draw="16 cm × 12 cm", on="auf dem Plan",
+                w=55, ar="4 / 3",
+                intro="Ein Zimmer von 4 m × 3 m ist im Maßstab 1:25 nur 16 cm × 12 cm groß auf dem Plan."),
+    35:    dict(name="Panzer", real="7 m × 3,5 m", draw="20 cm × 10 cm", on="im Modell",
+                w=65, ar="2 / 1",
+                intro="Ein Panzer von 7 m × 3,5 m ist im Maßstab 1:35 nur 20 cm × 10 cm groß im Modell."),
+    50:    dict(name="Wohnzimmer", real="5 m × 4 m", draw="10 cm × 8 cm", on="auf dem Plan",
+                w=55, ar="5 / 4",
+                intro="Ein Wohnzimmer von 5 m × 4 m ist im Maßstab 1:50 nur 10 cm × 8 cm groß auf dem Plan."),
+    72:    dict(name="Flugzeug", real="36 m × 8 m", draw="50 cm × 11,1 cm", on="im Modell",
+                w=80, ar="9 / 2",
+                intro="Ein Flugzeug von 36 m × 8 m ist im Maßstab 1:72 nur 50 cm × 11,1 cm groß im Modell."),
+    87:    dict(name="Modellhaus", real="8,7 m × 4,35 m", draw="10 cm × 5 cm", on="im Modell",
+                w=65, ar="2 / 1",
+                intro="Ein Modellhaus von 8,7 m × 4,35 m ist im Maßstab 1:87 nur 10 cm × 5 cm groß im Modell."),
+    100:   dict(name="Haus", real="10 m × 8 m", draw="10 cm × 8 cm", on="auf dem Plan",
+                w=55, ar="5 / 4",
+                intro="Ein Haus von 10 m × 8 m ist im Maßstab 1:100 nur 10 cm × 8 cm groß auf dem Plan."),
+    200:   dict(name="Grundstück", real="20 m × 15 m", draw="10 cm × 7,5 cm", on="auf dem Plan",
+                w=55, ar="4 / 3",
+                intro="Ein Grundstück von 20 m × 15 m ist im Maßstab 1:200 nur 10 cm × 7,5 cm groß auf dem Plan."),
+    250:   dict(name="Grundstück", real="25 m × 20 m", draw="10 cm × 8 cm", on="auf dem Plan",
+                w=55, ar="5 / 4",
+                intro="Ein Grundstück von 25 m × 20 m ist im Maßstab 1:250 nur 10 cm × 8 cm groß auf dem Plan."),
+    500:   dict(name="Haus", real="20 m × 15 m", draw="4 cm × 3 cm", on="auf dem Plan",
+                w=55, ar="4 / 3",
+                intro="Ein Haus von 20 m × 15 m ist im Maßstab 1:500 nur 4 cm × 3 cm groß auf dem Plan."),
+    1000:  dict(name="Straße", real="100 m × 20 m", draw="10 cm × 2 cm", on="auf dem Plan",
+                w=80, ar="5 / 1",
+                intro="Eine Straße von 100 m × 20 m ist im Maßstab 1:1000 nur 10 cm × 2 cm groß auf dem Plan."),
+    25000: dict(name="Kartenausschnitt", real="5 km × 4 km", draw="20 cm × 16 cm", on="auf der Karte",
+                w=55, ar="5 / 4",
+                intro="Ein Kartenausschnitt von 5 km × 4 km ist im Maßstab 1:25.000 nur 20 cm × 16 cm groß auf der Karte."),
+    50000: dict(name="Region", real="10 km × 8 km", draw="20 cm × 16 cm", on="auf der Karte",
+                w=55, ar="5 / 4",
+                intro="Eine Region von 10 km × 8 km ist im Maßstab 1:50.000 nur 20 cm × 16 cm groß auf der Karte."),
+}
+
+# Vergleichstabelle: Nachbar-Maßstäbe je Seite (kleinere Zahl, größere Zahl).
+NEIGHBOURS = {
+    10: (20, 25), 20: (10, 25), 24: (20, 25), 25: (20, 50), 35: (25, 50),
+    50: (25, 100), 72: (50, 100), 87: (72, 100), 100: (50, 200),
+    200: (100, 250), 250: (200, 500), 500: (250, 1000), 1000: (500, 2000),
+    25000: (10000, 50000), 50000: (25000, 100000),
+}
+
+# Maßstäbe ohne eigene Seite (nur für die Vergleichstabelle): 1 cm in echt + Wofür.
+# Sie verlinken auf den Hauptrechner, nie auf eine tote Seite.
+EXTRA_SCALES = {
+    2000: ("20 m", "Stadtpläne"),
+    10000: ("100 m", "Wanderkarten"),
+    100000: ("1 km", "Autokarten"),
+}
+
 FAQ_KEEP = [
     ("Was ist der Unterschied zwischen großem und kleinem Maßstab?",
      "Kleine Zahl hinter dem Doppelpunkt, zum Beispiel 1:10.000: Du siehst ein kleines Stück Land, aber ganz genau. Große Zahl, zum Beispiel 1:1.000.000: Du siehst ein riesiges Stück Land, aber nur grob."),
@@ -234,7 +393,7 @@ def build_page(scale):
     canon = f"https://codeshifter-git.github.io/massklar/massstabsrechner/{slug}/"
 
     title = f"Maßstabsrechner {label} – 1 zu {scale} berechnen & umrechnen | maßklar"
-    meta = (f"Maßstab {label} berechnen und umrechnen: 1 cm auf dem Plan sind "
+    meta = (f"Maßstab {label} berechnen und umrechnen: 1 cm {d.get('meta_on', 'auf dem Plan')} sind "
             f"{d['one_cm']} in echt. Kostenloser Maßstabsrechner für {d['use_short']} "
             f"— zwei Zahlen eintippen, fertig.")
     assert 130 <= len(meta) <= 165, f"meta length {len(meta)} for 1:{scale}: {meta!r}"
@@ -259,7 +418,7 @@ def build_page(scale):
               + f" Stell dir vor: Alles auf dem Papier ist {fmt_de(scale)}-mal kleiner als in echt.")
     faq2_q = f"Wie rechne ich {label} auf einer Karte um?"
     if 4 * scale >= 100:
-        verb = "ist" if 4 * scale == 100 else "sind"
+        verb = "ist" if four_real in ("1 m", "1 km") else "sind"
         faq2_a = (f"Nimm die Strecke auf der Karte mal {fmt_de(scale)}. "
                   f"4 cm auf der Karte sind {fmt_de(4 * scale)} cm — das {verb} {four_real} in echt. "
                   f"Der Rechner macht das für dich.")
@@ -347,13 +506,25 @@ def build_page(scale):
               f'        <div class="quick-title"><span class="eyebrow">Im Alltag</span><h2>Wofür nutzt man den Maßstab {label}?</h2></div>\n'
               f'        <p class="table-intro">{d["wofuer"]}</p>\n'
               f'      </section>\n')
+    # --- "Beispiel aus der Praxis" — reines CSS-Diagramm (nach dem Rechner) ---
+    dg = DIAGRAM[scale]
+    diagram = (f'      <section class="table-section" id="beispiel">\n'
+               f'        <div class="quick-title"><span class="eyebrow">Ein Beispiel aus der Praxis</span><h2>So sieht {label} aus.</h2></div>\n'
+               f'        <p class="table-intro">{dg["intro"]}</p>\n'
+               f'        <div class="diagram">\n'
+               f'          <p class="diagram-size">{dg["draw"]} {dg["on"]}</p>\n'
+               f'          <div class="diagram-box" style="width: {dg["w"]}%; aspect-ratio: {dg["ar"]};">'
+               f'<span>{dg["name"]}</span></div>\n'
+               f'          <p class="diagram-real">in echt: {dg["real"]}</p>\n'
+               f'        </div>\n'
+               f'      </section>\n')
     html = rep(html, '      </section>\n\n      <section class="quick-examples" id="beispiele">',
-               '      </section>\n\n' + wofuer + '      <section class="quick-examples" id="beispiele">')
+               '      </section>\n\n' + wofuer + diagram + '      <section class="quick-examples" id="beispiele">')
 
     # --- "Alle Maßstäbe" section -> "Andere Maßstäbe" (same list, siblings) ---
     links = []
     for s in SCALES:
-        text = f"Maßstab 1:{s}"
+        text = f"Maßstab 1:{fmt_de(s)}"
         if s == scale:
             links.append(f'<span aria-current="page">{text}</span>')
         else:
@@ -412,12 +583,68 @@ def build_page(scale):
                 f'<p>{faq2_a}</p></details>')
     html = rep(html, faq2_old, faq2_new)
 
+    # --- "Rechenbeispiele" + "Vergleich" (neu, nach der Anleitung) ---
+    on = d.get("meta_on", "auf dem Plan")
+    dir_from = {"auf dem Plan": "Vom Plan", "im Modell": "Vom Modell",
+                "auf der Karte": "Von der Karte"}[on]
+    dir_from_low = {"auf dem Plan": "vom Plan", "im Modell": "vom Modell",
+                    "auf der Karte": "von der Karte"}[on]
+    dir_to = {"auf dem Plan": "auf den Plan", "im Modell": "ins Modell",
+              "auf der Karte": "auf die Karte"}[on]
+    fwd_eq = f"8 cm × {fmt_de(scale)} = {fmt_de(8 * scale)} cm"
+    fwd_res = fmt_real(8 * scale)
+    rev_eq = f"{fmt_de(8 * scale)} cm ÷ {fmt_de(scale)} = 8 cm"
+    beispiele = (f'      <section class="table-section" id="rechenbeispiele">\n'
+                 f'        <div class="quick-title"><span class="eyebrow">Zwei Rechnungen</span><h2>Rechenbeispiele für {label}.</h2></div>\n'
+                 f'        <p class="table-intro">Einmal {dir_from_low} in die Wirklichkeit — und einmal zurück. Die Rechnung ist immer die gleiche: mal die Maßstabszahl, oder geteilt durch sie.</p>\n'
+                 f'        <div class="table-wrap">\n'
+                 f'          <table class="scale-table scale-table--static">\n'
+                 f'            <thead><tr><th scope="col">Richtung</th><th scope="col">Rechnung</th><th scope="col">Ergebnis</th></tr></thead>\n'
+                 f'            <tbody>\n'
+                 f'              <tr><th scope="row">{dir_from} in die Wirklichkeit</th><td>{fwd_eq}</td><td>{fwd_res}</td></tr>\n'
+                 f'              <tr><th scope="row">Von der Wirklichkeit {dir_to}</th><td>{rev_eq}</td><td>8 cm</td></tr>\n'
+                 f'            </tbody>\n'
+                 f'          </table>\n'
+                 f'        </div>\n'
+                 f'      </section>\n')
+
+    def _cmp_row(s):
+        if s in DATA:
+            one_cm, use = DATA[s]["one_cm"], DATA[s]["use_short"]
+        else:
+            one_cm, use = EXTRA_SCALES[s]
+        if s == scale:
+            return (f'              <tr><th scope="row">1:{fmt_de(s)}</th><td>{one_cm}</td>'
+                    f'<td>{use}</td></tr>')
+        href = f"../1-zu-{s}/" if s in SCALES else "../"
+        return (f'              <tr><th scope="row"><a href="{href}">1:{fmt_de(s)}</a></th><td>{one_cm}</td>'
+                f'<td>{use}</td></tr>')
+
+    lo, hi = NEIGHBOURS[scale]
+    cmp_rows = "\n".join(_cmp_row(s) for s in sorted((lo, scale, hi)))
+    vergleich = (f'      <section class="table-section" id="vergleich">\n'
+                 f'        <div class="quick-title"><span class="eyebrow">Im Vergleich</span><h2>{label} oder doch ein anderer Maßstab?</h2></div>\n'
+                 f'        <p class="table-intro">Je kleiner die Zahl hinter dem Doppelpunkt ist, desto größer ist der Plan — und desto mehr Details siehst du. So liegt {label} zwischen seinen Nachbarn.</p>\n'
+                 f'        <div class="table-wrap">\n'
+                 f'          <table class="scale-table scale-table--static">\n'
+                 f'            <thead><tr><th scope="col">Maßstab</th><th scope="col">1 cm {on}</th><th scope="col">Wofür?</th></tr></thead>\n'
+                 f'            <tbody>\n'
+                 f'{cmp_rows}\n'
+                 f'            </tbody>\n'
+                 f'          </table>\n'
+                 f'        </div>\n'
+                 f'      </section>\n')
+    html = rep(html, '      </section>\n\n      <section class="practice-section" id="ueben">',
+               '      </section>\n\n' + beispiele + vergleich + '      <section class="practice-section" id="ueben">')
+
     # --- sanity: no grade mention, no leftover template scale in key spots ---
     assert "Klasse" not in html and "klasse 5" not in html.lower(), "grade mention!"
-    for needle in ["1:25.000 in echt 1 km", "Maßstabsrechner.</h1>"]:
-        assert needle not in html, f"leftover template text: {needle!r}"
-    # The only "25000" left must be the compare tool's generic example (Karte A).
-    assert html.count('value="25000"') == 1 and 'id="compare-scale-a"' in html, "unexpected 25000 leftovers"
+    if scale != 25000:  # 1:25.000 legitimately has the template's default context
+        assert "1:25.000 in echt 1 km" not in html, "leftover template text"
+    assert "Maßstabsrechner.</h1>" not in html, "leftover template H1"
+    # The only "25000" left must be the compare tool's generic example (Karte A);
+    # on the 1:25.000 page the main input legitimately reads 25000 too.
+    assert html.count('value="25000"') == (2 if scale == 25000 else 1) and 'id="compare-scale-a"' in html, "unexpected 25000 leftovers"
     assert f"massklar_v1" not in html  # storage key lives in app.js only
     return html, len(meta)
 
