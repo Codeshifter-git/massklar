@@ -37,11 +37,11 @@ function formatScale(drawingMeters, realMeters) {
 // Friendly errors (Lincoln tell #13: no raw error text) + per-field state (#6).
 const FIELD_LABELS = {
   drawing: "Die Länge auf dem Plan",
-  real: "Die reale Länge",
-  scale: "Die Maßstabszahl",
+  real: "Die Länge in echt",
+  scale: "Der Maßstab",
 };
 function friendlyError(key) {
-  return `${FIELD_LABELS[key]} braucht eine Zahl größer als 0. Bitte prüfe die Eingabe.`;
+  return `${FIELD_LABELS[key]}: Bitte eine Zahl größer als 0 eintippen.`;
 }
 function markField(fieldId, state) {
   const field = document.querySelector(`#${fieldId}`);
@@ -85,7 +85,7 @@ function setTarget(next, { save = true } = {}) {
       input.required = !disabled;
     });
   }
-  calculateButton.textContent = ` ${next === "scale" ? "Maßstab" : next === "drawing" ? "Zeichnungslänge" : "Reale Länge"} berechnen `;
+  calculateButton.textContent = ` ${next === "scale" ? "Maßstab" : next === "drawing" ? "Länge auf dem Plan" : "Echte Länge"} berechnen `;
   const arrow = document.createElement("span");
   arrow.setAttribute("aria-hidden", "true");
   arrow.textContent = "↗";
@@ -132,27 +132,27 @@ function calculate(event) {
     if (target === "real") {
       const drawing = drawingMeters * unitInMeters[drawingUnit.value];
       const real = drawing * scaleDenominator;
-      if (!Number.isFinite(real)) throw new Error("Das Ergebnis ist zu groß. Prüfe deine Eingaben.");
+      if (!Number.isFinite(real)) throw new Error("Das Ergebnis ist zu groß. Schau dir deine Zahlen noch einmal an.");
       value = formatLength(real, realUnit.value);
-      context = `${format(drawingMeters)} ${drawingUnit.value} auf der Zeichnung entsprechen bei 1:${format(scaleDenominator)} einer realen Länge von ${value}.`;
+      context = `${format(drawingMeters)} ${drawingUnit.value} auf der Karte sind bei 1:${format(scaleDenominator)} in echt ${value} lang.`;
       // v1 app-2.js fix: formula result in the drawing unit, not metres.
       formula = `${format(drawingMeters)} ${drawingUnit.value} × ${format(scaleDenominator)} = ${formatLength(real, drawingUnit.value)}`;
       realInput.value = String(real / unitInMeters[realUnit.value]);
     } else if (target === "drawing") {
       const real = realMeters * unitInMeters[realUnit.value];
       const drawing = real / scaleDenominator;
-      if (!Number.isFinite(drawing)) throw new Error("Das Ergebnis ist zu groß. Prüfe deine Eingaben.");
+      if (!Number.isFinite(drawing)) throw new Error("Das Ergebnis ist zu groß. Schau dir deine Zahlen noch einmal an.");
       value = formatLength(drawing, drawingUnit.value);
-      context = `${format(realMeters)} ${realUnit.value} in Wirklichkeit entsprechen bei 1:${format(scaleDenominator)} einer Zeichnungslänge von ${value}.`;
+      context = `${format(realMeters)} ${realUnit.value} in echt sind bei 1:${format(scaleDenominator)} auf dem Plan ${value} lang.`;
       formula = `${format(realMeters)} ${realUnit.value} ÷ ${format(scaleDenominator)} = ${formatLength(drawing, drawingUnit.value)}`;
       drawingInput.value = String(drawing / unitInMeters[drawingUnit.value]);
     } else {
       const drawing = drawingMeters * unitInMeters[drawingUnit.value];
       const real = realMeters * unitInMeters[realUnit.value];
-      if (!Number.isFinite(real / drawing)) throw new Error("Das Ergebnis ist zu groß. Prüfe deine Eingaben.");
+      if (!Number.isFinite(real / drawing)) throw new Error("Das Ergebnis ist zu groß. Schau dir deine Zahlen noch einmal an.");
       const ratio = formatScale(drawing, real);
       value = ratio;
-      context = `${format(drawingMeters)} ${drawingUnit.value} auf der Zeichnung entsprechen ${format(realMeters)} ${realUnit.value} in Wirklichkeit.`;
+      context = `${format(drawingMeters)} ${drawingUnit.value} auf dem Plan sind in echt ${format(realMeters)} ${realUnit.value} lang.`;
       formula = `${formatLength(drawing, "m")} : ${formatLength(real, "m")} = ${ratio}`;
       scaleInput.value = String(real / drawing);
     }
@@ -238,7 +238,7 @@ copyButton.addEventListener("click", async (event) => {
       copyButton.innerHTML = 'Ergebnis kopieren <span aria-hidden="true">⧉</span>';
     }, 1600);
   } catch {
-    errorMessage.textContent = "Kopieren ist in diesem Browser nicht verfügbar. Markiere das Ergebnis und kopiere es manuell.";
+    errorMessage.textContent = "Kopieren geht in diesem Browser leider nicht. Markiere das Ergebnis und kopiere es selbst.";
     errorMessage.hidden = false;
   }
 });
