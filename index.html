@@ -191,6 +191,7 @@
           <article class="guide-step"><span class="step-number">02</span><div><h3>Wie lang wird es auf dem Plan?</h3><p>Teile die echte Länge durch die Maßstabszahl. Ein Zimmer, das 5 m lang ist, ist auf einem Grundriss im Maßstab 1:50 dann 10 cm lang.</p><span class="step-equation">500 cm ÷ 50 = 10 cm</span></div></article>
           <article class="guide-step"><span class="step-number">03</span><div><h3>Welcher Maßstab ist das?</h3><p>Bring beide Längen erst in die gleiche Einheit. Dann teilst du die Länge auf dem Plan durch die echte Länge. 2 cm zu 1 m — das ist 1:50.</p><span class="step-equation">2 cm : 100 cm = 1 : 50</span></div></article>
           <article class="guide-step"><span class="step-number">04</span><div><h3>Wie groß ist eine Fläche?</h3><p>Bei einer Fläche nimmst du die Maßstabszahl mal sich selbst. Ein Zimmer ist auf dem Plan 4 cm lang und 3 cm breit — also 12 cm². Bei 1:100 sind das in echt 12 m².</p><span class="step-equation">12 cm² × 100² = 120.000 cm² = 12 m²</span></div></article>
+          <article class="guide-step"><span class="step-number">05</span><div><h3>Wie groß ist ein Volumen?</h3><p>Bei einem Volumen nimmst du die Maßstabszahl gleich dreimal: mal sich selbst, mal sich selbst. Ein Würfel ist auf dem Modell 1 cm groß — also 1 cm³. Bei 1:100 sind das in echt 1 m³.</p><span class="step-equation">1 cm³ × 100³ = 1.000.000 cm³ = 1 m³</span></div></article>
         </div>
       </section>
 
@@ -200,6 +201,43 @@
         <div class="faq-list">
           <details><summary>Eine Straße ist auf dem Stadtplan 3 cm lang. Der Maßstab ist 1:10.000. Wie lang ist die Straße in echt? <span aria-hidden="true">+</span></summary><p>3 cm × 10.000 = 30.000 cm = 300 m. Die Straße ist 300 m lang.</p></details>
           <details><summary>Zwei Dörfer sind auf der Karte 5 cm auseinander. Der Maßstab ist 1:50.000. Wie weit sind sie in echt auseinander? <span aria-hidden="true">+</span></summary><p>5 cm × 50.000 = 250.000 cm = 2,5 km. Die Dörfer sind 2,5 km auseinander.</p></details>
+        </div>
+      </section>
+
+      <section class="compare-section" id="vergleichen">
+        <div class="quick-title"><span class="eyebrow">Zwei Karten, eine Strecke</span><h2>Gleiche Strecke, andere Karte.</h2></div>
+        <p class="table-intro">Du hast eine Route auf einer Karte gemessen und willst wissen, wie lang sie auf einer anderen Karte ist? Gib die Länge und die beiden Maßstäbe ein — der Rest geht von allein.</p>
+        <form class="compare-grid" id="compare-form" novalidate>
+          <div class="field">
+            <label for="compare-length">Länge auf Karte A</label>
+            <div class="input-with-unit">
+              <input id="compare-length" name="compareLength" type="number" min="0" step="any" value="3" inputmode="decimal">
+              <select id="compare-unit" name="compareUnit" aria-label="Einheit der Länge auf Karte A">
+                <option value="mm">mm</option><option value="cm" selected>cm</option><option value="m">m</option><option value="km">km</option>
+              </select>
+            </div>
+          </div>
+          <div class="field">
+            <label for="compare-scale-a">Maßstab von Karte A</label>
+            <div class="ratio-input">
+              <span class="ratio-leading">1 :</span>
+              <input id="compare-scale-a" name="compareScaleA" type="number" min="0" step="any" value="25000" inputmode="decimal" aria-label="Maßstabszahl von Karte A">
+            </div>
+          </div>
+          <div class="field">
+            <label for="compare-scale-b">Maßstab von Karte B</label>
+            <div class="ratio-input">
+              <span class="ratio-leading">1 :</span>
+              <input id="compare-scale-b" name="compareScaleB" type="number" min="0" step="any" value="50000" inputmode="decimal" aria-label="Maßstabszahl von Karte B">
+            </div>
+          </div>
+        </form>
+        <p class="form-error" id="compare-error" role="alert" hidden></p>
+        <div class="result-panel compare-result" id="compare-result-panel" aria-live="polite" aria-atomic="true">
+          <div class="result-topline"><span>AUF KARTE B</span><span class="result-check" aria-hidden="true">✓</span></div>
+          <div class="result-value" id="compare-result-value">1,5 cm</div>
+          <p class="result-context" id="compare-result-context">3 cm auf der Karte mit 1:25.000 sind auf der Karte mit 1:50.000 1,5 cm lang.</p>
+          <div class="result-meta"><span id="compare-result-formula">3 cm × (25.000 ÷ 50.000) = 1,5 cm</span></div>
         </div>
       </section>
 

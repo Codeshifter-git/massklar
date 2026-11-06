@@ -256,6 +256,43 @@ document.querySelectorAll(".scale-row").forEach((row) => {
     document.querySelector("#rechner").scrollIntoView({ behavior: "smooth" });
   });
 });
+// Two-scale compare: same real length, different map.
+// Length B = Length A × (scale A ÷ scale B).
+const compareLength = document.querySelector("#compare-length");
+const compareUnit = document.querySelector("#compare-unit");
+const compareScaleA = document.querySelector("#compare-scale-a");
+const compareScaleB = document.querySelector("#compare-scale-b");
+const compareError = document.querySelector("#compare-error");
+const comparePanel = document.querySelector("#compare-result-panel");
+const compareValue = document.querySelector("#compare-result-value");
+const compareContext = document.querySelector("#compare-result-context");
+const compareFormula = document.querySelector("#compare-result-formula");
+function compareScales() {
+  compareError.hidden = true;
+  const length = Number(compareLength.value);
+  const scaleA = Number(compareScaleA.value);
+  const scaleB = Number(compareScaleB.value);
+  if (!compareLength.value.trim() || !Number.isFinite(length) || length <= 0
+    || !compareScaleA.value.trim() || !Number.isFinite(scaleA) || scaleA <= 0
+    || !compareScaleB.value.trim() || !Number.isFinite(scaleB) || scaleB <= 0) {
+    compareError.textContent = "Bitte überall eine Zahl größer als 0 eintippen.";
+    compareError.hidden = false;
+    comparePanel.hidden = true;
+    return;
+  }
+  const result = length * (scaleA / scaleB);
+  const unit = compareUnit.value;
+  const resultText = `${format(result)} ${unit}`;
+  compareValue.textContent = resultText;
+  compareContext.textContent = `${format(length)} ${unit} auf der Karte mit 1:${format(scaleA)} sind auf der Karte mit 1:${format(scaleB)} ${resultText} lang.`;
+  compareFormula.textContent = `${format(length)} ${unit} × (${format(scaleA)} ÷ ${format(scaleB)}) = ${resultText}`;
+  comparePanel.hidden = false;
+}
+for (const el of [compareLength, compareUnit, compareScaleA, compareScaleB]) {
+  el.addEventListener("input", compareScales);
+  el.addEventListener("change", compareScales);
+}
+compareScales();
 document.querySelector("#reset-button").addEventListener("click", resetCalculator);
 copyButton.addEventListener("click", async (event) => {
   try {

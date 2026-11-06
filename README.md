@@ -87,3 +87,10 @@ Studied https://rechneneinfach.de/massstabsrechner/ and took its best parts:
   1:200.000 / 1:500.000 / 1:1.000.000 / 1:2.000.000.
 - New practice section `#ueben`: 2 Klasse-5 tasks with hidden solutions (own numbers).
 - QA: 28/28 checks (table values, also-line, practice, area).
+
+## Update 2026-11-06 — two-scale compare + volume
+- New section `#vergleichen`: same route on a different map — length on map A +
+  scale A + scale B -> length on map B, live calc. Default 3 cm, 1:25.000 ->
+  1:50.000 = 1,5 cm. Friendly error on empty/zero fields.
+- Guide step 05: volume, factor cubed (1 cm³ × 100³ = 1 m³).
+- QA: 12/12 new checks + 28/28 regression.
