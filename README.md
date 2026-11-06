@@ -104,3 +104,12 @@ The two QA issues were fixed directly in this build instead:
 - Segmented control: role="tablist"/role="tab" + aria-selected replaced with
   role="group" + aria-pressed (there is no tabpanel, so tab semantics were wrong).
 - QA: 15/15 checks (typing flow, submit error, ARIA, regression).
+
+## Update 2026-11-06 — short practice rows + standout button
+- Practice tasks: summaries were full sentences spanning the whole width.
+  Now short titles ("Aufgabe 1: Wie lang ist die Straße?"); the full
+  question + solution sit inside the opened row. List capped at 1050px,
+  section spacing tightened.
+- Calculate button: 52px -> 60px, 15px -> 17px bold, added lift shadow
+  (deeper on hover) so it stands out from the card.
+- QA: 8/8 checks.
