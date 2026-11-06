@@ -27,9 +27,8 @@
         setTimeout(hide, 2500);
       })();
     </script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Bitter:wght@400;500;600;700;800&display=swap">
+    <link rel="preload" href="../../fonts/bitter-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="../../fonts/dm-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
 <style>
       /* Loading skeleton — inline so it paints before the stylesheet arrives.
          Shown by the <head> script adding .is-loading to <html>; hidden by default. */
@@ -47,7 +46,7 @@
       @keyframes sk-shimmer { to { transform: translateX(100%); } }
       @media (prefers-reduced-motion: reduce) { .sk-bar::after, .sk-card::after { animation: none; } }
     </style>
-    <link rel="stylesheet" href="../../styles.css?v=10">
+    <link rel="stylesheet" href="../../styles.css?v=11">
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",

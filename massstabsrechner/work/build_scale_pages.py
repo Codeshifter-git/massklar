@@ -444,6 +444,11 @@ def build_page(scale):
                f'<meta property="og:description" content="{esc(meta)}">')
     html = rep(html, f'<link rel="stylesheet" href="../styles.css?v={css_version}">',
                f'<link rel="stylesheet" href="../../styles.css?v={css_version}">')
+    # Font preloads are one level deeper on scale pages (template uses ../fonts/).
+    html = rep(html, '<link rel="preload" href="../fonts/bitter-latin.woff2" as="font" type="font/woff2" crossorigin>',
+               '<link rel="preload" href="../../fonts/bitter-latin.woff2" as="font" type="font/woff2" crossorigin>')
+    html = rep(html, '<link rel="preload" href="../fonts/dm-sans-latin.woff2" as="font" type="font/woff2" crossorigin>',
+               '<link rel="preload" href="../../fonts/dm-sans-latin.woff2" as="font" type="font/woff2" crossorigin>')
     html = rep(html, '"name": "Maßstabsrechner",',
                f'"name": "Maßstabsrechner {label}",')
     html = rep(html, '"description": "Maßstabsrechner: Maßstab berechnen, Länge auf der Karte und echte Länge umrechnen — für Karten, Grundrisse und Modellbau."',

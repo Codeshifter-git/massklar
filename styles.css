@@ -1,4 +1,37 @@
-/* Fonts load via <link> + preconnect in each page head (faster than @import). */
+/* Self-hosted fonts (fonts/): Bitter + DM Sans are variable fonts — one file
+   covers all weights (Bitter wght 100-900, DM Sans wght 100-1000). DM Mono is
+   static (400 + 500 only; Google Fonts has no 600 for it, so 600 in CSS keeps
+   rendering as synthesized bold, as before). No Google Fonts requests. */
+
+@font-face {
+  font-family: "Bitter";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("fonts/bitter-latin.woff2") format("woff2");
+}
+@font-face {
+  font-family: "DM Sans";
+  font-style: normal;
+  font-weight: 100 1000;
+  font-display: swap;
+  src: url("fonts/dm-sans-latin.woff2") format("woff2");
+}
+@font-face {
+  font-family: "DM Mono";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("fonts/dm-mono-400-latin.woff2") format("woff2");
+}
+@font-face {
+  font-family: "DM Mono";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("fonts/dm-mono-500-latin.woff2") format("woff2");
+}
+
 
 :root {
   color-scheme: light;
