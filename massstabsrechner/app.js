@@ -190,6 +190,7 @@ function calculate(event, silent = false) {
       lastValue = value;
     }
     saveState();
+    renderLengthTable();
   } catch (error) {
     // Silent while typing: clearing a field mid-typing (e.g. "4" -> "12")
     // must not flash the error or hide the last good result. The error
@@ -260,6 +261,38 @@ document.querySelectorAll(".scale-row").forEach((row) => {
     document.querySelector("#rechner").scrollIntoView({ behavior: "smooth" });
   });
 });
+// Length table: for the current scale, the common map lengths in real life.
+// Re-renders whenever the scale changes (live, like the calculator itself).
+const LENGTH_CM = [0.1, 0.2, 0.3, 0.4, 0.5, 0.7, 1, 1.5, 2, 2.5, 3, 4, 5, 6, 7, 8, 9, 10, 12, 14, 15, 16, 18, 20, 25, 30, 35, 40, 45, 50, 55, 60, 70, 80, 90, 100];
+const lengthTableScale = document.querySelector("#length-table-scale");
+const lengthBodies = [...document.querySelectorAll(".length-table tbody")];
+function formatRealLength(realCm) {
+  if (realCm >= 100000) return `${format(realCm / 100000)} km`;
+  if (realCm >= 100) return `${format(realCm / 100)} m`;
+  return `${format(realCm)} cm`;
+}
+function renderLengthTable() {
+  const scale = Number(scaleInput.value);
+  if (!Number.isFinite(scale) || scale <= 0) return; // keep the last good table
+  lengthTableScale.textContent = `1:${format(scale)}`;
+  lengthBodies.forEach((tbody, i) => {
+    const rows = LENGTH_CM.slice(i * 12, i * 12 + 12);
+    tbody.innerHTML = rows.map((cm) =>
+      `<tr class="length-row" data-cm="${cm}"><th scope="row">${format(cm)} cm</th><td>${formatRealLength(cm * scale)}</td></tr>`
+    ).join("");
+  });
+  // Click a row: that map length, in reality, at the current scale.
+  document.querySelectorAll(".length-row").forEach((row) => {
+    row.addEventListener("click", () => {
+      setTarget("real", { save: false });
+      drawingInput.value = row.dataset.cm;
+      drawingUnit.value = "cm";
+      realInput.value = "";
+      calculate();
+      document.querySelector("#rechner").scrollIntoView({ behavior: "smooth" });
+    });
+  });
+}
 // Two-scale compare: same real length, different map.
 // Length B = Length A × (scale A ÷ scale B).
 const compareLength = document.querySelector("#compare-length");

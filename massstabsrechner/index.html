@@ -46,7 +46,7 @@
       @keyframes sk-shimmer { to { transform: translateX(100%); } }
       @media (prefers-reduced-motion: reduce) { .sk-bar::after, .sk-card::after { animation: none; } }
     </style>
-    <link rel="stylesheet" href="../styles.css?v=5">
+    <link rel="stylesheet" href="../styles.css?v=6">
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -223,6 +223,70 @@
               <tr class="scale-row" data-scale="2000000" data-real-unit="km"><th scope="row">1:2.000.000</th><td>20 km</td><td>200 km</td><td>Deutschlandkarte</td></tr>
             </tbody>
           </table>
+        </div>
+      </section>
+
+      <section class="table-section length-section" id="laengen">
+        <div class="quick-title"><span class="eyebrow">Längentabelle</span><h2>Wie lang ist das bei <span id="length-table-scale">1:25.000</span>?</h2></div>
+        <p class="table-intro">Die gängigen Längen auf der Karte — und was sie in echt bedeuten. Die Tabelle rechnet mit, sobald du oben einen anderen Maßstab eintippst. Tipp eine Zeile an, und der Rechner nimmt genau diese Länge.</p>
+        <div class="length-tables">
+        <div class="table-wrap">
+          <table class="length-table">
+<thead><tr><th scope="col">Auf der Karte</th><th scope="col">In echt</th></tr></thead>
+<tbody>
+              <tr class="length-row" data-cm="0.1"><th scope="row">0,1 cm</th><td>25 m</td></tr>
+              <tr class="length-row" data-cm="0.2"><th scope="row">0,2 cm</th><td>50 m</td></tr>
+              <tr class="length-row" data-cm="0.3"><th scope="row">0,3 cm</th><td>75 m</td></tr>
+              <tr class="length-row" data-cm="0.4"><th scope="row">0,4 cm</th><td>100 m</td></tr>
+              <tr class="length-row" data-cm="0.5"><th scope="row">0,5 cm</th><td>125 m</td></tr>
+              <tr class="length-row" data-cm="0.7"><th scope="row">0,7 cm</th><td>175 m</td></tr>
+              <tr class="length-row" data-cm="1"><th scope="row">1 cm</th><td>250 m</td></tr>
+              <tr class="length-row" data-cm="1.5"><th scope="row">1,5 cm</th><td>375 m</td></tr>
+              <tr class="length-row" data-cm="2"><th scope="row">2 cm</th><td>500 m</td></tr>
+              <tr class="length-row" data-cm="2.5"><th scope="row">2,5 cm</th><td>625 m</td></tr>
+              <tr class="length-row" data-cm="3"><th scope="row">3 cm</th><td>750 m</td></tr>
+              <tr class="length-row" data-cm="4"><th scope="row">4 cm</th><td>1 km</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="table-wrap">
+          <table class="length-table">
+<thead><tr><th scope="col">Auf der Karte</th><th scope="col">In echt</th></tr></thead>
+<tbody>
+              <tr class="length-row" data-cm="5"><th scope="row">5 cm</th><td>1,25 km</td></tr>
+              <tr class="length-row" data-cm="6"><th scope="row">6 cm</th><td>1,5 km</td></tr>
+              <tr class="length-row" data-cm="7"><th scope="row">7 cm</th><td>1,75 km</td></tr>
+              <tr class="length-row" data-cm="8"><th scope="row">8 cm</th><td>2 km</td></tr>
+              <tr class="length-row" data-cm="9"><th scope="row">9 cm</th><td>2,25 km</td></tr>
+              <tr class="length-row" data-cm="10"><th scope="row">10 cm</th><td>2,5 km</td></tr>
+              <tr class="length-row" data-cm="12"><th scope="row">12 cm</th><td>3 km</td></tr>
+              <tr class="length-row" data-cm="14"><th scope="row">14 cm</th><td>3,5 km</td></tr>
+              <tr class="length-row" data-cm="15"><th scope="row">15 cm</th><td>3,75 km</td></tr>
+              <tr class="length-row" data-cm="16"><th scope="row">16 cm</th><td>4 km</td></tr>
+              <tr class="length-row" data-cm="18"><th scope="row">18 cm</th><td>4,5 km</td></tr>
+              <tr class="length-row" data-cm="20"><th scope="row">20 cm</th><td>5 km</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="table-wrap">
+          <table class="length-table">
+<thead><tr><th scope="col">Auf der Karte</th><th scope="col">In echt</th></tr></thead>
+<tbody>
+              <tr class="length-row" data-cm="25"><th scope="row">25 cm</th><td>6,25 km</td></tr>
+              <tr class="length-row" data-cm="30"><th scope="row">30 cm</th><td>7,5 km</td></tr>
+              <tr class="length-row" data-cm="35"><th scope="row">35 cm</th><td>8,75 km</td></tr>
+              <tr class="length-row" data-cm="40"><th scope="row">40 cm</th><td>10 km</td></tr>
+              <tr class="length-row" data-cm="45"><th scope="row">45 cm</th><td>11,25 km</td></tr>
+              <tr class="length-row" data-cm="50"><th scope="row">50 cm</th><td>12,5 km</td></tr>
+              <tr class="length-row" data-cm="55"><th scope="row">55 cm</th><td>13,75 km</td></tr>
+              <tr class="length-row" data-cm="60"><th scope="row">60 cm</th><td>15 km</td></tr>
+              <tr class="length-row" data-cm="70"><th scope="row">70 cm</th><td>17,5 km</td></tr>
+              <tr class="length-row" data-cm="80"><th scope="row">80 cm</th><td>20 km</td></tr>
+              <tr class="length-row" data-cm="90"><th scope="row">90 cm</th><td>22,5 km</td></tr>
+              <tr class="length-row" data-cm="100"><th scope="row">100 cm</th><td>25 km</td></tr>
+            </tbody>
+          </table>
+        </div>
         </div>
       </section>
 

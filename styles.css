@@ -167,6 +167,19 @@ h1, h2, h3, p { margin-top: 0; }
 .scale-table tbody tr:active { background: #e4edcf; }
 .scale-table tbody tr:nth-child(even) { background: #fafaf5; }
 .scale-table tbody tr:nth-child(even):hover { background: #f1f5e9; }
+/* Length table (per-scale lookup, borrowed from the #1 competitor, own design). */
+.length-tables { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0 32px; }
+.length-table { width: 100%; border-collapse: collapse; font-size: 15px; line-height: 1.5; }
+.length-table th, .length-table td { padding: 14px 16px; text-align: left; white-space: nowrap; }
+.length-table thead th { color: var(--green); font: 600 12px var(--mono); text-transform: uppercase; letter-spacing: .8px; border-bottom: 2px solid #e7e8df; }
+.length-table tbody th { font: 600 15px var(--mono); color: var(--green-dark); }
+.length-table tbody td { color: var(--ink); font-family: var(--mono); }
+.length-table tbody tr { border-bottom: 1px solid #eef0e9; cursor: pointer; transition: background .15s; }
+.length-table tbody tr:last-child { border-bottom: 0; }
+.length-table tbody tr:hover { background: #f1f5e9; }
+.length-table tbody tr:active { background: #e4edcf; }
+.length-table tbody tr:nth-child(even) { background: #fafaf5; }
+.length-table tbody tr:nth-child(even):hover { background: #f1f5e9; }
 
 .practice-section { padding: 48px 11.2% 24px; }
 .practice-section .faq-list { max-width: 1050px; margin: 0 auto; }
@@ -202,6 +215,7 @@ h1, h2, h3, p { margin-top: 0; }
   .calculator { grid-template-columns: 1fr; }
   .calc-aside { display: grid; grid-template-columns: 1fr 1.3fr; align-items: center; gap: 4px 18px; padding: 20px 24px; }.aside-number { grid-column: 1 / -1; }.aside-art { grid-row: span 3; height: 105px; margin: 8px 0 0; }.calc-aside h3 { margin: 6px 0 0; }.calc-aside p { margin: 0; }.calc-aside a { align-self: start; }
   .input-grid { grid-template-columns: 1fr 1fr; gap: 13px 10px; }.scale-field { grid-column: 1 / -1; }
+  .length-tables { grid-template-columns: 1fr; }
 }
 @media (max-width: 680px) {
   html { scroll-padding-top: 68px; }.site-header { min-height: 60px; }.top-nav { display: none; }.header-cta { padding: 10px 12px; font-size: 12px; }
@@ -212,7 +226,7 @@ h1, h2, h3, p { margin-top: 0; }
   .calculator { grid-template-columns: 1fr; }.calc-main { padding: 20px 17px; }.calc-aside { display: grid; grid-template-columns: 1fr 1.3fr; align-items: center; gap: 4px 18px; padding: 20px 18px; }.aside-number { grid-column: 1 / -1; }.aside-art { grid-row: span 3; height: 105px; margin: 8px 0 0; }.calc-aside h3 { margin: 6px 0 0; }.calc-aside p { margin: 0; }.calc-aside a { align-self: start; }
   .input-grid { grid-template-columns: 1fr 1fr; gap: 13px 10px; }.scale-field { grid-column: 1 / -1; }.target-segmented { margin-bottom: 18px; }
   .quick-examples { padding: 48px 5%; }.example-strip { grid-template-columns: 1fr; }.example-card { min-height: 80px; }
-  .table-section { padding: 48px 5%; }.scale-table { font-size: 13px; }.scale-table th, .scale-table td { padding: 12px 8px; white-space: normal; line-height: 1.45; }.scale-table thead th { font-size: 11px; }.scale-table tbody th { font-size: 13px; }
+  .table-section { padding: 48px 5%; }.scale-table { font-size: 13px; }.scale-table th, .scale-table td { padding: 12px 8px; white-space: normal; line-height: 1.45; }.scale-table thead th { font-size: 11px; }.scale-table tbody th { font-size: 13px; } .length-table { font-size: 13px; }.length-table th, .length-table td { padding: 12px 8px; }.length-table thead th { font-size: 11px; }.length-table tbody th { font-size: 13px; }
   .practice-section { padding: 48px 5%; }
   .compare-section { padding: 48px 5%; }.compare-grid { grid-template-columns: 1fr; }
   .guide-section, .faq-section { grid-template-columns: 1fr; gap: 33px; padding: 56px 8%; }.guide-intro h2 { font-size: 31px; }.formula-card { margin-top: 19px; }.faq-section { gap: 26px; }.faq-heading h2 { font-size: 28px; }

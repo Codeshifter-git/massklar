@@ -177,3 +177,24 @@ to supporting tints only (no lime text left on any page):
   only external dependency, served as subsetted woff2 with `display=swap`).
 - **Hastle, not "Hastle Inc.":** footers now read "Ein Produkt von Hastle"
   — Hastle is not a registered business, so "Inc." is never used.
+
+## Competitor: weltkugel-globus.de — ranks #1 for maßstabsrechner (DR 5)
+Read 2026-11-06. Old, plain site — but it wins on topical depth, not
+design or authority:
+- **Per-scale length table:** for the scale you pick (default 1:500), ~35
+  precomputed rows (0,1 cm → 100 cm on the map → real distance). Ours
+  answers the other question (all scales, one length) — the two tables
+  complement each other; theirs is the one a map reader actually looks up.
+- **One page per common scale:** "Gebräuchliche Maßstäbe" links 24 scales
+  (1:2 → 1:80.000.000), each a separate page targeting that exact scale.
+  That cluster is almost certainly why a DR 5 site outranks everyone.
+- **Explainer article** ("Maßstab - Bedeutung und Berechnungen") linked
+  from the tool page — separate educational content, not just the tool.
+- Their calculator **needs JavaScript** (NoScript warning on the page) and
+  rounds to 4 decimals. Ours degrades gracefully (static fallback result)
+  and already beats it on: 3rd mode (find the scale itself), all-units
+  result, all 3 formulas, area (factor²) + volume (factor³) steps,
+  Klasse-5 practice, two-scale compare, FAQ, design, speed, mobile.
+- Borrowable, in our own words/design: (1) the per-scale length table —
+  small addition to the Maßstab page; (2) scale-specific pages — the bigger
+  SEO move. Both need the user's go-ahead first.
