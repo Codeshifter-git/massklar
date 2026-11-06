@@ -142,6 +142,24 @@ h1, h2, h3, p { margin-top: 0; }
 .example-sub { color: #5a6a62; font-size: 13px; line-height: 1.5; }.example-sub i { padding: 0 3px; color: var(--orange); font-style: normal; }
 .example-arrow { margin-left: auto; color: #5a6a62; font-size: 16px; }
 
+/* Maßstabstabelle — ordered scale table, rows tap to fill the calculator */
+.table-section { padding: 64px 11.2% 70px; }
+.table-section .quick-title { margin-bottom: 10px; }
+.table-intro { max-width: 1050px; margin: 0 auto 24px; color: #4f5f56; font-size: 15px; line-height: 1.75; }
+.table-wrap { max-width: 1050px; margin: auto; border-radius: 8px; background: #fffefa; box-shadow: 0 2px 10px #293e300d; overflow-x: auto; }
+.scale-table { width: 100%; border-collapse: collapse; font-size: 15px; line-height: 1.5; }
+.scale-table th, .scale-table td { padding: 14px 16px; text-align: left; white-space: nowrap; }
+.scale-table thead th { color: var(--green); font: 600 12px var(--mono); text-transform: uppercase; letter-spacing: .8px; border-bottom: 2px solid #e7e8df; }
+.scale-table tbody th { font: 600 15px var(--mono); color: var(--green-dark); }
+.scale-table tbody td { color: #4f5f56; }
+.scale-table tbody td:nth-child(2) { font-family: var(--mono); color: var(--ink); }
+.scale-table tbody tr { border-bottom: 1px solid #eef0e9; cursor: pointer; transition: background .15s; }
+.scale-table tbody tr:last-child { border-bottom: 0; }
+.scale-table tbody tr:hover { background: #f1f5e9; }
+.scale-table tbody tr:active { background: #e4edcf; }
+.scale-table tbody tr:nth-child(even) { background: #fafaf5; }
+.scale-table tbody tr:nth-child(even):hover { background: #f1f5e9; }
+
 .guide-section { display: grid; grid-template-columns: .85fr 1.15fr; gap: 10%; padding: 80px 15% 92px; background: var(--green-dark); color: #fffefa; }
 .guide-intro .eyebrow { color: var(--lime); }.guide-intro h2 { margin: 0 0 20px; font: 600 34px/1.22 var(--display); letter-spacing: -1px; }.guide-intro h2 span { color: #a9c5a5; }
 .guide-intro > p:not(.eyebrow) { max-width: 360px; margin: 0; color: #c2cec5; font-size: 15px; line-height: 1.8; }
@@ -159,7 +177,7 @@ h1, h2, h3, p { margin-top: 0; }
 .site-footer { display: flex; align-items: center; justify-content: space-between; padding: 22px 7.1%; border-top: 1px solid #e4e6dc; color: #5a6a62; font-size: 12px; }.footer-brand { color: var(--ink); font-size: 16px; }.footer-brand .brand-mark { width: 26px; height: 26px; font-size: 10px; }.site-footer p { margin: 0; }.site-footer > span { font: 11px var(--mono); }
 
 @media (max-width: 900px) {
-  .site-header { padding: 0 5%; }.hero { padding: 52px 7% 66px; }.calculator-section, .quick-examples { padding-right: 7%; padding-left: 7%; }
+  .site-header { padding: 0 5%; }.hero { padding: 52px 7% 66px; }.calculator-section, .quick-examples, .table-section { padding-right: 7%; padding-left: 7%; }
   .guide-section, .faq-section { padding-right: 9%; padding-left: 9%; gap: 7%; }
   .hero-index { right: 12px; }
   .target-segmented button { white-space: nowrap; font-size: 12px; }
@@ -178,6 +196,7 @@ h1, h2, h3, p { margin-top: 0; }
   .calculator { grid-template-columns: 1fr; }.calc-main { padding: 20px 17px; }.calc-aside { display: grid; grid-template-columns: 1fr 1.3fr; align-items: center; gap: 4px 18px; padding: 20px 18px; }.aside-number { grid-column: 1 / -1; }.aside-art { grid-row: span 3; height: 105px; margin: 8px 0 0; }.calc-aside h3 { margin: 6px 0 0; }.calc-aside p { margin: 0; }.calc-aside a { align-self: start; }
   .input-grid { grid-template-columns: 1fr 1fr; gap: 13px 10px; }.scale-field { grid-column: 1 / -1; }.target-segmented { margin-bottom: 18px; }
   .quick-examples { padding: 48px 5%; }.example-strip { grid-template-columns: 1fr; }.example-card { min-height: 80px; }
+  .table-section { padding: 48px 5%; }.scale-table { font-size: 13px; }.scale-table th, .scale-table td { padding: 12px 8px; white-space: normal; line-height: 1.45; }.scale-table thead th { font-size: 11px; }.scale-table tbody th { font-size: 13px; }
   .guide-section, .faq-section { grid-template-columns: 1fr; gap: 33px; padding: 56px 8%; }.guide-intro h2 { font-size: 31px; }.formula-card { margin-top: 19px; }.faq-section { gap: 26px; }.faq-heading h2 { font-size: 28px; }
   .site-footer { flex-wrap: wrap; gap: 10px; padding: 20px 6%; }.site-footer p { order: 3; width: 100%; }
 }

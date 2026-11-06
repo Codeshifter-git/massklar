@@ -226,6 +226,19 @@ document.querySelectorAll(".example-card").forEach((card) => {
     document.querySelector("#rechner").scrollIntoView({ behavior: "smooth" });
   });
 });
+// Table rows fill the calculator with that scale (1 cm, real unit per row).
+document.querySelectorAll(".scale-row").forEach((row) => {
+  row.addEventListener("click", () => {
+    setTarget("real", { save: false });
+    drawingInput.value = "1";
+    drawingUnit.value = "cm";
+    scaleInput.value = row.dataset.scale;
+    realUnit.value = row.dataset.realUnit;
+    realInput.value = "";
+    calculate();
+    document.querySelector("#rechner").scrollIntoView({ behavior: "smooth" });
+  });
+});
 document.querySelector("#reset-button").addEventListener("click", resetCalculator);
 copyButton.addEventListener("click", async (event) => {
   try {

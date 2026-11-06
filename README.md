@@ -72,3 +72,9 @@ Lime stays only as a highlight on green, as in v1.
   value (`1 : 25…`). Fixed by stacking the calculator card at ≤900px and giving
   the scale field its own row.
 - Not verified: a real phone tap-through (keyboard behaviour, copy button on iOS/Android).
+
+## Update 2026-11-06 — Maßstabstabelle
+New section `#tabelle` between Examples and Guide, like the competitor sites:
+11 scales in order (1:50 → 1:100.000), columns Maßstab | 1 cm auf dem Plan |
+10 cm auf dem Plan | Wofür? Every value verified against the calculator (26/26 checks).
+Tapping a row fills the calculator with that scale. Fits without scrolling at 390px.
