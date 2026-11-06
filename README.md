@@ -78,3 +78,12 @@ New section `#tabelle` between Examples and Guide, like the competitor sites:
 11 scales in order (1:50 → 1:100.000), columns Maßstab | 1 cm auf dem Plan |
 10 cm auf dem Plan | Wofür? Every value verified against the calculator (26/26 checks).
 Tapping a row fills the calculator with that scale. Fits without scrolling at 390px.
+
+## Update 2026-11-06 — competitor study (rechneneinfach.de)
+Studied https://rechneneinfach.de/massstabsrechner/ and took its best parts:
+- Result shows in ALL units at once (`#result-also`, hidden in scale mode).
+- Formula card lists all three formulas; guide gained step 04 (area, factor squared).
+- Table grew 11 -> 17 rows: model scales 1:120 (TT) + 1:160 (N), big map scales
+  1:200.000 / 1:500.000 / 1:1.000.000 / 1:2.000.000.
+- New practice section `#ueben`: 2 Klasse-5 tasks with hidden solutions (own numbers).
+- QA: 28/28 checks (table values, also-line, practice, area).

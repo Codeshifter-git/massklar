@@ -15,6 +15,7 @@ const scaleInput = document.querySelector("#scale-denominator");
 const errorMessage = document.querySelector("#form-error");
 const resultValue = document.querySelector("#result-value");
 const resultContext = document.querySelector("#result-context");
+const resultAlso = document.querySelector("#result-also");
 const resultFormula = document.querySelector("#result-formula");
 const resultPanel = document.querySelector("#result-panel");
 const calculateButton = document.querySelector(".calculate-button");
@@ -32,6 +33,14 @@ function formatLength(meters, preferredUnit) {
 function formatScale(drawingMeters, realMeters) {
   const ratio = drawingMeters / realMeters;
   return ratio <= 1 ? `1 : ${format(1 / ratio)}` : `${format(ratio)} : 1`;
+}
+// Result in every unit at once (like the big competitor sites do):
+// "Das sind auch: 1.000.000 mm · 100.000 cm · 1.000 m".
+function alsoInOtherUnits(meters, shownUnit) {
+  return ["mm", "cm", "m", "km"]
+    .filter((unit) => unit !== shownUnit)
+    .map((unit) => formatLength(meters, unit))
+    .join(" · ");
 }
 
 // Friendly errors (Lincoln tell #13: no raw error text) + per-field state (#6).
@@ -127,7 +136,7 @@ function calculate(event) {
     const drawingMeters = target === "drawing" ? null : readPositive(drawingInput, "drawing");
     const realMeters = target === "real" ? null : readPositive(realInput, "real");
     const scaleDenominator = target === "scale" ? null : readPositive(scaleInput, "scale");
-    let value, context, formula;
+    let value, context, formula, alsoMeters, alsoUnit;
 
     if (target === "real") {
       const drawing = drawingMeters * unitInMeters[drawingUnit.value];
@@ -137,6 +146,7 @@ function calculate(event) {
       context = `${format(drawingMeters)} ${drawingUnit.value} auf der Karte sind bei 1:${format(scaleDenominator)} in echt ${value} lang.`;
       // v1 app-2.js fix: formula result in the drawing unit, not metres.
       formula = `${format(drawingMeters)} ${drawingUnit.value} × ${format(scaleDenominator)} = ${formatLength(real, drawingUnit.value)}`;
+      alsoMeters = real; alsoUnit = realUnit.value;
       realInput.value = String(real / unitInMeters[realUnit.value]);
     } else if (target === "drawing") {
       const real = realMeters * unitInMeters[realUnit.value];
@@ -145,6 +155,7 @@ function calculate(event) {
       value = formatLength(drawing, drawingUnit.value);
       context = `${format(realMeters)} ${realUnit.value} in echt sind bei 1:${format(scaleDenominator)} auf dem Plan ${value} lang.`;
       formula = `${format(realMeters)} ${realUnit.value} ÷ ${format(scaleDenominator)} = ${formatLength(drawing, drawingUnit.value)}`;
+      alsoMeters = drawing; alsoUnit = drawingUnit.value;
       drawingInput.value = String(drawing / unitInMeters[drawingUnit.value]);
     } else {
       const drawing = drawingMeters * unitInMeters[drawingUnit.value];
@@ -160,6 +171,12 @@ function calculate(event) {
     resultValue.textContent = value;
     resultContext.textContent = context;
     resultFormula.textContent = formula;
+    if (alsoMeters !== undefined) {
+      resultAlso.textContent = `Das sind auch: ${alsoInOtherUnits(alsoMeters, alsoUnit)}`;
+      resultAlso.hidden = false;
+    } else {
+      resultAlso.hidden = true;
+    }
     resultPanel.hidden = false;
     clearFieldStates();
     if (target !== "real") markField("real-field", "valid");
