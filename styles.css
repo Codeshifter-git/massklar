@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap');
+/* Fonts load via <link> + preconnect in each page head (faster than @import). */
 
 :root {
   color-scheme: light;
@@ -22,6 +22,10 @@
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; scroll-padding-top: 85px; }
 body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--sans); font-size: 16px; line-height: 1.65; -webkit-font-smoothing: antialiased; }
+/* Smooth page load — fade + rise, opacity/transform only (GPU-friendly).
+   Pure CSS on purpose: if JS fails, the page still appears. */
+main { animation: page-in .5s ease both; }
+@keyframes page-in { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
 a { color: inherit; text-decoration: none; }
 button, input, select { font: inherit; }
 button, a, select { -webkit-tap-highlight-color: transparent; }
@@ -280,5 +284,6 @@ a.tool-card:active { transform: scale(.98); }
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; }
+  main { animation: none; }
   .example-card { animation: none; }
 }

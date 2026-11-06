@@ -140,7 +140,7 @@ Structure (same repo, GitHub Pages):
 - Shared `styles.css` (v3). Hub CSS lesson: responsive overrides must sit
   AFTER the hub base rules in the file, or the base 3-col grid wins on
   source order (caught a 390px overflow this way).
-- Footers carry "Ein Produkt von Hastle Inc." (standing Hastle rule).
+- Footers carry "Ein Produkt von Hastle" (standing Hastle rule — "Inc." removed 2026-11-06, not a registered business).
 - Next tools in line (from the hub cards): Prozentrechner, BMI, Brutto-Netto.
 
 ## Color pass — 2026-11-06 (Niki Aroca rule: one accent)
@@ -155,3 +155,25 @@ to supporting tints only (no lime text left on any page):
 - No new hues, no gradients-for-show (Charles Liu: clean up, improve
   contrast). Orange text is never used on paper (2.28:1 — unreadable),
   only dark text on orange (5.10:1) or orange on dark green.
+
+## Skeleton loading + performance — 2026-11-06
+- **Skeleton loading screen** on all 3 pages: orange `mk` mark + shimmering
+  grey bars (hero lines + calculator card) on paper. Shows only if loading
+  is slow (>150 ms), so fast loads never flicker; hides on `load`, with a
+  2.5 s failsafe so the page can never get stuck behind a loader.
+- The show timer lives in a `<head>` script placed BEFORE any stylesheet
+  link — a script after the CSS would wait for the CSS to arrive, which is
+  exactly the slow case the skeleton is for. Visibility is driven by
+  `.is-loading` / `.is-ready` classes on `<html>`; without JS the skeleton
+  simply never appears (hidden by default).
+- **Smooth load animation:** `main` fades + rises 8 px in 0.5 s (pure CSS,
+  opacity/transform only). If JS fails, the page still appears.
+  `prefers-reduced-motion` turns off the shimmer and the fade-in.
+- **Performance for slow internet / weak devices:** fonts now load via
+  `<link rel="preconnect">` + stylesheet in each page head instead of a
+  CSS `@import` (parallel fetch, no chained round-trip). No images, no
+  frameworks, no JS libraries — local page weight (uncompressed):
+  hub ~45 KB, Maßstab ~70 KB, Alter ~52 KB (HTML + CSS + JS; fonts are the
+  only external dependency, served as subsetted woff2 with `display=swap`).
+- **Hastle, not "Hastle Inc.":** footers now read "Ein Produkt von Hastle"
+  — Hastle is not a registered business, so "Inc." is never used.

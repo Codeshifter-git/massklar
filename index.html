@@ -10,7 +10,43 @@
     <meta property="og:locale" content="de_DE">
     <meta property="og:title" content="Kostenlose Online-Rechner – einfach &amp; schnell | maßklar">
     <meta property="og:description" content="Maßstab, Alter, Prozent, BMI und mehr: Rechner, die sofort antworten. Kostenlos und ohne Anmeldung.">
-    <link rel="stylesheet" href="styles.css?v=4">
+<script>
+      /* Loading skeleton: this timer lives in <head> (before any stylesheet) so a slow connection can't delay it. */
+      (function () {
+        var root = document.documentElement;
+        var done = false;
+        setTimeout(function () { if (!done) root.classList.add("is-loading"); }, 150);
+        function hide() {
+          if (done) return;
+          done = true;
+          root.classList.remove("is-loading");
+          setTimeout(function () { root.classList.add("is-ready"); }, 400);
+        }
+        window.addEventListener("load", hide);
+        setTimeout(hide, 2500);
+      })();
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap">
+<style>
+      /* Loading skeleton — inline so it paints before the stylesheet arrives.
+         Shown by the <head> script adding .is-loading to <html>; hidden by default. */
+      .page-skeleton { position: fixed; inset: 0; z-index: 60; background: #f5f4ed; opacity: 0; visibility: hidden; transition: opacity .3s ease, visibility 0s linear .3s; }
+      html.is-loading .page-skeleton { opacity: 1; visibility: visible; transition: opacity .3s ease; }
+      html.is-ready .page-skeleton { display: none; }
+      .sk-inner { max-width: 1050px; margin: 0 auto; padding: 26px 7% 0; }
+      .sk-brand { display: flex; align-items: center; gap: 10px; margin-bottom: 52px; }
+      .sk-mark { width: 30px; height: 30px; border-radius: 9px 9px 9px 3px; background: #e79a62; color: #193f34; display: grid; place-items: center; font: 600 12px monospace; }
+      .sk-bar { position: relative; height: 16px; max-width: 520px; margin: 0 0 14px; border-radius: 4px; background: #e6e7dd; overflow: hidden; }
+      .sk-bar--title { height: 34px; max-width: 420px; }
+      .sk-bar--short { max-width: 300px; }
+      .sk-bar::after, .sk-card::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, transparent, #fffefa 50%, transparent); transform: translateX(-100%); animation: sk-shimmer 1.4s infinite; }
+      .sk-card { position: relative; height: 220px; margin-top: 34px; border-radius: 10px; background: #e6e7dd; overflow: hidden; }
+      @keyframes sk-shimmer { to { transform: translateX(100%); } }
+      @media (prefers-reduced-motion: reduce) { .sk-bar::after, .sk-card::after { animation: none; } }
+    </style>
+    <link rel="stylesheet" href="styles.css?v=5">
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -26,6 +62,16 @@
     </script>
   </head>
   <body>
+    <div class="page-skeleton" id="page-skeleton" aria-hidden="true">
+      <div class="sk-inner">
+        <div class="sk-brand"><span class="sk-mark">mk</span></div>
+        <div class="sk-bar sk-bar--title"></div>
+        <div class="sk-bar sk-bar--title sk-bar--short"></div>
+        <div class="sk-bar"></div>
+        <div class="sk-bar sk-bar--short"></div>
+        <div class="sk-card"></div>
+      </div>
+    </div>
     <header class="site-header">
       <a class="brand" href="#" aria-label="Maßklar Startseite">
         <span class="brand-mark" aria-hidden="true">mk</span>
@@ -135,7 +181,7 @@
 
     <footer class="site-footer">
       <a class="brand footer-brand" href="#"><span class="brand-mark" aria-hidden="true">mk</span><span>maßklar<span class="brand-period">.</span></span></a>
-      <p>Kostenlose Online-Rechner — einfach, schnell und ohne Anmeldung. Ein Produkt von Hastle Inc.</p>
+      <p>Kostenlose Online-Rechner — einfach, schnell und ohne Anmeldung. Ein Produkt von Hastle.</p>
       <span>© <span id="current-year"></span> maßklar</span>
     </footer>
     <script>document.querySelector("#current-year").textContent = new Date().getFullYear();</script>
