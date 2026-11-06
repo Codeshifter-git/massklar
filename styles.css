@@ -154,6 +154,11 @@ h1, h2, h3, p { margin-top: 0; }
 .table-section { padding: 64px 11.2% 70px; }
 .table-section .quick-title { margin-bottom: 10px; }
 .table-intro { max-width: 1050px; margin: 0 auto 24px; color: #4f5f56; font-size: 15px; line-height: 1.75; }
+.scale-links-section { padding: 48px 11.2% 56px; }
+.scale-links { max-width: 1050px; margin: 0 auto; color: #4f5f56; font-size: 15px; line-height: 1.9; }
+.scale-links a { color: var(--green); font-weight: 600; }
+.scale-links a:hover { text-decoration: underline; }
+.scale-links [aria-current="page"] { color: var(--ink); font-weight: 700; }
 .table-wrap { max-width: 1050px; margin: auto; border-radius: 8px; background: #fffefa; box-shadow: 0 2px 10px #293e300d; overflow-x: auto; }
 .scale-table { width: 100%; border-collapse: collapse; font-size: 15px; line-height: 1.5; }
 .scale-table th, .scale-table td { padding: 14px 16px; text-align: left; white-space: nowrap; }
@@ -226,7 +231,7 @@ h1, h2, h3, p { margin-top: 0; }
   .calculator { grid-template-columns: 1fr; }.calc-main { padding: 20px 17px; }.calc-aside { display: grid; grid-template-columns: 1fr 1.3fr; align-items: center; gap: 4px 18px; padding: 20px 18px; }.aside-number { grid-column: 1 / -1; }.aside-art { grid-row: span 3; height: 105px; margin: 8px 0 0; }.calc-aside h3 { margin: 6px 0 0; }.calc-aside p { margin: 0; }.calc-aside a { align-self: start; }
   .input-grid { grid-template-columns: 1fr 1fr; gap: 13px 10px; }.scale-field { grid-column: 1 / -1; }.target-segmented { margin-bottom: 18px; }
   .quick-examples { padding: 48px 5%; }.example-strip { grid-template-columns: 1fr; }.example-card { min-height: 80px; }
-  .table-section { padding: 48px 5%; }.scale-table { font-size: 13px; }.scale-table th, .scale-table td { padding: 12px 8px; white-space: normal; line-height: 1.45; }.scale-table thead th { font-size: 11px; }.scale-table tbody th { font-size: 13px; } .length-table { font-size: 13px; }.length-table th, .length-table td { padding: 12px 8px; }.length-table thead th { font-size: 11px; }.length-table tbody th { font-size: 13px; }
+  .table-section { padding: 48px 5%; }.scale-links-section { padding: 40px 5% 48px; }.scale-table { font-size: 13px; }.scale-table th, .scale-table td { padding: 12px 8px; white-space: normal; line-height: 1.45; }.scale-table thead th { font-size: 11px; }.scale-table tbody th { font-size: 13px; } .length-table { font-size: 13px; }.length-table th, .length-table td { padding: 12px 8px; }.length-table thead th { font-size: 11px; }.length-table tbody th { font-size: 13px; }
   .practice-section { padding: 48px 5%; }
   .compare-section { padding: 48px 5%; }.compare-grid { grid-template-columns: 1fr; }
   .guide-section, .faq-section { grid-template-columns: 1fr; gap: 33px; padding: 56px 8%; }.guide-intro h2 { font-size: 31px; }.formula-card { margin-top: 19px; }.faq-section { gap: 26px; }.faq-heading h2 { font-size: 28px; }

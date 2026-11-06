@@ -16,7 +16,7 @@
       (function () {
         var root = document.documentElement;
         var done = false;
-        setTimeout(function () { if (!done) root.classList.add("is-loading"); }, 150);
+        setTimeout(function () { if (!done && document.readyState !== "complete") root.classList.add("is-loading"); }, 400);
         function hide() {
           if (done) return;
           done = true;
@@ -34,7 +34,7 @@
       /* Loading skeleton — inline so it paints before the stylesheet arrives.
          Shown by the <head> script adding .is-loading to <html>; hidden by default. */
       .page-skeleton { position: fixed; inset: 0; z-index: 60; background: #f5f4ed; opacity: 0; visibility: hidden; transition: opacity .3s ease, visibility 0s linear .3s; }
-      html.is-loading .page-skeleton { opacity: 1; visibility: visible; transition: opacity .3s ease; }
+      html.is-loading .page-skeleton { opacity: 1; visibility: visible; transition: opacity .15s ease; }
       html.is-ready .page-skeleton { display: none; }
       .sk-inner { max-width: 1050px; margin: 0 auto; padding: 26px 7% 0; }
       .sk-brand { display: flex; align-items: center; gap: 10px; margin-bottom: 52px; }
@@ -47,7 +47,7 @@
       @keyframes sk-shimmer { to { transform: translateX(100%); } }
       @media (prefers-reduced-motion: reduce) { .sk-bar::after, .sk-card::after { animation: none; } }
     </style>
-    <link rel="stylesheet" href="../../styles.css?v=7">
+    <link rel="stylesheet" href="../../styles.css?v=8">
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",

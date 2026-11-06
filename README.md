@@ -248,3 +248,13 @@ Längeneinheiten. Einfach und präzise." What Google rewards here:
   brand -0.3px), H1 weight 700. SEO pass applied with it: title, meta,
   H1 line 2, hero + guide keyword weave, TK25/TK50, FAQ +2. QA jsdom
   19/19 + Chromium 1280/390, H1 Bitter, no overflow. styles.css v7.
+- **Keyword tweaks (1f181f8, 2026-11-06):** Zeichnung in the table intro,
+  Alter meta + hero carry online + "an einem bestimmten Datum", Baby
+  hero line + FAQ, stale Maßstab OG tags fixed, self-canonicals, sitemap.
+- **Scale pages (c8fe1f7, 2026-11-06):** 9 pages, 1:10–1:1000, each with
+  own title/meta/H1/hero, preset calculator, regenerated 36-row length
+  table, own example + uses + 2 FAQs, FAQPage JSON-LD, self-canonical,
+  per-scale storage key. Cluster: main page links down, each page links
+  back + to all siblings. Generator: massstabsrechner/work/
+  build_scale_pages.py (idempotent). QA jsdom 432/432 + Chromium
+  1280/390 (1:50, 1:1000).
