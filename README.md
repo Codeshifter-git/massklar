@@ -305,6 +305,9 @@ Längeneinheiten. Einfach und präzise." What Google rewards here:
   weights; DM Mono 600 does not exist — CSS 600 renders as synthesized
   bold, same as before). No Google Fonts requests anywhere; preloads for
   Bitter 700 + DM Sans 400 (relative paths per page depth). styles.css
-  v11. QA jsdom 1202/1202 + Chromium 1280/390. Live Slow 3G flash check
-  still to do via browser task (headless Chromium cannot throttle
-  file:// loads).
+  v11. QA jsdom 1202/1202 + Chromium 1280/390. Live Slow 3G check via
+  browser task 2026-11-06 17:30–17:35: DevTools would not open in the
+  automated browser, so no throttled run; unthrottled cold loads showed
+  NO font swap (Bitter from the first frame, only the 0.5s page-in fade)
+  and the skeleton briefly on the coldest load. True Slow 3G run needs
+  the user's own machine.
