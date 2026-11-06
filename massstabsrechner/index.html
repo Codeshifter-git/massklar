@@ -4,8 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#f5f4ed">
-    <meta name="description" content="Maßstab berechnen ohne Mathe-Stress: Wie lang ist etwas in echt, wie groß auf dem Plan? Zwei Zahlen eintippen, fertig. Für Karten, Grundrisse und Modellbau.">
-    <title>Maßstabsrechner – Maßstab einfach berechnen</title>
+    <meta name="description" content="Kostenloser Maßstabsrechner: Maßstab berechnen und umrechnen für Karten, Grundrisse und Baupläne. Zwei Zahlen eintippen, fertig — ohne Anmeldung.">
+    <title>Maßstabsrechner – Maßstab online berechnen &amp; umrechnen | maßklar</title>
     <meta property="og:type" content="website">
     <meta property="og:locale" content="de_DE">
     <meta property="og:title" content="Maßstabsrechner – Maßstab einfach berechnen">
@@ -28,7 +28,7 @@
     </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Bitter:wght@400;500;600;700;800&display=swap">
 <style>
       /* Loading skeleton — inline so it paints before the stylesheet arrives.
          Shown by the <head> script adding .is-loading to <html>; hidden by default. */
@@ -46,7 +46,7 @@
       @keyframes sk-shimmer { to { transform: translateX(100%); } }
       @media (prefers-reduced-motion: reduce) { .sk-bar::after, .sk-card::after { animation: none; } }
     </style>
-    <link rel="stylesheet" href="../styles.css?v=6">
+    <link rel="stylesheet" href="../styles.css?v=7">
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -90,8 +90,8 @@
       <section class="hero">
         <div class="hero-copy">
           <p class="eyebrow"><span class="eyebrow-dot"></span> Der einfache Maßstabsrechner</p>
-          <h1>Maßstabsrechner.<br><span>Ganz einfach.</span></h1>
-          <p class="hero-description">Mit dem Maßstabsrechner findest du es in Sekunden raus: Wie lang ist eine Strecke in echt — und wie groß muss sie auf dem Plan sein?</p>
+          <h1>Maßstabsrechner.<br><span>Für Karten, Grundrisse und Modelle.</span></h1>
+          <p class="hero-description">Kostenlos, ohne Anmeldung: Rechne jede Strecke um — von der Karte in die Wirklichkeit und zurück. Maßstab und eine Länge eintippen, fertig.</p>
           <a class="text-link" href="#rechner">Rechner öffnen <span aria-hidden="true">↓</span></a>
         </div>
         <div class="hero-visual" aria-label="Illustration eines Kartenmaßstabs">
@@ -214,8 +214,8 @@
               <tr class="scale-row" data-scale="1000" data-real-unit="m"><th scope="row">1:1.000</th><td>10 m</td><td>100 m</td><td>Stadtplan</td></tr>
               <tr class="scale-row" data-scale="5000" data-real-unit="m"><th scope="row">1:5.000</th><td>50 m</td><td>500 m</td><td>Stadtplan</td></tr>
               <tr class="scale-row" data-scale="10000" data-real-unit="m"><th scope="row">1:10.000</th><td>100 m</td><td>1 km</td><td>Wanderkarte</td></tr>
-              <tr class="scale-row" data-scale="25000" data-real-unit="m"><th scope="row">1:25.000</th><td>250 m</td><td>2,5 km</td><td>Wanderkarte</td></tr>
-              <tr class="scale-row" data-scale="50000" data-real-unit="m"><th scope="row">1:50.000</th><td>500 m</td><td>5 km</td><td>Wanderkarte</td></tr>
+              <tr class="scale-row" data-scale="25000" data-real-unit="m"><th scope="row">1:25.000</th><td>250 m</td><td>2,5 km</td><td>Wanderkarte (TK25)</td></tr>
+              <tr class="scale-row" data-scale="50000" data-real-unit="m"><th scope="row">1:50.000</th><td>500 m</td><td>5 km</td><td>Radkarte (TK50)</td></tr>
               <tr class="scale-row" data-scale="100000" data-real-unit="km"><th scope="row">1:100.000</th><td>1 km</td><td>10 km</td><td>Autokarte</td></tr>
               <tr class="scale-row" data-scale="200000" data-real-unit="km"><th scope="row">1:200.000</th><td>2 km</td><td>20 km</td><td>Regionalkarte</td></tr>
               <tr class="scale-row" data-scale="500000" data-real-unit="km"><th scope="row">1:500.000</th><td>5 km</td><td>50 km</td><td>Landeskarte</td></tr>
@@ -294,7 +294,7 @@
         <div class="guide-intro">
           <p class="eyebrow">Kurz erklärt</p>
           <h2>Maßstab berechnen:<br><span>so funktioniert’s.</span></h2>
-          <p>Ein Maßstab sagt dir: So viel kleiner ist etwas auf dem Papier als in echt.</p>
+          <p>Ein Maßstab ist ein Verhältnis: Er sagt dir, wie stark die Wirklichkeit auf dem Papier verkleinert ist — bei 1:25.000 ist 1 cm auf der Karte 250 m in echt.</p>
           <div class="formula-card"><span>Die drei Formeln, die du brauchst</span><strong>Echte Länge = Länge auf dem Plan × Maßstabszahl</strong><strong>Länge auf dem Plan = Echte Länge ÷ Maßstabszahl</strong><strong>Maßstab = Länge auf dem Plan : Länge in echt</strong><small>Wichtig: Beide Längen in der gleichen Einheit messen — also beide in cm oder beide in m.</small></div>
         </div>
         <div class="guide-steps">
@@ -359,6 +359,8 @@
           <details><summary>Wie rechne ich 1:25.000 auf einer Karte um? <span aria-hidden="true">+</span></summary><p>Nimm die Strecke auf der Karte mal 25.000. 4 cm auf der Karte sind 100.000 cm — das sind 1.000 m, also 1 km. Der Rechner macht das für dich.</p></details>
           <details><summary>Was ist der Unterschied zwischen großem und kleinem Maßstab? <span aria-hidden="true">+</span></summary><p>Kleine Zahl hinter dem Doppelpunkt, zum Beispiel 1:10.000: Du siehst ein kleines Stück Land, aber ganz genau. Große Zahl, zum Beispiel 1:1.000.000: Du siehst ein riesiges Stück Land, aber nur grob.</p></details>
           <details><summary>Kann ich verschiedene Einheiten verwenden? <span aria-hidden="true">+</span></summary><p>Ja, klar. Schreib die Länge auf dem Plan in cm und die echte Länge in m — oder andersrum. Der Rechner rechnet es passend um.</p></details>
+          <details><summary>Ist der Maßstabsrechner kostenlos? <span aria-hidden="true">+</span></summary><p>Ja. Der Rechner ist kostenlos und du brauchst keine Anmeldung — rechne so oft du willst, auf dem Handy genauso wie am Computer.</p></details>
+          <details><summary>Funktioniert der Rechner auch auf dem Handy? <span aria-hidden="true">+</span></summary><p>Ja. Die Seite passt sich deinem Bildschirm an — Handy, Tablet oder Computer, alles geht. Du musst nichts installieren.</p></details>
         </div>
       </section>
 

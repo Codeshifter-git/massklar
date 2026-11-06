@@ -198,3 +198,50 @@ design or authority:
 - Borrowable, in our own words/design: (1) the per-scale length table —
   small addition to the Maßstab page; (2) scale-specific pages — the bigger
   SEO move. Both need the user's go-ahead first.
+
+## Length table — 2026-11-06 (user pick)
+New `#laengen` section on the Maßstab page: 36 common map lengths
+(0,1–100 cm) in real life for the current scale, in 3 tables; re-renders
+live whenever the scale changes; the section title shows the current
+scale; clicking a row fills the calculator with that map length (mode:
+real). Static fallback rows for 1:25.000 live in the HTML (SEO + no-JS),
+verified identical to the live render. QA: jsdom 17/17 (incl. scale
+change, row click, find-the-scale mode, invalid-scale keeps last table)
++ real Chromium 1280/768/390, no overflow. styles.css v6.
+QA scripts now live durably in `~/workspace/qa-massklar/` (the old
+`/tmp/massklar-jsdom` folder was wiped by a /tmp cleanup — lesson: keep
+generators and QA in the workspace, never only in /tmp).
+
+## SEO research — 2026-11-06 (user: "think like an seo expert", "use semantic/LSI keywords", "do some research of your own")
+New #1 found by search: **massstab-srechner.de** — title "Maßstabsrechner –
+Maßstab online berechnen & umrechnen", meta "Kostenloser Maßstabsrechner -
+Maßstab berechnen und umrechnen für Karten, Baupläne und Modelle. Alle
+Längeneinheiten. Einfach und präzise." What Google rewards here:
+- **Title/meta pattern:** keyword first + online/kostenlos/umrechnen +
+  the use cases (Karten, Baupläne, Modelle). Ours: "Maßstabsrechner –
+  Maßstab einfach berechnen" — missing online, umrechnen, kostenlos.
+- **Semantic/LSI field:** Maßstabszahl, umrechnen, Verkleinerung,
+  Verhältnis, Entfernung, Wirklichkeit, Realität, Länge auf dem Plan,
+  Grundrisse, Baupläne, Lageplan, Bebauungsplan, Stadtplanung,
+  Liegenschaftskarte, topografische Karte, TK25/TK50, Wanderkarte,
+  Radkarte, Straßenkarte, Modellbau, Modelleisenbahn H0, Architektur,
+  Kartographie, Vermessung, Schule (Geographie/Mathematik), Zoll, Fuß,
+  Yard, Meile, Seemeile.
+- **Structure:** intro (both directions + units) → 3 formulas with
+  "Vom Plan zur Wirklichkeit" → worked example (Grundriss 1:50, Wand
+  8 cm → 4 m) → "So funktioniert der Rechner" (2 modes incl. finding the
+  scale from old maps without a scale) → units incl. imperial → "Maßstäbe
+  und Anwendungsbereiche" (use-case table) → use-case list → Ratgeber
+  cluster (Anleitung, Anwendungsbeispiele, Grundlagen, Maßstab Tabelle,
+  Modellbau) → FAQ (how it works, which scales, free?, which units,
+  mobile?).
+- **Gaps vs maßklar:** imperial units (in/ft/yd/mi/nmi), screen-size
+  presets (measure on screen), Ratgeber article cluster, FAQ depth,
+  richer use-case labels (Bauantrag, TK25/TK50). **Our edges:** 3rd mode,
+  two-scale compare, practice tasks, length table, area/volume steps,
+  design/speed/mobile, no-JS fallback.
+- **Fonts look AI (user, 2026-11-06):** Manrope + DM Sans + DM Mono is
+  the generic AI-built stack. Fix: serif display with character
+  (Fraunces recommended) + mono only for numbers. Preview artifact built
+  for the font pick; SEO title/meta/H1 + keyword weave + FAQ additions
+  follow the pick.
