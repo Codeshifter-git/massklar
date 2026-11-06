@@ -124,3 +124,21 @@ The two QA issues were fixed directly in this build instead:
   segmented button now gets its dark colour again.
 - QA: computed styles verified (both buttons rgb(231,154,98) orange,
   dark text rgb(25,63,52)); gap measured 24px at 1280px.
+
+## Hub — 2026-11-06 (maßklar is now a calculator hub)
+Structure (same repo, GitHub Pages):
+- `/` — hub homepage: hero, 13 tool cards (2 live, 11 "Bald da"),
+  categories, why, FAQ. Own design + own German copy (not a copy of
+  rechneneinfach.de — same tool ideas, our words).
+- `/massstabsrechner/` — the Maßstab tool, moved here from root (root is
+  now the hub). All content, demo rules and QA unchanged.
+- `/altersrechner/` — Altersrechner (tool #2): birthdate + reference date
+  (default today) -> exact age (years/months/days, real month lengths),
+  total days/weeks, next-birthday countdown, zodiac. Live calc, silent
+  errors while typing, localStorage `massklar_alter_v1`. QA 13/13
+  (leap birthday, month borrow, same-day, zodiac boundaries, singulars).
+- Shared `styles.css` (v3). Hub CSS lesson: responsive overrides must sit
+  AFTER the hub base rules in the file, or the base 3-col grid wins on
+  source order (caught a 390px overflow this way).
+- Footers carry "Ein Produkt von Hastle Inc." (standing Hastle rule).
+- Next tools in line (from the hub cards): Prozentrechner, BMI, Brutto-Netto.
