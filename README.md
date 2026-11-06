@@ -266,4 +266,35 @@ Längeneinheiten. Einfach und präzise." What Google rewards here:
   timer fired just before the load event — threshold raised to 400ms
   and gated on document.readyState !== "complete", so on a fast load
   it never appears; slow loads (>400ms) still get it. All 12 pages.
-  Live browser sweep requested 2026-11-06 15:49 (results pending).
+  Live browser sweep 2026-11-06 15:51–15:57: Alter/1:50/1:1000 OK,
+  calculators work; links row confirmed FIXED via cache-busting URL
+  (centered ~428px, green) — plain URL still showed the old copy in
+  that browser because its CDN edge cache (10 min) had not expired
+  yet; skeleton no longer flashes on cold load. Phone layout (390px)
+  still untested — browser task could only run at 1919px.
+- **Readability audit + fixes (8c8572e, 2026-11-06):** green guide
+  section is readable — contrasts 7.09:1 (step text), 5.09–5.30:1
+  (formulas), all pass 4.5:1. Length tables were 225px cards adrift in
+  a 1478px row (~280px gaps): grid had no width limit and
+  .table-wrap's margin:auto centered each narrow card — fixed with
+  max-width 1050px on the grid + full-width wraps (3×329px, 32px gaps
+  at 1920; full-width stacked on phone). Guide steps 04/05 used a
+  1:100 example with no marker on all 9 scale pages — now open
+  "Zum Beispiel bei 1:100" (template fix, re-generated to all pages).
+  styles.css v9. QA jsdom 432/432 + Chromium 1920/1280/390.
+- **Monetization plan (user, 2026-11-06 16:02):** AdSense first (wire
+  transfer to Pakistani bank, $100 threshold, paid 21st–26th), finance
+  affiliates second (Brutto-Netto/Kredit tools — the real money; live
+  tools have no buying intent). Needs first: .de domain, Impressum +
+  Datenschutzerklärung, privacy-friendly analytics. No paywall, no ads
+  before traffic. User picked the readability fixes first; monetization
+  setup still pending his go-ahead.
+- **Scale-page upgrade, 15 pages (2026-11-06):** 9 existing scale pages
+  upgraded to the richer template of the German #1 (massstab-srechner.de):
+  a pure-CSS "Beispiel aus der Praxis" diagram, worked examples in both
+  directions, and a comparison table vs neighbouring scales. 6 new pages:
+  1:87 (H0 Modelleisenbahn), 1:24, 1:35, 1:72 (Modellbau), 1:25000 (TK25),
+  1:50000 (TK50). Main page lists all 15; sitemap 12 → 18 URLs. The 6 new
+  scales had zero measured search volume — a topical-coverage play, not a
+  volume play. styles.css v10. QA jsdom 1202/1202 + Chromium 1280/390
+  (1:50, 1:87).
