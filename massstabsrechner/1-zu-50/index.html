@@ -1,0 +1,450 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f5f4ed">
+    <meta name="description" content="Maßstab 1:50 berechnen und umrechnen: 1 cm auf dem Plan sind 50 cm in echt. Kostenloser Maßstabsrechner für Wohnungsgrundrisse — zwei Zahlen eintippen, fertig.">
+    <title>Maßstabsrechner 1:50 – 1 zu 50 berechnen &amp; umrechnen | maßklar</title>
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="de_DE">
+    <link rel="canonical" href="https://codeshifter-git.github.io/massklar/massstabsrechner/1-zu-50/">
+    <meta property="og:title" content="Maßstabsrechner 1:50 – 1 zu 50 berechnen &amp; umrechnen | maßklar">
+    <meta property="og:description" content="Maßstab 1:50 berechnen und umrechnen: 1 cm auf dem Plan sind 50 cm in echt. Kostenloser Maßstabsrechner für Wohnungsgrundrisse — zwei Zahlen eintippen, fertig.">
+<script>
+      /* Loading skeleton: this timer lives in <head> (before any stylesheet) so a slow connection can't delay it. */
+      (function () {
+        var root = document.documentElement;
+        var done = false;
+        setTimeout(function () { if (!done) root.classList.add("is-loading"); }, 150);
+        function hide() {
+          if (done) return;
+          done = true;
+          root.classList.remove("is-loading");
+          setTimeout(function () { root.classList.add("is-ready"); }, 400);
+        }
+        window.addEventListener("load", hide);
+        setTimeout(hide, 2500);
+      })();
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Bitter:wght@400;500;600;700;800&display=swap">
+<style>
+      /* Loading skeleton — inline so it paints before the stylesheet arrives.
+         Shown by the <head> script adding .is-loading to <html>; hidden by default. */
+      .page-skeleton { position: fixed; inset: 0; z-index: 60; background: #f5f4ed; opacity: 0; visibility: hidden; transition: opacity .3s ease, visibility 0s linear .3s; }
+      html.is-loading .page-skeleton { opacity: 1; visibility: visible; transition: opacity .3s ease; }
+      html.is-ready .page-skeleton { display: none; }
+      .sk-inner { max-width: 1050px; margin: 0 auto; padding: 26px 7% 0; }
+      .sk-brand { display: flex; align-items: center; gap: 10px; margin-bottom: 52px; }
+      .sk-mark { width: 30px; height: 30px; border-radius: 9px 9px 9px 3px; background: #e79a62; color: #193f34; display: grid; place-items: center; font: 600 12px monospace; }
+      .sk-bar { position: relative; height: 16px; max-width: 520px; margin: 0 0 14px; border-radius: 4px; background: #e6e7dd; overflow: hidden; }
+      .sk-bar--title { height: 34px; max-width: 420px; }
+      .sk-bar--short { max-width: 300px; }
+      .sk-bar::after, .sk-card::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, transparent, #fffefa 50%, transparent); transform: translateX(-100%); animation: sk-shimmer 1.4s infinite; }
+      .sk-card { position: relative; height: 220px; margin-top: 34px; border-radius: 10px; background: #e6e7dd; overflow: hidden; }
+      @keyframes sk-shimmer { to { transform: translateX(100%); } }
+      @media (prefers-reduced-motion: reduce) { .sk-bar::after, .sk-card::after { animation: none; } }
+    </style>
+    <link rel="stylesheet" href="../../styles.css?v=7">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Maßstabsrechner 1:50",
+        "applicationCategory": "EducationalApplication",
+        "operatingSystem": "Any",
+        "inLanguage": "de",
+        "description": "Maßstab 1:50 berechnen und umrechnen: 1 cm auf dem Plan sind 50 cm in echt. Kostenloser Maßstabsrechner für Wohnungsgrundrisse — zwei Zahlen eintippen, fertig."
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Was bedeutet ein Maßstab von 1:50?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "1 cm auf dem Plan sind 50 cm in echt. Stell dir vor: Alles auf dem Papier ist 50-mal kleiner als in echt."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Wie rechne ich 1:50 auf einer Karte um?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Nimm die Strecke auf der Karte mal 50. 4 cm auf der Karte sind 200 cm — das sind 2 m in echt. Der Rechner macht das für dich."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Was ist der Unterschied zwischen großem und kleinem Maßstab?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Kleine Zahl hinter dem Doppelpunkt, zum Beispiel 1:10.000: Du siehst ein kleines Stück Land, aber ganz genau. Große Zahl, zum Beispiel 1:1.000.000: Du siehst ein riesiges Stück Land, aber nur grob."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Kann ich verschiedene Einheiten verwenden?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Ja, klar. Schreib die Länge auf dem Plan in cm und die echte Länge in m — oder andersrum. Der Rechner rechnet es passend um."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Ist der Maßstabsrechner kostenlos?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Ja. Der Rechner ist kostenlos und du brauchst keine Anmeldung — rechne so oft du willst, auf dem Handy genauso wie am Computer."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Funktioniert der Rechner auch auf dem Handy?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Ja. Die Seite passt sich deinem Bildschirm an — Handy, Tablet oder Computer, alles geht. Du musst nichts installieren."
+            }
+          }
+        ]
+      }
+    </script>
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <div class="page-skeleton" id="page-skeleton" aria-hidden="true">
+      <div class="sk-inner">
+        <div class="sk-brand"><span class="sk-mark">mk</span></div>
+        <div class="sk-bar sk-bar--title"></div>
+        <div class="sk-bar sk-bar--title sk-bar--short"></div>
+        <div class="sk-bar"></div>
+        <div class="sk-bar sk-bar--short"></div>
+        <div class="sk-card"></div>
+      </div>
+    </div>
+    <header class="site-header">
+      <a class="brand" href="../../" aria-label="Maßklar Startseite">
+        <span class="brand-mark" aria-hidden="true">mk</span>
+        <span>maßklar<span class="brand-period">.</span></span>
+      </a>
+      <nav class="top-nav" aria-label="Hauptnavigation">
+        <a href="../../">Alle Rechner</a>
+        <a href="#rechner">Rechner</a>
+        <a href="#beispiele">Beispiele</a>
+        <a href="#tabelle">Tabelle</a>
+        <a href="#anleitung">So geht’s</a>
+      </nav>
+      <a class="header-cta" href="#rechner">Jetzt berechnen <span aria-hidden="true">↗</span></a>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="eyebrow-dot"></span> Der einfache Maßstabsrechner</p>
+          <h1>Maßstab 1:50.<br><span>Für Grundrisse und Wohnungen.</span></h1>
+          <p class="hero-description">Kostenlos, ohne Anmeldung: Rechne jede Strecke im Maßstab 1:50 um — von der Karte in die Wirklichkeit und zurück. Maßstab und eine Länge eintippen, fertig.</p>
+          <a class="text-link" href="#rechner">Rechner öffnen <span aria-hidden="true">↓</span></a>
+        </div>
+        <div class="hero-visual" aria-label="Illustration eines Kartenmaßstabs">
+          <div class="map-card">
+            <div class="map-card-top"><span>GRUNDRISS · 1:50</span><span class="map-compass">N ↑</span></div>
+            <div class="map-drawing" aria-hidden="true">
+              <span class="street street-one"></span><span class="street street-two"></span><span class="street street-three"></span>
+              <span class="block block-one"></span><span class="block block-two"></span><span class="block block-three"></span>
+              <span class="park">PARK</span><span class="route"></span><span class="route-pin pin-start"></span><span class="route-pin pin-end"></span>
+            </div>
+            <div class="map-scale"><span>0</span><span class="scale-line"></span><span>1 m</span></div>
+          </div>
+          <div class="floating-note"><span class="note-icon">↗</span><span><strong>4 cm</strong><small>auf dem Plan</small></span><span class="note-equals">=</span><span><strong>2 m</strong><small>in echt</small></span></div>
+          <span class="visual-orbit orbit-one"></span><span class="visual-orbit orbit-two"></span>
+          <span class="hero-index">01 / 03</span>
+        </div>
+      </section>
+
+      <section class="calculator-section" id="rechner">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Zwei Zahlen reichen.</p>
+            <h2>Was willst du wissen?</h2>
+          </div>
+          <p>Tippe zwei Zahlen ein. Das Ergebnis steht sofort da.</p>
+        </div>
+
+        <div class="calculator">
+          <div class="calc-main">
+            <div class="calc-toolbar">
+              <span class="live-indicator"><span></span> Bereit — leg los</span>
+              <button class="reset-button" type="button" id="reset-button">Zurück zum Start <span aria-hidden="true">↺</span></button>
+            </div>
+            <form id="scale-form" novalidate>
+              <span class="target-label" id="target-label">Ich will wissen:</span>
+              <div class="target-segmented" role="group" aria-labelledby="target-label" id="target-segmented">
+                <span class="seg-indicator" aria-hidden="true"></span>
+                <button type="button" aria-pressed="true" data-target="real" id="seg-real">Echte Länge</button>
+                <button type="button" aria-pressed="false" data-target="drawing" id="seg-drawing">Länge auf dem Plan</button>
+                <button type="button" aria-pressed="false" data-target="scale" id="seg-scale">Maßstab</button>
+              </div>
+
+              <div class="input-grid">
+                <div class="field" id="drawing-field">
+                  <label for="drawing-length">Länge auf dem Plan</label>
+                  <div class="input-with-unit">
+                    <input id="drawing-length" name="drawing" type="number" min="0" step="any" value="4" inputmode="decimal">
+                    <select id="drawing-unit" name="drawingUnit" aria-label="Einheit der Länge auf Plan oder Karte">
+                      <option value="mm">mm</option><option value="cm" selected>cm</option><option value="m">m</option><option value="km">km</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="field" id="real-field">
+                  <label for="real-length">Länge in echt</label>
+                  <div class="input-with-unit">
+                    <input id="real-length" name="real" type="number" min="0" step="any" placeholder="steht gleich hier" inputmode="decimal">
+                    <select id="real-unit" name="realUnit" aria-label="Einheit der realen Länge">
+                      <option value="mm">mm</option><option value="cm">cm</option><option value="m">m</option><option value="km" selected>km</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="field scale-field" id="scale-field">
+                  <label for="scale-denominator">Maßstab</label>
+                  <div class="ratio-input">
+                    <span class="ratio-leading">1 :</span>
+                    <input id="scale-denominator" name="scale" type="number" min="0" step="any" value="50" inputmode="decimal" aria-label="Maßstabszahl nach 1 zu">
+                  </div>
+                </div>
+              </div>
+              <p class="form-error" id="form-error" role="alert" hidden></p>
+              <button class="calculate-button" type="submit">Jetzt berechnen <span aria-hidden="true">↗</span></button>
+              <p class="live-hint">Du musst gar nicht erst auf den Knopf drücken: Sobald du tippst, steht das Ergebnis schon da.</p>
+            </form>
+
+            <div class="result-panel" id="result-panel" aria-live="polite" aria-atomic="true">
+              <div class="result-topline"><span>DEIN ERGEBNIS</span><span class="result-check" aria-hidden="true">✓</span></div>
+              <div class="result-value" id="result-value">0,002 km</div>
+              <p class="result-context" id="result-context">4 cm auf der Karte sind bei 1:50 in echt 0,002 km lang.</p>
+              <p class="result-also" id="result-also">Das sind auch: 2.000 mm · 200 cm · 2 m</p>
+              <div class="result-meta"><span id="result-formula">4 cm × 50 = 200 cm</span><button type="button" id="copy-button">Ergebnis kopieren <span aria-hidden="true">⧉</span></button></div>
+            </div>
+            <noscript><p class="form-error">Diese Seite braucht JavaScript zum Rechnen. Ein Beispiel: 4 cm auf der Karte sind bei 1:50 in echt 2 m.</p></noscript>
+          </div>
+          <aside class="calc-aside">
+            <span class="aside-number">GUT ZU WISSEN</span>
+            <div class="aside-art" aria-hidden="true"><span class="art-short"></span><span class="art-long"></span><span class="art-label">1 : 100</span></div>
+            <h3>Egal ob cm oder m.</h3>
+            <p>Du kannst Zentimeter und Meter mischen, wie du willst. Der Rechner rechnet alles passend um — du musst nichts umrechnen.</p>
+            <a href="#anleitung">Maßstab einfach erklärt <span aria-hidden="true">→</span></a>
+          </aside>
+        </div>
+      </section>
+
+      <section class="table-section" id="wofuer">
+        <div class="quick-title"><span class="eyebrow">Im Alltag</span><h2>Wofür nutzt man den Maßstab 1:50?</h2></div>
+        <p class="table-intro">Den Maßstab 1:50 nutzt man für Grundrisse und Wohnungen. Alles ist 50-mal kleiner als in echt — eine Wand von 3 m ist auf dem Plan 6 cm lang. So passt eine ganze Wohnung auf ein Blatt.</p>
+      </section>
+      <section class="quick-examples" id="beispiele">
+        <div class="quick-title"><span class="eyebrow">Häufige Maßstäbe</span><h2>Drei Beispiele, die du kennst.</h2></div>
+        <p class="examples-hint">Tipp eins an — der Rechner füllt sich von allein aus.</p>
+        <div class="example-strip">
+          <button type="button" class="example-card" data-drawing="1" data-drawing-unit="cm" data-scale="25000" data-real-unit="m"><span class="example-symbol">⌖</span><span class="example-text"><span class="example-title">Wanderkarte</span><span class="example-sub">1:25.000 <i>·</i> 1 cm = 250 m</span></span><span class="example-arrow" aria-hidden="true">↗</span></button>
+          <button type="button" class="example-card" data-drawing="1" data-drawing-unit="cm" data-scale="100" data-real-unit="m"><span class="example-symbol">⌂</span><span class="example-text"><span class="example-title">Grundriss</span><span class="example-sub">1:100 <i>·</i> 1 cm = 1 m</span></span><span class="example-arrow" aria-hidden="true">↗</span></button>
+          <button type="button" class="example-card" data-drawing="1" data-drawing-unit="cm" data-scale="87" data-real-unit="cm"><span class="example-symbol">▧</span><span class="example-text"><span class="example-title">Modellbau H0</span><span class="example-sub">1:87 <i>·</i> 1 cm = 87 cm</span></span><span class="example-arrow" aria-hidden="true">↗</span></button>
+        </div>
+      </section>
+
+      <section class="table-section" id="tabelle">
+        <div class="quick-title"><span class="eyebrow">Maßstabstabelle</span><h2>Was ist 1 cm in echt?</h2></div>
+        <p class="table-intro">Hier siehst du es auf einen Blick — von klein nach groß sortiert, für Karten, Grundrisse und technische Zeichnungen. Tipp eine Zeile an, und der Rechner rechnet mit genau diesem Maßstab weiter.</p>
+        <div class="table-wrap">
+          <table class="scale-table">
+            <thead>
+              <tr><th scope="col">Maßstab</th><th scope="col">1 cm auf dem Plan</th><th scope="col">10 cm auf dem Plan</th><th scope="col">Wofür?</th></tr>
+            </thead>
+            <tbody>
+              <tr class="scale-row" data-scale="50" data-real-unit="cm"><th scope="row">1:50</th><td>50 cm</td><td>5 m</td><td>Zimmerplan</td></tr>
+              <tr class="scale-row" data-scale="87" data-real-unit="cm"><th scope="row">1:87</th><td>87 cm</td><td>8,7 m</td><td>Modellbau H0</td></tr>
+              <tr class="scale-row" data-scale="100" data-real-unit="m"><th scope="row">1:100</th><td>1 m</td><td>10 m</td><td>Grundriss</td></tr>
+              <tr class="scale-row" data-scale="120" data-real-unit="m"><th scope="row">1:120</th><td>1,2 m</td><td>12 m</td><td>Modellbau TT</td></tr>
+              <tr class="scale-row" data-scale="160" data-real-unit="m"><th scope="row">1:160</th><td>1,6 m</td><td>16 m</td><td>Modellbau N</td></tr>
+              <tr class="scale-row" data-scale="200" data-real-unit="m"><th scope="row">1:200</th><td>2 m</td><td>20 m</td><td>Lageplan</td></tr>
+              <tr class="scale-row" data-scale="500" data-real-unit="m"><th scope="row">1:500</th><td>5 m</td><td>50 m</td><td>Lageplan</td></tr>
+              <tr class="scale-row" data-scale="1000" data-real-unit="m"><th scope="row">1:1.000</th><td>10 m</td><td>100 m</td><td>Stadtplan</td></tr>
+              <tr class="scale-row" data-scale="5000" data-real-unit="m"><th scope="row">1:5.000</th><td>50 m</td><td>500 m</td><td>Stadtplan</td></tr>
+              <tr class="scale-row" data-scale="10000" data-real-unit="m"><th scope="row">1:10.000</th><td>100 m</td><td>1 km</td><td>Wanderkarte</td></tr>
+              <tr class="scale-row" data-scale="25000" data-real-unit="m"><th scope="row">1:25.000</th><td>250 m</td><td>2,5 km</td><td>Wanderkarte (TK25)</td></tr>
+              <tr class="scale-row" data-scale="50000" data-real-unit="m"><th scope="row">1:50.000</th><td>500 m</td><td>5 km</td><td>Radkarte (TK50)</td></tr>
+              <tr class="scale-row" data-scale="100000" data-real-unit="km"><th scope="row">1:100.000</th><td>1 km</td><td>10 km</td><td>Autokarte</td></tr>
+              <tr class="scale-row" data-scale="200000" data-real-unit="km"><th scope="row">1:200.000</th><td>2 km</td><td>20 km</td><td>Regionalkarte</td></tr>
+              <tr class="scale-row" data-scale="500000" data-real-unit="km"><th scope="row">1:500.000</th><td>5 km</td><td>50 km</td><td>Landeskarte</td></tr>
+              <tr class="scale-row" data-scale="1000000" data-real-unit="km"><th scope="row">1:1.000.000</th><td>10 km</td><td>100 km</td><td>Weltkarte</td></tr>
+              <tr class="scale-row" data-scale="2000000" data-real-unit="km"><th scope="row">1:2.000.000</th><td>20 km</td><td>200 km</td><td>Deutschlandkarte</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="scale-links-section" id="massstaebe">
+        <div class="section-heading"><p class="eyebrow">Alle Maßstäbe</p><h2>Andere Maßstäbe.</h2></div>
+        <p class="table-intro">Jeder Maßstab hat seine eigene Seite — mit Rechner, Längentabelle und einem Beispiel aus der Praxis. Zurück zum <a href="../">Maßstabsrechner</a>, oder schau dir die <a href="#anleitung">Formeln und Beispiele</a> an.</p>
+        <p class="scale-links"><a href="../1-zu-10/">Maßstab 1:10</a> · <a href="../1-zu-20/">Maßstab 1:20</a> · <a href="../1-zu-25/">Maßstab 1:25</a> · <span aria-current="page">Maßstab 1:50</span> · <a href="../1-zu-100/">Maßstab 1:100</a> · <a href="../1-zu-200/">Maßstab 1:200</a> · <a href="../1-zu-250/">Maßstab 1:250</a> · <a href="../1-zu-500/">Maßstab 1:500</a> · <a href="../1-zu-1000/">Maßstab 1:1000</a></p>
+      </section>
+      <section class="table-section length-section" id="laengen">
+        <div class="quick-title"><span class="eyebrow">Längentabelle</span><h2>Wie lang ist das bei <span id="length-table-scale">1:50</span>?</h2></div>
+        <p class="table-intro">Die gängigen Längen auf der Karte — und was sie in echt bedeuten. Die Tabelle rechnet mit, sobald du oben einen anderen Maßstab eintippst. Tipp eine Zeile an, und der Rechner nimmt genau diese Länge.</p>
+        <div class="length-tables">
+        <div class="table-wrap">
+          <table class="length-table">
+<thead><tr><th scope="col">Auf der Karte</th><th scope="col">In echt</th></tr></thead>
+<tbody>
+              <tr class="length-row" data-cm="0.1"><th scope="row">0,1 cm</th><td>5 cm</td></tr>
+              <tr class="length-row" data-cm="0.2"><th scope="row">0,2 cm</th><td>10 cm</td></tr>
+              <tr class="length-row" data-cm="0.3"><th scope="row">0,3 cm</th><td>15 cm</td></tr>
+              <tr class="length-row" data-cm="0.4"><th scope="row">0,4 cm</th><td>20 cm</td></tr>
+              <tr class="length-row" data-cm="0.5"><th scope="row">0,5 cm</th><td>25 cm</td></tr>
+              <tr class="length-row" data-cm="0.7"><th scope="row">0,7 cm</th><td>35 cm</td></tr>
+              <tr class="length-row" data-cm="1"><th scope="row">1 cm</th><td>50 cm</td></tr>
+              <tr class="length-row" data-cm="1.5"><th scope="row">1,5 cm</th><td>75 cm</td></tr>
+              <tr class="length-row" data-cm="2"><th scope="row">2 cm</th><td>1 m</td></tr>
+              <tr class="length-row" data-cm="2.5"><th scope="row">2,5 cm</th><td>1,25 m</td></tr>
+              <tr class="length-row" data-cm="3"><th scope="row">3 cm</th><td>1,5 m</td></tr>
+              <tr class="length-row" data-cm="4"><th scope="row">4 cm</th><td>2 m</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="table-wrap">
+          <table class="length-table">
+<thead><tr><th scope="col">Auf der Karte</th><th scope="col">In echt</th></tr></thead>
+<tbody>
+              <tr class="length-row" data-cm="5"><th scope="row">5 cm</th><td>2,5 m</td></tr>
+              <tr class="length-row" data-cm="6"><th scope="row">6 cm</th><td>3 m</td></tr>
+              <tr class="length-row" data-cm="7"><th scope="row">7 cm</th><td>3,5 m</td></tr>
+              <tr class="length-row" data-cm="8"><th scope="row">8 cm</th><td>4 m</td></tr>
+              <tr class="length-row" data-cm="9"><th scope="row">9 cm</th><td>4,5 m</td></tr>
+              <tr class="length-row" data-cm="10"><th scope="row">10 cm</th><td>5 m</td></tr>
+              <tr class="length-row" data-cm="12"><th scope="row">12 cm</th><td>6 m</td></tr>
+              <tr class="length-row" data-cm="14"><th scope="row">14 cm</th><td>7 m</td></tr>
+              <tr class="length-row" data-cm="15"><th scope="row">15 cm</th><td>7,5 m</td></tr>
+              <tr class="length-row" data-cm="16"><th scope="row">16 cm</th><td>8 m</td></tr>
+              <tr class="length-row" data-cm="18"><th scope="row">18 cm</th><td>9 m</td></tr>
+              <tr class="length-row" data-cm="20"><th scope="row">20 cm</th><td>10 m</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="table-wrap">
+          <table class="length-table">
+<thead><tr><th scope="col">Auf der Karte</th><th scope="col">In echt</th></tr></thead>
+<tbody>
+              <tr class="length-row" data-cm="25"><th scope="row">25 cm</th><td>12,5 m</td></tr>
+              <tr class="length-row" data-cm="30"><th scope="row">30 cm</th><td>15 m</td></tr>
+              <tr class="length-row" data-cm="35"><th scope="row">35 cm</th><td>17,5 m</td></tr>
+              <tr class="length-row" data-cm="40"><th scope="row">40 cm</th><td>20 m</td></tr>
+              <tr class="length-row" data-cm="45"><th scope="row">45 cm</th><td>22,5 m</td></tr>
+              <tr class="length-row" data-cm="50"><th scope="row">50 cm</th><td>25 m</td></tr>
+              <tr class="length-row" data-cm="55"><th scope="row">55 cm</th><td>27,5 m</td></tr>
+              <tr class="length-row" data-cm="60"><th scope="row">60 cm</th><td>30 m</td></tr>
+              <tr class="length-row" data-cm="70"><th scope="row">70 cm</th><td>35 m</td></tr>
+              <tr class="length-row" data-cm="80"><th scope="row">80 cm</th><td>40 m</td></tr>
+              <tr class="length-row" data-cm="90"><th scope="row">90 cm</th><td>45 m</td></tr>
+              <tr class="length-row" data-cm="100"><th scope="row">100 cm</th><td>50 m</td></tr>
+            </tbody>
+          </table>
+        </div>
+        </div>
+      </section>
+
+      <section class="guide-section" id="anleitung">
+        <div class="guide-intro">
+          <p class="eyebrow">Kurz erklärt</p>
+          <h2>Maßstab berechnen:<br><span>so funktioniert’s.</span></h2>
+          <p>Ein Maßstab ist ein Verhältnis: Er sagt dir, wie stark die Wirklichkeit auf dem Papier verkleinert ist — bei 1:50 ist 1 cm auf der Karte 50 cm in echt. Ein Beispiel: Eine Wand ist auf dem Plan 6 cm lang — in echt sind das 3 m (6 × 50 = 300 cm).</p>
+          <div class="formula-card"><span>Die drei Formeln, die du brauchst</span><strong>Echte Länge = Länge auf dem Plan × Maßstabszahl</strong><strong>Länge auf dem Plan = Echte Länge ÷ Maßstabszahl</strong><strong>Maßstab = Länge auf dem Plan : Länge in echt</strong><small>Wichtig: Beide Längen in der gleichen Einheit messen — also beide in cm oder beide in m.</small></div>
+        </div>
+        <div class="guide-steps">
+          <article class="guide-step"><span class="step-number">01</span><div><h3>Wie lang ist es in echt?</h3><p>Nimm die Länge auf dem Plan mal die Maßstabszahl. Bei 1:50 werden aus 3 cm auf dem Plan 150 cm — also 1,5 m — in echt.</p><span class="step-equation">3 cm × 50 = 150 cm = 1,5 m</span></div></article>
+          <article class="guide-step"><span class="step-number">02</span><div><h3>Wie lang wird es auf dem Plan?</h3><p>Teile die echte Länge durch die Maßstabszahl. Ein Zimmer, das 5 m lang ist, ist auf einem Grundriss im Maßstab 1:50 dann 10 cm lang.</p><span class="step-equation">500 cm ÷ 50 = 10 cm</span></div></article>
+          <article class="guide-step"><span class="step-number">03</span><div><h3>Welcher Maßstab ist das?</h3><p>Bring beide Längen erst in die gleiche Einheit. Dann teilst du die Länge auf dem Plan durch die echte Länge. 2 cm zu 1 m — das ist 1:50.</p><span class="step-equation">2 cm : 100 cm = 1 : 50</span></div></article>
+          <article class="guide-step"><span class="step-number">04</span><div><h3>Wie groß ist eine Fläche?</h3><p>Bei einer Fläche nimmst du die Maßstabszahl mal sich selbst. Ein Zimmer ist auf dem Plan 4 cm lang und 3 cm breit — also 12 cm². Bei 1:100 sind das in echt 12 m².</p><span class="step-equation">12 cm² × 100² = 120.000 cm² = 12 m²</span></div></article>
+          <article class="guide-step"><span class="step-number">05</span><div><h3>Wie groß ist ein Volumen?</h3><p>Bei einem Volumen nimmst du die Maßstabszahl gleich dreimal: mal sich selbst, mal sich selbst. Ein Würfel ist auf dem Modell 1 cm groß — also 1 cm³. Bei 1:100 sind das in echt 1 m³.</p><span class="step-equation">1 cm³ × 100³ = 1.000.000 cm³ = 1 m³</span></div></article>
+        </div>
+      </section>
+
+      <section class="practice-section" id="ueben">
+        <div class="quick-title"><span class="eyebrow">Zum Ausprobieren</span><h2>Üben wie in der Schule.</h2></div>
+        <p class="table-intro">Zwei Aufgaben zum Üben. Tipp auf die Aufgabe, dann siehst du die Lösung.</p>
+        <div class="faq-list">
+          <details><summary>Aufgabe 1: Wie lang ist die Straße? <span aria-hidden="true">+</span></summary><p>Eine Straße ist auf dem Stadtplan 3 cm lang. Der Maßstab ist 1:10.000. Wie lang ist die Straße in echt?</p><p><strong>Lösung:</strong> 3 cm × 10.000 = 30.000 cm = 300 m. Die Straße ist 300 m lang.</p></details>
+          <details><summary>Aufgabe 2: Wie weit sind die Dörfer auseinander? <span aria-hidden="true">+</span></summary><p>Zwei Dörfer sind auf der Karte 5 cm auseinander. Der Maßstab ist 1:50.000. Wie weit sind sie in echt auseinander?</p><p><strong>Lösung:</strong> 5 cm × 50.000 = 250.000 cm = 2,5 km. Die Dörfer sind 2,5 km auseinander.</p></details>
+        </div>
+      </section>
+
+      <section class="compare-section" id="vergleichen">
+        <div class="quick-title"><span class="eyebrow">Zwei Karten, eine Strecke</span><h2>Gleiche Strecke, andere Karte.</h2></div>
+        <p class="table-intro">Du hast eine Route auf einer Karte gemessen und willst wissen, wie lang sie auf einer anderen Karte ist? Gib die Länge und die beiden Maßstäbe ein — der Rest geht von allein.</p>
+        <form class="compare-grid" id="compare-form" novalidate>
+          <div class="field">
+            <label for="compare-length">Länge auf Karte A</label>
+            <div class="input-with-unit">
+              <input id="compare-length" name="compareLength" type="number" min="0" step="any" value="3" inputmode="decimal">
+              <select id="compare-unit" name="compareUnit" aria-label="Einheit der Länge auf Karte A">
+                <option value="mm">mm</option><option value="cm" selected>cm</option><option value="m">m</option><option value="km">km</option>
+              </select>
+            </div>
+          </div>
+          <div class="field">
+            <label for="compare-scale-a">Maßstab von Karte A</label>
+            <div class="ratio-input">
+              <span class="ratio-leading">1 :</span>
+              <input id="compare-scale-a" name="compareScaleA" type="number" min="0" step="any" value="25000" inputmode="decimal" aria-label="Maßstabszahl von Karte A">
+            </div>
+          </div>
+          <div class="field">
+            <label for="compare-scale-b">Maßstab von Karte B</label>
+            <div class="ratio-input">
+              <span class="ratio-leading">1 :</span>
+              <input id="compare-scale-b" name="compareScaleB" type="number" min="0" step="any" value="50000" inputmode="decimal" aria-label="Maßstabszahl von Karte B">
+            </div>
+          </div>
+        </form>
+        <p class="form-error" id="compare-error" role="alert" hidden></p>
+        <div class="result-panel compare-result" id="compare-result-panel" aria-live="polite" aria-atomic="true">
+          <div class="result-topline"><span>AUF KARTE B</span><span class="result-check" aria-hidden="true">✓</span></div>
+          <div class="result-value" id="compare-result-value">1,5 cm</div>
+          <p class="result-context" id="compare-result-context">3 cm auf der Karte mit 1:25.000 sind auf der Karte mit 1:50.000 1,5 cm lang.</p>
+          <div class="result-meta"><span id="compare-result-formula">3 cm × (25.000 ÷ 50.000) = 1,5 cm</span></div>
+        </div>
+      </section>
+
+      <section class="faq-section">
+        <div class="faq-heading"><p class="eyebrow">Noch eine Frage?</p><h2>Fragst du dich<br>das auch?</h2></div>
+        <div class="faq-list">
+          <details><summary>Was bedeutet ein Maßstab von 1:50? <span aria-hidden="true">+</span></summary><p>1 cm auf dem Plan sind 50 cm in echt. Stell dir vor: Alles auf dem Papier ist 50-mal kleiner als in echt.</p></details>
+          <details><summary>Wie rechne ich 1:50 auf einer Karte um? <span aria-hidden="true">+</span></summary><p>Nimm die Strecke auf der Karte mal 50. 4 cm auf der Karte sind 200 cm — das sind 2 m in echt. Der Rechner macht das für dich.</p></details>
+          <details><summary>Was ist der Unterschied zwischen großem und kleinem Maßstab? <span aria-hidden="true">+</span></summary><p>Kleine Zahl hinter dem Doppelpunkt, zum Beispiel 1:10.000: Du siehst ein kleines Stück Land, aber ganz genau. Große Zahl, zum Beispiel 1:1.000.000: Du siehst ein riesiges Stück Land, aber nur grob.</p></details>
+          <details><summary>Kann ich verschiedene Einheiten verwenden? <span aria-hidden="true">+</span></summary><p>Ja, klar. Schreib die Länge auf dem Plan in cm und die echte Länge in m — oder andersrum. Der Rechner rechnet es passend um.</p></details>
+          <details><summary>Ist der Maßstabsrechner kostenlos? <span aria-hidden="true">+</span></summary><p>Ja. Der Rechner ist kostenlos und du brauchst keine Anmeldung — rechne so oft du willst, auf dem Handy genauso wie am Computer.</p></details>
+          <details><summary>Funktioniert der Rechner auch auf dem Handy? <span aria-hidden="true">+</span></summary><p>Ja. Die Seite passt sich deinem Bildschirm an — Handy, Tablet oder Computer, alles geht. Du musst nichts installieren.</p></details>
+        </div>
+      </section>
+
+      <section class="more-tools">
+        <div class="quick-title"><span class="eyebrow">Mehr Rechner</span><h2>Das gibt es noch bei maßklar.</h2></div>
+        <div class="tool-grid">
+          <a class="tool-card" href="../../altersrechner/"><span class="tool-icon" aria-hidden="true">🎂</span><span class="tool-text"><span class="tool-title">Altersrechner</span><span class="tool-desc">Wie alt bist du in Jahren, Monaten und Tagen? Mit Geburtstag-Countdown.</span></span><span class="tool-arrow" aria-hidden="true">↗</span></a>
+          <article class="tool-card tool-card--soon"><span class="tool-icon" aria-hidden="true">%</span><span class="tool-text"><span class="tool-title">Prozentrechner</span><span class="tool-desc">Prozentwert, Rabatt oder Erhöhung — in Sekunden.</span></span><span class="tool-badge">Bald da</span></article>
+          <article class="tool-card tool-card--soon"><span class="tool-icon" aria-hidden="true">⚖</span><span class="tool-text"><span class="tool-title">BMI-Rechner</span><span class="tool-desc">Body-Mass-Index ausrechnen und einordnen.</span></span><span class="tool-badge">Bald da</span></article>
+        </div>
+        <p class="more-tools-link"><a href="../../">Alle Rechner ansehen <span aria-hidden="true">→</span></a></p>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <a class="brand footer-brand" href="../../"><span class="brand-mark" aria-hidden="true">mk</span><span>maßklar<span class="brand-period">.</span></span></a>
+      <p>Maßstab berechnen — einfach, schnell und ohne Mathe-Stress. Ein Produkt von Hastle.</p>
+      <span>© <span id="current-year"></span> maßklar</span>
+    </footer>
+  </body>
+</html>
