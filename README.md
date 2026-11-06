@@ -94,3 +94,13 @@ Studied https://rechneneinfach.de/massstabsrechner/ and took its best parts:
   1:50.000 = 1,5 cm. Friendly error on empty/zero fields.
 - Guide step 05: volume, factor cubed (1 cm³ × 100³ = 1 m³).
 - QA: 12/12 new checks + 28/28 regression.
+
+## Update 2026-11-06 — two small fixes (Copilot is out)
+User is not using Copilot to build anymore, so the rules swap is cancelled.
+The two QA issues were fixed directly in this build instead:
+- Live calc is silent while typing: clearing a field mid-typing no longer
+  flashes the error or hides the last good result; the error only shows on
+  submit (button / Enter). Same for the compare tool.
+- Segmented control: role="tablist"/role="tab" + aria-selected replaced with
+  role="group" + aria-pressed (there is no tabpanel, so tab semantics were wrong).
+- QA: 15/15 checks (typing flow, submit error, ARIA, regression).

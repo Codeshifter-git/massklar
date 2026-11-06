@@ -80,11 +80,11 @@
             </div>
             <form id="scale-form" novalidate>
               <span class="target-label" id="target-label">Ich will wissen:</span>
-              <div class="target-segmented" role="tablist" aria-labelledby="target-label" id="target-segmented">
+              <div class="target-segmented" role="group" aria-labelledby="target-label" id="target-segmented">
                 <span class="seg-indicator" aria-hidden="true"></span>
-                <button type="button" role="tab" aria-selected="true" data-target="real" id="seg-real">Echte Länge</button>
-                <button type="button" role="tab" aria-selected="false" data-target="drawing" id="seg-drawing">Länge auf dem Plan</button>
-                <button type="button" role="tab" aria-selected="false" data-target="scale" id="seg-scale">Maßstab</button>
+                <button type="button" aria-pressed="true" data-target="real" id="seg-real">Echte Länge</button>
+                <button type="button" aria-pressed="false" data-target="drawing" id="seg-drawing">Länge auf dem Plan</button>
+                <button type="button" aria-pressed="false" data-target="scale" id="seg-scale">Maßstab</button>
               </div>
 
               <div class="input-grid">

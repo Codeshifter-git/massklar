@@ -84,7 +84,7 @@ function setTarget(next, { save = true } = {}) {
   target = next;
   const index = ["real", "drawing", "scale"].indexOf(next);
   segmented.dataset.active = String(index);
-  segButtons.forEach((b) => b.setAttribute("aria-selected", String(b.dataset.target === next)));
+  segButtons.forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.target === next)));
   const disabledField = next === "real" ? "real-field" : next === "drawing" ? "drawing-field" : "scale-field";
   for (const id of ["drawing-field", "real-field", "scale-field"]) {
     const field = document.querySelector(`#${id}`);
@@ -129,7 +129,7 @@ function loadState() {
   } catch { return false; }
 }
 
-function calculate(event) {
+function calculate(event, silent = false) {
   if (event) event.preventDefault();
   errorMessage.hidden = true;
   try {
@@ -191,6 +191,10 @@ function calculate(event) {
     }
     saveState();
   } catch (error) {
+    // Silent while typing: clearing a field mid-typing (e.g. "4" -> "12")
+    // must not flash the error or hide the last good result. The error
+    // only shows on submit (button / Enter).
+    if (silent) { errorMessage.hidden = true; return; }
     fail(error.message, error.fieldKey);
   }
 }
@@ -216,8 +220,8 @@ form.addEventListener("submit", (event) => {
   calculate(event);
 });
 for (const el of [drawingInput, drawingUnit, realInput, realUnit, scaleInput]) {
-  el.addEventListener("input", () => calculate());
-  el.addEventListener("change", () => calculate());
+  el.addEventListener("input", () => calculate(null, true));
+  el.addEventListener("change", () => calculate(null, true));
 }
 // Lincoln tell #3: keep the focused field visible above the mobile keyboard.
 for (const el of [drawingInput, realInput, scaleInput]) {
@@ -267,7 +271,7 @@ const comparePanel = document.querySelector("#compare-result-panel");
 const compareValue = document.querySelector("#compare-result-value");
 const compareContext = document.querySelector("#compare-result-context");
 const compareFormula = document.querySelector("#compare-result-formula");
-function compareScales() {
+function compareScales(silent = false) {
   compareError.hidden = true;
   const length = Number(compareLength.value);
   const scaleA = Number(compareScaleA.value);
@@ -275,6 +279,8 @@ function compareScales() {
   if (!compareLength.value.trim() || !Number.isFinite(length) || length <= 0
     || !compareScaleA.value.trim() || !Number.isFinite(scaleA) || scaleA <= 0
     || !compareScaleB.value.trim() || !Number.isFinite(scaleB) || scaleB <= 0) {
+    // Same as the main calculator: no error flash while typing.
+    if (silent) { compareError.hidden = true; return; }
     compareError.textContent = "Bitte überall eine Zahl größer als 0 eintippen.";
     compareError.hidden = false;
     comparePanel.hidden = true;
@@ -289,9 +295,13 @@ function compareScales() {
   comparePanel.hidden = false;
 }
 for (const el of [compareLength, compareUnit, compareScaleA, compareScaleB]) {
-  el.addEventListener("input", compareScales);
-  el.addEventListener("change", compareScales);
+  el.addEventListener("input", () => compareScales(true));
+  el.addEventListener("change", () => compareScales(true));
 }
+document.querySelector("#compare-form").addEventListener("submit", (event) => {
+  event.preventDefault();
+  compareScales();
+});
 compareScales();
 document.querySelector("#reset-button").addEventListener("click", resetCalculator);
 copyButton.addEventListener("click", async (event) => {
