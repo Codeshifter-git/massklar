@@ -1,0 +1,369 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f5f4ed">
+    <meta name="description" content="Modellbau-Maßstab umrechnen: echte Länge in Modell-Länge — für H0, Spur N, 1:72 und mehr. Kostenlos, ohne Anmeldung, mit Nenngrößen-Tabelle.">
+    <title>Modellbau-Maßstab umrechnen – H0, N, 1:72 | maßklar</title>
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="de_DE">
+    <link rel="canonical" href="https://codeshifter-git.github.io/massklar/massstabsrechner/modellbau/">
+    <meta property="og:title" content="Modellbau-Maßstab umrechnen – H0, N, 1:72 | maßklar">
+    <meta property="og:description" content="Modellbau-Maßstab umrechnen: echte Länge in Modell-Länge — für H0, Spur N, 1:72 und mehr. Kostenlos, ohne Anmeldung, mit Nenngrößen-Tabelle.">
+<script>
+      /* Loading skeleton: this timer lives in <head> (before any stylesheet) so a slow connection can't delay it. */
+      (function () {
+        var root = document.documentElement;
+        var done = false;
+        setTimeout(function () { if (!done && document.readyState !== "complete") root.classList.add("is-loading"); }, 400);
+        function hide() {
+          if (done) return;
+          done = true;
+          root.classList.remove("is-loading");
+          setTimeout(function () { root.classList.add("is-ready"); }, 400);
+        }
+        window.addEventListener("load", hide);
+        setTimeout(hide, 2500);
+      })();
+    </script>
+    <link rel="preload" href="../../fonts/bitter-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="../../fonts/dm-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+      /* Loading skeleton — inline so it paints before the stylesheet arrives.
+         Shown by the <head> script adding .is-loading to <html>; hidden by default. */
+      .page-skeleton { position: fixed; inset: 0; z-index: 60; background: #f5f4ed; opacity: 0; visibility: hidden; transition: opacity .3s ease, visibility 0s linear .3s; }
+      html.is-loading .page-skeleton { opacity: 1; visibility: visible; transition: opacity .15s ease; }
+      html.is-ready .page-skeleton { display: none; }
+      .sk-inner { max-width: 1050px; margin: 0 auto; padding: 26px 7% 0; }
+      .sk-brand { display: flex; align-items: center; gap: 10px; margin-bottom: 52px; }
+      .sk-mark { width: 30px; height: 30px; border-radius: 9px 9px 9px 3px; background: #e79a62; color: #193f34; display: grid; place-items: center; font: 600 12px monospace; }
+      .sk-bar { position: relative; height: 16px; max-width: 520px; margin: 0 0 14px; border-radius: 4px; background: #e6e7dd; overflow: hidden; }
+      .sk-bar--title { height: 34px; max-width: 420px; }
+      .sk-bar--short { max-width: 300px; }
+      .sk-bar::after, .sk-card::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, transparent, #fffefa 50%, transparent); transform: translateX(-100%); animation: sk-shimmer 1.4s infinite; }
+      .sk-card { position: relative; height: 220px; margin-top: 34px; border-radius: 10px; background: #e6e7dd; overflow: hidden; }
+      @keyframes sk-shimmer { to { transform: translateX(100%); } }
+      @media (prefers-reduced-motion: reduce) { .sk-bar::after, .sk-card::after { animation: none; } }
+      /* Nenngröße presets — page-local, same tokens as the design system. */
+      .preset-row { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 18px; }
+      .preset-button { border: 1px solid #245c48; border-radius: 999px; background: transparent; color: #245c48; font: 600 14px/1 "DM Sans", system-ui, sans-serif; padding: 9px 14px; cursor: pointer; }
+      .preset-button:hover { background: #d7ed7b; }
+      .preset-button.is-active { background: #245c48; color: #f5f4ed; }
+    </style>
+    <link rel="stylesheet" href="../../styles.css?v=11">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Modellbau-Maßstabsrechner",
+        "applicationCategory": "EducationalApplication",
+        "operatingSystem": "Any",
+        "inLanguage": "de",
+        "description": "Modellbau-Maßstab umrechnen: echte Länge in Modell-Länge für H0, Spur N, TT, 1:72 und mehr — mit Nenngrößen-Tabelle und Schiffs-Rechner."
+      }
+    </script>
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <div class="page-skeleton" id="page-skeleton" aria-hidden="true">
+      <div class="sk-inner">
+        <div class="sk-brand"><span class="sk-mark">mk</span></div>
+        <div class="sk-bar sk-bar--title"></div>
+        <div class="sk-bar sk-bar--title sk-bar--short"></div>
+        <div class="sk-bar"></div>
+        <div class="sk-bar sk-bar--short"></div>
+        <div class="sk-card"></div>
+      </div>
+    </div>
+    <header class="site-header">
+      <a class="brand" href="../../" aria-label="Maßklar Startseite">
+        <span class="brand-mark" aria-hidden="true">mk</span>
+        <span>maßklar<span class="brand-period">.</span></span>
+      </a>
+      <nav class="top-nav" aria-label="Hauptnavigation">
+        <a href="../../">Alle Rechner</a>
+        <a href="#rechner">Rechner</a>
+        <a href="#nenngroessen">Nenngrößen</a>
+        <a href="#anleitung">So geht’s</a>
+      </nav>
+      <a class="header-cta" href="#rechner">Jetzt berechnen <span aria-hidden="true">↗</span></a>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="eyebrow-dot"></span> Der Rechner für Modellbauer</p>
+          <h1>Modellbau-Maßstab.<br><span>Für deine Bahn, dein Schiff, dein Flugzeug.</span></h1>
+          <p class="hero-description">Du baust ein Modell und willst wissen, wie lang ein Teil sein muss? Echte Länge eintippen, Baugröße wählen — fertig. Kostenlos, ohne Anmeldung.</p>
+          <a class="text-link" href="#rechner">Rechner öffnen <span aria-hidden="true">↓</span></a>
+        </div>
+        <div class="hero-visual" aria-label="Illustration eines Modellbahn-Maßstabs">
+          <div class="map-card">
+            <div class="map-card-top"><span>MODELLBAHN · H0 1:87</span><span class="map-compass">16,5 mm</span></div>
+            <div class="map-drawing" aria-hidden="true">
+              <span class="street street-one"></span><span class="street street-two"></span><span class="street street-three"></span>
+              <span class="block block-one"></span><span class="block block-two"></span><span class="block block-three"></span>
+              <span class="park">H0</span><span class="route"></span><span class="route-pin pin-start"></span><span class="route-pin pin-end"></span>
+            </div>
+            <div class="map-scale"><span>0</span><span class="scale-line"></span><span>17,2 cm</span></div>
+          </div>
+          <div class="floating-note"><span class="note-icon">↗</span><span><strong>15 m</strong><small>in echt</small></span><span class="note-equals">=</span><span><strong>17,2 cm</strong><small>im Modell</small></span></div>
+          <span class="visual-orbit orbit-one"></span><span class="visual-orbit orbit-two"></span>
+          <span class="hero-index">03 / 03</span>
+        </div>
+      </section>
+
+      <section class="calculator-section" id="rechner">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Zwei Zahlen reichen.</p>
+            <h2>Was willst du wissen?</h2>
+          </div>
+          <p>Tippe zwei Zahlen ein. Das Ergebnis steht sofort da.</p>
+        </div>
+
+        <div class="calculator">
+          <div class="calc-main">
+            <div class="calc-toolbar">
+              <span class="live-indicator"><span></span> Bereit — leg los</span>
+              <button class="reset-button" type="button" id="reset-button">Zurück zum Start <span aria-hidden="true">↺</span></button>
+            </div>
+            <form id="scale-form" novalidate>
+              <span class="target-label" id="target-label">Ich will wissen:</span>
+              <div class="target-segmented" role="group" aria-labelledby="target-label" id="target-segmented">
+                <span class="seg-indicator" aria-hidden="true"></span>
+                <button type="button" aria-pressed="false" data-target="real" id="seg-real">Echte Länge</button>
+                <button type="button" aria-pressed="true" data-target="drawing" id="seg-drawing">Modell-Länge</button>
+                <button type="button" aria-pressed="false" data-target="scale" id="seg-scale">Maßstab</button>
+              </div>
+
+              <span class="target-label" id="preset-label">Deine Baugröße:</span>
+              <div class="preset-row" role="group" aria-labelledby="preset-label" id="preset-row">
+                <button type="button" class="preset-button" data-scale="220">Z · 1:220</button>
+                <button type="button" class="preset-button" data-scale="160">N · 1:160</button>
+                <button type="button" class="preset-button" data-scale="120">TT · 1:120</button>
+                <button type="button" class="preset-button is-active" data-scale="87">H0 · 1:87</button>
+                <button type="button" class="preset-button" data-scale="64">S · 1:64</button>
+                <button type="button" class="preset-button" data-scale="45">0 · 1:45</button>
+                <button type="button" class="preset-button" data-scale="32">I · 1:32</button>
+                <button type="button" class="preset-button" data-scale="22.5">II · 1:22,5</button>
+                <button type="button" class="preset-button" data-scale="72">1:72</button>
+                <button type="button" class="preset-button" data-scale="48">1:48</button>
+                <button type="button" class="preset-button" data-scale="35">1:35</button>
+                <button type="button" class="preset-button" data-scale="24">1:24</button>
+              </div>
+
+              <div class="input-grid">
+                <div class="field" id="drawing-field">
+                  <label for="drawing-length">Länge im Modell</label>
+                  <div class="input-with-unit">
+                    <input id="drawing-length" name="drawing" type="number" min="0" step="any" placeholder="steht gleich hier" inputmode="decimal">
+                    <select id="drawing-unit" name="drawingUnit" aria-label="Einheit der Länge im Modell">
+                      <option value="mm">mm</option><option value="cm" selected>cm</option><option value="m">m</option><option value="km">km</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="field" id="real-field">
+                  <label for="real-length">Länge in echt</label>
+                  <div class="input-with-unit">
+                    <input id="real-length" name="real" type="number" min="0" step="any" value="15" inputmode="decimal">
+                    <select id="real-unit" name="realUnit" aria-label="Einheit der realen Länge">
+                      <option value="mm">mm</option><option value="cm">cm</option><option value="m" selected>m</option><option value="km">km</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="field scale-field" id="scale-field">
+                  <label for="scale-denominator">Maßstab</label>
+                  <div class="ratio-input">
+                    <span class="ratio-leading">1 :</span>
+                    <input id="scale-denominator" name="scale" type="number" min="0" step="any" value="87" inputmode="decimal" aria-label="Maßstabszahl nach 1 zu">
+                  </div>
+                </div>
+              </div>
+              <p class="form-error" id="form-error" role="alert" hidden></p>
+              <button class="calculate-button" type="submit">Modell-Länge berechnen <span aria-hidden="true">↗</span></button>
+              <p class="live-hint">Du musst gar nicht erst auf den Knopf drücken: Sobald du tippst, steht das Ergebnis schon da.</p>
+            </form>
+
+            <div class="result-panel" id="result-panel" aria-live="polite" aria-atomic="true">
+              <div class="result-topline"><span>DEIN ERGEBNIS</span><span class="result-check" aria-hidden="true">✓</span></div>
+              <div class="result-value" id="result-value">17,2 cm</div>
+              <p class="result-context" id="result-context">15 m in echt sind bei 1:87 im Modell 17,2 cm lang.</p>
+              <p class="result-also" id="result-also">Das sind auch: 172,4 mm · 0,17 m</p>
+              <p class="result-also" id="result-scale-note">Bei 1:87: Flächen ×87², Volumen und Gewicht ×87³.</p>
+              <div class="result-meta"><span id="result-formula">15 m ÷ 87 = 17,2 cm</span><button type="button" id="copy-button">Ergebnis kopieren <span aria-hidden="true">⧉</span></button></div>
+            </div>
+            <noscript><p class="form-error">Diese Seite braucht JavaScript zum Rechnen. Ein Beispiel: 15 m in echt sind bei 1:87 im Modell 17,2 cm lang.</p></noscript>
+          </div>
+          <aside class="calc-aside">
+            <span class="aside-number">GUT ZU WISSEN</span>
+            <div class="aside-art" aria-hidden="true"><span class="art-short"></span><span class="art-long"></span><span class="art-label">1 : 87</span></div>
+            <h3>Ein Zentimeter daneben — und es wirkt falsch.</h3>
+            <p>In H0 ist eine Lok, die in echt 15 m lang ist, gerade mal 17,2 cm lang. Darum lohnt es sich, einmal kurz zu rechnen, statt zu raten.</p>
+            <a href="#nenngroessen">Nenngrößen ansehen <span aria-hidden="true">→</span></a>
+          </aside>
+        </div>
+      </section>
+
+      <section class="quick-examples" id="beispiele">
+        <div class="quick-title"><span class="eyebrow">Häufige Modelle</span><h2>Drei Beispiele aus der Werkstatt.</h2></div>
+        <p class="examples-hint">Tipp eins an — der Rechner füllt sich von allein aus.</p>
+        <div class="example-strip">
+          <button type="button" class="example-card" data-real="15" data-real-unit="m" data-scale="87" data-drawing-unit="cm"><span class="example-symbol">🚂</span><span class="example-text"><span class="example-title">H0-Lok</span><span class="example-sub">1:87 <i>·</i> 15 m = 17,2 cm</span></span><span class="example-arrow" aria-hidden="true">↗</span></button>
+          <button type="button" class="example-card" data-real="12" data-real-unit="m" data-scale="72" data-drawing-unit="cm"><span class="example-symbol">✈</span><span class="example-text"><span class="example-title">Flugzeug</span><span class="example-sub">1:72 <i>·</i> 12 m = 16,7 cm</span></span><span class="example-arrow" aria-hidden="true">↗</span></button>
+          <button type="button" class="example-card" data-real="100" data-real-unit="m" data-scale="200" data-drawing-unit="cm"><span class="example-symbol">🚢</span><span class="example-text"><span class="example-title">Schiff</span><span class="example-sub">1:200 <i>·</i> 100 m = 50 cm</span></span><span class="example-arrow" aria-hidden="true">↗</span></button>
+        </div>
+      </section>
+
+      <section class="table-section" id="nenngroessen">
+        <div class="quick-title"><span class="eyebrow">Nenngrößen</span><h2>Welche Baugröße hast du?</h2></div>
+        <p class="table-intro">Bei der Modelleisenbahn hat jede Baugröße einen Namen — und einen festen Maßstab. Tipp eine Zeile an, und der Rechner nimmt genau diesen Maßstab.</p>
+        <div class="table-wrap">
+          <table class="scale-table">
+            <thead>
+              <tr><th scope="col">Nenngröße</th><th scope="col">Maßstab</th><th scope="col">Spurweite</th><th scope="col">Wofür?</th></tr>
+            </thead>
+            <tbody>
+              <tr class="scale-row" data-scale="220" data-real-unit="m"><th scope="row">Z</th><td>1:220</td><td>4,5 mm</td><td>Kleine Bahn, große Anlage</td></tr>
+              <tr class="scale-row" data-scale="160" data-real-unit="m"><th scope="row">N</th><td>1:160</td><td>9 mm</td><td>Spur N</td></tr>
+              <tr class="scale-row" data-scale="120" data-real-unit="m"><th scope="row">TT</th><td>1:120</td><td>12 mm</td><td>Spur TT</td></tr>
+              <tr class="scale-row" data-scale="87" data-real-unit="m"><th scope="row">H0</th><td>1:87</td><td>16,5 mm</td><td>Die beliebteste Baugröße</td></tr>
+              <tr class="scale-row" data-scale="64" data-real-unit="m"><th scope="row">S</th><td>1:64</td><td>22,5 mm</td><td>Spur S</td></tr>
+              <tr class="scale-row" data-scale="45" data-real-unit="m"><th scope="row">0</th><td>1:45</td><td>32 mm</td><td>Spur 0</td></tr>
+              <tr class="scale-row" data-scale="32" data-real-unit="m"><th scope="row">I</th><td>1:32</td><td>45 mm</td><td>Spur 1</td></tr>
+              <tr class="scale-row" data-scale="22.5" data-real-unit="m"><th scope="row">II</th><td>1:22,5</td><td>64 mm</td><td>Spur 2</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="table-intro">Die Spurweite ist der Abstand zwischen den beiden Schienen — im Modell, in Millimetern. Flugzeuge und Panzer haben keine Nenngröße, nur einen Maßstab: 1:72 ist der Klassiker bei Flugzeugen, 1:35 bei Panzern, 1:24 bei Autos, 1:48 dazwischen.</p>
+      </section>
+
+      <section class="compare-section" id="schiffe">
+        <div class="quick-title"><span class="eyebrow">Für Schiffe</span><h2>Dein Schiff fährt im Modell langsamer. Warum?</h2></div>
+        <p class="table-intro">Ein Schiff im Modell fährt nicht einfach mit der gleichen Geschwindigkeit wie in echt — es fährt langsamer, und zwar mit der Wurzel aus dem Maßstab. Den Namen dafür — Froude-Gesetz — musst du nicht kennen. Rechne einfach hier: Ein Schiff, das in echt 20 Knoten fährt, fährt im Maßstab 1:200 nur 1,41 Knoten. Wer das nicht weiß, baut ein Schiff, das im Wasser aussieht wie ein Schnellboot — und sich auch so fährt.</p>
+        <form class="compare-grid" id="ship-form" novalidate>
+          <div class="field">
+            <label for="ship-speed">Echte Geschwindigkeit (Knoten)</label>
+            <div class="input-with-unit">
+              <input id="ship-speed" name="shipSpeed" type="number" min="0" step="any" value="20" inputmode="decimal">
+              <span class="ratio-leading" aria-hidden="true">kn</span>
+            </div>
+          </div>
+          <div class="field">
+            <label for="ship-scale">Maßstab vom Modell</label>
+            <div class="ratio-input">
+              <span class="ratio-leading">1 :</span>
+              <input id="ship-scale" name="shipScale" type="number" min="0" step="any" value="200" inputmode="decimal" aria-label="Maßstabszahl vom Modell">
+            </div>
+          </div>
+        </form>
+        <p class="form-error" id="ship-error" role="alert" hidden></p>
+        <div class="result-panel compare-result" id="ship-result-panel" aria-live="polite" aria-atomic="true">
+          <div class="result-topline"><span>IM MODELL</span><span class="result-check" aria-hidden="true">✓</span></div>
+          <div class="result-value" id="ship-result-value">1,41 kn</div>
+          <p class="result-context" id="ship-result-context">20 Knoten in echt sind bei 1:200 im Modell 1,41 Knoten.</p>
+          <div class="result-meta"><span id="ship-result-formula">20 kn ÷ √200 = 1,41 kn</span></div>
+        </div>
+        <p class="table-intro">Und das Gewicht? Das teilt sich durch den Maßstab hoch drei. Ein Boot, das in echt 18.000 kg wiegt, darf als Modell im Maßstab 1:15 nur 5,33 kg wiegen. Schwerer, und es liegt zu tief im Wasser — leichter, und es schaukelt bei jeder Welle.</p>
+      </section>
+
+      <section class="guide-section" id="anleitung">
+        <div class="guide-intro">
+          <p class="eyebrow">Kurz erklärt</p>
+          <h2>Modellbau-Maßstab:<br><span>so funktioniert’s.</span></h2>
+          <p>Ein Maßstab sagt dir, wie viel kleiner das Modell ist als das Original. Bei 1:87 ist jeder Zentimeter im Modell 87 cm in echt — eine Lok von 15 m passt so auf 17,2 cm.</p>
+          <div class="formula-card"><span>Die drei Formeln, die du brauchst</span><strong>Echte Länge = Modell-Länge × Maßstabszahl</strong><strong>Modell-Länge = Echte Länge ÷ Maßstabszahl</strong><strong>Maßstab = Modell-Länge : Echte Länge</strong><small>Wichtig: Beide Längen in der gleichen Einheit messen — also beide in mm oder beide in cm.</small></div>
+        </div>
+        <div class="guide-steps">
+          <article class="guide-step"><span class="step-number">01</span><div><h3>Miss das Vorbild.</h3><p>Bevor du rechnest, brauchst du eine Zahl: Wie lang ist das echte Ding? Unsere Lok hier ist 15 m lang — das sind 1.500 cm. Alles andere ist Rechnen.</p><span class="step-equation">15 m = 1.500 cm</span></div></article>
+          <article class="guide-step"><span class="step-number">02</span><div><h3>Wähl deine Baugröße.</h3><p>Baust du in H0, N oder TT? Jede Baugröße hat ihren festen Maßstab — H0 ist 1:87, Spur N ist 1:160. Tipp oben auf deine Baugröße, der Maßstab steht dann schon da.</p><span class="step-equation">H0 = 1:87 · N = 1:160 · TT = 1:120</span></div></article>
+          <article class="guide-step"><span class="step-number">03</span><div><h3>Teil die echte Länge durch den Maßstab.</h3><p>Jetzt wird gerechnet: 15 m durch 87 — das sind 17,2 cm. So lang muss deine Lok im Modell sein. Der Rechner macht das für dich, aber die Rechnung ist so einfach, dass du sie auch im Kopf nachprüfen kannst.</p><span class="step-equation">1.500 cm ÷ 87 = 17,2 cm</span></div></article>
+          <article class="guide-step"><span class="step-number">04</span><div><h3>Denk an Fläche und Gewicht.</h3><p>Eine Länge teilt sich durch 87. Eine Fläche aber durch 87 mal 87 — und ein Gewicht sogar durch 87 mal 87 mal 87. Darum wiegt ein Modell so wenig, obwohl es genauso aussieht wie das Original.</p><span class="step-equation">Fläche ×87² · Gewicht ×87³</span></div></article>
+          <article class="guide-step"><span class="step-number">05</span><div><h3>Schiffe: Geschwindigkeit mit der Wurzel.</h3><p>Ein Schiff fährt im Modell langsamer — nicht durch den Maßstab, sondern durch seine Wurzel. Bei 1:200 und 20 Knoten in echt sind das 1,41 Knoten im Modell. Probier es oben im Schiffs-Rechner aus.</p><span class="step-equation">20 kn ÷ √200 = 1,41 kn</span></div></article>
+        </div>
+      </section>
+
+      <section class="practice-section" id="ueben">
+        <div class="quick-title"><span class="eyebrow">Zum Ausprobieren</span><h2>Üben wie in der Werkstatt.</h2></div>
+        <p class="table-intro">Zwei Aufgaben zum Üben. Tipp auf die Aufgabe, dann siehst du die Lösung.</p>
+        <div class="faq-list">
+          <details><summary>Aufgabe 1: Wie lang ist die Hauswand? <span aria-hidden="true">+</span></summary><p>Eine Hauswand ist in echt 8 m lang. Du baust in H0 (1:87). Wie lang ist die Wand im Modell?</p><p><strong>Lösung:</strong> 8 m = 800 cm. 800 cm ÷ 87 = 9,2 cm. Die Wand ist im Modell 9,2 cm lang.</p></details>
+          <details><summary>Aufgabe 2: Wie lang ist der Panzer? <span aria-hidden="true">+</span></summary><p>Ein Panzer ist in echt 6 m lang. Du baust ihn im Maßstab 1:35. Wie lang ist das Modell?</p><p><strong>Lösung:</strong> 6 m = 600 cm. 600 cm ÷ 35 = 17,1 cm. Der Panzer ist im Modell 17,1 cm lang.</p></details>
+        </div>
+      </section>
+
+      <section class="compare-section" id="vergleichen">
+        <div class="quick-title"><span class="eyebrow">Vom Plan zum Modell</span><h2>Gleicher Plan, anderer Maßstab.</h2></div>
+        <p class="table-intro">Du hast einen Bauplan im Maßstab 1:48 und willst das Modell in 1:72 bauen? Gib die Länge auf dem Plan und die beiden Maßstäbe ein — der Rest geht von allein.</p>
+        <form class="compare-grid" id="compare-form" novalidate>
+          <div class="field">
+            <label for="compare-length">Länge auf dem Plan</label>
+            <div class="input-with-unit">
+              <input id="compare-length" name="compareLength" type="number" min="0" step="any" value="10" inputmode="decimal">
+              <select id="compare-unit" name="compareUnit" aria-label="Einheit der Länge auf dem Plan">
+                <option value="mm">mm</option><option value="cm" selected>cm</option><option value="m">m</option><option value="km">km</option>
+              </select>
+            </div>
+          </div>
+          <div class="field">
+            <label for="compare-scale-a">Maßstab vom Plan</label>
+            <div class="ratio-input">
+              <span class="ratio-leading">1 :</span>
+              <input id="compare-scale-a" name="compareScaleA" type="number" min="0" step="any" value="48" inputmode="decimal" aria-label="Maßstabszahl vom Plan">
+            </div>
+          </div>
+          <div class="field">
+            <label for="compare-scale-b">Maßstab vom Modell</label>
+            <div class="ratio-input">
+              <span class="ratio-leading">1 :</span>
+              <input id="compare-scale-b" name="compareScaleB" type="number" min="0" step="any" value="72" inputmode="decimal" aria-label="Maßstabszahl vom Modell">
+            </div>
+          </div>
+        </form>
+        <p class="form-error" id="compare-error" role="alert" hidden></p>
+        <div class="result-panel compare-result" id="compare-result-panel" aria-live="polite" aria-atomic="true">
+          <div class="result-topline"><span>IM MODELL</span><span class="result-check" aria-hidden="true">✓</span></div>
+          <div class="result-value" id="compare-result-value">6,7 cm</div>
+          <p class="result-context" id="compare-result-context">10 cm auf dem Plan mit 1:48 sind im Maßstab 1:72 6,7 cm lang.</p>
+          <div class="result-meta"><span id="compare-result-formula">10 cm × (48 ÷ 72) = 6,7 cm</span></div>
+        </div>
+      </section>
+
+      <section class="faq-section">
+        <div class="faq-heading"><p class="eyebrow">Noch eine Frage?</p><h2>Fragst du dich<br>das auch?</h2></div>
+        <div class="faq-list">
+          <details><summary>Was ist eine Nenngröße? <span aria-hidden="true">+</span></summary><p>Eine Nenngröße ist der Name für eine Baugröße bei der Modelleisenbahn — H0, N, TT und so weiter. Dahinter steckt immer ein fester Maßstab: H0 ist 1:87, Spur N ist 1:160. Wenn du deine Nenngröße kennst, kennst du deinen Maßstab.</p></details>
+          <details><summary>Welcher Maßstab passt zu meiner Modelleisenbahn? <span aria-hidden="true">+</span></summary><p>Das hängt von deiner Anlage ab: H0 (1:87) ist die beliebteste Baugröße in Deutschland — groß genug zum Anfassen, klein genug fürs Wohnzimmer. Spur N (1:160) passt auf noch weniger Platz, TT (1:120) liegt dazwischen.</p></details>
+          <details><summary>Wie rechne ich einen Plan von 1:48 auf 1:72 um? <span aria-hidden="true">+</span></summary><p>Miss die Länge auf dem Plan und rechne sie erst in echt um — dann wieder runter auf 1:72. Oder nimm den Vergleichs-Rechner oben: 10 cm auf einem 1:48-Plan sind in 1:72 nur 6,7 cm.</p></details>
+          <details><summary>Warum fährt mein Schiff im Modell so langsam? <span aria-hidden="true">+</span></summary><p>Weil Wasser sich nicht verkleinern lässt: Die Wellen, die dein Schiff macht, hängen von seiner Länge ab. Darum fährt ein Modell langsamer — mit der Wurzel aus dem Maßstab. Bei 1:200 und 20 Knoten in echt sind das 1,41 Knoten im Modell. Der Schiffs-Rechner oben rechnet es dir aus.</p></details>
+          <details><summary>Wie schwer darf mein Modell sein? <span aria-hidden="true">+</span></summary><p>Das Gewicht teilt sich durch den Maßstab hoch drei. Ein Boot von 18.000 kg darf als Modell in 1:15 nur 5,33 kg wiegen. Faustregel: Lieber ein bisschen zu leicht als zu schwer — zu schwer liegt das Schiff zu tief im Wasser.</p></details>
+          <details><summary>Ist der Rechner kostenlos? <span aria-hidden="true">+</span></summary><p>Ja. Der Rechner ist kostenlos und du brauchst keine Anmeldung — rechne so oft du willst, auf dem Handy genauso wie am Computer.</p></details>
+        </div>
+      </section>
+
+      <section class="scale-links-section" id="massstaebe">
+        <div class="section-heading"><p class="eyebrow">Alle Maßstäbe</p><h2>Jeden Maßstab<br>einzeln erklärt.</h2></div>
+        <p class="table-intro">Jeder Maßstab hat seine eigene Seite — der Rechner ist schon darauf eingestellt, mit der Längentabelle dazu und einem Beispiel aus der Praxis.</p>
+        <p class="scale-links"><a href="../1-zu-24/">Maßstab 1:24</a> · <a href="../1-zu-35/">Maßstab 1:35</a> · <a href="../1-zu-72/">Maßstab 1:72</a> · <a href="../1-zu-87/">Maßstab 1:87</a></p>
+        <p class="table-intro"><a href="../">Zum Maßstabsrechner für Karten und Grundrisse →</a></p>
+      </section>
+
+      <section class="more-tools">
+        <div class="quick-title"><span class="eyebrow">Mehr Rechner</span><h2>Das gibt es noch bei maßklar.</h2></div>
+        <div class="tool-grid">
+          <a class="tool-card" href="../"><span class="tool-icon" aria-hidden="true">🗺</span><span class="tool-text"><span class="tool-title">Maßstabsrechner</span><span class="tool-desc">Karten, Grundrisse, Modellbau: echte Länge und Plan-Länge umrechnen.</span></span><span class="tool-arrow" aria-hidden="true">↗</span></a>
+          <a class="tool-card" href="../../altersrechner/"><span class="tool-icon" aria-hidden="true">🎂</span><span class="tool-text"><span class="tool-title">Altersrechner</span><span class="tool-desc">Wie alt bist du in Jahren, Monaten und Tagen? Mit Geburtstag-Countdown.</span></span><span class="tool-arrow" aria-hidden="true">↗</span></a>
+          <article class="tool-card tool-card--soon"><span class="tool-icon" aria-hidden="true">%</span><span class="tool-text"><span class="tool-title">Prozentrechner</span><span class="tool-desc">Prozentwert, Rabatt oder Erhöhung — in Sekunden.</span></span><span class="tool-badge">Bald da</span></article>
+        </div>
+        <p class="more-tools-link"><a href="../../">Alle Rechner ansehen <span aria-hidden="true">→</span></a></p>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <a class="brand footer-brand" href="../../"><span class="brand-mark" aria-hidden="true">mk</span><span>maßklar<span class="brand-period">.</span></span></a>
+      <p>Modellbau-Maßstab umrechnen — einfach, schnell und ohne Mathe-Stress. Ein Produkt von Hastle.</p>
+      <span>© <span id="current-year"></span> maßklar</span>
+    </footer>
+  </body>
+</html>
