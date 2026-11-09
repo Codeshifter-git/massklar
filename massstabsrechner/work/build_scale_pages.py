@@ -54,7 +54,7 @@ DATA = {
     ),
     20: dict(
         one_cm="20 cm", ten_cm="2 m",
-        use_line="Für Treppen und Innenausbau.", use_short="Treppen, Innenausbau",
+        use_line="Für Treppen und Innenausbau.", use_short="Treppen, Ausbau",
         map_label="TREPPE",
         example="Ein Beispiel: Eine Treppe ist auf dem Plan 15 cm lang — in echt sind das 3 m (15 × 20 = 300 cm).",
         wofuer=("Den Maßstab 1:20 nutzt man für Detailpläne, Treppen und den Innenausbau. "
@@ -237,7 +237,7 @@ DATA = {
     25000: dict(
         one_cm="250 m", ten_cm="2,5 km",
         use_line="Für Wanderkarten (TK25).",
-        use_short="Wanderkarten TK25",
+        use_short="Wanderkarten",
         map_label="WANDERKARTE",
         meta_on="auf der Karte",
         example="Ein Beispiel: Ein Wanderweg ist auf der Karte 20 cm lang — in echt sind das 5 km (20 × 25.000 = 500.000 cm).",
@@ -392,11 +392,12 @@ def build_page(scale):
     slug = f"1-zu-{scale}"
     canon = f"https://codeshifter-git.github.io/massklar/massstabsrechner/{slug}/"
 
-    title = f"Maßstabsrechner {label} – 1 zu {scale} berechnen & umrechnen | maßklar"
+    title = f"Maßstabsrechner {label} – 1 zu {scale} berechnen | maßklar"
     meta = (f"Maßstab {label} berechnen und umrechnen: 1 cm {d.get('meta_on', 'auf dem Plan')} sind "
             f"{d['one_cm']} in echt. Kostenloser Maßstabsrechner für {d['use_short']} "
             f"— zwei Zahlen eintippen, fertig.")
-    assert 130 <= len(meta) <= 165, f"meta length {len(meta)} for 1:{scale}: {meta!r}"
+    assert len(title) <= 60, f"title length {len(title)} for 1:{scale}: {title!r}"
+    assert 130 <= len(meta) <= 160, f"meta length {len(meta)} for 1:{scale}: {meta!r}"
     hero = (f"Kostenlos, ohne Anmeldung: Rechne jede Strecke im Maßstab {label} um — "
             f"von der Karte in die Wirklichkeit und zurück. Maßstab und eine Länge "
             f"eintippen, fertig.")
@@ -432,13 +433,13 @@ def build_page(scale):
     css_version = re.search(r'href="\.\./styles\.css\?v=(\d+)"', html).group(1)
 
     # --- head: title / meta / canonical / og / JSON-LD ---
-    html = rep(html, "<title>Maßstabsrechner – Maßstab online berechnen &amp; umrechnen | maßklar</title>",
+    html = rep(html, "<title>Maßstabsrechner – Maßstab online berechnen | maßklar</title>",
                f"<title>{esc(title)}</title>")
     html = rep(html, '<meta name="description" content="Kostenloser Maßstabsrechner: Maßstab berechnen und umrechnen für Karten, Grundrisse und Baupläne. Zwei Zahlen eintippen, fertig — ohne Anmeldung.">',
                f'<meta name="description" content="{esc(meta)}">')
     html = rep(html, '<link rel="canonical" href="https://codeshifter-git.github.io/massklar/massstabsrechner/">',
                f'<link rel="canonical" href="{canon}">')
-    html = rep(html, '<meta property="og:title" content="Maßstabsrechner – Maßstab online berechnen &amp; umrechnen | maßklar">',
+    html = rep(html, '<meta property="og:title" content="Maßstabsrechner – Maßstab online berechnen | maßklar">',
                f'<meta property="og:title" content="{esc(title)}">')
     html = rep(html, '<meta property="og:description" content="Kostenloser Maßstabsrechner: Maßstab berechnen und umrechnen für Karten, Grundrisse und Baupläne. Zwei Zahlen eintippen, fertig — ohne Anmeldung.">',
                f'<meta property="og:description" content="{esc(meta)}">')
