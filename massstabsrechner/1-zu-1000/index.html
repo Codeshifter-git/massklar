@@ -298,27 +298,11 @@
       </section>
 
       <section class="calculator-section" id="rechner">
-        <div class="section-heading">
-          <div>
-            <p class="eyebrow">Zwei Zahlen reichen.</p>
-            <h2>Was willst du wissen?</h2>
-          </div>
-          <p>Tippe zwei Zahlen ein. Das Ergebnis steht sofort da.</p>
-        </div>
-
         <div class="calculator">
           <div class="calc-main">
             <div class="calc-toolbar">
               <span class="live-indicator"><span></span> Bereit — leg los</span>
               <button class="reset-button" type="button" id="reset-button">Zurück zum Start <span aria-hidden="true">↺</span></button>
-            </div>
-            <div class="preset-chips" role="group" aria-label="Häufige Maßstäbe">
-              <span class="preset-label">Häufige Maßstäbe:</span>
-              <button type="button" class="preset-chip" data-scale="25000">Wandern 1:25.000</button>
-              <button type="button" class="preset-chip" data-scale="50000">Rad 1:50.000</button>
-              <button type="button" class="preset-chip" data-scale="100">Grundriss 1:100</button>
-              <button type="button" class="preset-chip" data-scale="87">H0 1:87</button>
-              <button type="button" class="preset-chip" data-scale="72">Flugzeug 1:72</button>
             </div>
             <form id="scale-form" novalidate>
               <span class="target-label" id="target-label">Ich will wissen:</span>
@@ -368,6 +352,14 @@
               <p class="result-context" id="result-context">4 cm auf der Karte sind bei 1:1.000 in echt 0,04 km lang.</p>
               <p class="result-also" id="result-also">Das sind auch: 40.000 mm · 4.000 cm · 40 m</p>
               <div class="result-meta"><span id="result-formula">4 cm × 1.000 = 4.000 cm</span><div class="result-actions"><button type="button" id="copy-button">Ergebnis kopieren <span aria-hidden="true">⧉</span></button><button type="button" id="share-button">Link teilen <span aria-hidden="true">↗</span></button><button type="button" id="print-button">Drucken <span aria-hidden="true">🖨</span></button></div></div>
+            <div class="preset-chips" role="group" aria-label="Häufige Maßstäbe">
+              <span class="preset-label">Häufige Maßstäbe:</span>
+              <button type="button" class="preset-chip" data-scale="25000">Wandern 1:25.000</button>
+              <button type="button" class="preset-chip" data-scale="50000">Rad 1:50.000</button>
+              <button type="button" class="preset-chip" data-scale="100">Grundriss 1:100</button>
+              <button type="button" class="preset-chip" data-scale="87">H0 1:87</button>
+              <button type="button" class="preset-chip" data-scale="72">Flugzeug 1:72</button>
+            </div>
             </div>
             <noscript><p class="form-error">Diese Seite braucht JavaScript zum Rechnen. Ein Beispiel: 4 cm auf der Karte sind bei 1:1000 in echt 40 m.</p></noscript>
           </div>
