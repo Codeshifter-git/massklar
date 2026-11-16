@@ -398,11 +398,12 @@ def build_page(scale):
             f"— zwei Zahlen eintippen, fertig.")
     assert len(title) <= 60, f"title length {len(title)} for 1:{scale}: {title!r}"
     assert 130 <= len(meta) <= 160, f"meta length {len(meta)} for 1:{scale}: {meta!r}"
-    hero = (f"Kostenlos, ohne Anmeldung: Rechne jede Strecke im Maßstab {label} um — "
-            f"von der Karte in die Wirklichkeit und zurück. Maßstab und eine Länge "
-            f"eintippen, fertig.")
     four_real = fmt_real(4 * scale)   # what 4 cm on the plan are in real life
     bar_real = fmt_real(2 * scale)    # what the 2 cm scale bar stands for
+    # GEO: the paragraph under the title gives the direct, fact-checked answer.
+    on = d.get("meta_on", "auf dem Plan")
+    hero = (f"Bei {label} ist 1 cm {on} {d['one_cm']} in echt. "
+            f"4 cm {on} sind {four_real} in echt.")
 
     # Static result defaults — must equal what app.js computes on load
     # (drawing 4 cm, scale S, real unit km, target "real").
@@ -479,7 +480,7 @@ def build_page(scale):
     # --- hero ---
     html = rep(html, "<h1>Maßstabsrechner.<br><span>Für Karten, Grundrisse und Modelle.</span></h1>",
                f"<h1>Maßstab {label}.<br><span>{d['use_line']}</span></h1>")
-    html = rep(html, '<p class="hero-description">Kostenlos, ohne Anmeldung: Rechne jede Strecke um — von der Karte in die Wirklichkeit und zurück. Maßstab und eine Länge eintippen, fertig.</p>',
+    html = rep(html, '<p class="hero-description">Ein Maßstab sagt, wie viel kleiner etwas gezeichnet ist als in echt. Bei 1:25.000 ist 1 cm auf der Karte 250 m in echt. Echte Länge = Plan-Länge × Maßstabszahl.</p>',
                f'<p class="hero-description">{hero}</p>')
     html = rep(html, "<span>STADTPLAN · 1:25.000</span>",
                f"<span>{d['map_label']} · {label_de}</span>")
