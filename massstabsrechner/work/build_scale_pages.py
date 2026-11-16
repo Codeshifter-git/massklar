@@ -430,6 +430,11 @@ def build_page(scale):
     faqs = [(faq1_q, faq1_a), (faq2_q, faq2_a)] + FAQ_KEEP
 
     html = TEMPLATE_HTML.read_text(encoding="utf-8")
+    # JSON-LD: the template's injected blocks (FAQPage 14, HowTo, BreadcrumbList)
+    # describe the MAIN tool page, not this scale page — strip them all; the
+    # per-scale blocks are rebuilt fresh at the end of build_page.
+    html = re.sub(r'    <script type="application/ld\+json">.*?</script>\n', '', html, flags=re.DOTALL)
+    assert 'application/ld+json' not in html, "JSON-LD strip failed"
     css_version = re.search(r'href="\.\./styles\.css\?v=(\d+)"', html).group(1)
 
     # --- head: title / meta / canonical / og / JSON-LD ---
@@ -450,25 +455,8 @@ def build_page(scale):
                '<link rel="preload" href="../../fonts/bitter-latin.woff2" as="font" type="font/woff2" crossorigin>')
     html = rep(html, '<link rel="preload" href="../fonts/dm-sans-latin.woff2" as="font" type="font/woff2" crossorigin>',
                '<link rel="preload" href="../../fonts/dm-sans-latin.woff2" as="font" type="font/woff2" crossorigin>')
-    html = rep(html, '"name": "Maßstabsrechner",',
-               f'"name": "Maßstabsrechner {label}",')
-    html = rep(html, '"description": "Maßstabsrechner: Maßstab berechnen, Länge auf der Karte und echte Länge umrechnen — für Karten, Grundrisse und Modellbau."',
-               f'"description": "{meta}"')
-    faq_ld = {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": [
-            {"@type": "Question", "name": q,
-             "acceptedAnswer": {"@type": "Answer", "text": a}}
-            for q, a in faqs
-        ],
-    }
-    faq_json = json.dumps(faq_ld, ensure_ascii=False, indent=2)
-    faq_block = ("    <script type=\"application/ld+json\">\n"
-                 + "\n".join("      " + line for line in faq_json.split("\n"))
-                 + "\n    </script>\n")
-    html = rep(html, '    </script>\n    <script src="app.js" defer></script>',
-               '    </script>\n' + faq_block + '    <script src="app.js" defer></script>')
+    # (WebApplication + FAQPage + BreadcrumbList + HowTo are rebuilt fresh per
+    # scale at the end of build_page — the template's blocks were stripped above.)
 
     # --- nav / footer links: one level deeper ---
     html = rep(html, '<a class="brand" href="../" aria-label="Maßklar Startseite">',
@@ -478,8 +466,15 @@ def build_page(scale):
     html = rep(html, '<a href="../">Alle Rechner</a>', '<a href="../../">Alle Rechner</a>')
     html = rep(html, '<a class="tool-card" href="../altersrechner/">',
                '<a class="tool-card" href="../../altersrechner/">')
+    html = rep(html, '<a class="tool-card" href="modellbau/">',
+               '<a class="tool-card" href="../modellbau/">')
     html = rep(html, '<p class="more-tools-link"><a href="../">Alle Rechner ansehen',
                '<p class="more-tools-link"><a href="../../">Alle Rechner ansehen')
+    # Ratgeber text-links in more-tools: one level deeper on scale pages.
+    html = rep(html, '<a href="../ratgeber/was-ist-ein-massstab/">',
+               '<a href="../../ratgeber/was-ist-ein-massstab/">')
+    html = rep(html, '<a href="../ratgeber/massstab-berechnen/">',
+               '<a href="../../ratgeber/massstab-berechnen/">')
 
     # --- hero ---
     html = rep(html, "<h1>Maßstabsrechner.<br><span>Für Karten, Grundrisse und Modelle.</span></h1>",
@@ -535,10 +530,18 @@ def build_page(scale):
             links.append(f'<span aria-current="page">{text}</span>')
         else:
             links.append(f'<a href="../1-zu-{s}/">{text}</a>')
+    # Related text-links (no cards): the guides for every scale, plus the
+    # Modellbau tool + guide for the model scales (24, 35, 72, 87).
+    related = ('Weiterlesen: <a href="../../ratgeber/was-ist-ein-massstab/">Was ist ein Maßstab?</a> · '
+               '<a href="../../ratgeber/massstab-berechnen/">Maßstab berechnen</a>')
+    if scale in (24, 35, 72, 87):
+        related += (' · <a href="../modellbau/">Modellbau-Maßstab</a> · '
+                    '<a href="../../ratgeber/modellgroesse-berechnen/">Modellgröße berechnen</a>')
     other = (f'      <section class="scale-links-section" id="massstaebe">\n'
              f'        <div class="section-heading"><p class="eyebrow">Alle Maßstäbe</p><h2>Andere Maßstäbe.</h2></div>\n'
              f'        <p class="table-intro">Jeder Maßstab hat seine eigene Seite — mit Rechner, Längentabelle und einem Beispiel aus der Praxis. Zurück zum <a href="../">Maßstabsrechner</a>, oder schau dir die <a href="#anleitung">Formeln und Beispiele</a> an.</p>\n'
              f'        <p class="scale-links">{" · ".join(links)}</p>\n'
+             f'        <p class="scale-links">{related}</p>\n'
              f'      </section>')
     html = re.sub(r'      <section class="scale-links-section" id="massstaebe">.*?</section>',
                   other.replace("\\", "\\\\"), html, count=1, flags=re.DOTALL)
@@ -651,7 +654,74 @@ def build_page(scale):
     # The only "25000" left must be the compare tool's generic example (Karte A);
     # on the 1:25.000 page the main input legitimately reads 25000 too.
     assert html.count('value="25000"') == (2 if scale == 25000 else 1) and 'id="compare-scale-a"' in html, "unexpected 25000 leftovers"
-    assert f"massklar_v1" not in html  # storage key lives in app.js only
+    # --- JSON-LD: rebuild fresh per scale page (WebApplication + FAQPage +
+    # BreadcrumbList + HowTo), inserted before the app.js script tag. HowTo
+    # steps are extracted from the built page, so they match the rewritten
+    # scale-specific steps 1-3 plus the kept Fläche/Volumen steps 4-5.
+    webapp = {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": f"Maßstabsrechner {label}",
+        "applicationCategory": "EducationalApplication",
+        "operatingSystem": "Any",
+        "inLanguage": "de",
+        "description": meta,
+        "url": canon,
+    }
+    # FAQPage must match the VISIBLE FAQ section (Google requires schema ==
+    # visible content): extract all 14 questions/answers from the built page.
+    faq_section = re.search(r'<section class="faq-section">(.*?)</section>', html, re.DOTALL).group(1)
+    faq_re = re.compile(r'<details><summary>(.*?) <span aria-hidden="true">\+</span></summary><p>(.*?)</p></details>', re.DOTALL)
+    visible_faqs = [(re.sub(r"<[^>]+>", "", m.group(1)).strip(),
+                     re.sub(r"<[^>]+>", "", m.group(2)).strip())
+                    for m in faq_re.finditer(faq_section)]
+    assert len(visible_faqs) == 14, f"expected 14 visible FAQs, got {len(visible_faqs)}"
+    faq_ld = {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {"@type": "Question", "name": q,
+             "acceptedAnswer": {"@type": "Answer", "text": a}}
+            for q, a in visible_faqs
+        ],
+    }
+    breadcrumb = {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Startseite",
+             "item": "https://codeshifter-git.github.io/massklar/"},
+            {"@type": "ListItem", "position": 2, "name": "Maßstabsrechner",
+             "item": "https://codeshifter-git.github.io/massklar/massstabsrechner/"},
+            {"@type": "ListItem", "position": 3, "name": f"Maßstab {label}",
+             "item": canon},
+        ],
+    }
+    step_re = re.compile(
+        r'<article class="guide-step"><span class="step-number">(\d+)</span>'
+        r'<div><h3>(.*?)</h3><p>(.*?)</p><span class="step-equation">(.*?)</span></div></article>')
+    howto_steps = [
+        {"@type": "HowToStep", "position": int(m.group(1)), "name": m.group(2),
+         "text": re.sub(r"<[^>]+>", "", m.group(3)) + " " + m.group(4)}
+        for m in step_re.finditer(html)
+    ]
+    assert len(howto_steps) == 5, f"expected 5 guide steps for HowTo, got {len(howto_steps)}"
+    howto = {
+        "@context": "https://schema.org",
+        "@type": "HowTo",
+        "name": f"So rechnest du im Maßstab {label}",
+        "description": f"Maßstab {label} berechnen: echte Länge, Plan-Länge, Maßstab, Fläche und Volumen — Schritt für Schritt.",
+        "step": howto_steps,
+    }
+    ld_blocks = ""
+    for block in (webapp, faq_ld, breadcrumb, howto):
+        ld_blocks += ("    <script type=\"application/ld+json\">\n"
+                      + "\n".join("      " + line for line in json.dumps(block, ensure_ascii=False, indent=2).split("\n"))
+                      + "\n    </script>\n")
+    html = rep(html, '    <script src="app.js" defer></script>',
+               ld_blocks + '    <script src="app.js" defer></script>')
+    assert html.count('application/ld+json') == 4, "expected 4 JSON-LD blocks"
+    assert "massklar_v1" not in html  # storage key lives in app.js only
     return html, len(meta)
 
 

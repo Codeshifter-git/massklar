@@ -55,7 +55,8 @@
         "applicationCategory": "EducationalApplication",
         "operatingSystem": "Any",
         "inLanguage": "de",
-        "description": "Maßstab 1:25000 berechnen und umrechnen: 1 cm auf der Karte sind 250 m in echt. Kostenloser Maßstabsrechner für Wanderkarten — zwei Zahlen eintippen, fertig."
+        "description": "Maßstab 1:25000 berechnen und umrechnen: 1 cm auf der Karte sind 250 m in echt. Kostenloser Maßstabsrechner für Wanderkarten — zwei Zahlen eintippen, fertig.",
+        "url": "https://codeshifter-git.github.io/massklar/massstabsrechner/1-zu-25000/"
       }
     </script>
     <script type="application/ld+json">
@@ -110,13 +111,143 @@
               "@type": "Answer",
               "text": "Ja. Die Seite passt sich deinem Bildschirm an — Handy, Tablet oder Computer, alles geht. Du musst nichts installieren."
             }
+          },
+          {
+            "@type": "Question",
+            "name": "Welcher Maßstab ist größer, 1:25.000 oder 1:50.000?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "1:25.000. Das klingt erst mal falsch — 50.000 ist doch die größere Zahl. Aber beim Maßstab gilt: Je kleiner die Zahl nach dem Doppelpunkt, desto größer der Maßstab — und desto mehr Details siehst du auf der Karte. Auf der Karte mit 1:25.000 ist 1 cm genau 250 m, bei 1:50.000 sind es 500 m."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Was bedeutet TK25?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "TK25 ist eine topografische Karte im Maßstab 1:25.000. TK heißt Topografische Karte, die 25 steht für die Maßstabszahl in Tausend. Auf der TK25 sind 1 km genau 4 cm lang. Die TK50 ist die gleiche Karte im Maßstab 1:50.000."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Welcher Maßstab eignet sich zum Wandern?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Für Wanderungen nimmst du am besten 1:25.000 — da siehst du jeden Weg, jeden Bach und jede Hütte. Für längere Touren reicht auch 1:50.000: Da passt mehr Strecke auf ein Blatt, dafür siehst du weniger Details."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Wie rechne ich Flächen im Maßstab um?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Eine Fläche wächst mit dem Quadrat der Maßstabszahl. Ein Zimmer ist auf dem Plan 12 cm² groß — bei 1:100 sind das in echt 12 m². Die Rechnung: 12 cm² × 100² = 120.000 cm² = 12 m². Der Flächen-Rechner weiter unten auf dieser Seite macht das für dich."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Warum stimmt der Maßstab auf dem Ausdruck nicht?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Weil der Drucker das Blatt fast immer ein bisschen kleiner druckt, damit es auf die Seite passt. Stell im Druckfenster statt „An Seite anpassen“ lieber „Tatsächliche Größe“ oder 100 % ein — dann stimmt der Maßstab wieder."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Wie rechne ich Zentimeter in Kilometer um?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "100.000 cm sind 1 km. Oder andersrum: 1 km sind 100.000 cm. Der Rechner zeigt dir das Ergebnis auch in allen Einheiten an — schau einfach unter „Das sind auch“."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Stimmt die Länge bei kurvigen Wegen?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Ja, wenn du in kleinen Stücken misst: Leg das Lineal an jedes gerade Stück der Kurve und zähl die Stücke zusammen. Oder nimm einen Faden, leg ihn auf die Kurve und miss den Faden danach mit dem Lineal."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Kann ein Maßstab auch größer als 1 sein?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Ja — dann wird vergrößert statt verkleinert. 2:1 heißt: Das Bild ist doppelt so groß wie das Original. Das brauchst du zum Beispiel, wenn du ein winziges Teil unter dem Mikroskop zeichnest. Im Rechner tippst du dafür eine Maßstabszahl kleiner als 1 ein — 0,5 für 2:1."
+            }
+          }
+        ]
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Startseite",
+            "item": "https://codeshifter-git.github.io/massklar/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Maßstabsrechner",
+            "item": "https://codeshifter-git.github.io/massklar/massstabsrechner/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Maßstab 1:25000",
+            "item": "https://codeshifter-git.github.io/massklar/massstabsrechner/1-zu-25000/"
+          }
+        ]
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "HowTo",
+        "name": "So rechnest du im Maßstab 1:25000",
+        "description": "Maßstab 1:25000 berechnen: echte Länge, Plan-Länge, Maßstab, Fläche und Volumen — Schritt für Schritt.",
+        "step": [
+          {
+            "@type": "HowToStep",
+            "position": 1,
+            "name": "Wie lang ist es in echt?",
+            "text": "Nimm die Länge auf der Karte mal die Maßstabszahl. Bei 1:25.000 werden aus 3 cm auf der Karte 750 m in echt. 3 cm × 25.000 = 75.000 cm = 750 m"
+          },
+          {
+            "@type": "HowToStep",
+            "position": 2,
+            "name": "Wie lang wird es auf dem Plan?",
+            "text": "Teile die echte Länge durch die Maßstabszahl. Ein Weg, der 5 km lang ist, ist auf einer Wanderkarte im Maßstab 1:25.000 dann 20 cm lang. 500.000 cm ÷ 25.000 = 20 cm"
+          },
+          {
+            "@type": "HowToStep",
+            "position": 3,
+            "name": "Welcher Maßstab ist das?",
+            "text": "Bring beide Längen erst in die gleiche Einheit. Dann teilst du die Länge auf der Karte durch die echte Länge. 3 cm zu 750 m — das ist 1:25000. 3 cm : 75.000 cm = 1 : 25.000"
+          },
+          {
+            "@type": "HowToStep",
+            "position": 4,
+            "name": "Wie groß ist eine Fläche?",
+            "text": "Bei einer Fläche nimmst du die Maßstabszahl mal sich selbst. Ein Zimmer ist auf dem Plan 4 cm lang und 3 cm breit — also 12 cm². Zum Beispiel bei 1:100 sind das in echt 12 m². 12 cm² × 100² = 120.000 cm² = 12 m²"
+          },
+          {
+            "@type": "HowToStep",
+            "position": 5,
+            "name": "Wie groß ist ein Volumen?",
+            "text": "Bei einem Volumen nimmst du die Maßstabszahl gleich dreimal: mal sich selbst, mal sich selbst. Ein Würfel ist auf dem Modell 1 cm groß — also 1 cm³. Zum Beispiel bei 1:100 sind das in echt 1 m³. 1 cm³ × 100³ = 1.000.000 cm³ = 1 m³"
           }
         ]
       }
     </script>
     <script src="app.js" defer></script>
-  </head>
-  <body>
+      </head>
+  <body class="tool-page">
     <div class="page-skeleton" id="page-skeleton" aria-hidden="true">
       <div class="sk-inner">
         <div class="sk-brand"><span class="sk-mark">mk</span></div>
@@ -181,6 +312,14 @@
               <span class="live-indicator"><span></span> Bereit — leg los</span>
               <button class="reset-button" type="button" id="reset-button">Zurück zum Start <span aria-hidden="true">↺</span></button>
             </div>
+            <div class="preset-chips" role="group" aria-label="Häufige Maßstäbe">
+              <span class="preset-label">Häufige Maßstäbe:</span>
+              <button type="button" class="preset-chip" data-scale="25000">Wandern 1:25.000</button>
+              <button type="button" class="preset-chip" data-scale="50000">Rad 1:50.000</button>
+              <button type="button" class="preset-chip" data-scale="100">Grundriss 1:100</button>
+              <button type="button" class="preset-chip" data-scale="87">H0 1:87</button>
+              <button type="button" class="preset-chip" data-scale="72">Flugzeug 1:72</button>
+            </div>
             <form id="scale-form" novalidate>
               <span class="target-label" id="target-label">Ich will wissen:</span>
               <div class="target-segmented" role="group" aria-labelledby="target-label" id="target-segmented">
@@ -196,7 +335,7 @@
                   <div class="input-with-unit">
                     <input id="drawing-length" name="drawing" type="number" min="0" step="any" value="4" inputmode="decimal">
                     <select id="drawing-unit" name="drawingUnit" aria-label="Einheit der Länge auf Plan oder Karte">
-                      <option value="mm">mm</option><option value="cm" selected>cm</option><option value="m">m</option><option value="km">km</option>
+                      <option value="mm">mm</option><option value="cm" selected>cm</option><option value="m">m</option><option value="km">km</option><option value="in">in</option><option value="ft">ft</option><option value="yd">yd</option><option value="mi">mi</option><option value="nmi">nmi</option>
                     </select>
                   </div>
                 </div>
@@ -205,7 +344,7 @@
                   <div class="input-with-unit">
                     <input id="real-length" name="real" type="number" min="0" step="any" placeholder="steht gleich hier" inputmode="decimal">
                     <select id="real-unit" name="realUnit" aria-label="Einheit der realen Länge">
-                      <option value="mm">mm</option><option value="cm">cm</option><option value="m">m</option><option value="km" selected>km</option>
+                      <option value="mm">mm</option><option value="cm">cm</option><option value="m">m</option><option value="km" selected>km</option><option value="in">in</option><option value="ft">ft</option><option value="yd">yd</option><option value="mi">mi</option><option value="nmi">nmi</option>
                     </select>
                   </div>
                 </div>
@@ -215,6 +354,7 @@
                     <span class="ratio-leading">1 :</span>
                     <input id="scale-denominator" name="scale" type="number" min="0" step="any" value="25000" inputmode="decimal" aria-label="Maßstabszahl nach 1 zu">
                   </div>
+                  <small class="field-hint">Kleiner als 1 heißt Vergrößerung — z. B. 0,5 für 2:1.</small>
                 </div>
               </div>
               <p class="form-error" id="form-error" role="alert" hidden></p>
@@ -227,15 +367,15 @@
               <div class="result-value" id="result-value">1 km</div>
               <p class="result-context" id="result-context">4 cm auf der Karte sind bei 1:25.000 in echt 1 km lang.</p>
               <p class="result-also" id="result-also">Das sind auch: 1.000.000 mm · 100.000 cm · 1.000 m</p>
-              <div class="result-meta"><span id="result-formula">4 cm × 25.000 = 100.000 cm</span><button type="button" id="copy-button">Ergebnis kopieren <span aria-hidden="true">⧉</span></button></div>
+              <div class="result-meta"><span id="result-formula">4 cm × 25.000 = 100.000 cm</span><div class="result-actions"><button type="button" id="copy-button">Ergebnis kopieren <span aria-hidden="true">⧉</span></button><button type="button" id="share-button">Link teilen <span aria-hidden="true">↗</span></button><button type="button" id="print-button">Drucken <span aria-hidden="true">🖨</span></button></div></div>
             </div>
             <noscript><p class="form-error">Diese Seite braucht JavaScript zum Rechnen. Ein Beispiel: 4 cm auf der Karte sind bei 1:25000 in echt 1 km.</p></noscript>
           </div>
           <aside class="calc-aside">
             <span class="aside-number">GUT ZU WISSEN</span>
             <div class="aside-art" aria-hidden="true"><span class="art-short"></span><span class="art-long"></span><span class="art-label">1 : 100</span></div>
-            <h3>Egal ob cm oder m.</h3>
-            <p>Du kannst Zentimeter und Meter mischen, wie du willst. Der Rechner rechnet alles passend um — du musst nichts umrechnen.</p>
+            <h3>Egal ob cm, m oder Fuß.</h3>
+            <p>Du kannst Zentimeter und Meter mischen, wie du willst — oder Fuß und Meilen. Der Rechner rechnet alles passend um — du musst nichts umrechnen.</p>
             <a href="#anleitung">Maßstab einfach erklärt <span aria-hidden="true">→</span></a>
           </aside>
         </div>
@@ -299,6 +439,7 @@
         <div class="section-heading"><p class="eyebrow">Alle Maßstäbe</p><h2>Andere Maßstäbe.</h2></div>
         <p class="table-intro">Jeder Maßstab hat seine eigene Seite — mit Rechner, Längentabelle und einem Beispiel aus der Praxis. Zurück zum <a href="../">Maßstabsrechner</a>, oder schau dir die <a href="#anleitung">Formeln und Beispiele</a> an.</p>
         <p class="scale-links"><a href="../1-zu-10/">Maßstab 1:10</a> · <a href="../1-zu-20/">Maßstab 1:20</a> · <a href="../1-zu-24/">Maßstab 1:24</a> · <a href="../1-zu-25/">Maßstab 1:25</a> · <a href="../1-zu-35/">Maßstab 1:35</a> · <a href="../1-zu-50/">Maßstab 1:50</a> · <a href="../1-zu-72/">Maßstab 1:72</a> · <a href="../1-zu-87/">Maßstab 1:87</a> · <a href="../1-zu-100/">Maßstab 1:100</a> · <a href="../1-zu-200/">Maßstab 1:200</a> · <a href="../1-zu-250/">Maßstab 1:250</a> · <a href="../1-zu-500/">Maßstab 1:500</a> · <a href="../1-zu-1000/">Maßstab 1:1.000</a> · <span aria-current="page">Maßstab 1:25.000</span> · <a href="../1-zu-50000/">Maßstab 1:50.000</a></p>
+        <p class="scale-links">Weiterlesen: <a href="../../ratgeber/was-ist-ein-massstab/">Was ist ein Maßstab?</a> · <a href="../../ratgeber/massstab-berechnen/">Maßstab berechnen</a></p>
       </section>
       <section class="table-section length-section" id="laengen">
         <div class="quick-title"><span class="eyebrow">Längentabelle</span><h2>Wie lang ist das bei <span id="length-table-scale">1:25.000</span>?</h2></div>
@@ -380,6 +521,46 @@
         </div>
       </section>
 
+
+      <section class="area-section" id="flaeche">
+        <div class="quick-title"><span class="eyebrow">Flächen-Rechner</span><h2>Wie groß ist die Fläche in echt?</h2></div>
+        <p class="table-intro">Eine Fläche auf dem Plan ist viel kleiner als in echt — sie wächst mit dem Quadrat der Maßstabszahl. Tipp die Plan-Fläche und den Maßstab ein.</p>
+        <form class="area-grid" id="area-form" novalidate>
+          <div class="field">
+            <label for="area-plan">Fläche auf dem Plan</label>
+            <div class="input-with-unit">
+              <input id="area-plan" type="number" min="0" step="any" value="12" inputmode="decimal">
+              <select id="area-plan-unit" aria-label="Einheit der Plan-Fläche">
+                <option value="cm2" selected>cm²</option><option value="m2">m²</option><option value="km2">km²</option><option value="in2">in²</option><option value="ft2">ft²</option>
+              </select>
+            </div>
+          </div>
+          <div class="field">
+            <label for="area-scale">Maßstab</label>
+            <div class="ratio-input">
+              <span class="ratio-leading">1 :</span>
+              <input id="area-scale" type="number" min="0" step="any" value="100" inputmode="decimal" aria-label="Maßstabszahl">
+            </div>
+          </div>
+          <div class="field">
+            <label for="area-real">Fläche in echt</label>
+            <div class="input-with-unit">
+              <input id="area-real" type="number" min="0" step="any" placeholder="steht gleich hier" inputmode="decimal" disabled>
+              <select id="area-real-unit" aria-label="Einheit der echten Fläche">
+                <option value="cm2">cm²</option><option value="m2" selected>m²</option><option value="km2">km²</option><option value="in2">in²</option><option value="ft2">ft²</option>
+              </select>
+            </div>
+          </div>
+        </form>
+        <p class="form-error" id="area-error" role="alert" hidden></p>
+        <div class="result-panel" id="area-result-panel" aria-live="polite" aria-atomic="true">
+          <div class="result-topline"><span>DEINE FLÄCHE</span><span class="result-check" aria-hidden="true">✓</span></div>
+          <div class="result-value" id="area-result-value">12 m²</div>
+          <p class="result-context" id="area-result-context">12 cm² auf dem Plan sind bei 1:100 in echt 12 m² groß.</p>
+          <div class="result-meta"><span id="area-result-formula">12 cm² × 100² = 120.000 cm² = 12 m²</span></div>
+        </div>
+      </section>
+
       <section class="table-section" id="rechenbeispiele">
         <div class="quick-title"><span class="eyebrow">Zwei Rechnungen</span><h2>Rechenbeispiele für 1:25000.</h2></div>
         <p class="table-intro">Einmal von der Karte in die Wirklichkeit — und einmal zurück. Die Rechnung ist immer die gleiche: mal die Maßstabszahl, oder geteilt durch sie.</p>
@@ -409,10 +590,12 @@
       </section>
       <section class="practice-section" id="ueben">
         <div class="quick-title"><span class="eyebrow">Zum Ausprobieren</span><h2>Üben wie in der Schule.</h2></div>
-        <p class="table-intro">Zwei Aufgaben zum Üben. Tipp auf die Aufgabe, dann siehst du die Lösung.</p>
+        <p class="table-intro">Vier Aufgaben zum Üben. Tipp auf die Aufgabe, dann siehst du die Lösung.</p>
         <div class="faq-list">
           <details><summary>Aufgabe 1: Wie lang ist die Straße? <span aria-hidden="true">+</span></summary><p>Eine Straße ist auf dem Stadtplan 3 cm lang. Der Maßstab ist 1:10.000. Wie lang ist die Straße in echt?</p><p><strong>Lösung:</strong> 3 cm × 10.000 = 30.000 cm = 300 m. Die Straße ist 300 m lang.</p></details>
           <details><summary>Aufgabe 2: Wie weit sind die Dörfer auseinander? <span aria-hidden="true">+</span></summary><p>Zwei Dörfer sind auf der Karte 5 cm auseinander. Der Maßstab ist 1:50.000. Wie weit sind sie in echt auseinander?</p><p><strong>Lösung:</strong> 5 cm × 50.000 = 250.000 cm = 2,5 km. Die Dörfer sind 2,5 km auseinander.</p></details>
+          <details><summary>Aufgabe 3: Wie lang wird die Wand auf dem Grundriss? <span aria-hidden="true">+</span></summary><p>Ein Zimmer ist in echt 4 m lang. Wie lang ist es auf einem Grundriss im Maßstab 1:50?</p><p><strong>Lösung:</strong> 4 m sind 400 cm. 400 cm ÷ 50 = 8 cm. Auf dem Grundriss ist das Zimmer 8 cm lang.</p></details>
+          <details><summary>Aufgabe 4: Welcher Maßstab ist das? <span aria-hidden="true">+</span></summary><p>Auf einer Karte sind 5 cm in echt 2,5 km. Welcher Maßstab ist das?</p><p><strong>Lösung:</strong> 2,5 km sind 250.000 cm. 250.000 cm ÷ 5 cm = 50.000. Der Maßstab ist 1:50.000.</p></details>
         </div>
       </section>
 
@@ -425,7 +608,7 @@
             <div class="input-with-unit">
               <input id="compare-length" name="compareLength" type="number" min="0" step="any" value="3" inputmode="decimal">
               <select id="compare-unit" name="compareUnit" aria-label="Einheit der Länge auf Karte A">
-                <option value="mm">mm</option><option value="cm" selected>cm</option><option value="m">m</option><option value="km">km</option>
+                <option value="mm">mm</option><option value="cm" selected>cm</option><option value="m">m</option><option value="km">km</option><option value="in">in</option><option value="ft">ft</option><option value="yd">yd</option><option value="mi">mi</option><option value="nmi">nmi</option>
               </select>
             </div>
           </div>
@@ -453,6 +636,24 @@
         </div>
       </section>
 
+
+      <section class="ruler-section" id="lineal">
+        <div class="quick-title"><span class="eyebrow">Bildschirm-Lineal</span><h2>Ist dein Bildschirm richtig eingestellt?</h2></div>
+        <p class="table-intro">Leg ein echtes Lineal an den Bildschirm und stell den Schieberegler so ein, dass die Linie unten genau 10 cm lang ist. Danach zeigt dir das Lineal Zentimeter so, wie sie wirklich sind.</p>
+        <div class="ruler-box">
+          <div class="ruler-calibrate">
+            <span class="ruler-cal-label">Diese Linie soll 10 cm lang sein:</span>
+            <div class="ruler-cal-line" id="ruler-cal-line"></div>
+            <span class="ruler-cal-value">10 cm — misst du mit einem echten Lineal nach</span>
+          </div>
+          <label class="ruler-slider-label" for="ruler-slider">Schieberegler: Linie länger oder kürzer machen</label>
+          <input type="range" id="ruler-slider" min="200" max="600" step="1" value="378">
+          <div class="ruler-display" id="ruler-display"><div class="ruler-ticks" id="ruler-ticks"></div></div>
+          <p class="ruler-note" id="ruler-note">Kalibriert: 1 cm sind 37,8 Pixel. Das ist der normale Wert für die meisten Bildschirme.</p>
+          <button type="button" class="reset-button" id="ruler-reset">Zurück auf 37,8 Pixel pro cm</button>
+        </div>
+      </section>
+
       <section class="faq-section">
         <div class="faq-heading"><p class="eyebrow">Noch eine Frage?</p><h2>Fragst du dich<br>das auch?</h2></div>
         <div class="faq-list">
@@ -462,6 +663,14 @@
           <details><summary>Kann ich verschiedene Einheiten verwenden? <span aria-hidden="true">+</span></summary><p>Ja, klar. Schreib die Länge auf dem Plan in cm und die echte Länge in m — oder andersrum. Der Rechner rechnet es passend um.</p></details>
           <details><summary>Ist der Maßstabsrechner kostenlos? <span aria-hidden="true">+</span></summary><p>Ja. Der Rechner ist kostenlos und du brauchst keine Anmeldung — rechne so oft du willst, auf dem Handy genauso wie am Computer.</p></details>
           <details><summary>Funktioniert der Rechner auch auf dem Handy? <span aria-hidden="true">+</span></summary><p>Ja. Die Seite passt sich deinem Bildschirm an — Handy, Tablet oder Computer, alles geht. Du musst nichts installieren.</p></details>
+          <details><summary>Welcher Maßstab ist größer, 1:25.000 oder 1:50.000? <span aria-hidden="true">+</span></summary><p>1:25.000. Das klingt erst mal falsch — 50.000 ist doch die größere Zahl. Aber beim Maßstab gilt: Je kleiner die Zahl nach dem Doppelpunkt, desto größer der Maßstab — und desto mehr Details siehst du auf der Karte. Auf der Karte mit 1:25.000 ist 1 cm genau 250 m, bei 1:50.000 sind es 500 m.</p></details>
+          <details><summary>Was bedeutet TK25? <span aria-hidden="true">+</span></summary><p>TK25 ist eine topografische Karte im Maßstab 1:25.000. TK heißt Topografische Karte, die 25 steht für die Maßstabszahl in Tausend. Auf der TK25 sind 1 km genau 4 cm lang. Die TK50 ist die gleiche Karte im Maßstab 1:50.000.</p></details>
+          <details><summary>Welcher Maßstab eignet sich zum Wandern? <span aria-hidden="true">+</span></summary><p>Für Wanderungen nimmst du am besten 1:25.000 — da siehst du jeden Weg, jeden Bach und jede Hütte. Für längere Touren reicht auch 1:50.000: Da passt mehr Strecke auf ein Blatt, dafür siehst du weniger Details.</p></details>
+          <details><summary>Wie rechne ich Flächen im Maßstab um? <span aria-hidden="true">+</span></summary><p>Eine Fläche wächst mit dem Quadrat der Maßstabszahl. Ein Zimmer ist auf dem Plan 12 cm² groß — bei 1:100 sind das in echt 12 m². Die Rechnung: 12 cm² × 100² = 120.000 cm² = 12 m². Der Flächen-Rechner weiter unten auf dieser Seite macht das für dich.</p></details>
+          <details><summary>Warum stimmt der Maßstab auf dem Ausdruck nicht? <span aria-hidden="true">+</span></summary><p>Weil der Drucker das Blatt fast immer ein bisschen kleiner druckt, damit es auf die Seite passt. Stell im Druckfenster statt „An Seite anpassen“ lieber „Tatsächliche Größe“ oder 100 % ein — dann stimmt der Maßstab wieder.</p></details>
+          <details><summary>Wie rechne ich Zentimeter in Kilometer um? <span aria-hidden="true">+</span></summary><p>100.000 cm sind 1 km. Oder andersrum: 1 km sind 100.000 cm. Der Rechner zeigt dir das Ergebnis auch in allen Einheiten an — schau einfach unter „Das sind auch“.</p></details>
+          <details><summary>Stimmt die Länge bei kurvigen Wegen? <span aria-hidden="true">+</span></summary><p>Ja, wenn du in kleinen Stücken misst: Leg das Lineal an jedes gerade Stück der Kurve und zähl die Stücke zusammen. Oder nimm einen Faden, leg ihn auf die Kurve und miss den Faden danach mit dem Lineal.</p></details>
+          <details><summary>Kann ein Maßstab auch größer als 1 sein? <span aria-hidden="true">+</span></summary><p>Ja — dann wird vergrößert statt verkleinert. 2:1 heißt: Das Bild ist doppelt so groß wie das Original. Das brauchst du zum Beispiel, wenn du ein winziges Teil unter dem Mikroskop zeichnest. Im Rechner tippst du dafür eine Maßstabszahl kleiner als 1 ein — 0,5 für 2:1.</p></details>
         </div>
       </section>
 
@@ -469,10 +678,13 @@
         <div class="quick-title"><span class="eyebrow">Mehr Rechner</span><h2>Das gibt es noch bei maßklar.</h2></div>
         <div class="tool-grid">
           <a class="tool-card" href="../../altersrechner/"><span class="tool-icon" aria-hidden="true">🎂</span><span class="tool-text"><span class="tool-title">Altersrechner</span><span class="tool-desc">Wie alt bist du in Jahren, Monaten und Tagen? Mit Geburtstag-Countdown.</span></span><span class="tool-arrow" aria-hidden="true">↗</span></a>
+          <a class="tool-card" href="../modellbau/"><span class="tool-icon" aria-hidden="true">🚂</span><span class="tool-text"><span class="tool-title">Modellbau-Maßstab</span><span class="tool-desc">H0, Spur N, 1:72: echte Länge in Modell-Länge umrechnen.</span></span><span class="tool-arrow" aria-hidden="true">↗</span></a>
           <article class="tool-card tool-card--soon"><span class="tool-icon" aria-hidden="true">%</span><span class="tool-text"><span class="tool-title">Prozentrechner</span><span class="tool-desc">Prozentwert, Rabatt oder Erhöhung — in Sekunden.</span></span><span class="tool-badge">Bald da</span></article>
           <article class="tool-card tool-card--soon"><span class="tool-icon" aria-hidden="true">⚖</span><span class="tool-text"><span class="tool-title">BMI-Rechner</span><span class="tool-desc">Body-Mass-Index ausrechnen und einordnen.</span></span><span class="tool-badge">Bald da</span></article>
         </div>
         <p class="more-tools-link"><a href="../../">Alle Rechner ansehen <span aria-hidden="true">→</span></a></p>
+        <p class="more-tools-link"><a href="../../ratgeber/was-ist-ein-massstab/">Ratgeber: Was ist ein Maßstab? Einfach erklärt <span aria-hidden="true">→</span></a></p>
+        <p class="more-tools-link"><a href="../../ratgeber/massstab-berechnen/">Ratgeber: Maßstab berechnen – Schritt für Schritt <span aria-hidden="true">→</span></a></p>
       </section>
     </main>
 

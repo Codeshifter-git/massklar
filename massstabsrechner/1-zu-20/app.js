@@ -1,7 +1,7 @@
 // maßklar. v2 — same math as v1 (app-2.js), plus the reel lessons:
 // live auto-calc, friendly field states, example autofill, saved inputs.
 // Vanilla JS only. No framework, no tracking.
-const unitInMeters = { mm: 0.001, cm: 0.01, m: 1, km: 1000 };
+const unitInMeters = { mm: 0.001, cm: 0.01, m: 1, km: 1000, in: 0.0254, ft: 0.3048, yd: 0.9144, mi: 1609.344, nmi: 1852 };
 const STORAGE_KEY = "massklar_v1_20";
 
 const form = document.querySelector("#scale-form");
@@ -34,10 +34,20 @@ function formatScale(drawingMeters, realMeters) {
   const ratio = drawingMeters / realMeters;
   return ratio <= 1 ? `1 : ${format(1 / ratio)}` : `${format(ratio)} : 1`;
 }
+// Enlargement (N:1) display: a denominator below 1 is shown as "2 : 1",
+// not as "1 : 0,5".
+function formatScaleLabel(denominator) {
+  return denominator >= 1 ? `1:${format(denominator)}` : `${format(1 / denominator)}:1`;
+}
 // Result in every unit at once (like the big competitor sites do):
 // "Das sind auch: 1.000.000 mm · 100.000 cm · 1.000 m".
+// Same-system units only: metric results list metric units, imperial
+// results list imperial units — otherwise the line gets too long.
+const METRIC_UNITS = ["mm", "cm", "m", "km"];
+const IMPERIAL_UNITS = ["in", "ft", "yd", "mi", "nmi"];
 function alsoInOtherUnits(meters, shownUnit) {
-  return ["mm", "cm", "m", "km"]
+  const system = IMPERIAL_UNITS.includes(shownUnit) ? IMPERIAL_UNITS : METRIC_UNITS;
+  return system
     .filter((unit) => unit !== shownUnit)
     .map((unit) => formatLength(meters, unit))
     .join(" · ");
@@ -113,6 +123,31 @@ function saveState() {
     }));
   } catch { /* private mode — the calculator still works, it just forgets */ }
 }
+function updateShareURL() {
+  try {
+    const params = new URLSearchParams({
+      t: target,
+      z: drawingInput.value, e: drawingUnit.value,
+      r: realInput.value, u: realUnit.value,
+      m: scaleInput.value,
+    });
+    history.replaceState(null, "", `${location.pathname}?${params}`);
+  } catch { /* ignore */ }
+}
+function loadFromURL() {
+  try {
+    const p = new URLSearchParams(location.search);
+    if (!p.has("m") && !p.has("z") && !p.has("r")) return false;
+    if (p.get("t") && ["real", "drawing", "scale"].includes(p.get("t"))) target = p.get("t");
+    if (p.get("z") !== null) drawingInput.value = p.get("z");
+    if (p.get("e") && unitInMeters[p.get("e")] !== undefined) drawingUnit.value = p.get("e");
+    if (p.get("r") !== null) realInput.value = p.get("r");
+    if (p.get("u") && unitInMeters[p.get("u")] !== undefined) realUnit.value = p.get("u");
+    if (p.get("m") !== null) scaleInput.value = p.get("m");
+    setTarget(target, { save: false });
+    return true;
+  } catch { return false; }
+}
 function loadState() {
   try {
     const raw = localStorage.getItem(STORAGE_KEY);
@@ -143,7 +178,7 @@ function calculate(event, silent = false) {
       const real = drawing * scaleDenominator;
       if (!Number.isFinite(real)) throw new Error("Das Ergebnis ist zu groß. Schau dir deine Zahlen noch einmal an.");
       value = formatLength(real, realUnit.value);
-      context = `${format(drawingMeters)} ${drawingUnit.value} auf der Karte sind bei 1:${format(scaleDenominator)} in echt ${value} lang.`;
+      context = `${format(drawingMeters)} ${drawingUnit.value} auf der Karte sind bei ${formatScaleLabel(scaleDenominator)} in echt ${value} lang.`;
       // v1 app-2.js fix: formula result in the drawing unit, not metres.
       formula = `${format(drawingMeters)} ${drawingUnit.value} × ${format(scaleDenominator)} = ${formatLength(real, drawingUnit.value)}`;
       alsoMeters = real; alsoUnit = realUnit.value;
@@ -153,7 +188,7 @@ function calculate(event, silent = false) {
       const drawing = real / scaleDenominator;
       if (!Number.isFinite(drawing)) throw new Error("Das Ergebnis ist zu groß. Schau dir deine Zahlen noch einmal an.");
       value = formatLength(drawing, drawingUnit.value);
-      context = `${format(realMeters)} ${realUnit.value} in echt sind bei 1:${format(scaleDenominator)} auf dem Plan ${value} lang.`;
+      context = `${format(realMeters)} ${realUnit.value} in echt sind bei ${formatScaleLabel(scaleDenominator)} auf dem Plan ${value} lang.`;
       formula = `${format(realMeters)} ${realUnit.value} ÷ ${format(scaleDenominator)} = ${formatLength(drawing, drawingUnit.value)}`;
       alsoMeters = drawing; alsoUnit = drawingUnit.value;
       drawingInput.value = String(drawing / unitInMeters[drawingUnit.value]);
@@ -190,6 +225,7 @@ function calculate(event, silent = false) {
       lastValue = value;
     }
     saveState();
+    updateShareURL();
     renderLengthTable();
   } catch (error) {
     // Silent while typing: clearing a field mid-typing (e.g. "4" -> "12")
@@ -261,6 +297,15 @@ document.querySelectorAll(".scale-row").forEach((row) => {
     document.querySelector("#rechner").scrollIntoView({ behavior: "smooth" });
   });
 });
+// Preset chips above the form: one tap sets a common scale.
+document.querySelectorAll(".preset-chip").forEach((chip) => {
+  chip.addEventListener("click", () => {
+    setTarget("real", { save: false });
+    scaleInput.value = chip.dataset.scale;
+    realInput.value = "";
+    calculate();
+  });
+});
 // Length table: for the current scale, the common map lengths in real life.
 // Re-renders whenever the scale changes (live, like the calculator itself).
 const LENGTH_CM = [0.1, 0.2, 0.3, 0.4, 0.5, 0.7, 1, 1.5, 2, 2.5, 3, 4, 5, 6, 7, 8, 9, 10, 12, 14, 15, 16, 18, 20, 25, 30, 35, 40, 45, 50, 55, 60, 70, 80, 90, 100];
@@ -323,7 +368,7 @@ function compareScales(silent = false) {
   const unit = compareUnit.value;
   const resultText = `${format(result)} ${unit}`;
   compareValue.textContent = resultText;
-  compareContext.textContent = `${format(length)} ${unit} auf der Karte mit 1:${format(scaleA)} sind auf der Karte mit 1:${format(scaleB)} ${resultText} lang.`;
+  compareContext.textContent = `${format(length)} ${unit} auf der Karte mit ${formatScaleLabel(scaleA)} sind auf der Karte mit ${formatScaleLabel(scaleB)} ${resultText} lang.`;
   compareFormula.textContent = `${format(length)} ${unit} × (${format(scaleA)} ÷ ${format(scaleB)}) = ${resultText}`;
   comparePanel.hidden = false;
 }
@@ -352,6 +397,117 @@ copyButton.addEventListener("click", async (event) => {
     errorMessage.hidden = false;
   }
 });
+// Flächen-Rechner: Plan-Fläche × Maßstabszahl² = echte Fläche.
+const areaInM2 = { cm2: 0.0001, m2: 1, km2: 1000000, in2: 0.00064516, ft2: 0.09290304 };
+const areaLabels = { cm2: "cm²", m2: "m²", km2: "km²", in2: "in²", ft2: "ft²" };
+const areaPlan = document.querySelector("#area-plan");
+const areaPlanUnit = document.querySelector("#area-plan-unit");
+const areaScale = document.querySelector("#area-scale");
+const areaReal = document.querySelector("#area-real");
+const areaRealUnit = document.querySelector("#area-real-unit");
+const areaError = document.querySelector("#area-error");
+const areaPanel = document.querySelector("#area-result-panel");
+const areaValue = document.querySelector("#area-result-value");
+const areaContext = document.querySelector("#area-result-context");
+const areaFormula = document.querySelector("#area-result-formula");
+function formatArea(m2, unit) {
+  return `${format(m2 / areaInM2[unit])} ${areaLabels[unit]}`;
+}
+function calculateArea(silent = false) {
+  areaError.hidden = true;
+  const plan = Number(areaPlan.value);
+  const scale = Number(areaScale.value);
+  if (!areaPlan.value.trim() || !Number.isFinite(plan) || plan <= 0
+    || !areaScale.value.trim() || !Number.isFinite(scale) || scale <= 0) {
+    if (silent) { areaError.hidden = true; return; }
+    areaError.textContent = "Bitte überall eine Zahl größer als 0 eintippen.";
+    areaError.hidden = false;
+    areaPanel.hidden = true;
+    return;
+  }
+  const planM2 = plan * areaInM2[areaPlanUnit.value];
+  const realM2 = planM2 * scale * scale;
+  if (!Number.isFinite(realM2)) {
+    areaError.textContent = "Das Ergebnis ist zu groß. Schau dir deine Zahlen noch einmal an.";
+    areaError.hidden = false;
+    areaPanel.hidden = true;
+    return;
+  }
+  areaValue.textContent = formatArea(realM2, areaRealUnit.value);
+  areaContext.textContent = `${format(plan)} ${areaLabels[areaPlanUnit.value]} auf dem Plan sind bei ${formatScaleLabel(scale)} in echt ${formatArea(realM2, areaRealUnit.value)} groß.`;
+  areaFormula.textContent = `${format(plan)} ${areaLabels[areaPlanUnit.value]} × ${format(scale)}² = ${formatArea(realM2, areaPlanUnit.value)} = ${formatArea(realM2, areaRealUnit.value)}`;
+  areaReal.value = String(realM2 / areaInM2[areaRealUnit.value]);
+  areaPanel.hidden = false;
+}
+for (const el of [areaPlan, areaPlanUnit, areaScale, areaRealUnit]) {
+  el.addEventListener("input", () => calculateArea(true));
+  el.addEventListener("change", () => calculateArea(true));
+}
+document.querySelector("#area-form").addEventListener("submit", (event) => {
+  event.preventDefault();
+  calculateArea();
+});
+calculateArea();
+
+// Bildschirm-Lineal: kalibrieren, dann zeigt das Lineal echte Zentimeter.
+const RULER_KEY = "massklar_ruler_v1";
+const RULER_DEFAULT = 378; // 37,8 px pro cm = 96 dpi
+const rulerSlider = document.querySelector("#ruler-slider");
+const rulerCalLine = document.querySelector("#ruler-cal-line");
+const rulerTicks = document.querySelector("#ruler-ticks");
+const rulerNote = document.querySelector("#ruler-note");
+const rulerReset = document.querySelector("#ruler-reset");
+function renderRuler(pxPer10cm) {
+  const pxPerCm = pxPer10cm / 10;
+  rulerCalLine.style.width = `${pxPer10cm}px`;
+  rulerNote.textContent = `Kalibriert: 1 cm sind ${format(pxPerCm)} Pixel auf deinem Bildschirm.`;
+  rulerTicks.style.width = `${15 * pxPerCm}px`;
+  rulerTicks.innerHTML = "";
+  for (let i = 0; i <= 15; i++) {
+    const tick = document.createElement("span");
+    tick.className = "ruler-tick";
+    tick.style.left = `${i * pxPerCm}px`;
+    tick.innerHTML = `<span>${i}</span>`;
+    rulerTicks.appendChild(tick);
+  }
+  try { localStorage.setItem(RULER_KEY, String(pxPer10cm)); } catch { /* ignore */ }
+}
+function loadRuler() {
+  let value = RULER_DEFAULT;
+  try {
+    const raw = localStorage.getItem(RULER_KEY);
+    if (raw !== null) {
+      const n = Number(raw);
+      if (Number.isFinite(n) && n >= 200 && n <= 600) value = n;
+    }
+  } catch { /* ignore */ }
+  rulerSlider.value = String(value);
+  renderRuler(value);
+}
+rulerSlider.addEventListener("input", () => renderRuler(Number(rulerSlider.value)));
+rulerReset.addEventListener("click", () => {
+  rulerSlider.value = String(RULER_DEFAULT);
+  renderRuler(RULER_DEFAULT);
+});
+loadRuler();
+
+// Link teilen: kopiert die Adresse mit den eingetippten Werten.
+const shareButton = document.querySelector("#share-button");
+shareButton.addEventListener("click", async () => {
+  try {
+    await navigator.clipboard.writeText(location.href);
+    shareButton.classList.add("copied");
+    shareButton.textContent = "Link kopiert ✓";
+    window.setTimeout(() => {
+      shareButton.classList.remove("copied");
+      shareButton.innerHTML = 'Link teilen <span aria-hidden="true">↗</span>';
+    }, 1600);
+  } catch {
+    errorMessage.textContent = "Kopieren geht in diesem Browser leider nicht. Kopiere die Adresse oben aus der Adressleiste.";
+    errorMessage.hidden = false;
+  }
+});
+document.querySelector("#print-button").addEventListener("click", () => window.print());
 document.querySelector("#current-year").textContent = new Date().getFullYear();
-if (!loadState()) setTarget("real", { save: false });
+if (!loadFromURL() && !loadState()) setTarget("real", { save: false });
 calculate();
