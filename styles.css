@@ -359,10 +359,10 @@ a.tool-card:active { transform: scale(.98); }
 .tool-page .hero-description { margin: 14px 0 0; }
 .tool-page .hero .text-link { display: none; }
 .tool-page .hero-copy { padding-bottom: 0; }
-.tool-page .calculator-section { padding-top: 36px; }
+.tool-page .calculator-section { padding-top: 16px; }
 .tool-page .section-heading { margin-bottom: 15px; }
 .tool-page .calc-main { padding-top: 12px; }
-.tool-page .calc-toolbar { padding-bottom: 12px; }
+.tool-page .calc-toolbar { padding-bottom: 8px; }
 @media (max-width: 680px) {
   /* On phones the intro line costs a full screen of scroll — the H1 says
      what the tool does. Hide it so the first input sits above the fold. */
