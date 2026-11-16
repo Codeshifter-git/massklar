@@ -59,8 +59,100 @@
       }
     </script>
     <script src="app.js" defer></script>
+      <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Startseite",
+      "item": "https://codeshifter-git.github.io/massklar/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Altersrechner – Alter in Jahren, Monaten, Tagen",
+      "item": "https://codeshifter-git.github.io/massklar/altersrechner/"
+    }
+  ]
+}
+    </script>
+      <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Wie genau ist das Alter hier?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Auf den Tag genau. Der Rechner zählt volle Jahre, dann die Monate seit deinem letzten Geburtstag, dann die Tage — mit echten Monatslängen und Schaltjahren."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Was ist, wenn ich am 29. Februar geboren bin?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Dann hast du nur alle vier Jahre einen echten Geburtstag. In den Jahren dazwischen rechnet der Rechner mit dem 1. März als deinem Geburtstag."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Kann ich auch ein anderes Datum als heute nehmen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja. Beim Stichtag kannst du jedes Datum eintippen — zum Beispiel, um zu sehen, wie alt du an einem bestimmten Tag warst oder sein wirst."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wie alt ist mein Baby in Monaten?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Trag das Geburtsdatum ein — das Ergebnis zeigt das Alter in Jahren, Monaten und Tagen, und darunter die Tage und Wochen insgesamt. Bei einem Baby liest du die Monate direkt ab."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Woher weiß der Rechner mein Sternzeichen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Aus deinem Geburtsdatum. Jedes Sternzeichen gehört zu einem festen Zeitraum im Jahr — zum Beispiel Steinbock vom 22. Dezember bis 19. Januar."
+      }
+    }
+  ]
+}
+    </script>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "Altersrechner – Alter in Jahren, Monaten, Tagen",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "name": "Jahre zählen",
+      "text": "Erst die vollen Jahre: vom Geburtsjahr bis zum aktuellen Jahr — minus eins, wenn dein Geburtstag dieses Jahr noch kommt. 2026 − 2000 = 26 Jahre"
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Monate und Tage dazu",
+      "text": "Dann die Monate seit dem letzten Geburtstag, und dann die Tage seit Monatsanfang. So wird aus „ungefähr 26“ ein genaues Alter. 26 Jahre, 10 Monate, 5 Tage"
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Schaltjahre nicht vergessen",
+      "text": "Alle vier Jahre hat der Februar 29 Tage. Wer an einem 29. Februar geboren ist, feiert in den Jahren dazwischen am 1. März. 2000, 2004, 2008 … sind Schaltjahre"
+    }
+  ]
+}
+    </script>
   </head>
-  <body>
+  <body class="tool-page">
     <div class="page-skeleton" id="page-skeleton" aria-hidden="true">
       <div class="sk-inner">
         <div class="sk-brand"><span class="sk-mark">mk</span></div>

@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://codeshifter-git.github.io/massklar/sitemap.xml

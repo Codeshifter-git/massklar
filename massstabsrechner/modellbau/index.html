@@ -64,8 +64,118 @@
       }
     </script>
     <script src="app.js" defer></script>
+      <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Was ist eine Nenngröße?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Eine Nenngröße ist der Name für eine Baugröße bei der Modelleisenbahn — H0, N, TT und so weiter. Dahinter steckt immer ein fester Maßstab: H0 ist 1:87, Spur N ist 1:160. Wenn du deine Nenngröße kennst, kennst du deinen Maßstab."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Welcher Maßstab passt zu meiner Modelleisenbahn?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Das hängt von deiner Anlage ab: H0 (1:87) ist die beliebteste Baugröße in Deutschland — groß genug zum Anfassen, klein genug fürs Wohnzimmer. Spur N (1:160) passt auf noch weniger Platz, TT (1:120) liegt dazwischen."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wie rechne ich einen Plan von 1:48 auf 1:72 um?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Miss die Länge auf dem Plan und rechne sie erst in echt um — dann wieder runter auf 1:72. Oder nimm den Vergleichs-Rechner oben: 10 cm auf einem 1:48-Plan sind in 1:72 nur 6,7 cm."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Warum fährt mein Schiff im Modell so langsam?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Weil Wasser sich nicht verkleinern lässt: Die Wellen, die dein Schiff macht, hängen von seiner Länge ab. Darum fährt ein Modell langsamer — mit der Wurzel aus dem Maßstab. Bei 1:200 und 20 Knoten in echt sind das 1,41 Knoten im Modell. Der Schiffs-Rechner oben rechnet es dir aus."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wie schwer darf mein Modell sein?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Das Gewicht teilt sich durch den Maßstab hoch drei. Ein Boot von 18.000 kg darf als Modell in 1:15 nur 5,33 kg wiegen. Faustregel: Lieber ein bisschen zu leicht als zu schwer — zu schwer liegt das Schiff zu tief im Wasser."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Ist der Rechner kostenlos?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja. Der Rechner ist kostenlos und du brauchst keine Anmeldung — rechne so oft du willst, auf dem Handy genauso wie am Computer."
+      }
+    }
+  ]
+}
+    </script>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Startseite",
+      "item": "https://codeshifter-git.github.io/massklar/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Modellbau-Maßstab umrechnen – H0, N, 1:72",
+      "item": "https://codeshifter-git.github.io/massklar/massstabsrechner/modellbau/"
+    }
+  ]
+}
+    </script>
+      <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "Modellbau-Maßstab umrechnen – H0, N, 1:72",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "name": "Miss das Vorbild.",
+      "text": "Bevor du rechnest, brauchst du eine Zahl: Wie lang ist das echte Ding? Unsere Lok hier ist 15 m lang — das sind 1.500 cm. Alles andere ist Rechnen. 15 m = 1.500 cm"
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Wähl deine Baugröße.",
+      "text": "Baust du in H0, N oder TT? Jede Baugröße hat ihren festen Maßstab — H0 ist 1:87, Spur N ist 1:160. Tipp oben auf deine Baugröße, der Maßstab steht dann schon da. H0 = 1:87 · N = 1:160 · TT = 1:120"
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Teil die echte Länge durch den Maßstab.",
+      "text": "Jetzt wird gerechnet: 15 m durch 87 — das sind 17,2 cm. So lang muss deine Lok im Modell sein. Der Rechner macht das für dich, aber die Rechnung ist so einfach, dass du sie auch im Kopf nachprüfen kannst. 1.500 cm ÷ 87 = 17,2 cm"
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Denk an Fläche und Gewicht.",
+      "text": "Eine Länge teilt sich durch 87. Eine Fläche aber durch 87 mal 87 — und ein Gewicht sogar durch 87 mal 87 mal 87. Darum wiegt ein Modell so wenig, obwohl es genauso aussieht wie das Original. Fläche ×87² · Gewicht ×87³"
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Schiffe: Geschwindigkeit mit der Wurzel.",
+      "text": "Ein Schiff fährt im Modell langsamer — nicht durch den Maßstab, sondern durch seine Wurzel. Bei 1:200 und 20 Knoten in echt sind das 1,41 Knoten im Modell. Probier es oben im Schiffs-Rechner aus. 20 kn ÷ √200 = 1,41 kn"
+    }
+  ]
+}
+    </script>
   </head>
-  <body>
+  <body class="tool-page">
     <div class="page-skeleton" id="page-skeleton" aria-hidden="true">
       <div class="sk-inner">
         <div class="sk-brand"><span class="sk-mark">mk</span></div>

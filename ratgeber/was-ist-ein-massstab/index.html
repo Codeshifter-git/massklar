@@ -1,0 +1,334 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f5f4ed">
+    <meta name="description" content="Was ist ein Maßstab? Die 3 Arten, wo du ihm begegnest und wie du ihn liest — einfach erklärt, mit Beispielen zum Nachrechnen.">
+    <title>Was ist ein Maßstab? Einfach erklärt | maßklar</title>
+    <meta property="og:type" content="article">
+    <meta property="og:locale" content="de_DE">
+    <link rel="canonical" href="https://codeshifter-git.github.io/massklar/ratgeber/was-ist-ein-massstab/">
+    <meta property="og:title" content="Was ist ein Maßstab? Einfach erklärt | maßklar">
+    <meta property="og:description" content="Was ist ein Maßstab? Die 3 Arten, wo du ihm begegnest und wie du ihn liest — einfach erklärt, mit Beispielen zum Nachrechnen.">
+<script>
+      /* Loading skeleton: this timer lives in <head> (before any stylesheet) so a slow connection can't delay it. */
+      (function () {
+        var root = document.documentElement;
+        var done = false;
+        setTimeout(function () { if (!done && document.readyState !== "complete") root.classList.add("is-loading"); }, 400);
+        function hide() {
+          if (done) return;
+          done = true;
+          root.classList.remove("is-loading");
+          setTimeout(function () { root.classList.add("is-ready"); }, 400);
+        }
+        window.addEventListener("load", hide);
+        setTimeout(hide, 2500);
+      })();
+    </script>
+    <link rel="preload" href="../../fonts/bitter-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="../../fonts/dm-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+      /* Loading skeleton — inline so it paints before the stylesheet arrives.
+         Shown by the <head> script adding .is-loading to <html>; hidden by default. */
+      .page-skeleton { position: fixed; inset: 0; z-index: 60; background: #f5f4ed; opacity: 0; visibility: hidden; transition: opacity .3s ease, visibility 0s linear .3s; }
+      html.is-loading .page-skeleton { opacity: 1; visibility: visible; transition: opacity .15s ease; }
+      html.is-ready .page-skeleton { display: none; }
+      .sk-inner { max-width: 1050px; margin: 0 auto; padding: 26px 7% 0; }
+      .sk-brand { display: flex; align-items: center; gap: 10px; margin-bottom: 52px; }
+      .sk-mark { width: 30px; height: 30px; border-radius: 9px 9px 9px 3px; background: #e79a62; color: #193f34; display: grid; place-items: center; font: 600 12px monospace; }
+      .sk-bar { position: relative; height: 16px; max-width: 520px; margin: 0 0 14px; border-radius: 4px; background: #e6e7dd; overflow: hidden; }
+      .sk-bar--title { height: 34px; max-width: 420px; }
+      .sk-bar--short { max-width: 300px; }
+      .sk-bar::after, .sk-card::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, transparent, #fffefa 50%, transparent); transform: translateX(-100%); animation: sk-shimmer 1.4s infinite; }
+      .sk-card { position: relative; height: 220px; margin-top: 34px; border-radius: 10px; background: #e6e7dd; overflow: hidden; }
+      @keyframes sk-shimmer { to { transform: translateX(100%); } }
+      @media (prefers-reduced-motion: reduce) { .sk-bar::after, .sk-card::after { animation: none; } }
+      /* Ratgeber: worked examples — same tokens as the design system. */
+      .example-block { max-width: 1050px; margin: 0 auto 14px; padding: 22px 24px; border-radius: 8px; background: #fffefa; box-shadow: 0 2px 10px #293e300d; }
+      .example-block h3 { margin: 0 0 8px; font: 600 19px/1.35 var(--display); }
+      .example-block p { margin: 0 0 10px; color: #4f5f56; font-size: 15px; line-height: 1.8; }
+      .example-block p:last-child { margin-bottom: 0; }
+      .example-math { color: var(--ink); font: 500 16px/1.7 var(--mono); }
+      .example-math strong { color: var(--green); }
+    </style>
+    <link rel="stylesheet" href="../../styles.css?v=11">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Was ist ein Maßstab? Einfach erklärt",
+        "description": "Was ist ein Maßstab? Die 3 Arten, wo du ihm begegnest und wie du ihn liest — einfach erklärt, mit Beispielen zum Nachrechnen.",
+        "inLanguage": "de",
+        "author": { "@type": "Organization", "name": "maßklar" },
+        "datePublished": "2026-11-16"
+      }
+    </script>
+      <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Welcher Maßstab ist größer, 1:25.000 oder 1:50.000?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "1 : 25.000. Das klingt erst mal falsch — 50.000 ist doch die größere Zahl. Aber: Je kleiner die Zahl nach dem Doppelpunkt, desto größer der Maßstab und desto mehr Details siehst du. Als Bruch gelesen: 1/25.000 ist größer als 1/50.000. Auf der Karte mit 1 : 25.000 ist 1 cm genau 250 m, bei 1 : 50.000 sind es 500 m — die erste Karte zeigt also alles größer."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Was bedeutet TK25?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "TK25 ist eine topografische Karte im Maßstab 1 : 25.000. TK heißt Topografische Karte, die 25 ist die Maßstabszahl in Tausend. Auf der TK25 sind 1 km genau 4 cm lang."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Was heißt 1 : 1?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Das Bild ist genauso groß wie das Original. 1 cm auf der Zeichnung sind 1 cm in echt. Das brauchst du zum Beispiel bei Schablonen oder Schnittmustern — da muss das Papier genau so groß sein wie das Teil."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Gilt der Maßstab auch für Flächen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nein — der Maßstab gilt nur für Längen. Bei Flächen musst du die Maßstabszahl zum Quadrat nehmen. 1 cm² auf einer Karte im Maßstab 1 : 25.000 sind 250 m × 250 m = 62.500 m², also 6,25 Hektar."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wo kann ich das online rechnen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Mit dem Maßstabsrechner hier auf maßklar: Maßstab eintippen, Strecke eintippen, fertig — kostenlos und ohne Anmeldung."
+      }
+    }
+  ]
+}
+    </script>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "Was ist ein Maßstab? Einfach erklärt",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "name": "Erst schauen: Was ist was?",
+      "text": "Die erste Zahl gehört zur Zeichnung, die zweite zur Wirklichkeit. Bei 1 : 25.000 ist die 1 die Karte und die 25.000 die echte Welt."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Richtung Wirklichkeit: mal nehmen",
+      "text": "Auf einer Wanderkarte im Maßstab 1 : 25.000 misst du eine Strecke von 4 cm. Wie lang ist sie in echt? 4 cm × 25.000 = 100.000 cm = 1 km"
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Richtung Plan: teilen",
+      "text": "Eine Wand ist 4 m lang. Wie lang wird sie auf einem Grundriss im Maßstab 1 : 50? 4 m = 400 cm, dann 400 cm ÷ 50 = 8 cm"
+    }
+  ]
+}
+    </script>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Startseite",
+      "item": "https://codeshifter-git.github.io/massklar/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Ratgeber",
+      "item": "https://codeshifter-git.github.io/massklar/ratgeber/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Was ist ein Maßstab? Einfach erklärt",
+      "item": "https://codeshifter-git.github.io/massklar/ratgeber/was-ist-ein-massstab/"
+    }
+  ]
+}
+    </script>
+  </head>
+  <body>
+    <div class="page-skeleton" id="page-skeleton" aria-hidden="true">
+      <div class="sk-inner">
+        <div class="sk-brand"><span class="sk-mark">mk</span></div>
+        <div class="sk-bar sk-bar--title"></div>
+        <div class="sk-bar sk-bar--title sk-bar--short"></div>
+        <div class="sk-bar"></div>
+        <div class="sk-bar sk-bar--short"></div>
+        <div class="sk-card"></div>
+      </div>
+    </div>
+    <header class="site-header">
+      <a class="brand" href="../../" aria-label="Maßklar Startseite">
+        <span class="brand-mark" aria-hidden="true">mk</span>
+        <span>maßklar<span class="brand-period">.</span></span>
+      </a>
+      <nav class="top-nav" aria-label="Hauptnavigation">
+        <a href="../../">Alle Rechner</a>
+        <a href="../../massstabsrechner/">Maßstabsrechner</a>
+        <a href="../../#ratgeber">Ratgeber</a>
+      </nav>
+      <a class="header-cta" href="../../massstabsrechner/">Zum Rechner <span aria-hidden="true">↗</span></a>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="eyebrow-dot"></span> Ratgeber · Grundlagen</p>
+          <h1>Was ist ein Maßstab?<br><span>Ganz einfach erklärt.</span></h1>
+          <p class="hero-description">Ein Haus passt nicht auf ein Blatt Papier. Darum zeichnet man es kleiner — und der Maßstab sagt dir, wie viel kleiner. Hier lernst du, was ein Maßstab ist, in welchen 3 Formen er steht und wie du ihn liest.</p>
+          <a class="text-link" href="#was-ist">Los geht’s <span aria-hidden="true">↓</span></a>
+        </div>
+        <div class="hero-visual" aria-label="Illustration eines Kartenmaßstabs">
+          <div class="map-card">
+            <div class="map-card-top"><span>KARTE · 1:25.000</span><span class="map-compass">N ↑</span></div>
+            <div class="map-drawing" aria-hidden="true">
+              <span class="street street-one"></span><span class="street street-two"></span><span class="street street-three"></span>
+              <span class="block block-one"></span><span class="block block-two"></span><span class="block block-three"></span>
+              <span class="park">PARK</span><span class="route"></span><span class="route-pin pin-start"></span><span class="route-pin pin-end"></span>
+            </div>
+            <div class="map-scale"><span>0</span><span class="scale-line"></span><span>500 m</span></div>
+          </div>
+          <div class="floating-note"><span class="note-icon">↗</span><span><strong>1 cm</strong><small>auf der Karte</small></span><span class="note-equals">=</span><span><strong>250 m</strong><small>in echt</small></span></div>
+          <span class="visual-orbit orbit-one"></span><span class="visual-orbit orbit-two"></span>
+          <span class="hero-index">Ratgeber 04 / 04</span>
+        </div>
+      </section>
+
+      <section class="guide-section" id="was-ist">
+        <div class="guide-intro">
+          <p class="eyebrow">Die Grundlage</p>
+          <h2>Eine Zahl, die sagt:<br><span>so viel kleiner.</span></h2>
+          <p>Ein Maßstab ist ein Verhältnis. Er sagt dir, wie viel kleiner — oder größer — etwas gezeichnet ist als in echt. Er steht immer als zwei Zahlen mit einem Doppelpunkt dazwischen: 1 : 25.000. Die erste Zahl ist die Zeichnung, die zweite die Wirklichkeit.</p>
+          <div class="formula-card">
+            <span>Was 1 : 25.000 heißt</span>
+            <strong>1 cm auf der Karte = 250 m in echt</strong>
+            <small>1 cm sind 25.000 cm — das sind 250 m. Merk dir: Die erste Zahl gehört zur Zeichnung. Die zweite zur Wirklichkeit.</small>
+          </div>
+        </div>
+        <div class="guide-steps">
+          <div class="guide-step"><span class="step-num" aria-hidden="true">01</span><div><h3>Erst schauen: Was ist was?</h3><p>Die erste Zahl gehört zur Zeichnung, die zweite zur Wirklichkeit. Bei 1 : 25.000 ist die 1 die Karte und die 25.000 die echte Welt.</p></div></div>
+          <div class="guide-step"><span class="step-num" aria-hidden="true">02</span><div><h3>Richtung Wirklichkeit: mal nehmen</h3><p>Auf einer Wanderkarte im Maßstab 1 : 25.000 misst du eine Strecke von 4 cm. Wie lang ist sie in echt?</p><span class="step-equation">4 cm × 25.000 = 100.000 cm = 1 km</span></div></div>
+          <div class="guide-step"><span class="step-num" aria-hidden="true">03</span><div><h3>Richtung Plan: teilen</h3><p>Eine Wand ist 4 m lang. Wie lang wird sie auf einem Grundriss im Maßstab 1 : 50?</p><span class="step-equation">4 m = 400 cm, dann 400 cm ÷ 50 = 8 cm</span></div></div>
+        </div>
+      </section>
+
+      <section class="table-section" id="arten">
+        <div class="quick-title"><span class="eyebrow">Die 3 Arten</span><h2>Drei Arten — alle sagen dasselbe.</h2></div>
+        <p class="table-intro">Ein Maßstab steht nicht immer als 1 : 25.000 da. Es gibt 3 Arten — alle sagen dasselbe, nur anders geschrieben.</p>
+        <div class="example-block">
+          <h3>1. Zahlenmaßstab — „1 : 25.000“</h3>
+          <p>Die häufigste Form. Zwei Zahlen, ein Doppelpunkt. 1 cm auf der Karte sind 25.000 cm in echt — also 250 m.</p>
+        </div>
+        <div class="example-block">
+          <h3>2. Grafischer Maßstab — der Balken</h3>
+          <p>Ein Balken auf der Karte, in Stücke geteilt, mit 0, 250 m, 500 m und 1 km daneben. Du legst das Lineal an den Balken und liest ab — ganz ohne Rechnen. Sein Trick: Wird die Karte größer oder kleiner kopiert, wird der Balken mit kopiert. Er stimmt immer noch. Der Zahlenmaßstab nach dem Kopieren nicht.</p>
+        </div>
+        <div class="example-block">
+          <h3>3. Wortmaßstab — „1 cm = 250 m“</h3>
+          <p>Steht so in Worten da. Kein Umrechnen nötig — du liest es einfach ab.</p>
+        </div>
+      </section>
+
+      <section class="table-section" id="wo">
+        <div class="quick-title"><span class="eyebrow">Wo dir Maßstäbe begegnen</span><h2>Fast überall, wo etwas gezeichnet ist.</h2></div>
+        <div class="example-block">
+          <h3>Karten</h3>
+          <p>Eine Wanderkarte ist 1 : 25.000. Ohne Maßstab wüsstest du nicht, ob der Weg bis zum See 500 m oder 5 km lang ist.</p>
+        </div>
+        <div class="example-block">
+          <h3>Grundrisse</h3>
+          <p>Ein Grundriss ist oft 1 : 50 oder 1 : 100. Eine Wand, die auf dem Papier 8 cm lang ist, ist in echt 4 m lang — bei 1 : 50.</p>
+        </div>
+        <div class="example-block">
+          <h3>Modelle</h3>
+          <p>Ein Modellauto in 1 : 24, ein Flugzeug in 1 : 72, eine Modelleisenbahn in H0, also 1 : 87. Auch ein Modell hat einen Maßstab. Er sagt dir, wie viel kleiner es ist als das echte Fahrzeug.</p>
+        </div>
+      </section>
+
+      <section class="table-section" id="tabelle">
+        <div class="quick-title"><span class="eyebrow">Gängige Maßstäbe</span><h2>Welche Maßstäbe gibt es?</h2></div>
+        <p class="table-intro">Die Maßstäbe, die du am häufigsten siehst — und wofür sie da sind.</p>
+        <div class="table-wrap">
+          <table class="scale-table scale-table--static">
+            <thead>
+              <tr><th scope="col">Maßstab</th><th scope="col">1 cm bedeutet</th><th scope="col">Wofür?</th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">1:25.000</th><td>250 m</td><td>Wanderkarte</td></tr>
+              <tr><th scope="row">1:50.000</th><td>500 m</td><td>Rad- und Wanderkarte</td></tr>
+              <tr><th scope="row">1:100</th><td>1 m</td><td>Grundriss</td></tr>
+              <tr><th scope="row">1:87</th><td>87 cm</td><td>Modelleisenbahn H0</td></tr>
+              <tr><th scope="row">1:72</th><td>72 cm</td><td>Flugzeugmodell</td></tr>
+              <tr><th scope="row">1:35</th><td>35 cm</td><td>Panzermodell</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="table-section" id="vergrosserung">
+        <div class="quick-title"><span class="eyebrow">Vergrößerung</span><h2>Manchmal wird größer gezeichnet.</h2></div>
+        <div class="example-block">
+          <h3>Die große Zahl steht vorne: N : 1</h3>
+          <p>Nicht alles wird kleiner gezeichnet. Manchmal wird etwas größer gezeichnet — weil es in echt zu klein ist, um es zu sehen. Dann steht die große Zahl vorne: 2 : 1 heißt, das Bild ist doppelt so groß wie das Original. 2 cm auf der Zeichnung sind 1 cm in echt. Das brauchst du zum Beispiel unter dem Mikroskop — oder wenn du ein winziges Teil zeichnest.</p>
+          <p>Ein Teil ist in echt 5 mm lang. Im Maßstab 2 : 1 zeichnest du es 10 mm lang.</p>
+          <p class="example-math">5 mm × 2 = <strong>10 mm</strong></p>
+          <p>Merk dir: Steht die große Zahl vorne, wird vergrößert. Steht sie hinten, wird verkleinert. Bei 1 : 1 ist das Bild genauso groß wie das Original — zum Beispiel bei einer Schablone.</p>
+        </div>
+      </section>
+
+      <section class="practice-section" id="ueben">
+        <div class="quick-title"><span class="eyebrow">Üben wie in der Schule</span><h2>Jetzt bist du dran.</h2></div>
+        <div class="faq-list">
+          <details><summary>Aufgabe 1: Wie lang ist der Weg? <span aria-hidden="true">+</span></summary><p>Auf einer Wanderkarte im Maßstab 1 : 25.000 ist ein Weg 6 cm lang. Wie lang ist er in echt?</p><p><strong>Lösung:</strong> 6 cm × 25.000 = 150.000 cm = <strong>1,5 km</strong>.</p></details>
+          <details><summary>Aufgabe 2: Wie lang ist die Wand? <span aria-hidden="true">+</span></summary><p>Auf einem Grundriss im Maßstab 1 : 100 ist eine Wand 4,5 cm lang. Wie lang ist sie in echt?</p><p><strong>Lösung:</strong> 4,5 cm × 100 = 450 cm = <strong>4,5 m</strong>.</p></details>
+        </div>
+      </section>
+
+      <section class="faq-section">
+        <div class="faq-heading"><p class="eyebrow">Noch eine Frage?</p><h2>Fragst du dich<br>das auch?</h2></div>
+        <div class="faq-list">
+          <details><summary>Welcher Maßstab ist größer, 1:25.000 oder 1:50.000? <span aria-hidden="true">+</span></summary><p>1 : 25.000. Das klingt erst mal falsch — 50.000 ist doch die größere Zahl. Aber: Je kleiner die Zahl nach dem Doppelpunkt, desto größer der Maßstab und desto mehr Details siehst du. Als Bruch gelesen: 1/25.000 ist größer als 1/50.000. Auf der Karte mit 1 : 25.000 ist 1 cm genau 250 m, bei 1 : 50.000 sind es 500 m — die erste Karte zeigt also alles größer.</p></details>
+          <details><summary>Was bedeutet TK25? <span aria-hidden="true">+</span></summary><p>TK25 ist eine topografische Karte im Maßstab 1 : 25.000. TK heißt Topografische Karte, die 25 ist die Maßstabszahl in Tausend. Auf der TK25 sind 1 km genau 4 cm lang.</p></details>
+          <details><summary>Was heißt 1 : 1? <span aria-hidden="true">+</span></summary><p>Das Bild ist genauso groß wie das Original. 1 cm auf der Zeichnung sind 1 cm in echt. Das brauchst du zum Beispiel bei Schablonen oder Schnittmustern — da muss das Papier genau so groß sein wie das Teil.</p></details>
+          <details><summary>Gilt der Maßstab auch für Flächen? <span aria-hidden="true">+</span></summary><p>Nein — der Maßstab gilt nur für Längen. Bei Flächen musst du die Maßstabszahl zum Quadrat nehmen. 1 cm² auf einer Karte im Maßstab 1 : 25.000 sind 250 m × 250 m = 62.500 m², also 6,25 Hektar.</p></details>
+          <details><summary>Wo kann ich das online rechnen? <span aria-hidden="true">+</span></summary><p>Mit dem <a href="../../massstabsrechner/">Maßstabsrechner</a> hier auf maßklar: Maßstab eintippen, Strecke eintippen, fertig — kostenlos und ohne Anmeldung.</p></details>
+        </div>
+      </section>
+
+      <section class="more-tools">
+        <div class="quick-title"><span class="eyebrow">Weiterrechnen</span><h2>Das gibt es noch bei maßklar.</h2></div>
+        <div class="tool-grid">
+          <a class="tool-card" href="../../massstabsrechner/"><span class="tool-icon" aria-hidden="true">🗺</span><span class="tool-text"><span class="tool-title">Maßstabsrechner</span><span class="tool-desc">Karten, Grundrisse, Modellbau: echte Länge und Plan-Länge umrechnen.</span></span><span class="tool-arrow" aria-hidden="true">↗</span></a>
+          <a class="tool-card" href="../../ratgeber/massstab-berechnen/"><span class="tool-icon" aria-hidden="true">📏</span><span class="tool-text"><span class="tool-title">Maßstab berechnen</span><span class="tool-desc">Die 3 Formeln in Worten — mit Beispielen zum Nachrechnen und Aufgaben.</span></span><span class="tool-arrow" aria-hidden="true">↗</span></a>
+          <a class="tool-card" href="../../ratgeber/modellgroesse-berechnen/"><span class="tool-icon" aria-hidden="true">🚂</span><span class="tool-text"><span class="tool-title">Modellgröße berechnen</span><span class="tool-desc">Echte Länge durch den Maßstab teilen — mit Beispielen für H0 und 1:72.</span></span><span class="tool-arrow" aria-hidden="true">↗</span></a>
+        </div>
+        <p class="more-tools-link"><a href="../../">Alle Rechner ansehen <span aria-hidden="true">→</span></a></p>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <a class="brand footer-brand" href="../../"><span class="brand-mark" aria-hidden="true">mk</span><span>maßklar<span class="brand-period">.</span></span></a>
+      <p>Maßstab berechnen — einfach, schnell und ohne Mathe-Stress. Ein Produkt von Hastle.</p>
+      <span>© <span id="current-year"></span> maßklar</span>
+    </footer>
+    <script>document.querySelector("#current-year").textContent = new Date().getFullYear();</script>
+  </body>
+</html>

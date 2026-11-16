@@ -268,7 +268,7 @@ h1, h2, h3, p { margin-top: 0; }
 @media (max-width: 680px) {
   html { scroll-padding-top: 68px; }.site-header { min-height: 60px; }.top-nav { display: none; }.header-cta { padding: 10px 12px; font-size: 12px; }
   .target-segmented button { font-size: 12px; }
-  .hero { display: block; min-height: auto; padding: 55px 7% 34px; }.hero h1 { font-size: clamp(43px, 12vw, 58px); letter-spacing: -2px; }.hero-description { font-size: 16px; line-height: 1.8; }
+  .hero { display: block; min-height: auto; padding: 40px 7% 30px; }.hero h1 { font-size: clamp(43px, 12vw, 58px); letter-spacing: -2px; }.hero-description { font-size: 16px; line-height: 1.8; }
   .hero-visual { height: 310px; margin: 22px 0 0; }.map-card { width: min(390px, 89%); }.floating-note { left: -3px; bottom: 0; }.orbit-one { width: 320px; height: 320px; }.orbit-two { width: 270px; height: 270px; }.hero-index { right: 12px; bottom: 3px; }
   .calculator-section { padding: 50px 5% 56px; }.section-heading { align-items: start; gap: 15px; flex-direction: column; }.section-heading h2 { font-size: 24px; }.section-heading > p br { display: none; }
   .calculator { grid-template-columns: 1fr; }.calc-main { padding: 20px 17px; }.calc-aside { display: grid; grid-template-columns: 1fr 1.3fr; align-items: center; gap: 4px 18px; padding: 20px 18px; }.aside-number { grid-column: 1 / -1; }.aside-art { grid-row: span 3; height: 105px; margin: 8px 0 0; }.calc-aside h3 { margin: 6px 0 0; }.calc-aside p { margin: 0; }.calc-aside a { align-self: start; }
@@ -348,4 +348,66 @@ a.tool-card:active { transform: scale(.98); }
   *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; }
   main { animation: none; }
   .example-card { animation: none; }
+}
+
+/* Tool pages: compact hero — the calculator, not the intro, is the star.
+   Lecture point 3: the tool must sit above the fold. The hero visual
+   (map card) is hidden here; the H1 + one-line intro stay. */
+.tool-page .hero { min-height: 0; grid-template-columns: 1fr; padding: 34px 11.2% 30px; }
+.tool-page .hero-visual { display: none; }
+.tool-page .hero h1 { font-size: clamp(34px, 4vw, 46px); }
+.tool-page .hero-description { margin: 14px 0 0; }
+.tool-page .hero .text-link { display: none; }
+.tool-page .hero-copy { padding-bottom: 0; }
+.tool-page .calculator-section { padding-top: 36px; }
+.tool-page .section-heading { margin-bottom: 15px; }
+.tool-page .calc-main { padding-top: 12px; }
+.tool-page .calc-toolbar { padding-bottom: 12px; }
+@media (max-width: 680px) {
+  /* On phones the intro line costs a full screen of scroll — the H1 says
+     what the tool does. Hide it so the first input sits above the fold. */
+  .tool-page .hero-description { display: none; }
+  .tool-page .calculator-section { padding-top: 24px; }
+  .tool-page .section-heading { margin-bottom: 12px; }
+  .tool-page .target-segmented { margin-bottom: 12px; }
+}
+
+/* Preset chips (Maßstab: häufige Maßstäbe, ein Tipp füllt den Rechner) */
+.preset-chips { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: 0 0 16px; }
+.preset-label { margin-right: 2px; color: #5a6a62; font-size: 13px; font-weight: 600; }
+.preset-chip { min-height: 44px; padding: 8px 14px; border: 1px solid #e2e7dc; border-radius: 20px; background: #fff; color: var(--green); font: 600 13px var(--sans); cursor: pointer; transition: border-color .2s, background .2s; }
+.preset-chip:hover { border-color: var(--green); background: #f1f5e9; }
+.field-hint { display: block; margin-top: 8px; color: #5a6a62; font-size: 13px; line-height: 1.5; }
+.result-actions { display: flex; flex-wrap: wrap; gap: 4px; }
+/* Flächen-Rechner — wie der Vergleichs-Rechner aufgebaut */
+.area-section { padding: 24px 11.2% 70px; }
+.area-grid { display: grid; grid-template-columns: 1.2fr 1fr 1fr; gap: 16px; max-width: 1050px; margin: 0 auto 12px; }
+.area-section .form-error { max-width: 1050px; margin: 0 auto 12px; }
+#area-result-panel { max-width: 1050px; margin: 0 auto; }
+/* Bildschirm-Lineal */
+.ruler-section { padding: 48px 11.2% 70px; }
+.ruler-box { max-width: 1050px; margin: 0 auto; padding: 24px; border-radius: 8px; background: #fffefa; box-shadow: 0 2px 10px #293e300d; }
+.ruler-calibrate { overflow-x: auto; }
+.ruler-cal-label { color: #4f5f56; font-size: 14px; font-weight: 600; }
+.ruler-cal-line { height: 6px; margin: 12px 0 4px; border-radius: 3px; background: var(--green); }
+.ruler-cal-value { color: #5a6a62; font: 12px var(--mono); }
+.ruler-slider-label { display: block; margin: 20px 0 8px; color: #4f5f56; font-size: 14px; font-weight: 600; }
+.ruler-box input[type="range"] { width: 100%; accent-color: var(--green); }
+.ruler-display { margin-top: 24px; overflow-x: auto; border-top: 2px solid var(--green); }
+.ruler-ticks { position: relative; height: 56px; }
+.ruler-tick { position: absolute; top: 0; width: 1px; height: 12px; background: var(--green); }
+.ruler-tick span { position: absolute; top: 14px; left: -4px; color: #5a6a62; font: 11px var(--mono); }
+.ruler-note { margin: 16px 0 8px; color: #4f5f56; font-size: 14px; }
+@media (max-width: 680px) {
+  .area-grid { grid-template-columns: 1fr; }
+  .ruler-section { padding: 48px 5%; }
+  .area-section { padding: 24px 5% 56px; }
+}
+/* Drucken: nur der Rechner mit Ergebnis */
+@media print {
+  .site-header, .hero, .quick-examples, .table-section, .scale-links-section, .guide-section, .practice-section, .compare-section, .area-section, .ruler-section, .faq-section, .more-tools, .site-footer, .calc-aside, .preset-chips { display: none !important; }
+  body { background: #fff; }
+  .calculator-section { padding: 0; background: none; }
+  .calculator { box-shadow: none; }
+  main { animation: none; }
 }
