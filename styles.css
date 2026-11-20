@@ -325,12 +325,14 @@ a.tool-card:active { transform: scale(.98); }
 .more-tools-link { max-width: 1050px; margin: 22px auto 0; }
 .more-tools-link a { color: var(--green); font-size: 14px; font-weight: 700; }
 .input-grid--two { grid-template-columns: 1fr 1fr; }
-/* Altersrechner: the two date labels wrap to different heights
-   ("Stichtag (meistens heute)" runs to two lines), which pushed the
-   Stichtag box a line below the Geburtsdatum box. Flex column + auto
-   top margin keeps both labels top-aligned and both boxes bottom-aligned. */
-.input-grid--two .field { display: flex; flex-direction: column; }
-.input-grid--two .field .input-with-unit { margin-top: auto; }
+/* Input boxes stay aligned in every grid row (2026-11-20): labels wrap to
+   different heights ("Länge auf dem Plan" runs to two lines at ~960px,
+   "Maßstab" fits on one), which pushed some boxes a full line below the
+   others. A two-line minimum label height equalises them, so every box
+   starts at the same height. This replaces the earlier margin-top:auto
+   fix on the boxes (Altersrechner, 2026-11-20): that breaks rows where
+   one field has a hint below its box, e.g. the scale field. */
+.field label { line-height: 1.65; min-height: 3.3em; }
 .input-with-unit input[type="date"] { font-family: var(--sans); font-size: 15px; font-weight: 500; }
 .result-value--age { font-size: 26px; line-height: 1.3; }
 
