@@ -873,3 +873,45 @@ a.tool-card:active { transform: scale(.98); }
   .grundsteuer-page .example-card h3 { font-size: 16px; }
   .grundsteuer-page .example-result { flex-basis: 100%; }
 }
+
+/* Kreditrechner (2026-11-26): zwei Modi (Rate / Leisten können), Felder
+   untereinander, Monatsrate und Gesamtkosten als Aufschlüsselung im
+   Ergebnis. Der Tilgungsplan zeigt erst 12 Monate, auf Wunsch alle. */
+.kredit-page .mode-grid { grid-template-columns: repeat(2, 1fr); }
+.kredit-page .field.has-error input { border-color: var(--error); }
+/* Hero-Karte (reines CSS, kein Bild): Monatsrate groß, Hinweis darunter. */
+.kredit-card { width: min(340px, 100%); padding: 26px 26px 22px; border-radius: 10px; background: var(--white); box-shadow: 0 18px 48px #293e3010; }
+.kredit-card-top { display: flex; align-items: center; justify-content: space-between; color: #8d9991; font: 9px var(--mono); letter-spacing: .5px; }
+.kredit-badge { padding: 4px 8px; border-radius: 4px; background: var(--orange); color: var(--green-dark); font: 700 13px var(--sans); }
+.kredit-card-value { margin: 20px 0 4px; color: var(--green-dark); font: 700 34px var(--display); letter-spacing: -0.5px; }
+.kredit-card-cat { color: var(--green); font: 600 15px var(--display); }
+.kredit-card-note { margin-top: 10px; color: var(--muted); font-size: 14px; }
+/* Aufschlüsselung im Ergebnis: Label links, Betrag rechts. */
+.kredit-page .result-extra div { display: flex; justify-content: space-between; gap: 12px; }
+.kredit-page .result-extra div span:last-child { white-space: nowrap; }
+/* Ehrliche Kästen: „Effektiver Jahreszins oder Sollzins?" (im Rechner) und
+   „Was der Rechner nicht macht" (unter der Anleitung). */
+.kredit-note { margin: 24px auto 0; max-width: 1050px; padding: 18px 20px; border-radius: 8px; background: #fffefa; box-shadow: 0 2px 10px #293e300d; }
+.kredit-note h3 { margin: 0 0 8px; color: var(--green-dark); font: 700 18px var(--display); }
+.kredit-note p { margin: 0; color: var(--ink); font-size: 15px; line-height: 1.65; }
+.kredit-note a { color: var(--green); }
+/* Tilgungsplan: Fußzeile mit den Summen, Knopf zum Aufklappen. */
+.kredit-page .scale-table tfoot th, .kredit-page .scale-table tfoot td { font-weight: 700; background: var(--paper); }
+.kredit-page .table-toggle { margin-top: 12px; padding: 10px 16px; border: 1px solid var(--line); border-radius: 5px; background: var(--white); color: var(--green); font: 600 15px var(--sans); cursor: pointer; }
+.kredit-page .table-toggle:hover { border-color: var(--green); }
+/* Raten-Tabelle: Zeilen sind klickbar (laden Zins + Laufzeit). */
+.kredit-page .raten-row { cursor: pointer; }
+.kredit-page .raten-row:hover td, .kredit-page .raten-row:hover th { background: #f0f1e8; }
+@media (max-width: 960px) {
+  /* Kreditrechner: Beispielkarten stapeln sich schon ab Tablet —
+     die langen Rechenwege sprengen sonst die 3 Spalten (gleiche Falle wie
+     beim Bürgergeld- und Grundsteuer-Rechner). */
+  .kredit-page .example-strip { grid-template-columns: 1fr; }
+}
+@media (max-width: 680px) {
+  /* Kreditrechner: Eingaben untereinander — zwei Spalten sind auf dem
+     Handy zu eng. */
+  .kredit-page .example-card { flex-wrap: wrap; }
+  .kredit-page .example-card h3 { font-size: 16px; }
+  .kredit-page .example-result { flex-basis: 100%; }
+}

@@ -1,0 +1,408 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Kreditrechner: Rate &amp; Zinsen 2026 berechnen</title>
+    <meta name="description" content="Kreditrechner 2026: Monatsrate, Zinsen und Gesamtkosten für deinen Kredit berechnen – mit Tilgungsplan und Rechenweg. Kostenlos.">
+    <link rel="canonical" href="https://codeshifter-git.github.io/massklar/kreditrechner/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Kreditrechner: Rate &amp; Zinsen 2026 berechnen">
+    <meta property="og:description" content="Kreditrechner 2026: Monatsrate, Zinsen und Gesamtkosten für deinen Kredit berechnen – mit Tilgungsplan und Rechenweg. Kostenlos.">
+    <meta property="og:url" content="https://codeshifter-git.github.io/massklar/kreditrechner/">
+    <meta property="og:site_name" content="maßklar">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Kreditrechner: Rate &amp; Zinsen 2026 berechnen">
+    <meta name="twitter:description" content="Kreditrechner 2026: Monatsrate, Zinsen und Gesamtkosten für deinen Kredit berechnen – mit Tilgungsplan und Rechenweg. Kostenlos.">
+    <link rel="preload" href="../fonts/bitter-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="../fonts/dm-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="../styles.css">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebApplication",
+            "name": "Kreditrechner",
+            "url": "https://codeshifter-git.github.io/massklar/kreditrechner/",
+            "applicationCategory": "FinanceApplication",
+            "operatingSystem": "Any",
+            "inLanguage": "de",
+            "isAccessibleForFree": true,
+            "description": "Kreditrechner 2026: Monatsrate, Zinsen und Gesamtkosten für deinen Kredit berechnen – mit Tilgungsplan und Rechenweg. Kostenlos.",
+            "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" }
+          },
+          {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              { "@type": "ListItem", "position": 1, "name": "Startseite", "item": "https://codeshifter-git.github.io/massklar/" },
+              { "@type": "ListItem", "position": 2, "name": "Kreditrechner", "item": "https://codeshifter-git.github.io/massklar/kreditrechner/" }
+            ]
+          },
+          {
+            "@type": "HowTo",
+            "name": "Kreditrate berechnen",
+            "description": "So rechnest du deine Monatsrate in fünf Schritten aus.",
+            "step": [
+              { "@type": "HowToStep", "name": "Kreditbetrag wählen", "text": "Wie viel brauchst du wirklich? Jeder Euro mehr kostet Zinsen — nimm nur, was du brauchst." },
+              { "@type": "HowToStep", "name": "Zins eintragen", "text": "Trag den effektiven Jahreszins aus dem Angebot ein, nicht den Sollzins. Der effektive Jahreszins enthält alle Kosten." },
+              { "@type": "HowToStep", "name": "Laufzeit wählen", "text": "In Monaten. Kürzer heißt: höhere Rate, weniger Zinsen. Länger heißt: kleinere Rate, mehr Zinsen." },
+              { "@type": "HowToStep", "name": "Rate ablesen", "text": "Die Monatsrate steht sofort da — dazu die Zinsen und die Gesamtkosten." },
+              { "@type": "HowToStep", "name": "Tilgungsplan prüfen", "text": "Unten siehst du Monat für Monat, wie viel Zinsen und wie viel Tilgung in der Rate steckt — und wann der Kredit abbezahlt ist." }
+            ]
+          },
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              { "@type": "Question", "name": "Was ist der Unterschied zwischen Sollzins und effektivem Jahreszins?", "acceptedAnswer": { "@type": "Answer", "text": "Der Sollzins ist der reine Zins auf den Kredit. Der effektive Jahreszins enthält zusätzlich alle Kosten — zum Beispiel Bearbeitungsgebühren. Vergleiche immer den effektiven Jahreszins, nicht den Sollzins. Der Rechner hier rechnet mit dem effektiven Jahreszins." } },
+              { "@type": "Question", "name": "Wie hoch ist die Monatsrate?", "acceptedAnswer": { "@type": "Answer", "text": "Das hängt von Betrag, Zins und Laufzeit ab. Beispiel: 10.000 €, 5,99 % effektiver Jahreszins, 48 Monate = 234,08 € im Monat. Trag deine Zahlen oben ein — die Rate steht sofort da." } },
+              { "@type": "Question", "name": "Wie viel Kredit kann ich mir leisten?", "acceptedAnswer": { "@type": "Answer", "text": "Netto minus feste Ausgaben ist das Geld, das für die Rate da ist. Beispiel: 2.500 € Netto minus 1.900 € Ausgaben = 600 € frei im Monat. Bei 5,99 % und 48 Monaten sind das höchstens 25.632,38 € Kredit. Lass dir einen Puffer — nimm nicht dein ganzes freies Geld für die Rate." } },
+              { "@type": "Question", "name": "Was ist eine Sondertilgung?", "acceptedAnswer": { "@type": "Answer", "text": "Eine Sondertilgung ist eine Extra-Zahlung neben der Monatsrate — zum Beispiel 1.000 € einmal im Jahr. Sie verkürzt die Laufzeit und spart Zinsen: Bei 20.000 €, 4,5 % und 60 Monaten sind es mit 1.000 € Sondertilgung im Jahr 49 statt 60 Monate und 382,73 € weniger Zinsen." } },
+              { "@type": "Question", "name": "Was passiert bei vorzeitiger Rückzahlung?", "acceptedAnswer": { "@type": "Answer", "text": "Du darfst einen Ratenkredit fast immer früher zurückzahlen. Die Bank darf dafür eine Vorfälligkeitsentschädigung verlangen — höchstens 1 % des vorzeitig zurückgezahlten Betrags, 0,5 % wenn weniger als 12 Monate Restlaufzeit bleiben (§ 502 BGB). Wie viel genau, steht in deinem Vertrag." } },
+              { "@type": "Question", "name": "Wie wirkt sich die Laufzeit auf die Zinsen aus?", "acceptedAnswer": { "@type": "Answer", "text": "Länger heißt: kleinere Rate, mehr Zinsen. Beispiel 15.000 € bei 5 %: 36 Monate = 448,82 € Rate und 1.157,37 € Zinsen; 72 Monate = 240,80 € Rate und 2.337,75 € Zinsen. Die Rate halbiert sich fast — die Zinsen verdoppeln sich." } },
+              { "@type": "Question", "name": "Ist das Ergebnis verbindlich?", "acceptedAnswer": { "@type": "Answer", "text": "Nein. Der Rechner gibt nur einen Richtwert als Beispielrechnung. Der Zinssatz hängt von deiner Bonität ab — der effektive Jahreszins im Angebot der Bank ist verbindlich. Keine Finanzberatung — bei größeren Summen bitte eine unabhängige Beratung fragen. Wir speichern nichts und fragen nach keiner E-Mail." } }
+            ]
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body class="tool-page kredit-page">
+    <a class="skip-link" href="#rechner">Zum Rechner springen</a>
+    <header class="site-header">
+      <a class="brand" href="../"><span class="brand-mark" aria-hidden="true">mk</span><span>maßklar<span class="brand-period">.</span></span></a>
+      <nav class="site-nav" aria-label="Hauptnavigation">
+        <a href="../">Alle Rechner</a>
+        <a href="#rechner">Rechner</a>
+        <a href="#beispiele">Beispiele</a>
+        <a href="#tabellen">Tabelle</a>
+        <a href="#anleitung">So geht's</a>
+      </nav>
+      <a class="header-cta" href="../#rechner">Zum Rechner ↓</a>
+    </header>
+    <main>
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="hero-eyebrow">Der einfache Kreditrechner</p>
+          <h1>Kreditrechner.<br><span>Was kostet dein Kredit im Monat?</span></h1>
+          <p class="hero-description">Ein Kredit über 10.000 € kostet bei 5,99 % effektivem Jahreszins und 48 Monaten Laufzeit 234,08 € im Monat. Insgesamt zahlst du 11.235,79 € zurück — davon 1.235,79 € Zinsen. Rechne hier deine Monatsrate, die Zinsen und die Gesamtkosten aus — mit Tilgungsplan, Sondertilgung und einer Antwort auf die Frage, wie viel Kredit du dir leisten kannst. Kostenlos und ohne Anmeldung.</p>
+        </div>
+        <div class="hero-visual">
+          <div class="kredit-card" aria-hidden="true">
+            <div class="kredit-card-top"><span>RATENKREDIT · 10.000 €</span><span class="kredit-badge">NUR EIN RICHTWERT</span></div>
+            <div class="kredit-card-value">234,08 €</div>
+            <div class="kredit-card-cat">Monatsrate</div>
+            <p class="kredit-card-note">1.235,79 € Zinsen bei 5,99 % über 48 Monate.</p>
+          </div>
+          <span class="hero-index">13 / 13</span>
+        </div>
+      </section>
+      <section class="calculator-section" id="rechner">
+        <div class="section-heading">
+          <h2>Kreditrechner</h2>
+          <p class="section-sub">Monatsrate, Zinsen und Gesamtkosten — kostenlos</p>
+        </div>
+        <div class="calculator">
+          <div class="calc-main">
+            <div class="calc-toolbar">
+              <span class="live-indicator"><span class="live-dot" aria-hidden="true"></span>Live gerechnet · Stand: November 2026</span>
+              <button class="reset-button" id="kredit-reset" type="button">Zurücksetzen ⟲</button>
+            </div>
+            <form id="kredit-form" novalidate>
+              <div class="field">
+                <label id="modus-label">Was willst du wissen?</label>
+                <div class="mode-grid" id="modus-grid" role="group" aria-labelledby="modus-label">
+                  <button class="mode-btn" type="button" data-modus="rate" aria-pressed="true">Rate berechnen</button>
+                  <button class="mode-btn" type="button" data-modus="leisten" aria-pressed="false">Leisten können</button>
+                </div>
+              </div>
+              <div class="field" id="field-betrag">
+                <label for="kredit-betrag">Kreditbetrag</label>
+                <div class="input-with-unit"><input id="kredit-betrag" inputmode="decimal" autocomplete="off" value="10.000"><span class="unit-suffix">€</span></div>
+                <p class="field-hint">Wie viel brauchst du wirklich? Jeder Euro mehr kostet Zinsen.</p>
+              </div>
+              <div id="fields-leisten" hidden>
+                <div class="field">
+                  <label for="kredit-netto">Nettoeinkommen im Monat</label>
+                  <div class="input-with-unit"><input id="kredit-netto" inputmode="decimal" autocomplete="off" value="2.500"><span class="unit-suffix">€</span></div>
+                  <p class="field-hint">Was kommt jeden Monat auf dein Konto? Das ist das Geld, von dem die Rate abgeht.</p>
+                </div>
+                <div class="field">
+                  <label for="kredit-ausgaben">Feste Ausgaben im Monat</label>
+                  <div class="input-with-unit"><input id="kredit-ausgaben" inputmode="decimal" autocomplete="off" value="1.900"><span class="unit-suffix">€</span></div>
+                  <p class="field-hint">Miete, Strom, Essen, Handy, Versicherungen — alles, was jeden Monat fest weggeht.</p>
+                </div>
+              </div>
+              <div class="field">
+                <label for="kredit-zins">Effektiver Jahreszins</label>
+                <div class="input-with-unit"><input id="kredit-zins" inputmode="decimal" autocomplete="off" value="5,99"><span class="unit-suffix">%</span></div>
+                <p class="field-hint">Der effektive Jahreszins enthält alle Kosten — vergleiche immer den effektiven Jahreszins, nicht den Sollzins. Was Prozent bedeuten, erklärt der <a href="../prozentrechner/">Prozentrechner</a>.</p>
+              </div>
+              <div class="field">
+                <label for="kredit-laufzeit">Laufzeit</label>
+                <div class="input-with-unit"><input id="kredit-laufzeit" inputmode="numeric" autocomplete="off" value="48"><span class="unit-suffix">Monate</span></div>
+                <p class="field-hint">In Monaten — z. B. 48 für vier Jahre. Länger heißt: kleinere Rate, mehr Zinsen.</p>
+              </div>
+              <div class="field" id="field-sonder">
+                <label for="kredit-sonder">Sondertilgung im Jahr (optional)</label>
+                <div class="input-with-unit"><input id="kredit-sonder" inputmode="decimal" autocomplete="off" value="0"><span class="unit-suffix">€</span></div>
+                <p class="field-hint">Extra-Zahlung einmal im Jahr — verkürzt die Laufzeit und spart Zinsen. Leer lassen oder 0 heißt: keine Sondertilgung.</p>
+              </div>
+              <p class="form-error" id="kredit-error" role="alert" hidden></p>
+              <button class="calculate-button" id="kredit-calc-btn" type="submit">Kredit berechnen ↗</button>
+              <p class="live-hint">Schon beim Tippen neu gerechnet. Kein Konto, keine Anmeldung.</p>
+            </form>
+            <div class="result-panel" id="kredit-result">
+              <p class="result-label" id="result-label">DEINE MONATSRATE (RICHTWERT)</p>
+              <p class="result-value" id="result-value">234,08 €</p>
+              <p class="result-context" id="result-context">10.000 € Kredit, 5,99 % effektiver Jahreszins, 48 Monate: 234,08 € im Monat — insgesamt 11.235,79 €, davon 1.235,79 € Zinsen.</p>
+              <p class="result-also" id="result-also">Das sind 1.235,79 € Zinsen — 12,36 % vom Kreditbetrag.</p>
+              <div class="result-extra" id="result-extra"></div>
+              <p class="result-formula" id="result-formula">Monatszins = (1 + 5,99 %)^(1/12) − 1 = 0,485965 % · Rate = 10.000 € × 0,485965 % × 1,262001 ÷ 0,262001 = 234,08 €</p>
+              <button class="copy-button" id="kredit-copy" type="button">Ergebnis kopieren</button>
+            </div>
+            <p class="calc-note">Nur ein Richtwert — eine Beispielrechnung. Der Zinssatz hängt von deiner Bonität ab; der effektive Jahreszins im Angebot der Bank ist verbindlich. Stand: November 2026.</p>
+            <div class="preset-chips" aria-label="Beispiele laden">
+              <span class="preset-label">Beispiele:</span>
+              <button class="preset-chip" type="button" data-example="auto">Auto: 234,08 €</button>
+              <button class="preset-chip" type="button" data-example="renovierung">Renovierung: 372,04 €</button>
+              <button class="preset-chip" type="button" data-example="sonder">Sondertilgung: 382,73 € gespart</button>
+            </div>
+            <div class="kredit-note">
+              <h3>Effektiver Jahreszins oder Sollzins?</h3>
+              <p>Der Sollzins ist der reine Zins auf den Kredit. Der effektive Jahreszins enthält zusätzlich alle Kosten — zum Beispiel Bearbeitungsgebühren. Zwei Angebote vergleichst du immer am effektiven Jahreszins, nie am Sollzins und nie an der Monatsrate allein. Der Rechner hier rechnet mit dem effektiven Jahreszins.</p>
+            </div>
+          </div>
+          <aside class="calc-aside">
+            <h2>Gut zu wissen</h2>
+            <p>Im September 2026 lag der durchschnittliche effektive Jahreszins für neue Ratenkredite bei 8,91 % (Deutsche Bundesbank, MFI-Zinsstatistik). Ein 10.000-€-Kredit über 48 Monate kostet damit rund 247 € im Monat und etwa 1.846 € Zinsen. Dein Angebot kann darunter oder darüber liegen — der Zins hängt von deiner Bonität ab.</p>
+            <a class="text-link" href="#anleitung">So funktioniert die Rechnung ↓</a>
+          </aside>
+        </div>
+        <div class="ad-slot" role="complementary" aria-label="Werbung">
+          <span class="ad-label">Anzeige</span>
+          <div class="ad-box">Hier könnte deine Werbung stehen</div>
+        </div>
+      </section>
+      <section class="quick-examples" id="beispiele" aria-label="Beispiele">
+        <div class="section-heading">
+          <h2>Kredit: drei Beispiele aus dem Leben</h2>
+          <p class="section-sub">Antippen lädt das Beispiel in den Rechner</p>
+        </div>
+        <div class="example-strip">
+          <button class="example-card" type="button" data-example="auto" tabindex="0">
+            <div class="example-icon" aria-hidden="true">🚗</div>
+            <div class="example-body">
+              <h3>Auto: 10.000 €, 5,99 %, 48 Monate</h3>
+              <p>234,08 € Rate im Monat. Insgesamt 11.235,79 € — davon 1.235,79 € Zinsen.</p>
+            </div>
+            <span class="example-result">234,08 €</span>
+          </button>
+          <button class="example-card" type="button" data-example="renovierung" tabindex="0">
+            <div class="example-icon" aria-hidden="true">🏠</div>
+            <div class="example-body">
+              <h3>Renovierung: 20.000 €, 4,5 %, 60 Monate</h3>
+              <p>372,04 € Rate im Monat. Insgesamt 22.322,42 € — davon 2.322,42 € Zinsen.</p>
+            </div>
+            <span class="example-result">372,04 €</span>
+          </button>
+          <button class="example-card" type="button" data-example="sonder" tabindex="0">
+            <div class="example-icon" aria-hidden="true">💰</div>
+            <div class="example-body">
+              <h3>Mit Sondertilgung: 1.000 € im Jahr extra</h3>
+              <p>20.000 €, 4,5 %, 60 Monate: 11 Monate früher fertig, 382,73 € Zinsen gespart.</p>
+            </div>
+            <span class="example-result">−382,73 €</span>
+          </button>
+        </div>
+      </section>
+      <section class="table-section" id="tabellen">
+        <div class="section-heading">
+          <h2>Tilgungsplan und Raten im Vergleich</h2>
+          <p class="section-sub">Alle Zahlen auf dieser Seite sind der Stand November 2026</p>
+        </div>
+        <div class="table-wrap">
+          <table class="scale-table">
+            <caption id="tilgung-caption">Tilgungsplan · 10.000 €, 5,99 %, 48 Monate</caption>
+            <thead>
+              <tr><th scope="col">Monat</th><th scope="col">Rate</th><th scope="col">Zinsen</th><th scope="col">Tilgung</th><th scope="col">Restschuld</th></tr>
+            </thead>
+            <tbody id="tilgung-tbody">
+            </tbody>
+            <tfoot id="tilgung-tfoot">
+            </tfoot>
+          </table>
+          <button class="table-toggle" id="tilgung-toggle" type="button">Alle 48 Monate zeigen</button>
+          <p class="table-note">Am Anfang steckt in der Rate fast nur Zins, am Ende fast nur Tilgung: Im 1. Monat sind es 48,60 € Zinsen und 185,48 € Tilgung, im 48. Monat nur noch 1,13 € Zinsen und 232,95 € Tilgung. Die Tabelle rechnet mit deinen Zahlen oben — ändere Betrag, Zins oder Laufzeit, und sie rechnet neu.</p>
+        </div>
+        <div class="table-wrap">
+          <table class="scale-table">
+            <caption>Was kostet ein 10.000-€-Kredit? · Monatsrate und Zinsen je Zins und Laufzeit</caption>
+            <thead>
+              <tr><th scope="col">Zinssatz</th><th scope="col">Laufzeit</th><th scope="col">Monatsrate</th><th scope="col">Zinsen gesamt</th></tr>
+            </thead>
+            <tbody id="raten-tbody">
+              <tr class="raten-row" data-zins="3" data-laufzeit="24"><th scope="row">3 %</th><td>24 Monate</td><td>429,63 €</td><td>311,19 €</td></tr>
+              <tr class="raten-row" data-zins="3" data-laufzeit="48"><th scope="row">3 %</th><td>48 Monate</td><td>221,16 €</td><td>615,89 €</td></tr>
+              <tr class="raten-row" data-zins="3" data-laufzeit="72"><th scope="row">3 %</th><td>72 Monate</td><td>151,76 €</td><td>926,41 €</td></tr>
+              <tr class="raten-row" data-zins="5" data-laufzeit="24"><th scope="row">5 %</th><td>24 Monate</td><td>438,22 €</td><td>517,20 €</td></tr>
+              <tr class="raten-row" data-zins="5" data-laufzeit="48"><th scope="row">5 %</th><td>48 Monate</td><td>229,79 €</td><td>1.029,93 €</td></tr>
+              <tr class="raten-row" data-zins="5" data-laufzeit="72"><th scope="row">5 %</th><td>72 Monate</td><td>160,53 €</td><td>1.558,50 €</td></tr>
+              <tr class="raten-row" data-zins="7" data-laufzeit="24"><th scope="row">7 %</th><td>24 Monate</td><td>446,75 €</td><td>722,04 €</td></tr>
+              <tr class="raten-row" data-zins="7" data-laufzeit="48"><th scope="row">7 %</th><td>48 Monate</td><td>238,47 €</td><td>1.446,37 €</td></tr>
+              <tr class="raten-row" data-zins="7" data-laufzeit="72"><th scope="row">7 %</th><td>72 Monate</td><td>169,46 €</td><td>2.201,08 €</td></tr>
+            </tbody>
+          </table>
+          <p class="table-note">Tipp eine Zeile an — der Rechner oben rechnet mit diesem Zins und dieser Laufzeit weiter. Längere Laufzeit heißt: kleinere Rate, aber deutlich mehr Zinsen — bei 5 % kosten 72 statt 24 Monate 1.041,30 € mehr Zinsen.</p>
+        </div>
+      </section>
+      <section class="guide-section" id="anleitung">
+        <div class="section-heading">
+          <h2>So funktioniert der Kreditrechner</h2>
+          <p class="section-sub">Fünf Schritte — dann steht der Richtwert</p>
+        </div>
+        <div class="guide-grid">
+          <article class="guide-step">
+            <span class="step-number" aria-hidden="true">1</span>
+            <h3>Kreditbetrag wählen</h3>
+            <p>Wie viel brauchst du wirklich? Jeder Euro mehr kostet Zinsen — nimm nur, was du brauchst.</p>
+          </article>
+          <article class="guide-step">
+            <span class="step-number" aria-hidden="true">2</span>
+            <h3>Zins eintragen</h3>
+            <p>Trag den effektiven Jahreszins aus dem Angebot ein, nicht den Sollzins. Der effektive Jahreszins enthält alle Kosten.</p>
+          </article>
+          <article class="guide-step">
+            <span class="step-number" aria-hidden="true">3</span>
+            <h3>Laufzeit wählen</h3>
+            <p>In Monaten. Kürzer heißt: höhere Rate, weniger Zinsen. Länger heißt: kleinere Rate, mehr Zinsen.</p>
+          </article>
+          <article class="guide-step">
+            <span class="step-number" aria-hidden="true">4</span>
+            <h3>Rate ablesen</h3>
+            <p>Die Monatsrate steht sofort da — dazu die Zinsen und die Gesamtkosten.</p>
+          </article>
+          <article class="guide-step">
+            <span class="step-number" aria-hidden="true">5</span>
+            <h3>Tilgungsplan prüfen</h3>
+            <p>Unten siehst du Monat für Monat, wie viel Zinsen und wie viel Tilgung in der Rate steckt — und wann der Kredit abbezahlt ist.</p>
+          </article>
+        </div>
+        <div class="formula-card">
+          <h3>Die Formel</h3>
+          <p class="formula">Monatsrate = Betrag × Monatszins × (1 + Monatszins)^Laufzeit ÷ ((1 + Monatszins)^Laufzeit − 1)</p>
+          <p class="formula-example">Monatszins = (1 + effektiver Jahreszins)^(1/12) − 1. Bei 5,99 % sind das 0,485965 % im Monat — nicht 5,99 % ÷ 12 = 0,4992 %. Wer den Jahreszins einfach durch 12 teilt, rechnet zu viel: Bei 10.000 € über 48 Monate wären das 234,80 € statt 234,08 € im Monat — insgesamt 34,83 € zu viel.</p>
+          <p class="formula-example">10.000 €, 5,99 %, 48 Monate: 10.000 € × 0,485965 % × 1,262001 ÷ 0,262001 = 234,08 €</p>
+        </div>
+        <div class="kredit-note">
+          <h3>Was der Rechner nicht macht</h3>
+          <p>Der Rechner macht kein Angebot und prüft keine Bonität — er fragt nach keiner Schufa, keiner E-Mail und keinem Namen. Er rechnet keine Vorfälligkeitsentschädigung aus (die steht in deinem Vertrag) und keine Restschuldversicherung. Eine Baufinanzierung rechnet er auch nicht: Da sind Zinsbindung und Grundschuld anders. Diese Seite ist ein Rechner, keine Finanzberatung.</p>
+        </div>
+      </section>
+      <section class="practice-section" id="ueben">
+        <div class="section-heading">
+          <h2>Üben: drei schnelle Aufgaben</h2>
+          <p class="section-sub">Rechne erst selbst — dann prüfe mit dem Rechner oben</p>
+        </div>
+        <div class="practice-grid">
+          <article class="practice-task">
+            <h3>Aufgabe 1 · Monatsrate</h3>
+            <p>Du leihst dir 10.000 € zu 6 % effektivem Jahreszins und zahlst in 48 Monaten zurück. Wie hoch ist die Monatsrate?</p>
+            <p class="practice-answer">Antwort: 234,12 € — insgesamt 11.237,87 €, davon 1.237,87 € Zinsen.</p>
+          </article>
+          <article class="practice-task">
+            <h3>Aufgabe 2 · Zinsen</h3>
+            <p>Du leihst dir 5.000 € zu 4 % effektivem Jahreszins und zahlst in 24 Monaten zurück. Wie viel Zinsen zahlst du insgesamt?</p>
+            <p class="practice-answer">Antwort: 207,17 € — die Rate ist 216,97 €, insgesamt zahlst du 5.207,17 €.</p>
+          </article>
+          <article class="practice-task">
+            <h3>Aufgabe 3 · Laufzeit-Vergleich</h3>
+            <p>Du leihst dir 15.000 € zu 5 % effektivem Jahreszins. Was kostet dich 36 Monate statt 72 Monate — Rate und Zinsen?</p>
+            <p class="practice-answer">Antwort: 36 Monate = 448,82 € Rate und 1.157,37 € Zinsen; 72 Monate = 240,80 € Rate und 2.337,75 € Zinsen. Die lange Laufzeit kostet 1.180,38 € mehr Zinsen.</p>
+          </article>
+        </div>
+      </section>
+      <section class="faq-section" id="faq">
+        <div class="section-heading">
+          <h2>Häufige Fragen zum Kredit</h2>
+          <p class="section-sub">Kurz beantwortet — Stand: November 2026</p>
+        </div>
+        <div class="faq-list">
+          <details class="faq-item">
+            <summary>Was ist der Unterschied zwischen Sollzins und effektivem Jahreszins?</summary>
+            <p>Der Sollzins ist der reine Zins auf den Kredit. Der effektive Jahreszins enthält zusätzlich alle Kosten — zum Beispiel Bearbeitungsgebühren. Vergleiche immer den effektiven Jahreszins, nicht den Sollzins. Der Rechner hier rechnet mit dem effektiven Jahreszins.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Wie hoch ist die Monatsrate?</summary>
+            <p>Das hängt von Betrag, Zins und Laufzeit ab. Beispiel: 10.000 €, 5,99 % effektiver Jahreszins, 48 Monate = 234,08 € im Monat. Trag deine Zahlen oben ein — die Rate steht sofort da.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Wie viel Kredit kann ich mir leisten?</summary>
+            <p>Netto minus feste Ausgaben ist das Geld, das für die Rate da ist. Beispiel: 2.500 € Netto minus 1.900 € Ausgaben = 600 € frei im Monat. Bei 5,99 % und 48 Monaten sind das höchstens 25.632,38 € Kredit. Lass dir einen Puffer — nimm nicht dein ganzes freies Geld für die Rate. Reicht dein Netto nicht? Prüfe mit dem <a href="../buergergeld-rechner/">Bürgergeld-Rechner</a>, ob dir Bürgergeld zusteht.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Was ist eine Sondertilgung?</summary>
+            <p>Eine Sondertilgung ist eine Extra-Zahlung neben der Monatsrate — zum Beispiel 1.000 € einmal im Jahr. Sie verkürzt die Laufzeit und spart Zinsen: Bei 20.000 €, 4,5 % und 60 Monaten sind es mit 1.000 € Sondertilgung im Jahr 49 statt 60 Monate und 382,73 € weniger Zinsen.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Was passiert bei vorzeitiger Rückzahlung?</summary>
+            <p>Du darfst einen Ratenkredit fast immer früher zurückzahlen. Die Bank darf dafür eine Vorfälligkeitsentschädigung verlangen — höchstens 1 % des vorzeitig zurückgezahlten Betrags, 0,5 % wenn weniger als 12 Monate Restlaufzeit bleiben (§ 502 BGB). Wie viel genau, steht in deinem Vertrag.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Wie wirkt sich die Laufzeit auf die Zinsen aus?</summary>
+            <p>Länger heißt: kleinere Rate, mehr Zinsen. Beispiel 15.000 € bei 5 %: 36 Monate = 448,82 € Rate und 1.157,37 € Zinsen; 72 Monate = 240,80 € Rate und 2.337,75 € Zinsen. Die Rate halbiert sich fast — die Zinsen verdoppeln sich.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Ist das Ergebnis verbindlich?</summary>
+            <p>Nein. Der Rechner gibt nur einen Richtwert als Beispielrechnung. Der Zinssatz hängt von deiner Bonität ab — der effektive Jahreszins im Angebot der Bank ist verbindlich. Keine Finanzberatung — bei größeren Summen bitte eine unabhängige Beratung fragen. Wir speichern nichts und fragen nach keiner E-Mail.</p>
+          </details>
+        </div>
+      </section>
+      <section class="more-tools" id="mehr-rechner">
+        <div class="section-heading">
+          <h2>Mehr Rechner von maßklar</h2>
+          <p class="section-sub">Kostenlos, ohne Anmeldung — direkt im Browser</p>
+        </div>
+        <div class="tool-grid">
+          <a class="tool-card" href="../massstabsrechner/"><span class="tool-icon" aria-hidden="true">📐</span><span class="tool-text"><span class="tool-title">Maßstabsrechner</span><span class="tool-desc">Längen umrechnen: 1:10 bis 1:1000 und mehr.</span></span><span class="tool-arrow" aria-hidden="true">↗</span></a>
+          <a class="tool-card" href="../prozentrechner/"><span class="tool-icon" aria-hidden="true">%</span><span class="tool-text"><span class="tool-title">Prozentrechner</span><span class="tool-desc">Prozent, Rabatt, Mehrwertsteuer — 8 Modi in einem.</span></span><span class="tool-arrow" aria-hidden="true">↗</span></a>
+          <a class="tool-card" href="../bmi-rechner/"><span class="tool-icon" aria-hidden="true">⚖️</span><span class="tool-text"><span class="tool-title">BMI-Rechner</span><span class="tool-desc">Body-Mass-Index mit WHO-Tabelle und Normalgewicht.</span></span><span class="tool-arrow" aria-hidden="true">↗</span></a>
+          <a class="tool-card" href="../tage-rechner/"><span class="tool-icon" aria-hidden="true">📅</span><span class="tool-text"><span class="tool-title">Tage-Rechner</span><span class="tool-desc">Tage zählen, Fristen prüfen und Wochentage finden.</span></span><span class="tool-arrow" aria-hidden="true">↗</span></a>
+          <a class="tool-card" href="../stunden-rechner/"><span class="tool-icon" aria-hidden="true">⏱️</span><span class="tool-text"><span class="tool-title">Arbeitszeitrechner</span><span class="tool-desc">Arbeitszeit, Überstunden und Pausen im Blick.</span></span><span class="tool-arrow" aria-hidden="true">↗</span></a>
+          <a class="tool-card" href="../indexmiete-rechner/"><span class="tool-icon" aria-hidden="true">🏠</span><span class="tool-text"><span class="tool-title">Indexmiete-Rechner</span><span class="tool-desc">Mieterhöhung nach Verbraucherpreisindex prüfen.</span></span><span class="tool-arrow" aria-hidden="true">↗</span></a>
+          <a class="tool-card" href="../quadratmeter-rechner/"><span class="tool-icon" aria-hidden="true">🧱</span><span class="tool-text"><span class="tool-title">Quadratmeter-Rechner</span><span class="tool-desc">Fläche von Zimmern und Grundstücken — mit Verschnitt und Kosten.</span></span><span class="tool-arrow" aria-hidden="true">↗</span></a>
+          <a class="tool-card" href="../schlafzyklus-rechner/"><span class="tool-icon" aria-hidden="true">🌙</span><span class="tool-text"><span class="tool-title">Schlafzyklus-Rechner</span><span class="tool-desc">Besser aufwachen: Schlafenszeit in 90-Minuten-Schritten planen.</span></span><span class="tool-arrow" aria-hidden="true">↗</span></a>
+          <a class="tool-card" href="../buergergeld-rechner/"><span class="tool-icon" aria-hidden="true">🧾</span><span class="tool-text"><span class="tool-title">Bürgergeld-Rechner</span><span class="tool-desc">Regelbedarf, Miete und Einkommen — schätze deinen Anspruch.</span></span><span class="tool-arrow" aria-hidden="true">↗</span></a>
+          <a class="tool-card" href="../grundsteuer-rechner/"><span class="tool-icon" aria-hidden="true">🏛️</span><span class="tool-text"><span class="tool-title">Grundsteuer-Rechner</span><span class="tool-desc">Grundsteuer im Jahr aus Grundsteuerwert, Messzahl und Hebesatz — mit Rechenweg.</span></span><span class="tool-arrow" aria-hidden="true">↗</span></a>
+          <a class="tool-card" href="../altersrechner/"><span class="tool-icon" aria-hidden="true">🎂</span><span class="tool-text"><span class="tool-title">Altersrechner</span><span class="tool-desc">Alter in Jahren, Monaten und Tagen — genau auf den Tag.</span></span><span class="tool-arrow" aria-hidden="true">↗</span></a>
+          <a class="tool-card" href="../massstabsrechner/modellbau/"><span class="tool-icon" aria-hidden="true">🧩</span><span class="tool-text"><span class="tool-title">Modellbau-Rechner</span><span class="tool-desc">Modellgrößen für Eisenbahn, Autos und Figuren.</span></span><span class="tool-arrow" aria-hidden="true">↗</span></a>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <a class="brand footer-brand" href="../"><span class="brand-mark" aria-hidden="true">mk</span><span>maßklar<span class="brand-period">.</span></span></a>
+      <p>Kredit berechnen — einfach, schnell und ohne Mathe-Stress. Ein Produkt von Hastle.</p>
+      <span>© <span id="current-year"></span> maßklar</span>
+    </footer>
+    <button class="back-to-top" type="button" aria-label="Nach oben">↑</button>
+    <script>
+      document.querySelector("#current-year").textContent = new Date().getFullYear();
+    </script>
+    <script>
+      (function () {
+        var btn = document.querySelector(".back-to-top");
+        if (!btn) return;
+        function onScroll() {
+          if (window.scrollY > 500) btn.classList.add("is-visible");
+          else btn.classList.remove("is-visible");
+        }
+        window.addEventListener("scroll", onScroll, { passive: true });
+        onScroll();
+        btn.addEventListener("click", function () {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+      })();
+    </script>
+    <script src="app.js" defer></script>
+  </body>
+</html>
