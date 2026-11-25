@@ -362,6 +362,7 @@ MORE_TOOLS = [
     ("🕐", "Stunden-Rechner", "Arbeitszeit und Stunden zwischen zwei Uhrzeiten — mit Pause und Nachtschicht.", "../../stunden-rechner/"),
     ("🏠", "Indexmiete-Rechner", "Neue Nettokaltmiete aus dem Verbraucherpreisindex — mit Rechenweg und Fristen.", "../../indexmiete-rechner/"),
     ("🧱", "Quadratmeter-Rechner", "Fläche von Zimmern und Grundstücken — mit Verschnitt und Kosten.", "../../quadratmeter-rechner/"),
+    ("🌙", "Schlafzyklus-Rechner", "Besser aufwachen: Schlafenszeit in 90-Minuten-Schritten planen.", "../../schlafzyklus-rechner/"),
 ]
 
 

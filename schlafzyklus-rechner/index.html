@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schlafzyklus-Rechner: Schlafenszeit berechnen</title>
+    <meta name="description" content="Schlafzyklus-Rechner: Finde deine Schlafenszeit in 90-Minuten-Schritten – 5 oder 6 Zyklen für 7,5 oder 9 Stunden Schlaf. Kostenlos.">
+    <link rel="canonical" href="https://codeshifter-git.github.io/massklar/schlafzyklus-rechner/">
+    <meta property="og:title" content="Schlafzyklus-Rechner: Schlafenszeit berechnen">
+    <meta property="og:description" content="Schlafzyklus-Rechner: Finde deine Schlafenszeit in 90-Minuten-Schritten – 5 oder 6 Zyklen für 7,5 oder 9 Stunden Schlaf. Kostenlos.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://codeshifter-git.github.io/massklar/schlafzyklus-rechner/">
+    <meta property="og:locale" content="de_DE">
+    <script>
+      document.documentElement.classList.add('js');
+    </script>
+    <link rel="preload" href="../fonts/bitter-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="../fonts/dm-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="../styles.css?v=11">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebApplication",
+          "name": "Schlafzyklus-Rechner",
+          "url": "https://codeshifter-git.github.io/massklar/schlafzyklus-rechner/",
+          "applicationCategory": "HealthApplication",
+          "operatingSystem": "Web",
+          "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
+          "description": "Schlafzyklus-Rechner: Finde deine Schlafenszeit in 90-Minuten-Schritten – 5 oder 6 Zyklen für 7,5 oder 9 Stunden Schlaf. Kostenlos.",
+          "inLanguage": "de"
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "maßklar", "item": "https://codeshifter-git.github.io/massklar/" },
+            { "@type": "ListItem", "position": 2, "name": "Schlafzyklus-Rechner", "item": "https://codeshifter-git.github.io/massklar/schlafzyklus-rechner/" }
+          ]
+        },
+        {
+          "@type": "HowTo",
+          "name": "Schlafenszeit aus Schlafzyklen berechnen",
+          "description": "So findest du die Schlafenszeit, bei der du am Ende eines vollen Schlafzyklus aufwachst — mit 90 Minuten je Zyklus und der Zeit zum Einschlafen.",
+          "step": [
+            { "@type": "HowToStep", "position": 1, "name": "Was ist ein Schlafzyklus?", "text": "Ein Zyklus dauert etwa 90 Minuten: Leichtschlaf, dann Tiefschlaf, dann Traumschlaf (REM) — und dann geht es von vorn los. Frühe Zyklen haben mehr Tiefschlaf, späte mehr Traumschlaf." },
+            { "@type": "HowToStep", "position": 2, "name": "Die Rechnung", "text": "Schlafenszeit = Weckzeit − Zyklen × 90 Minuten − Zeit zum Einschlafen. Wecker 07:00, 5 Zyklen, 15 Minuten: 07:00 − 450 Minuten − 15 Minuten = 23:15." },
+            { "@type": "HowToStep", "position": 3, "name": "Die Einschlafzeit zählt dazu", "text": "Die 15 Minuten, bis du einschläfst, gehören nicht zum Schlaf. Wer sie vergisst, rechnet mit weniger Schlaf — und wacht mitten im ersten Zyklus auf." },
+            { "@type": "HowToStep", "position": 4, "name": "Mitten im Zyklus aufwachen", "text": "Wer mitten in einem Zyklus aufwacht, ist benommen: Schlafträgheit dauert 15 bis 60 Minuten. Wer am Ende eines Zyklus aufwacht — also nach 4,5, 6, 7,5 oder 9 Stunden — ist schneller wach." },
+            { "@type": "HowToStep", "position": 5, "name": "Zyklen sind nicht alle gleich lang", "text": "Ein Zyklus dauert bei den meisten Menschen 70 bis 110 Minuten — 90 ist ein Schnitt. Deshalb kannst du die Zykluslänge im Rechner ändern." }
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            { "@type": "Question", "name": "Wie lange dauert ein Schlafzyklus wirklich?", "acceptedAnswer": { "@type": "Answer", "text": "Im Schnitt 90 Minuten — bei den meisten Menschen zwischen 70 und 110. Der Rechner nimmt 90, du kannst die Länge oben ändern." } },
+            { "@type": "Question", "name": "Wie viele Zyklen brauche ich?", "acceptedAnswer": { "@type": "Answer", "text": "Für Erwachsene 5 bis 6 Zyklen — das sind 7,5 bis 9 Stunden. Kinder brauchen mehr: 6 bis 13 Jahre 9 bis 11 Stunden, 14 bis 17 Jahre 8 bis 10 Stunden." } },
+            { "@type": "Question", "name": "Warum fühle ich mich nach 8 Stunden trotzdem müde?", "acceptedAnswer": { "@type": "Answer", "text": "Weil du mitten in einem Zyklus aufgewacht bist. 8 Stunden sind 5 Zyklen (7,5 Stunden) plus eine halbe Stunde in den nächsten Zyklus hinein — da bist du im Tiefschlaf. Schlafträgheit dauert dann 15 bis 60 Minuten." } },
+            { "@type": "Question", "name": "Zählt die Zeit zum Einschlafen zum Schlaf?", "acceptedAnswer": { "@type": "Answer", "text": "Nein. Die 15 Minuten, bis du einschläfst, sind kein Schlaf. Der Rechner zieht sie extra ab — sonst wacht man mitten im ersten Zyklus auf." } },
+            { "@type": "Question", "name": "Kann man Schlaf nachholen?", "acceptedAnswer": { "@type": "Answer", "text": "Kurzfristig ja: Eine längere Nacht holt ein Schlafdefizit von ein, zwei Nächten auf. Dauerhaft zu wenig Schlaf holt man mit einer Nacht nicht auf — dann hilft nur ein regelmäßiger Rhythmus." } },
+            { "@type": "Question", "name": "Was tun bei dauerhaften Schlafproblemen?", "acceptedAnswer": { "@type": "Answer", "text": "Ärztlich abklären lassen. Der Rechner gibt Zeiten aus, keine Diagnose — bei dauerhaften Ein- oder Durchschlafproblemen oder starker Tagesmüdigkeit bitte zum Arzt." } },
+            { "@type": "Question", "name": "Brauche ich als Kind mehr Schlaf?", "acceptedAnswer": { "@type": "Answer", "text": "Ja. Kinder von 6 bis 13 Jahren brauchen 9 bis 11 Stunden, Jugendliche von 14 bis 17 Jahren 8 bis 10 Stunden (National Sleep Foundation). Der Rechner zeigt dir für deine Altersgruppe die passende Zeile an." } }
+          ]
+        }
+      ]
+    }
+    </script>
+  </head>
+  <body class="tool-page schlafzyklus-page">
+    <a class="skip-link" href="#rechner">Zum Rechner springen</a>
+
+    <header class="site-header">
+      <a class="brand" href="../"><span class="brand-mark" aria-hidden="true">mk</span><span>maßklar<span class="brand-period">.</span></span></a>
+      <nav class="site-nav" aria-label="Hauptnavigation">
+        <a href="../">Alle Rechner</a>
+        <a href="#rechner">Rechner</a>
+        <a href="#beispiele">Beispiele</a>
+        <a href="#tabelle">Tabelle</a>
+        <a href="#anleitung">So geht's</a>
+      </nav>
+      <a class="header-cta" href="../#rechner">Zum Rechner ↓</a>
+    </header>
+
+    <main>
+      <section class="tool-hero">
+        <div class="hero-copy">
+          <p class="hero-eyebrow">Der einfache Schlafzyklus-Rechner</p>
+          <h1>Schlafzyklus-Rechner.<br><span>Wach auf, wenn es passt.</span></h1>
+          <p class="hero-description">Wecker 07:00 — dann leg dich um 23:15 hin: 5 Zyklen à 90 Minuten plus 15 Minuten zum Einschlafen sind 7,5 Stunden Schlaf. Hier rechnest du deine Schlafenszeit aus der Weckzeit aus — oder andersrum deine Aufwachzeit aus der Schlafenszeit. Kostenlos und ohne Anmeldung.</p>
+          <div class="hero-actions">
+            <a class="button-primary" href="#rechner">Schlafenszeit finden ↓</a>
+            <a class="text-link" href="#tabelle">Tabelle ansehen ↓</a>
+          </div>
+        </div>
+        <div class="hero-visual" aria-label="Beispiel: Wecker 07:00 Uhr, ins Bett um 23:15 Uhr, 5 Zyklen, 7,5 Stunden Schlaf">
+          <div class="schlafzyklus-card">
+            <div class="schlafzyklus-card-top"><span>WECKER · 07:00</span><span class="schlafzyklus-badge">5 Zyklen</span></div>
+            <p class="schlafzyklus-card-value">23:15</p>
+            <p class="schlafzyklus-card-cat">Ins Bett — 7,5 Stunden Schlaf</p>
+            <p class="schlafzyklus-card-note">07:00 − 5 × 90 Min. − 15 Min.</p>
+          </div>
+          <div class="floating-note"><span class="note-icon">↗</span><span><strong>5 Zyklen</strong><small>à 90 Minuten</small></span><span class="note-equals">=</span><span><strong>7,5 h</strong><small>Schlaf</small></span></div>
+          <span class="visual-orbit orbit-one"></span>
+          <span class="visual-orbit orbit-two"></span>
+          <span class="hero-index">10 / 10</span>
+        </div>
+      </section>
+
+      <section class="calculator-section" id="rechner">
+        <div class="calculator">
+          <div class="calc-main">
+            <div class="calc-toolbar">
+              <span class="live-indicator"><span class="live-dot" aria-hidden="true"></span>Bereit — leg los</span>
+              <button class="reset-button" id="schlafzyklus-reset" type="button">Zurück zum Start ↺</button>
+            </div>
+
+            <form id="schlafzyklus-form" novalidate>
+              <span class="target-label" id="mode-label">Was willst du wissen?</span>
+              <div class="mode-grid" role="group" aria-labelledby="mode-label" id="mode-grid">
+                <button type="button" class="mode-btn" aria-pressed="true" data-mode="aufwachen">Aufwachen um …</button>
+                <button type="button" class="mode-btn" aria-pressed="false" data-mode="insbett">Ins Bett um …</button>
+                <button type="button" class="mode-btn" aria-pressed="false" data-mode="jetzt">Jetzt schlafen</button>
+              </div>
+
+              <div class="mode-fields is-active" data-mode="aufwachen">
+                <div class="input-grid">
+                  <div class="field">
+                    <label for="schlaf-weckzeit">Weckzeit</label>
+                    <input type="time" id="schlaf-weckzeit" name="weckzeit" value="07:00" autocomplete="off">
+                    <span class="field-hint">Wann muss der Wecker klingeln? Z. B. 07:00.</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mode-fields" data-mode="insbett">
+                <div class="input-grid">
+                  <div class="field">
+                    <label for="schlaf-bettzeit">Schlafenszeit</label>
+                    <input type="time" id="schlaf-bettzeit" name="bettzeit" value="23:00" autocomplete="off">
+                    <span class="field-hint">Wann gehst du ins Bett? Z. B. 23:00.</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mode-fields" data-mode="jetzt">
+                <p class="field-hint"><strong id="jetzt-uhrzeit">Jetzt ist es --:-- Uhr.</strong> Die Zeiten unten rechnen ab jetzt — sie ändern sich, wenn die Uhr weiterläuft.</p>
+              </div>
+
+              <div class="input-grid input-grid--two">
+                <div class="field">
+                  <label for="schlaf-einschlaf">Zeit zum Einschlafen</label>
+                  <div class="input-with-unit">
+                    <input type="text" inputmode="decimal" id="schlaf-einschlaf" name="einschlaf" value="15" autocomplete="off">
+                    <span class="unit-suffix" aria-hidden="true">Min.</span>
+                  </div>
+                  <span class="field-hint">Bis du einschläfst — meist 10 bis 20 Minuten.</span>
+                </div>
+                <div class="field">
+                  <label for="schlaf-zyklus">Zykluslänge</label>
+                  <div class="input-with-unit">
+                    <input type="text" inputmode="decimal" id="schlaf-zyklus" name="zyklus" value="90" autocomplete="off">
+                    <span class="unit-suffix" aria-hidden="true">Min.</span>
+                  </div>
+                  <span class="field-hint">Ein Zyklus dauert 70 bis 110 Minuten — 90 ist der Schnitt.</span>
+                </div>
+              </div>
+
+              <div class="field">
+                <label for="schlaf-alter">Altersgruppe <span class="field-optional">(ändert nur die Empfehlung)</span></label>
+                <select id="schlaf-alter" name="alter">
+                  <option value="erwachsene" selected>Erwachsene · 18–64 Jahre</option>
+                  <option value="kind">Kind · 6–13 Jahre</option>
+                  <option value="jugend">Jugend · 14–17 Jahre</option>
+                  <option value="senior">65+ Jahre</option>
+                </select>
+                <span class="field-hint">Die Altersgruppe ändert nur, welche Zeile empfohlen wird — die Rechnung bleibt gleich.</span>
+              </div>
+
+              <p class="form-error" id="schlafzyklus-error" role="alert" hidden></p>
+              <button class="calculate-button" type="submit" id="schlafzyklus-calc-btn">Schlafenszeit finden ↗</button>
+              <p class="live-hint">Du musst gar nicht erst auf den Knopf drücken: Sobald du tippst, steht das Ergebnis schon da.</p>
+            </form>
+
+            <div class="result-panel" id="schlafzyklus-result" aria-live="polite">
+              <p class="result-topline">DEIN ERGEBNIS ✓</p>
+              <p class="result-value" id="result-value">23:15</p>
+              <p class="result-context" id="result-context">Wecker 07:00, 5 Zyklen à 90 Minuten, 15 Minuten zum Einschlafen: Leg dich um 23:15 hin (am Vortag) — das sind 7,5 Stunden Schlaf.</p>
+              <p class="result-also" id="result-also">3 Zyklen: 02:15 Uhr · 4 Zyklen: 00:45 Uhr · 6 Zyklen: 21:45 Uhr</p>
+              <div class="result-extra" id="result-extra"></div>
+              <div class="result-meta">
+                <span class="result-formula" id="result-formula">07:00 − 5 × 90 Min. − 15 Min. = 23:15</span>
+                <button class="copy-button" id="schlafzyklus-copy" type="button">Ergebnis kopieren</button>
+              </div>
+            </div>
+
+            <div class="schlafzyklus-note">
+              <h3>Nickerchen: 20–30 Minuten</h3>
+              <p>Ein Nickerchen ist kein voller Zyklus — 20 bis 30 Minuten reichen, um wieder wach zu werden. Länger als 30 Minuten, und du wachst mitten im Zyklus auf.</p>
+            </div>
+
+            <p class="schlafzyklus-medizin">Die Zeiten sind eine grobe Schätzung, keine Messung. Bei dauerhaften Ein- oder Durchschlafproblemen oder starker Tagesmüdigkeit bitte ärztlich abklären lassen.</p>
+
+            <div class="preset-chips" role="group" aria-label="Beispiele zum Ausprobieren">
+              <button class="preset-chip" type="button" data-example="pendler">Wecker 06:30 → 22:46</button>
+              <button class="preset-chip" type="button" data-example="nacht">Nachtschicht 15:00 → 22:45</button>
+              <button class="preset-chip" type="button" data-example="kind">Kind 07:00 → 21:45</button>
+            </div>
+          </div>
+
+          <aside class="calc-aside">
+            <p class="aside-eyebrow">GUT ZU WISSEN</p>
+            <div class="aside-art" aria-hidden="true">
+              <span class="art-label">90</span>
+              <span class="art-short"></span>
+              <span class="art-long"></span>
+            </div>
+            <h2>90 Minuten sind ein Schnitt</h2>
+            <p>Ein Schlafzyklus dauert bei den meisten Menschen 70 bis 110 Minuten — 90 ist nur der Mittelwert. Wer länger oder kürzer schläft, stellt die Zykluslänge oben um — die Zeiten ändern sich sofort.</p>
+            <a class="aside-link" href="#anleitung">Warum das so ist →</a>
+          </aside>
+        </div>
+
+        <div class="ad-slot" aria-hidden="true">
+          <span class="ad-slot-label">Anzeige</span>
+          <div class="ad-slot-box">Werbeplatz</div>
+        </div>
+      </section>
+
+      <section class="quick-examples" id="beispiele">
+        <p class="section-eyebrow">Drei Beispiele zum Ausprobieren</p>
+        <h2>Drei Zahlen, drei<br><span>Antworten.</span></h2>
+        <p class="section-intro">Tipp eine Karte an — der Rechner oben rechnet mit genau diesen Werten weiter.</p>
+        <div class="example-grid">
+          <article class="example-card" data-example="pendler" tabindex="0" role="button" aria-label="Beispiel laden: Pendler, Wecker 06:30 Uhr">
+            <span class="example-symbol" aria-hidden="true">🚆</span>
+            <h3>Pendler</h3>
+            <p>Wecker 06:30</p>
+            <p class="example-result">22:46 · 5 Zyklen</p>
+          </article>
+          <article class="example-card" data-example="nacht" tabindex="0" role="button" aria-label="Beispiel laden: Nachtschicht, ins Bett 15:00 Uhr">
+            <span class="example-symbol" aria-hidden="true">🌙</span>
+            <h3>Nachtschicht</h3>
+            <p>Ins Bett 15:00</p>
+            <p class="example-result">22:45 · 5 Zyklen</p>
+          </article>
+          <article class="example-card" data-example="kind" tabindex="0" role="button" aria-label="Beispiel laden: Kind, Wecker 07:00 Uhr">
+            <span class="example-symbol" aria-hidden="true">🧒</span>
+            <h3>Kind</h3>
+            <p>Wecker 07:00</p>
+            <p class="example-result">21:45 · 6 Zyklen</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="table-section" id="tabelle">
+        <p class="section-eyebrow">Deine Zeiten</p>
+        <h2>Alle Zyklen auf<br><span>einen Blick.</span></h2>
+        <p class="table-intro" style="margin-bottom: 16px;">Tipp eine Zeile an — der Rechner oben rechnet mit genau diesen Werten weiter. Die Zeiten kommen aus deinen Eingaben oben.</p>
+        <div class="table-wrap">
+          <table class="scale-table" id="zyklus-tabelle">
+            <caption>Alle Zyklen auf einen Blick — tipp eine Zeile an, um sie zu wählen</caption>
+            <thead>
+              <tr>
+                <th scope="col">Zyklen</th>
+                <th scope="col">Uhrzeit</th>
+                <th scope="col">Schlaf</th>
+                <th scope="col">Hinweis</th>
+              </tr>
+            </thead>
+            <tbody id="zyklus-tbody">
+            </tbody>
+          </table>
+        </div>
+        <p class="table-note" id="alter-hinweis">Für Erwachsene (18–64 Jahre) empfiehlt die National Sleep Foundation 7–9 Stunden Schlaf. Die Altersgruppe ändert nur die Empfehlung — die Rechnung bleibt gleich.</p>
+
+        <p class="section-eyebrow" style="margin-top: 40px;">Zyklen in Stunden</p>
+        <h2>So viele Zyklen sind<br><span>wie viele Stunden?</span></h2>
+        <p class="table-intro" style="margin-bottom: 16px;">Bei 90 Minuten je Zyklus. Wer die Zykluslänge oben ändert, sieht die Zeiten im Rechner sofort neu.</p>
+        <div class="table-wrap">
+          <table class="scale-table" id="zyklen-tabelle">
+            <caption>Zyklen in Stunden — bei 90 Minuten je Zyklus</caption>
+            <thead>
+              <tr>
+                <th scope="col">Zyklen</th>
+                <th scope="col">Schlaf</th>
+                <th scope="col">Für wen passt das?</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">3 Zyklen</th><td>4,5 Stunden</td><td>Eher kurz — nur für eine Nacht</td></tr>
+              <tr><th scope="row">4 Zyklen</th><td>6 Stunden</td><td>Eher kurz — unter dem Bedarf</td></tr>
+              <tr><th scope="row">5 Zyklen</th><td>7,5 Stunden</td><td>Meist passend — Erwachsene, 65+</td></tr>
+              <tr><th scope="row">6 Zyklen</th><td>9 Stunden</td><td>Meist passend — Kinder, Jugendliche</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p class="section-eyebrow" style="margin-top: 40px;">Schlafbedarf nach Alter</p>
+        <h2>Wie viel Schlaf<br><span>brauche ich?</span></h2>
+        <p class="table-intro" style="margin-bottom: 16px;">Empfohlene Schlafdauer je Alter — die Werte der National Sleep Foundation. Kinder brauchen mehr Schlaf als Erwachsene.</p>
+        <div class="table-wrap">
+          <table class="scale-table" id="alter-tabelle">
+            <caption>Empfohlener Schlaf je Alter (National Sleep Foundation)</caption>
+            <thead>
+              <tr>
+                <th scope="col">Alter</th>
+                <th scope="col">Schlaf pro Nacht</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">Kind · 6–13 Jahre</th><td>9–11 Stunden</td></tr>
+              <tr><th scope="row">Jugend · 14–17 Jahre</th><td>8–10 Stunden</td></tr>
+              <tr><th scope="row">Erwachsene · 18–64 Jahre</th><td>7–9 Stunden</td></tr>
+              <tr><th scope="row">65+ Jahre</th><td>7–8 Stunden</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="table-note">Quelle: Hirshkowitz et al. 2015, National Sleep Foundation — <a href="https://pubmed.ncbi.nlm.nih.gov/29073412/" target="_blank" rel="noopener">Empfehlungen nach Alter (PubMed) ↗</a>. Die Tabelle zeigt nur den Bedarf — wie viele Zyklen das sind, steht im Rechner oben.</p>
+      </section>
+
+      <section class="guide-section" id="anleitung">
+        <p class="guide-eyebrow">Kurz erklärt</p>
+        <h2>Schlafzyklen berechnen:<br><span>so funktioniert’s.</span></h2>
+        <p class="guide-intro">Eine Formel reicht für fast jede Schlafenszeit. Die fünf Sachen unten zeigen dir, worauf es ankommt.</p>
+        <div class="guide-grid">
+          <article class="guide-step">
+            <p class="guide-step-number">Schritt 01</p>
+            <h3>Was ist ein Schlafzyklus?</h3>
+            <p>Ein Zyklus dauert etwa 90 Minuten: Leichtschlaf, dann Tiefschlaf, dann Traumschlaf (REM) — und dann geht es von vorn los. Frühe Zyklen haben mehr Tiefschlaf, späte mehr Traumschlaf.</p>
+            <p class="guide-equation">1 Zyklus ≈ 90 Minuten · 5 Zyklen = 7,5 Stunden</p>
+          </article>
+          <article class="guide-step">
+            <p class="guide-step-number">Schritt 02</p>
+            <h3>Die Rechnung</h3>
+            <p>Schlafenszeit = Weckzeit − Zyklen × 90 Min. − Zeit zum Einschlafen. Wecker 07:00, 5 Zyklen, 15 Minuten: 07:00 − 450 Min. − 15 Min. = 23:15.</p>
+            <p class="guide-equation">07:00 − 5 × 90 Min. − 15 Min. = 23:15</p>
+          </article>
+          <article class="guide-step">
+            <p class="guide-step-number">Schritt 03</p>
+            <h3>Die Einschlafzeit zählt dazu</h3>
+            <p>Die 15 Minuten, bis du einschläfst, gehören nicht zum Schlaf. Wer sie vergisst, rechnet mit weniger Schlaf — und wacht mitten im ersten Zyklus auf.</p>
+            <p class="guide-equation">15 Min. Einschlafen + 5 × 90 Min. = 7 Stunden 45 Minuten im Bett</p>
+          </article>
+          <article class="guide-step">
+            <p class="guide-step-number">Schritt 04</p>
+            <h3>Mitten im Zyklus aufwachen</h3>
+            <p>Wer mitten in einem Zyklus aufwacht, ist benommen: Schlafträgheit dauert 15 bis 60 Minuten. Wer am Ende eines Zyklus aufwacht — also nach 4,5, 6, 7,5 oder 9 Stunden — ist schneller wach.</p>
+            <p class="guide-equation">4,5 · 6 · 7,5 · 9 Stunden — immer am Zyklusende aufwachen</p>
+          </article>
+          <article class="guide-step">
+            <p class="guide-step-number">Schritt 05</p>
+            <h3>Zyklen sind nicht alle gleich lang</h3>
+            <p>Ein Zyklus dauert bei den meisten Menschen 70 bis 110 Minuten — 90 ist ein Schnitt. Dement &amp; Kleitman haben die 90 Minuten 1957 beschrieben; Feinberg &amp; Floyd haben 1979 gezeigt, dass die Zyklen im Laufe der Nacht länger werden. Deshalb kannst du die Zykluslänge oben ändern.</p>
+            <p class="guide-equation">Zyklus: 70–110 Min. · Schnitt: 90 Min.</p>
+          </article>
+        </div>
+        <aside class="formula-card">
+          <p class="formula-eyebrow">Die Formeln, die du brauchst</p>
+          <p class="formula-main">Schlafenszeit = Weckzeit − Zyklen × 90 Min. − Einschlafzeit</p>
+          <p>Aufwachzeit = Schlafenszeit + Einschlafzeit + Zyklen × 90 Min. Ein Zyklus sind etwa 90 Minuten — bei den meisten Menschen 70 bis 110.</p>
+          <p class="formula-small">Quellen: Dement &amp; Kleitman 1957 (<a href="https://doi.org/10.1016/0013-4694(57)90088-3" target="_blank" rel="noopener">doi.org ↗</a>) · Schlafbedarf nach Alter: Hirshkowitz et al. 2015, National Sleep Foundation (<a href="https://pubmed.ncbi.nlm.nih.gov/29073412/" target="_blank" rel="noopener">PubMed ↗</a>).</p>
+        </aside>
+
+        <div class="schlafzyklus-note">
+          <h3>Schichtarbeit?</h3>
+          <p>Wenn du nachts arbeitest, rechnest du hier mit deiner Schlafenszeit am Tag — die Rechnung ist die gleiche. Die Arbeitszeit selbst — Anfang, Ende, Pause — rechnest du mit dem <a href="../stunden-rechner/">Arbeitszeitrechner</a> aus.</p>
+        </div>
+      </section>
+
+      <section class="practice-section" id="ueben">
+        <p class="section-eyebrow">Drei Aufgaben zum Üben</p>
+        <h2>Jetzt bist du<br><span>dran.</span></h2>
+        <p class="section-intro">Drei Aufgaben — die Lösungen stehen direkt darunter. Probier es zuerst selbst und klick dann auf „Lösung“.</p>
+        <div class="practice-grid">
+          <details class="practice-task">
+            <summary><span class="practice-number">Aufgabe 1</span>Wecker 06:00, 5 Zyklen, 15 Min. Einschlafen — wann ins Bett?</summary>
+            <p>22:15, am Vortag: 06:00 − 5 × 90 Min. − 15 Min. = 22:15.</p>
+          </details>
+          <details class="practice-task">
+            <summary><span class="practice-number">Aufgabe 2</span>Ins Bett 23:00, 4 Zyklen — wann aufstehen?</summary>
+            <p>05:15, am Folgetag: 23:00 + 15 Min. + 4 × 90 Min. = 05:15.</p>
+          </details>
+          <details class="practice-task">
+            <summary><span class="practice-number">Aufgabe 3</span>Wecker 07:00, 6 Zyklen, 10 Min. Einschlafen — wann ins Bett?</summary>
+            <p>21:50, am Vortag: 07:00 − 6 × 90 Min. − 10 Min. = 21:50.</p>
+          </details>
+        </div>
+      </section>
+
+      <section class="faq-section" id="faq">
+        <p class="section-eyebrow">Häufige Fragen</p>
+        <h2>Was du noch<br><span>wissen solltest.</span></h2>
+        <div class="faq-list">
+          <details class="faq-item">
+            <summary>Wie lange dauert ein Schlafzyklus wirklich?</summary>
+            <p>Im Schnitt 90 Minuten — bei den meisten Menschen zwischen 70 und 110. Der Rechner nimmt 90, du kannst die Länge oben ändern.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Wie viele Zyklen brauche ich?</summary>
+            <p>Für Erwachsene 5 bis 6 Zyklen — das sind 7,5 bis 9 Stunden. Kinder brauchen mehr: 6 bis 13 Jahre 9 bis 11 Stunden, 14 bis 17 Jahre 8 bis 10 Stunden.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Warum fühle ich mich nach 8 Stunden trotzdem müde?</summary>
+            <p>Weil du mitten in einem Zyklus aufgewacht bist. 8 Stunden sind 5 Zyklen (7,5 Stunden) plus eine halbe Stunde in den nächsten Zyklus hinein — da bist du im Tiefschlaf. Schlafträgheit dauert dann 15 bis 60 Minuten.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Zählt die Zeit zum Einschlafen zum Schlaf?</summary>
+            <p>Nein. Die 15 Minuten, bis du einschläfst, sind kein Schlaf. Der Rechner zieht sie extra ab — sonst wacht man mitten im ersten Zyklus auf.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Kann man Schlaf nachholen?</summary>
+            <p>Kurzfristig ja: Eine längere Nacht holt ein Schlafdefizit von ein, zwei Nächten auf. Dauerhaft zu wenig Schlaf holt man mit einer Nacht nicht auf — dann hilft nur ein regelmäßiger Rhythmus.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Was tun bei dauerhaften Schlafproblemen?</summary>
+            <p>Ärztlich abklären lassen. Der Rechner gibt Zeiten aus, keine Diagnose — bei dauerhaften Ein- oder Durchschlafproblemen oder starker Tagesmüdigkeit bitte zum Arzt.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Brauche ich als Kind mehr Schlaf?</summary>
+            <p>Ja. Kinder von 6 bis 13 Jahren brauchen 9 bis 11 Stunden, Jugendliche von 14 bis 17 Jahren 8 bis 10 Stunden (National Sleep Foundation). Der Rechner zeigt dir für deine Altersgruppe die passende Zeile an.</p>
+          </details>
+        </div>
+      </section>
+
+      <section class="more-tools">
+        <div class="quick-title"><span class="eyebrow">Mehr Rechner</span><h2>Das gibt es noch bei maßklar.</h2></div>
+        <div class="tool-grid">
+          <a class="tool-card" href="../massstabsrechner/"><span class="tool-icon" aria-hidden="true">🗺</span><span class="tool-text"><span class="tool-title">Maßstabsrechner</span><span class="tool-desc">Karten, Grundrisse, Modellbau: echte Länge und Plan-Länge umrechnen.</span></span><span class="tool-arrow" aria-hidden="true">↗</span></a>
+          <a class="tool-card" href="../altersrechner/"><span class="tool-icon" aria-hidden="true">🎂</span><span class="tool-text"><span class="tool-title">Altersrechner</span><span class="tool-desc">Wie alt bist du in Jahren, Monaten und Tagen? Mit Geburtstag-Countdown.</span></span><span class="tool-arrow" aria-hidden="true">↗</span></a>
+          <a class="tool-card" href="../massstabsrechner/modellbau/"><span class="tool-icon" aria-hidden="true">🚂</span><span class="tool-text"><span class="tool-title">Modellbau-Maßstab</span><span class="tool-desc">H0, Spur N, 1:72: echte Länge in Modell-Länge umrechnen.</span></span><span class="tool-arrow" aria-hidden="true">↗</span></a>
+          <a class="tool-card" href="../prozentrechner/"><span class="tool-icon" aria-hidden="true">%</span><span class="tool-text"><span class="tool-title">Prozentrechner</span><span class="tool-desc">Prozentwert, Rabatt oder Erhöhung — in Sekunden.</span></span><span class="tool-arrow" aria-hidden="true">↗</span></a>
+          <a class="tool-card" href="../bmi-rechner/"><span class="tool-icon" aria-hidden="true">⚖</span><span class="tool-text"><span class="tool-title">BMI-Rechner</span><span class="tool-desc">Body-Mass-Index ausrechnen und einordnen.</span></span><span class="tool-arrow" aria-hidden="true">↗</span></a>
+          <a class="tool-card" href="../tage-rechner/"><span class="tool-icon" aria-hidden="true">📅</span><span class="tool-text"><span class="tool-title">Tage-Rechner</span><span class="tool-desc">Tage zwischen zwei Daten zählen — mit Wochen, Arbeitstagen und Wochentag.</span></span><span class="tool-arrow" aria-hidden="true">↗</span></a>
+          <a class="tool-card" href="../stunden-rechner/"><span class="tool-icon" aria-hidden="true">🕐</span><span class="tool-text"><span class="tool-title">Stunden-Rechner</span><span class="tool-desc">Arbeitszeit und Stunden zwischen zwei Uhrzeiten — mit Pause und Nachtschicht.</span></span><span class="tool-arrow" aria-hidden="true">↗</span></a>
+          <a class="tool-card" href="../indexmiete-rechner/"><span class="tool-icon" aria-hidden="true">🏠</span><span class="tool-text"><span class="tool-title">Indexmiete-Rechner</span><span class="tool-desc">Neue Nettokaltmiete aus dem Verbraucherpreisindex — mit Rechenweg und Fristen.</span></span><span class="tool-arrow" aria-hidden="true">↗</span></a>
+          <a class="tool-card" href="../quadratmeter-rechner/"><span class="tool-icon" aria-hidden="true">🧱</span><span class="tool-text"><span class="tool-title">Quadratmeter-Rechner</span><span class="tool-desc">Fläche von Zimmern und Grundstücken — mit Verschnitt und Kosten.</span></span><span class="tool-arrow" aria-hidden="true">↗</span></a>
+        </div>
+        <p class="more-tools-link"><a href="../">Alle Rechner ansehen <span aria-hidden="true">→</span></a></p>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <a class="brand footer-brand" href="../"><span class="brand-mark" aria-hidden="true">mk</span><span>maßklar<span class="brand-period">.</span></span></a>
+      <p>Schlafzyklus berechnen — einfach, schnell und ohne Mathe-Stress. Ein Produkt von Hastle.</p>
+      <span>© <span id="current-year"></span> maßklar</span>
+    </footer>
+
+    <button class="back-to-top" id="back-to-top" type="button" aria-label="Nach oben scrollen">↑</button>
+    <script>
+      document.querySelector("#current-year").textContent = new Date().getFullYear();
+    </script>
+    <script>
+      (function () {
+        var button = document.getElementById("back-to-top");
+        var SHOW_AFTER = 500;
+        var footer = document.querySelector(".site-footer");
+        function updateVisibility() {
+          button.classList.toggle("is-visible", window.scrollY > SHOW_AFTER);
+          if (!footer) return;
+          var footerRect = footer.getBoundingClientRect();
+          var overlap = Math.max(0, window.innerHeight - footerRect.top);
+          button.style.bottom = overlap > 0 ? (overlap + 16) + "px" : "";
+        }
+        window.addEventListener("scroll", updateVisibility, { passive: true });
+        window.addEventListener("resize", updateVisibility);
+        button.addEventListener("click", function () {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+        updateVisibility();
+      })();
+    </script>
+    <script src="app.js" defer></script>
+  </body>
+</html>
