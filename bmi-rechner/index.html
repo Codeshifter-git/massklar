@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI-Rechner – Body-Mass-Index kostenlos berechnen</title>
+    <meta name="description" content="BMI-Rechner kostenlos: Größe und Gewicht eingeben, Body-Mass-Index sofort sehen – mit WHO-Tabelle, Normalgewicht und Grenzen des BMI. Ohne Anmeldung.">
+    <link rel="canonical" href="https://codeshifter-git.github.io/massklar/bmi-rechner/">
+    <meta property="og:title" content="BMI-Rechner – Body-Mass-Index kostenlos berechnen">
+    <meta property="og:description" content="BMI-Rechner kostenlos: Größe und Gewicht eingeben, Body-Mass-Index sofort sehen – mit WHO-Tabelle, Normalgewicht und Grenzen des BMI. Ohne Anmeldung.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://codeshifter-git.github.io/massklar/bmi-rechner/">
+    <meta property="og:locale" content="de_DE">
+    <script>
+      document.documentElement.classList.add('js');
+    </script>
+    <link rel="preload" href="../fonts/bitter-700.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="../fonts/dm-sans-400.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="../fonts/dm-sans-700.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="../fonts/dm-mono-400.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="../styles.css?v=11">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebApplication",
+          "name": "BMI-Rechner",
+          "url": "https://codeshifter-git.github.io/massklar/bmi-rechner/",
+          "applicationCategory": "HealthApplication",
+          "operatingSystem": "Web",
+          "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
+          "description": "BMI-Rechner kostenlos: Größe und Gewicht eingeben, Body-Mass-Index sofort sehen – mit WHO-Tabelle, Normalgewicht und Grenzen des BMI. Ohne Anmeldung.",
+          "inLanguage": "de"
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "maßklar", "item": "https://codeshifter-git.github.io/massklar/" },
+            { "@type": "ListItem", "position": 2, "name": "BMI-Rechner", "item": "https://codeshifter-git.github.io/massklar/bmi-rechner/" }
+          ]
+        },
+        {
+          "@type": "HowTo",
+          "name": "BMI berechnen",
+          "description": "So rechnest du deinen Body-Mass-Index aus und liest das Ergebnis.",
+          "step": [
+            { "@type": "HowToStep", "position": 1, "name": "Die Formel", "text": "Gewicht geteilt durch Größe mal Größe. Die Größe nimmst du in Metern." },
+            { "@type": "HowToStep", "position": 2, "name": "Rechenbeispiel: 1,75 m und 70 kg", "text": "Erst die Größe mal sich selbst: 1,75 mal 1,75 gleich 3,0625. Dann das Gewicht geteilt durch diese Zahl: 70 geteilt durch 3,0625 gleich 22,9." },
+            { "@type": "HowToStep", "position": 3, "name": "So liest du die Tabelle", "text": "Such deine Größe in der Tabelle: Bei 175 cm ist alles zwischen 56,7 und 76,3 kg Normalgewicht. Die Mitte davon – 66,5 kg – ist das Idealgewicht." },
+            { "@type": "HowToStep", "position": 4, "name": "Was der BMI nicht sagt", "text": "Der BMI sieht nur Gewicht und Größe. Er sieht nicht, ob das Gewicht Muskeln oder Fett sind – ein durchtrainierter Mensch kann einen hohen BMI haben und trotzdem wenig Körperfett. Er sieht auch nicht, wo das Fett sitzt – dafür hilft der Taillenumfang: kleiner als die halbe Größe ist gut. Und er gilt nicht für Kinder unter 18, Schwangere und Menschen mit Essstörungen." }
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            { "@type": "Question", "name": "Welcher BMI ist normal?", "acceptedAnswer": { "@type": "Answer", "text": "18,5 bis 24,9 – das sagt die WHO-Tabelle. Darunter ist Untergewicht, ab 25 Übergewicht, ab 30 Adipositas." } },
+            { "@type": "Question", "name": "Wie berechne ich meinen BMI?", "acceptedAnswer": { "@type": "Answer", "text": "Gewicht in Kilo geteilt durch Größe in Metern mal sich selbst. Beispiel: 70 geteilt durch (1,75 mal 1,75) gleich 22,9." } },
+            { "@type": "Question", "name": "Gibt es einen anderen BMI für Frauen?", "acceptedAnswer": { "@type": "Answer", "text": "Nein. Die WHO-Grenzen gelten für Frauen und Männer gleich. Frauen haben bei gleichem BMI im Schnitt mehr Körperfett – die Grenzen bleiben trotzdem dieselben." } },
+            { "@type": "Question", "name": "Gilt der BMI auch für Kinder?", "acceptedAnswer": { "@type": "Answer", "text": "Nein. Unter 18 Jahren gelten Perzentilkurven, nicht diese Tabelle. Frag eine Kinderärztin oder einen Kinderarzt – dieser Rechner ist nur für Erwachsene." } },
+            { "@type": "Question", "name": "Steigt der normale BMI mit dem Alter?", "acceptedAnswer": { "@type": "Answer", "text": "Die WHO sagt nein – ihre Tabelle gilt für alle Erwachsenen. Ältere Empfehlungen aus den USA (1989) sagen ja. Nach Angaben der Stiftung Gesundheitswissen liegt der optimale BMI ab 65 Jahren bei etwa 25 bis 30." } },
+            { "@type": "Question", "name": "Welcher BMI ist ab 60 normal?", "acceptedAnswer": { "@type": "Answer", "text": "Nach der WHO-Tabelle: 18,5 bis 24,9 – es gibt keine eigene WHO-Tabelle ab 50 oder 60. Ab 65 gilt ein BMI von etwa 25 bis 30 oft als günstig (Stiftung Gesundheitswissen)." } },
+            { "@type": "Question", "name": "Wie aussagekräftig ist der BMI?", "acceptedAnswer": { "@type": "Answer", "text": "Er ist ein Richtwert, keine Diagnose. Er sieht nicht, ob dein Gewicht Muskeln oder Fett sind, und nicht, wo das Fett sitzt. Der Taillenumfang hilft weiter: kleiner als die halbe Größe ist gut. Bei Fragen frag deine Ärztin oder deinen Arzt." } },
+            { "@type": "Question", "name": "Werden meine Daten gespeichert?", "acceptedAnswer": { "@type": "Answer", "text": "Nein. Alles wird nur in deinem Browser gerechnet. Nichts geht an einen Server – und deine Eingaben bleiben auf deinem Gerät. Du kannst sie mit „Zurück zum Start“ löschen." } }
+          ]
+        }
+      ]
+    }
+    </script>
+  </head>
+  <body class="tool-page bmi-page">
+    <a class="skip-link" href="#rechner">Zum Rechner springen</a>
+
+    <header class="site-header">
+      <a class="brand" href="../"><span class="brand-mark" aria-hidden="true">mk</span><span>maßklar<span class="brand-period">.</span></span></a>
+      <nav class="site-nav" aria-label="Hauptnavigation">
+        <a href="../">Alle Rechner</a>
+        <a href="#rechner">Rechner</a>
+        <a href="#beispiele">Beispiele</a>
+        <a href="#tabelle">Tabelle</a>
+        <a href="#anleitung">So geht's</a>
+      </nav>
+      <a class="header-cta" href="../#rechner">Zum Rechner ↓</a>
+    </header>
+
+    <main>
+      <section class="tool-hero">
+        <div class="hero-copy">
+          <p class="hero-eyebrow">Der einfache BMI-Rechner</p>
+          <h1>BMI-Rechner.<br><span>Ist dein Gewicht okay? Die Antwort in Sekunden.</span></h1>
+          <p class="hero-description">Der Body-Mass-Index (BMI) sagt, ob dein Gewicht zu deiner Größe passt. Du teilst dein Gewicht in Kilo durch deine Größe in Metern mal sich selbst. Bei 175 cm und 70 kg sind das 22,9 — Normalgewicht. Hier rechnest du deinen BMI aus, siehst die WHO-Tabelle und dein Normalgewicht — kostenlos und ohne Anmeldung.</p>
+          <div class="hero-actions">
+            <a class="button-primary" href="#rechner">BMI berechnen ↓</a>
+            <a class="text-link" href="#tabelle">WHO-Tabelle ansehen ↓</a>
+          </div>
+        </div>
+        <div class="hero-visual" aria-label="Beispiel: BMI auf einen Blick">
+          <div class="bmi-card">
+            <div class="bmi-card-top"><span>175 CM · 70 KG</span><span class="bmi-badge">BMI 22,9</span></div>
+            <p class="bmi-card-value">22,9</p>
+            <p class="bmi-card-cat">Normalgewicht</p>
+            <p class="bmi-card-note">Normalgewicht: 56,7 – 76,3 kg</p>
+          </div>
+          <div class="floating-note"><span class="note-icon">↗</span><span><strong>70 kg</strong><small>Gewicht</small></span><span class="note-equals">=</span><span><strong>22,9</strong><small>BMI</small></span></div>
+          <span class="visual-orbit orbit-one"></span>
+          <span class="visual-orbit orbit-two"></span>
+          <span class="hero-index">05 / 05</span>
+        </div>
+      </section>
+
+      <section class="calculator-section" id="rechner">
+        <div class="calculator">
+          <div class="calc-main">
+            <div class="calc-toolbar">
+              <span class="live-indicator"><span class="live-dot" aria-hidden="true"></span>Bereit — leg los</span>
+              <button class="reset-button" id="bmi-reset" type="button">Zurück zum Start ↺</button>
+            </div>
+
+            <form id="bmi-form" novalidate>
+              <div class="input-grid">
+                <div class="field">
+                  <label for="bmi-height">Körpergröße</label>
+                  <div class="input-with-unit">
+                    <input type="text" inputmode="decimal" id="bmi-height" name="height" value="175" autocomplete="off" aria-describedby="height-hint">
+                    <span class="unit" aria-hidden="true">cm</span>
+                  </div>
+                  <span class="field-hint" id="height-hint">In Zentimetern, z. B. 175.</span>
+                </div>
+                <div class="field">
+                  <label for="bmi-weight">Gewicht</label>
+                  <div class="input-with-unit">
+                    <input type="text" inputmode="decimal" id="bmi-weight" name="weight" value="70" autocomplete="off" aria-describedby="weight-hint">
+                    <span class="unit" aria-hidden="true">kg</span>
+                  </div>
+                  <span class="field-hint" id="weight-hint">In Kilo, z. B. 70.</span>
+                </div>
+                <div class="field">
+                  <label for="bmi-age">Alter <span class="field-optional">(optional)</span></label>
+                  <div class="input-with-unit">
+                    <input type="text" inputmode="numeric" id="bmi-age" name="age" value="" placeholder="z. B. 45" autocomplete="off" aria-describedby="age-hint">
+                    <span class="unit" aria-hidden="true">Jahre</span>
+                  </div>
+                  <span class="field-hint" id="age-hint">Nur für den Hinweis ab 65 und die Warnung unter 18.</span>
+                </div>
+                <div class="field">
+                  <label for="bmi-waist">Taillenumfang <span class="field-optional">(optional)</span></label>
+                  <div class="input-with-unit">
+                    <input type="text" inputmode="decimal" id="bmi-waist" name="waist" value="" placeholder="z. B. 80" autocomplete="off" aria-describedby="waist-hint">
+                    <span class="unit" aria-hidden="true">cm</span>
+                  </div>
+                  <span class="field-hint" id="waist-hint">Für das Taille-Größe-Verhältnis — miss an der schmalsten Stelle.</span>
+                </div>
+              </div>
+
+              <p class="form-error" id="bmi-error" role="alert" hidden></p>
+              <button class="calculate-button" type="submit">BMI berechnen ↗</button>
+              <p class="live-hint">Du musst gar nicht erst auf den Knopf drücken: Sobald du tippst, steht das Ergebnis schon da.</p>
+            </form>
+
+            <div class="result-panel" id="bmi-result" aria-live="polite">
+              <p class="result-topline">DEIN ERGEBNIS ✓</p>
+              <p class="result-value" id="result-value">22,9</p>
+              <p class="result-context" id="result-context">Bei 175 cm und 70 kg ist dein BMI 22,9 — Normalgewicht.</p>
+              <div class="bmi-scale" aria-hidden="true">
+                <div class="bmi-scale-track">
+                  <span class="bmi-seg bmi-seg--unter"></span>
+                  <span class="bmi-seg bmi-seg--normal"></span>
+                  <span class="bmi-seg bmi-seg--ueber"></span>
+                  <span class="bmi-seg bmi-seg--adi1"></span>
+                  <span class="bmi-seg bmi-seg--adi2"></span>
+                  <span class="bmi-seg bmi-seg--adi3"></span>
+                  <span class="bmi-scale-marker" id="scale-marker" style="left: 31.8%;"></span>
+                </div>
+                <p class="bmi-scale-legend"><span class="lg-unter">Untergewicht</span><span class="lg-normal">Normalgewicht</span><span class="lg-ueber">Übergewicht</span><span class="lg-adi1">Adipositas I</span><span class="lg-adi2">Adipositas II</span><span class="lg-adi3">Adipositas III</span></p>
+              </div>
+              <p class="result-also" id="result-also">Normalgewicht: 56,7 – 76,3 kg · Idealgewicht: 66,5 kg</p>
+              <div class="result-extra" id="result-extra"></div>
+              <div class="result-meta">
+                <span class="result-formula" id="result-formula">70 ÷ (1,75 × 1,75) = 22,9</span>
+                <button class="copy-button" id="bmi-copy" type="button">Ergebnis kopieren</button>
+              </div>
+              <p class="bmi-disclaimer">Der BMI ist ein Richtwert, keine Diagnose. Er ersetzt keine ärztliche Beratung.</p>
+            </div>
+
+            <div class="preset-chips" role="group" aria-label="Beispiele zum Ausprobieren">
+              <button class="preset-chip" type="button" data-height="175" data-weight="70">175 cm, 70 kg → 22,9 (normal)</button>
+              <button class="preset-chip" type="button" data-height="180" data-weight="95">180 cm, 95 kg → 29,3 (Übergewicht)</button>
+              <button class="preset-chip" type="button" data-height="165" data-weight="50">165 cm, 50 kg → 18,4 (Untergewicht)</button>
+            </div>
+          </div>
+
+          <aside class="calc-aside">
+            <p class="aside-eyebrow">GUT ZU WISSEN</p>
+            <div class="aside-art" aria-hidden="true">
+              <span class="art-label">22,9</span>
+              <span class="art-short"></span>
+              <span class="art-long"></span>
+            </div>
+            <h2>Die Formel ist einfach.</h2>
+            <p>Gewicht geteilt durch Größe mal Größe. 70 kg bei 1,75 m: 70 ÷ (1,75 × 1,75) = 22,9. Mehr brauchst du nicht.</p>
+            <a class="aside-link" href="#anleitung">Formel Schritt für Schritt →</a>
+          </aside>
+        </div>
+
+        <div class="ad-slot" aria-hidden="true">
+          <span class="ad-slot-label">Anzeige</span>
+          <div class="ad-slot-box">Werbeplatz</div>
+        </div>
+      </section>
+
+      <section class="quick-examples" id="beispiele">
+        <p class="section-eyebrow">Drei Beispiele zum Ausprobieren</p>
+        <h2>Drei Zahlen, drei<br><span>Antworten.</span></h2>
+        <p class="section-intro">Tipp eine Karte an — der Rechner oben rechnet mit genau diesen Werten weiter.</p>
+        <div class="example-grid">
+          <article class="example-card" data-height="175" data-weight="70" tabindex="0" role="button" aria-label="Beispiel laden: 175 cm, 70 kg">
+            <span class="example-symbol" aria-hidden="true">✓</span>
+            <h3>Normalgewicht</h3>
+            <p>175 cm · 70 kg</p>
+            <p class="example-result">22,9 — Normalgewicht</p>
+          </article>
+          <article class="example-card" data-height="180" data-weight="95" tabindex="0" role="button" aria-label="Beispiel laden: 180 cm, 95 kg">
+            <span class="example-symbol" aria-hidden="true">↗</span>
+            <h3>Übergewicht</h3>
+            <p>180 cm · 95 kg</p>
+            <p class="example-result">29,3 — Übergewicht</p>
+          </article>
+          <article class="example-card" data-height="165" data-weight="50" tabindex="0" role="button" aria-label="Beispiel laden: 165 cm, 50 kg">
+            <span class="example-symbol" aria-hidden="true">↓</span>
+            <h3>Untergewicht</h3>
+            <p>165 cm · 50 kg</p>
+            <p class="example-result">18,4 — Untergewicht</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="table-section" id="tabelle">
+        <p class="section-eyebrow">Die WHO-Tabelle</p>
+        <h2>Was dein BMI<br><span>bedeutet.</span></h2>
+        <p class="table-intro" style="margin-bottom: 16px;">Die Weltgesundheitsorganisation (WHO) teilt den BMI für Erwachsene in sechs Klassen ein. Deine Klasse ist unten markiert.</p>
+        <div class="table-wrap">
+          <table class="scale-table scale-table--static" id="who-table">
+            <caption>WHO-Tabelle: BMI-Klassen für Erwachsene ab 20 Jahren</caption>
+            <thead>
+              <tr>
+                <th scope="col">Kategorie</th>
+                <th scope="col">BMI</th>
+                <th scope="col">Kurz gesagt</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr data-cat="unter">
+                <th scope="row">Untergewicht</th>
+                <td>unter 18,5</td>
+                <td>Leichter als üblich für deine Größe.</td>
+              </tr>
+              <tr data-cat="normal" class="is-you">
+                <th scope="row">Normalgewicht</th>
+                <td>18,5 – 24,9</td>
+                <td>Passt zu deiner Größe.</td>
+              </tr>
+              <tr data-cat="ueber">
+                <th scope="row">Übergewicht</th>
+                <td>25,0 – 29,9</td>
+                <td>Schwerer als üblich für deine Größe.</td>
+              </tr>
+              <tr data-cat="adi1">
+                <th scope="row">Adipositas Grad I</th>
+                <td>30,0 – 34,9</td>
+                <td>Starkes Übergewicht.</td>
+              </tr>
+              <tr data-cat="adi2">
+                <th scope="row">Adipositas Grad II</th>
+                <td>35,0 – 39,9</td>
+                <td>Starkes Übergewicht.</td>
+              </tr>
+              <tr data-cat="adi3">
+                <th scope="row">Adipositas Grad III</th>
+                <td>ab 40,0</td>
+                <td>Starkes Übergewicht.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="sources-line">Quellen: <a href="https://www.who.int/news-room/fact-sheets/detail/obesity-and-overweight" target="_blank" rel="noopener">WHO — Obesity and overweight</a> · <a href="https://www.cdc.gov/bmi/adult-calculator/bmi-categories.html" target="_blank" rel="noopener">CDC — Adult BMI Categories</a> · <a href="https://www.nhs.uk/conditions/obesity/" target="_blank" rel="noopener">NHS — Obesity</a>. Die Grenzen gelten für Erwachsene ab 20 Jahren — für Frauen und Männer gleich.</p>
+
+        <div class="bmi-note">
+          <h3>Steigt der normale BMI mit dem Alter?</h3>
+          <p>Die WHO sagt nein — ihre Tabelle gilt für alle Erwachsenen gleich. Ältere Empfehlungen sagen ja: Sie kommen aus einer US-Empfehlung von 1989 und sind keine WHO-Tabelle. Nach Angaben der Stiftung Gesundheitswissen liegt der optimale BMI ab 65 Jahren bei etwa 25 bis 30. Dein Ergebnis oben nutzt immer die WHO-Grenzen — der Hinweis ab 65 steht nur als Zusatz dabei.</p>
+        </div>
+
+        <p class="section-eyebrow" style="margin-top: 40px;">Normalgewicht nach Größe</p>
+        <h2>Wie viel darf ich<br><span>bei meiner Größe wiegen?</span></h2>
+        <p class="table-intro" style="margin-bottom: 16px;">So viel darfst du bei deiner Größe wiegen, damit dein BMI zwischen 18,5 und 24,9 liegt. Tipp eine Zeile an — der Rechner rechnet mit genau dieser Größe weiter.</p>
+        <div class="table-wrap">
+          <table class="scale-table" id="normal-weight-table">
+            <caption>Normalgewicht (BMI 18,5 – 24,9) nach Körpergröße, in Kilo</caption>
+            <thead>
+              <tr>
+                <th scope="col">Körpergröße</th>
+                <th scope="col">Von</th>
+                <th scope="col">Bis</th>
+                <th scope="col">Idealgewicht</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="nw-row" data-height="150"><th scope="row">150 cm</th><td>41,6 kg</td><td>56,0 kg</td><td>48,8 kg</td></tr>
+              <tr class="nw-row" data-height="155"><th scope="row">155 cm</th><td>44,4 kg</td><td>59,8 kg</td><td>52,1 kg</td></tr>
+              <tr class="nw-row" data-height="160"><th scope="row">160 cm</th><td>47,4 kg</td><td>63,7 kg</td><td>55,6 kg</td></tr>
+              <tr class="nw-row" data-height="165"><th scope="row">165 cm</th><td>50,4 kg</td><td>67,8 kg</td><td>59,1 kg</td></tr>
+              <tr class="nw-row" data-height="170"><th scope="row">170 cm</th><td>53,5 kg</td><td>72,0 kg</td><td>62,7 kg</td></tr>
+              <tr class="nw-row" data-height="175"><th scope="row">175 cm</th><td>56,7 kg</td><td>76,3 kg</td><td>66,5 kg</td></tr>
+              <tr class="nw-row" data-height="180"><th scope="row">180 cm</th><td>59,9 kg</td><td>80,7 kg</td><td>70,3 kg</td></tr>
+              <tr class="nw-row" data-height="185"><th scope="row">185 cm</th><td>63,3 kg</td><td>85,2 kg</td><td>74,3 kg</td></tr>
+              <tr class="nw-row" data-height="190"><th scope="row">190 cm</th><td>66,8 kg</td><td>89,9 kg</td><td>78,3 kg</td></tr>
+              <tr class="nw-row" data-height="195"><th scope="row">195 cm</th><td>70,3 kg</td><td>94,7 kg</td><td>82,5 kg</td></tr>
+              <tr class="nw-row" data-height="200"><th scope="row">200 cm</th><td>74,0 kg</td><td>99,6 kg</td><td>86,8 kg</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="guide-section" id="anleitung">
+        <p class="guide-eyebrow">Kurz erklärt</p>
+        <h2>BMI berechnen:<br><span>so funktioniert’s.</span></h2>
+        <p class="guide-intro">Der BMI ist eine Zahl, die Gewicht und Größe in ein Verhältnis setzt. Er sagt nicht, ob du gesund bist — aber er sagt, ob dein Gewicht zu deiner Größe passt.</p>
+        <div class="guide-grid">
+          <article class="guide-step">
+            <p class="guide-step-number">Schritt 01</p>
+            <h3>Die Formel</h3>
+            <p>Gewicht geteilt durch Größe mal Größe. Die Größe nimmst du in Metern.</p>
+            <p class="guide-equation">BMI = Gewicht (kg) ÷ Größe (m)²</p>
+          </article>
+          <article class="guide-step">
+            <p class="guide-step-number">Schritt 02</p>
+            <h3>Rechenbeispiel: 1,75 m und 70 kg</h3>
+            <p>Erst die Größe mal sich selbst: 1,75 × 1,75 = 3,0625. Dann das Gewicht geteilt durch diese Zahl: 70 ÷ 3,0625 = 22,9.</p>
+            <p class="guide-equation">70 ÷ (1,75 × 1,75) = 22,9</p>
+          </article>
+          <article class="guide-step">
+            <p class="guide-step-number">Schritt 03</p>
+            <h3>So liest du die Tabelle</h3>
+            <p>Such deine Größe in der Tabelle oben: Bei 175 cm ist alles zwischen 56,7 und 76,3 kg Normalgewicht. Die Mitte davon — 66,5 kg — ist das Idealgewicht, also die Mitte des Normalbereichs.</p>
+            <p class="guide-equation">56,7 – 76,3 kg · Idealgewicht 66,5 kg</p>
+          </article>
+          <article class="guide-step">
+            <p class="guide-step-number">Schritt 04</p>
+            <h3>Was der BMI nicht sagt</h3>
+            <p>Der BMI sieht nur Gewicht und Größe. Er sieht nicht, ob das Gewicht Muskeln oder Fett sind — ein durchtrainierter Mensch kann einen hohen BMI haben und trotzdem wenig Körperfett. Er sieht auch nicht, wo das Fett sitzt — dafür hilft der Taillenumfang: kleiner als die halbe Größe ist gut. Und er gilt nicht für Kinder unter 18, Schwangere und Menschen mit Essstörungen.</p>
+            <p class="guide-equation">Taille ÷ Größe: 80 ÷ 175 = 0,46</p>
+          </article>
+        </div>
+        <aside class="formula-card">
+          <p class="formula-eyebrow">Die Formel, die du brauchst</p>
+          <p class="formula-main">BMI = Gewicht (kg) ÷ (Größe (m) × Größe (m))</p>
+          <p>Normalgewicht: BMI 18,5 – 24,9 · Taille-Größe-Verhältnis: Taille ÷ Größe — unter 0,5 ist gut.</p>
+          <p class="formula-small">Die Grenzen gelten für Frauen und Männer gleich. Für Kinder unter 18 gilt diese Tabelle nicht.</p>
+        </aside>
+      </section>
+
+      <section class="practice-section" id="ueben">
+        <p class="section-eyebrow">Drei Aufgaben zum Üben</p>
+        <h2>Jetzt bist du<br><span>dran.</span></h2>
+        <p class="section-intro">Drei Aufgaben — die Lösungen stehen direkt darunter. Probier es zuerst selbst und klick dann auf „Lösung“.</p>
+        <div class="practice-grid">
+          <details class="practice-task">
+            <summary><span class="practice-number">Aufgabe 1</span>1,80 m und 80 kg — welcher BMI?</summary>
+            <p>80 ÷ (1,80 × 1,80) = 80 ÷ 3,24 = 24,7 — Normalgewicht.</p>
+          </details>
+          <details class="practice-task">
+            <summary><span class="practice-number">Aufgabe 2</span>1,70 m und 68 kg — welcher BMI?</summary>
+            <p>68 ÷ (1,70 × 1,70) = 68 ÷ 2,89 = 23,5 — Normalgewicht.</p>
+          </details>
+          <details class="practice-task">
+            <summary><span class="practice-number">Aufgabe 3</span>Welches Gewicht ist bei 175 cm normal?</summary>
+            <p>Zwischen 56,7 und 76,3 kg: 18,5 × 3,0625 = 56,7 kg und 24,9 × 3,0625 = 76,3 kg.</p>
+          </details>
+        </div>
+      </section>
+
+      <section class="faq-section" id="faq">
+        <p class="section-eyebrow">Häufige Fragen</p>
+        <h2>Was du noch<br><span>wissen solltest.</span></h2>
+        <div class="faq-list">
+          <details class="faq-item">
+            <summary>Welcher BMI ist normal?</summary>
+            <p>18,5 bis 24,9 — das sagt die WHO-Tabelle. Darunter ist Untergewicht, ab 25 Übergewicht, ab 30 Adipositas.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Wie berechne ich meinen BMI?</summary>
+            <p>Gewicht in Kilo geteilt durch Größe in Metern mal sich selbst. Beispiel: 70 ÷ (1,75 × 1,75) = 22,9.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Gibt es einen anderen BMI für Frauen?</summary>
+            <p>Nein. Die WHO-Grenzen gelten für Frauen und Männer gleich. Frauen haben bei gleichem BMI im Schnitt mehr Körperfett — die Grenzen bleiben trotzdem dieselben.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Gilt der BMI auch für Kinder?</summary>
+            <p>Nein. Unter 18 Jahren gelten Perzentilkurven, nicht diese Tabelle. Frag eine Kinderärztin oder einen Kinderarzt — dieser Rechner ist nur für Erwachsene.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Steigt der normale BMI mit dem Alter?</summary>
+            <p>Die WHO sagt nein — ihre Tabelle gilt für alle Erwachsenen. Ältere Empfehlungen aus den USA (1989) sagen ja. Nach Angaben der Stiftung Gesundheitswissen liegt der optimale BMI ab 65 Jahren bei etwa 25 bis 30.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Welcher BMI ist ab 60 normal?</summary>
+            <p>Nach der WHO-Tabelle: 18,5 bis 24,9 — es gibt keine eigene WHO-Tabelle ab 50 oder 60. Ab 65 gilt ein BMI von etwa 25 bis 30 oft als günstig (Stiftung Gesundheitswissen).</p>
+          </details>
+          <details class="faq-item">
+            <summary>Wie aussagekräftig ist der BMI?</summary>
+            <p>Er ist ein Richtwert, keine Diagnose. Er sieht nicht, ob dein Gewicht Muskeln oder Fett sind, und nicht, wo das Fett sitzt. Der Taillenumfang hilft weiter: kleiner als die halbe Größe ist gut. Bei Fragen frag deine Ärztin oder deinen Arzt.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Werden meine Daten gespeichert?</summary>
+            <p>Nein. Alles wird nur in deinem Browser gerechnet. Nichts geht an einen Server — und deine Eingaben bleiben auf deinem Gerät. Du kannst sie mit „Zurück zum Start“ löschen.</p>
+          </details>
+        </div>
+      </section>
+
+      <section class="more-tools">
+        <div class="more-tools-head">
+          <h2>Mehr Rechner <span>von maßklar.</span></h2>
+          <a class="more-tools-link" href="../">Alle Rechner ansehen →</a>
+        </div>
+        <div class="more-tools-grid">
+          <a class="more-tool-card" href="../massstabsrechner/">
+            <span class="more-tool-icon" aria-hidden="true">⇄</span>
+            <span class="more-tool-title">Maßstabsrechner</span>
+            <span class="more-tool-desc">Vom Plan zur Wirklichkeit — und zurück.</span>
+          </a>
+          <a class="more-tool-card" href="../altersrechner/">
+            <span class="more-tool-icon" aria-hidden="true">🗓</span>
+            <span class="more-tool-title">Altersrechner</span>
+            <span class="more-tool-desc">Wie alt bist du — auf den Tag genau.</span>
+          </a>
+          <a class="more-tool-card" href="../massstabsrechner/modellbau/">
+            <span class="more-tool-icon" aria-hidden="true">🧱</span>
+            <span class="more-tool-title">Modellbau-Rechner</span>
+            <span class="more-tool-desc">Echte Größe in Modellgröße umrechnen.</span>
+          </a>
+          <a class="more-tool-card" href="../prozentrechner/">
+            <span class="more-tool-icon" aria-hidden="true">%</span>
+            <span class="more-tool-title">Prozentrechner</span>
+            <span class="more-tool-desc">Rabatt, Erhöhung, Prozentsatz — in Sekunden.</span>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <a class="brand footer-brand" href="../"><span class="brand-mark" aria-hidden="true">mk</span><span>maßklar<span class="brand-period">.</span></span></a>
+      <p>BMI berechnen — einfach, schnell und ohne Mathe-Stress. Ein Produkt von Hastle.</p>
+      <span>© <span id="current-year"></span> maßklar</span>
+    </footer>
+
+    <button class="back-to-top" id="back-to-top" type="button" aria-label="Nach oben scrollen">↑</button>
+    <script>
+      document.querySelector("#current-year").textContent = new Date().getFullYear();
+    </script>
+    <script>
+      (function () {
+        var button = document.getElementById("back-to-top");
+        var SHOW_AFTER = 500;
+        var footer = document.querySelector(".site-footer");
+        function updateVisibility() {
+          button.classList.toggle("is-visible", window.scrollY > SHOW_AFTER);
+          if (!footer) return;
+          var footerRect = footer.getBoundingClientRect();
+          var overlap = Math.max(0, window.innerHeight - footerRect.top);
+          button.style.bottom = overlap > 0 ? (overlap + 16) + "px" : "";
+        }
+        window.addEventListener("scroll", updateVisibility, { passive: true });
+        window.addEventListener("resize", updateVisibility);
+        button.addEventListener("click", function () {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+        updateVisibility();
+      })();
+    </script>
+    <script src="app.js" defer></script>
+  </body>
+</html>
