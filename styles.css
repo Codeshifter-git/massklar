@@ -915,3 +915,42 @@ a.tool-card:active { transform: scale(.98); }
   .kredit-page .example-card h3 { font-size: 16px; }
   .kredit-page .example-result { flex-basis: 100%; }
 }
+
+/* Brutto-Netto-Rechner (2026-11-26): drei 2er-Raster (Zeitraum, Kirche,
+   RV-pflichtig), Eingaben zu zweit nebeneinander, Steuerklasse und
+   Bundesland als Auswahl im Eingabefeld, Aufschlüsselung im Ergebnis.
+   Der Rechner rechnet nach dem BMF Programmablaufplan 2026. */
+.bruttonetto-page .mode-grid { grid-template-columns: repeat(2, 1fr); }
+.bruttonetto-page .input-grid { grid-template-columns: 1fr 1fr; }
+.bruttonetto-page .input-with-unit select { width: 100%; }
+.bruttonetto-page .field.has-error input, .bruttonetto-page .field.has-error select { border-color: var(--error); }
+/* Aufschlüsselung im Ergebnis: Label links, Betrag rechts. */
+.bruttonetto-page .result-extra div { display: flex; justify-content: space-between; gap: 12px; }
+.bruttonetto-page .result-extra div span:last-child { white-space: nowrap; }
+.bruttonetto-page .result-extra .bn-total { border-top: 1px solid #e1e9d8; padding-top: 6px; font-weight: 700; color: var(--green-dark); }
+/* Minijob-/Midijob-Hinweis unter dem Ergebnis. */
+.bn-jobnote { margin: 12px 0 0; padding: 12px; border-radius: 5px; background: #fffefa; color: var(--ink); font-size: 14px; line-height: 1.65; }
+.bn-jobnote[hidden] { display: none; }
+/* Ehrliche Kästen: „Was der Rechner braucht — und was nicht" (im Rechner)
+   und „Was der Rechner nicht rechnet" (unter der Anleitung). */
+.bruttonetto-note { margin: 24px auto 0; max-width: 1050px; padding: 18px 20px; border-radius: 8px; background: #fffefa; box-shadow: 0 2px 10px #293e300d; }
+.bruttonetto-note h3 { margin: 0 0 8px; color: var(--green-dark); font: 700 18px var(--display); }
+.bruttonetto-note p { margin: 0; color: var(--ink); font-size: 15px; line-height: 1.65; }
+.bruttonetto-note a { color: var(--green); }
+/* Tabellenzeilen sind klickbar (laden Brutto bzw. Steuerklasse). */
+.bruttonetto-page .bn-row { cursor: pointer; }
+.bruttonetto-page .bn-row:hover td, .bruttonetto-page .bn-row:hover th { background: #f0f1e8; }
+@media (max-width: 960px) {
+  /* Brutto-Netto-Rechner: Beispielkarten stapeln sich schon ab Tablet —
+     die langen Rechenwege sprengen sonst die 3 Spalten (gleiche Falle wie
+     beim Bürgergeld-, Grundsteuer- und Kreditrechner). */
+  .bruttonetto-page .example-strip { grid-template-columns: 1fr; }
+}
+@media (max-width: 680px) {
+  /* Brutto-Netto-Rechner: Eingaben untereinander — zwei Spalten sind auf
+     dem Handy zu eng. */
+  .bruttonetto-page .input-grid { grid-template-columns: 1fr; }
+  .bruttonetto-page .example-card { flex-wrap: wrap; }
+  .bruttonetto-page .example-card h3 { font-size: 16px; }
+  .bruttonetto-page .example-result { flex-basis: 100%; }
+}

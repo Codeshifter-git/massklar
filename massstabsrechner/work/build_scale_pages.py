@@ -366,6 +366,7 @@ MORE_TOOLS = [
     ("🧾", "Bürgergeld-Rechner", "Regelbedarf, Miete und Einkommen — schätze deinen Anspruch.", "../../buergergeld-rechner/"),
     ("🏛️", "Grundsteuer-Rechner", "Grundsteuer im Jahr aus Grundsteuerwert, Messzahl und Hebesatz — mit Rechenweg.", "../../grundsteuer-rechner/"),
     ("💳", "Kreditrechner", "Monatsrate, Zinsen und Gesamtkosten — mit Tilgungsplan.", "../../kreditrechner/"),
+    ("💶", "Brutto-Netto-Rechner", "Was bleibt vom Gehalt übrig? Steuern und Abgaben grob ausrechnen.", "../../brutto-netto-rechner/"),
 ]
 
 
