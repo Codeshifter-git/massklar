@@ -363,6 +363,7 @@ MORE_TOOLS = [
     ("🏠", "Indexmiete-Rechner", "Neue Nettokaltmiete aus dem Verbraucherpreisindex — mit Rechenweg und Fristen.", "../../indexmiete-rechner/"),
     ("🧱", "Quadratmeter-Rechner", "Fläche von Zimmern und Grundstücken — mit Verschnitt und Kosten.", "../../quadratmeter-rechner/"),
     ("🌙", "Schlafzyklus-Rechner", "Besser aufwachen: Schlafenszeit in 90-Minuten-Schritten planen.", "../../schlafzyklus-rechner/"),
+    ("🧾", "Bürgergeld-Rechner", "Regelbedarf, Miete und Einkommen — schätze deinen Anspruch.", "../../buergergeld-rechner/"),
 ]
 
 

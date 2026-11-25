@@ -1,0 +1,487 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bürgergeld Rechner 2026 – Anspruch berechnen</title>
+    <meta name="description" content="Bürgergeld Rechner 2026: Schätze deinen Anspruch aus Regelbedarf, Miete und Einkommen. Nur ein Richtwert – der Bescheid kommt vom Jobcenter.">
+    <link rel="canonical" href="https://codeshifter-git.github.io/massklar/buergergeld-rechner/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Bürgergeld Rechner 2026 – Anspruch berechnen">
+    <meta property="og:description" content="Schätze deinen Anspruch aus Regelbedarf, Miete und Einkommen. Nur ein Richtwert – der Bescheid kommt vom Jobcenter.">
+    <meta property="og:url" content="https://codeshifter-git.github.io/massklar/buergergeld-rechner/">
+    <meta property="og:site_name" content="maßklar">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Bürgergeld Rechner 2026 – Anspruch berechnen">
+    <meta name="twitter:description" content="Schätze deinen Anspruch aus Regelbedarf, Miete und Einkommen. Nur ein Richtwert – der Bescheid kommt vom Jobcenter.">
+    <link rel="preload" href="../fonts/bitter-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="../fonts/dm-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="../styles.css">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebApplication",
+            "name": "Bürgergeld-Rechner",
+            "url": "https://codeshifter-git.github.io/massklar/buergergeld-rechner/",
+            "applicationCategory": "FinanceApplication",
+            "operatingSystem": "Any",
+            "inLanguage": "de",
+            "isAccessibleForFree": true,
+            "description": "Schätze deinen Bürgergeld-Anspruch aus Regelbedarf, Miete und Einkommen. Nur ein Richtwert – der Bescheid kommt vom Jobcenter.",
+            "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" }
+          },
+          {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              { "@type": "ListItem", "position": 1, "name": "Startseite", "item": "https://codeshifter-git.github.io/massklar/" },
+              { "@type": "ListItem", "position": 2, "name": "Bürgergeld-Rechner", "item": "https://codeshifter-git.github.io/massklar/buergergeld-rechner/" }
+            ]
+          },
+          {
+            "@type": "HowTo",
+            "name": "Bürgergeld-Anspruch schätzen",
+            "description": "So schätzt du deinen Bürgergeld-Anspruch in fünf Schritten.",
+            "step": [
+              { "@type": "HowToStep", "name": "Haushalt wählen", "text": "Wähle Alleinstehend oder Mit Partner. Ein Partner im Haushalt zählt mit 506 € Regelbedarf." },
+              { "@type": "HowToStep", "name": "Kinder eintragen", "text": "Trage die Kinder der Bedarfsgemeinschaft nach Alter ein: 0–5, 6–13, 14–17 oder 18–24 Jahre." },
+              { "@type": "HowToStep", "name": "Miete eintragen", "text": "Trage Kaltmiete, Nebenkosten und Heizkosten ein. Zusammen sind das die Kosten der Unterkunft." },
+              { "@type": "HowToStep", "name": "Einkommen eintragen", "text": "Trage Brutto und Netto aus Arbeit ein und sonstiges Einkommen. Der Freibetrag wird automatisch abgezogen." },
+              { "@type": "HowToStep", "name": "Anspruch ablesen", "text": "Der Rechner zieht das angerechnete Einkommen und das Kindergeld vom Bedarf ab. Das Ergebnis ist ein Richtwert." }
+            ]
+          },
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              { "@type": "Question", "name": "Was ist Bürgergeld?", "acceptedAnswer": { "@type": "Answer", "text": "Bürgergeld ist die Grundsicherung für Arbeitssuchende nach dem SGB II. Seit 1. Juli 2026 heißt die Leistung offiziell Grundsicherungsgeld — die Höhe hat sich dadurch nicht geändert." } },
+              { "@type": "Question", "name": "Wie hoch ist der Regelsatz 2026?", "acceptedAnswer": { "@type": "Answer", "text": "Alleinstehende bekommen 563 € im Monat, Partner in einer Bedarfsgemeinschaft je 506 €. Kinder bekommen 357 € (0–5 Jahre), 390 € (6–13 Jahre) oder 471 € (14–17 Jahre); junge Erwachsene von 18–24 Jahren bekommen 451 €." } },
+              { "@type": "Question", "name": "Steigt das Bürgergeld 2027?", "acceptedAnswer": { "@type": "Answer", "text": "Geplant ist eine Nullrunde: Die Regelsätze sollen am 1. Januar 2027 nicht steigen, die nächste Anpassung folgt erst am 1. Juli 2028. Der Haushaltsausschuss hat sich am 16. November 2026 dafür ausgesprochen. Beschlossen ist das noch nicht: Der Bundestag stimmt am 27. November 2026 ab, der Bundesrat am 18. Dezember 2026." } },
+              { "@type": "Question", "name": "Wie viel darf ich zum Bürgergeld dazuverdienen?", "acceptedAnswer": { "@type": "Answer", "text": "Die ersten 100 € Brutto im Monat sind frei. Darüber bleiben 20 % von 100 bis 520 €, 30 % von 520 bis 1.000 € und 10 % von 1.000 bis 1.200 € frei — mit einem minderjährigen Kind bis 1.500 €. Maximal sind 348 € frei, mit Kind 378 €. Bei einem Minijob mit 520 € Brutto sind 184 € frei." } },
+              { "@type": "Question", "name": "Zählt Kindergeld als Einkommen?", "acceptedAnswer": { "@type": "Answer", "text": "Ja. Kindergeld von 259 € je Kind bis 17 Jahre wird als Einkommen des Kindes angerechnet und mindert den Anspruch. Der Kindersofortzuschlag von 25 € je Kind erhöht dagegen den Bedarf." } },
+              { "@type": "Question", "name": "Was ist eine Bedarfsgemeinschaft?", "acceptedAnswer": { "@type": "Answer", "text": "Eine Bedarfsgemeinschaft ist der Haushalt, der zusammen wirtschaftet: Partner und Kinder, die mit dir leben. Eine WG ist keine Bedarfsgemeinschaft — Mitbewohner zählen nicht zu deinem Bedarf." } },
+              { "@type": "Question", "name": "Wie viel Vermögen darf ich haben?", "acceptedAnswer": { "@type": "Answer", "text": "Seit Juli 2026 gilt ein altersgestaffeltes Schonvermögen: 5.000 € bis 30 Jahre, 10.000 € von 31 bis 40 Jahren, 12.500 € von 41 bis 50 Jahren und 20.000 € ab 51 Jahren. Der Rechner prüft das Vermögen nicht — das macht das Jobcenter." } },
+              { "@type": "Question", "name": "Ist das Ergebnis verbindlich?", "acceptedAnswer": { "@type": "Answer", "text": "Nein. Der Rechner gibt nur einen Richtwert zur Orientierung. Verbindlich entscheidet das Jobcenter per Bescheid. Der Rechner prüft weder dein Vermögen noch ob deine Miete angemessen ist." } }
+            ]
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body class="tool-page buergergeld-page">
+    <a class="skip-link" href="#rechner">Zum Rechner springen</a>
+    <header class="site-header">
+      <a class="brand" href="../"><span class="brand-mark" aria-hidden="true">mk</span><span>maßklar<span class="brand-period">.</span></span></a>
+      <nav class="site-nav" aria-label="Hauptnavigation">
+        <a href="../">Alle Rechner</a>
+        <a href="#rechner">Rechner</a>
+        <a href="#beispiele">Beispiele</a>
+        <a href="#tabellen">Tabelle</a>
+        <a href="#anleitung">So geht's</a>
+      </nav>
+      <a class="header-cta" href="../#rechner">Zum Rechner ↓</a>
+    </header>
+    <main>
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="hero-eyebrow">Der einfache Bürgergeld-Rechner</p>
+          <h1>Bürgergeld-Rechner.<br><span>Was steht dir zu?</span></h1>
+          <p class="hero-description">Bürgergeld heißt seit 1. Juli 2026 offiziell Grundsicherungsgeld — die Höhe ist gleich geblieben. Alleinstehend bekommst du 563 € Regelbedarf im Monat, dazu die Miete: Bei 520 € Warmmiete sind das 1.083 € Bedarf im Monat. Schätze hier deinen Anspruch aus Regelbedarf, Miete und Einkommen — kostenlos und ohne Anmeldung.</p>
+        </div>
+        <div class="hero-visual">
+          <div class="bg-card" aria-hidden="true">
+            <div class="bg-card-top"><span>ALLEINSTEHEND · 563 €</span><span class="bg-badge">NUR EIN RICHTWERT</span></div>
+            <div class="bg-card-value">1.083 €</div>
+            <div class="bg-card-cat">Anspruch im Monat</div>
+            <p class="bg-card-note">563 € Regelbedarf + 520 € Miete — ohne Einkommen.</p>
+          </div>
+          <span class="hero-index">11 / 11</span>
+        </div>
+      </section>
+      <section class="calculator-section" id="rechner">
+        <div class="section-heading">
+          <h2>Bürgergeld-Rechner</h2>
+          <p class="section-sub">Regelbedarf, Miete und Einkommen — kostenlos</p>
+        </div>
+        <div class="calculator">
+          <div class="calc-main">
+            <div class="calc-toolbar">
+              <span class="live-indicator"><span class="live-dot" aria-hidden="true"></span>Live gerechnet · Stand: November 2026</span>
+              <button class="reset-button" id="buergergeld-reset" type="button">Zurücksetzen ⟲</button>
+            </div>
+            <form id="buergergeld-form" novalidate>
+              <div class="field">
+                <label id="haushalt-label">Haushalt</label>
+                <div class="mode-grid" id="haushalt-grid" role="group" aria-labelledby="haushalt-label">
+                  <button class="mode-btn" type="button" data-household="single" aria-pressed="true">Alleinstehend</button>
+                  <button class="mode-btn" type="button" data-household="partner" aria-pressed="false">Mit Partner</button>
+                </div>
+                <p class="field-hint">Ein Partner im Haushalt zählt mit 506 € Regelbedarf. Eine WG zählt nicht als Bedarfsgemeinschaft — nur die eigene Bedarfsgemeinschaft.</p>
+              </div>
+              <fieldset class="bg-kinder">
+                <legend>Kinder in der Bedarfsgemeinschaft</legend>
+                <div class="bg-kinder-row" data-band="0-5">
+                  <span class="bg-kinder-label">Kinder 0–5 Jahre<small>357 € Regelbedarf je Kind</small></span>
+                  <span class="bg-stepper">
+                    <button class="bg-step-btn" type="button" data-dir="-1" aria-label="Ein Kind weniger (0–5 Jahre)">−</button>
+                    <span class="bg-step-count" aria-live="polite">0</span>
+                    <button class="bg-step-btn" type="button" data-dir="1" aria-label="Ein Kind mehr (0–5 Jahre)">+</button>
+                  </span>
+                </div>
+                <div class="bg-kinder-row" data-band="6-13">
+                  <span class="bg-kinder-label">Kinder 6–13 Jahre<small>390 € Regelbedarf je Kind</small></span>
+                  <span class="bg-stepper">
+                    <button class="bg-step-btn" type="button" data-dir="-1" aria-label="Ein Kind weniger (6–13 Jahre)">−</button>
+                    <span class="bg-step-count" aria-live="polite">0</span>
+                    <button class="bg-step-btn" type="button" data-dir="1" aria-label="Ein Kind mehr (6–13 Jahre)">+</button>
+                  </span>
+                </div>
+                <div class="bg-kinder-row" data-band="14-17">
+                  <span class="bg-kinder-label">Kinder 14–17 Jahre<small>471 € Regelbedarf je Kind</small></span>
+                  <span class="bg-stepper">
+                    <button class="bg-step-btn" type="button" data-dir="-1" aria-label="Ein Kind weniger (14–17 Jahre)">−</button>
+                    <span class="bg-step-count" aria-live="polite">0</span>
+                    <button class="bg-step-btn" type="button" data-dir="1" aria-label="Ein Kind mehr (14–17 Jahre)">+</button>
+                  </span>
+                </div>
+                <div class="bg-kinder-row" data-band="18-24">
+                  <span class="bg-kinder-label">Kinder 18–24 Jahre<small>451 € Regelbedarf je Kind</small></span>
+                  <span class="bg-stepper">
+                    <button class="bg-step-btn" type="button" data-dir="-1" aria-label="Ein Kind weniger (18–24 Jahre)">−</button>
+                    <span class="bg-step-count" aria-live="polite">0</span>
+                    <button class="bg-step-btn" type="button" data-dir="1" aria-label="Ein Kind mehr (18–24 Jahre)">+</button>
+                  </span>
+                </div>
+                <p class="field-hint">Kindergeld (259 € je Kind bis 17) wird unten automatisch eingetragen — du kannst den Wert ändern.</p>
+              </fieldset>
+              <div class="field">
+                <label>Mehrbedarfe</label>
+                <label class="check-row"><input type="checkbox" id="bg-schwanger">Ich bin schwanger (ab der 13. Woche) — +95,71 €</label>
+                <label class="check-row" id="bg-allein-row"><input type="checkbox" id="bg-allein">Ich bin alleinerziehend</label>
+                <p class="field-hint">Alleinerziehend: 36 % des Regelbedarfs bei einem Kind unter 7 oder zwei bis drei Kindern unter 16, sonst 12 % je Kind (max. 60 %). Der Rechner nimmt an: Kinder 0–5 sind unter 7, Kinder bis 17 sind unter 16. Nur ohne Partner wählbar.</p>
+              </div>
+              <div class="input-grid">
+                <div class="field">
+                  <label for="bg-kalt">Kaltmiete</label>
+                  <div class="input-with-unit"><input id="bg-kalt" inputmode="decimal" autocomplete="off" value="400"><span class="unit-suffix">€</span></div>
+                </div>
+                <div class="field">
+                  <label for="bg-nk">Nebenkosten</label>
+                  <div class="input-with-unit"><input id="bg-nk" inputmode="decimal" autocomplete="off" value="80"><span class="unit-suffix">€</span></div>
+                </div>
+                <div class="field">
+                  <label for="bg-heiz">Heizkosten</label>
+                  <div class="input-with-unit"><input id="bg-heiz" inputmode="decimal" autocomplete="off" value="40"><span class="unit-suffix">€</span></div>
+                </div>
+              </div>
+              <div class="input-grid">
+                <div class="field">
+                  <label for="bg-brutto">Brutto aus Arbeit</label>
+                  <div class="input-with-unit"><input id="bg-brutto" inputmode="decimal" autocomplete="off" value="0"><span class="unit-suffix">€</span></div>
+                  <p class="field-hint">Der Freibetrag wird automatisch abgezogen.</p>
+                </div>
+                <div class="field">
+                  <label for="bg-netto">Netto aus Arbeit <span class="field-optional">(optional)</span></label>
+                  <div class="input-with-unit"><input id="bg-netto" inputmode="decimal" autocomplete="off" placeholder="wie Brutto"><span class="unit-suffix">€</span></div>
+                  <p class="field-hint">Leer lassen = wie Brutto (passt beim Minijob).</p>
+                </div>
+                <div class="field">
+                  <label for="bg-sonst">Sonstiges Einkommen</label>
+                  <div class="input-with-unit"><input id="bg-sonst" inputmode="decimal" autocomplete="off" value="0"><span class="unit-suffix">€</span></div>
+                  <p class="field-hint">Z. B. Unterhalt oder Rente — wird voll angerechnet.</p>
+                </div>
+              </div>
+              <div class="field">
+                <label for="bg-kindergeld">Kindergeld im Monat</label>
+                <div class="input-with-unit"><input id="bg-kindergeld" inputmode="decimal" autocomplete="off" value="0"><span class="unit-suffix">€</span></div>
+                <p class="field-hint">Kindergeld wird als Einkommen des Kindes angerechnet und mindert den Anspruch. Automatisch 259 € je Kind bis 17 — änderbar.</p>
+              </div>
+              <p class="form-error" id="buergergeld-error" role="alert" hidden></p>
+              <button class="calculate-button" id="buergergeld-calc-btn" type="submit">Anspruch schätzen ↗</button>
+              <p class="live-hint">Schon beim Tippen neu gerechnet. Kein Konto, keine Anmeldung.</p>
+            </form>
+            <div class="result-panel" id="buergergeld-result">
+              <p class="result-label">DEIN ANSPRUCH (RICHTWERT)</p>
+              <p class="result-value" id="result-value">1.083 €</p>
+              <p class="result-context" id="result-context">Alleinstehend, 520 € Warmmiete, kein Einkommen: 563 € Regelbedarf + 520 € Miete = 1.083 € Bedarf.</p>
+              <p class="result-also" id="result-also">Zum Leben bleiben: 1.083 € im Monat.</p>
+              <div class="result-extra" id="result-extra"></div>
+              <p class="result-formula" id="result-formula">563 € + 520 € − 0 € = 1.083 €</p>
+              <button class="copy-button" id="buergergeld-copy" type="button">Ergebnis kopieren</button>
+            </div>
+            <p class="calc-note">Nur ein Richtwert zur Orientierung — verbindlich entscheidet das Jobcenter per Bescheid. Stand: November 2026.</p>
+            <div class="preset-chips" aria-label="Beispiele laden">
+              <span class="preset-label">Beispiele:</span>
+              <button class="preset-chip" type="button" data-example="allein">Alleinstehend: 1.083 €</button>
+              <button class="preset-chip" type="button" data-example="paar">Paar + Kind: 2.018 €</button>
+              <button class="preset-chip" type="button" data-example="allein-kind">Alleinerziehend + Kind: 1.508,68 €</button>
+            </div>
+          </div>
+          <aside class="calc-aside">
+            <h2>Gut zu wissen</h2>
+            <p>Der Rechner rechnet mit dem Regelbedarf, nicht mit deinem Konto. Er prüft weder dein Vermögen noch ob deine Miete angemessen ist — das macht das Jobcenter.</p>
+            <a class="text-link" href="#anleitung">So funktioniert die Rechnung ↓</a>
+          </aside>
+        </div>
+        <div class="ad-slot" role="complementary" aria-label="Werbung">
+          <span class="ad-label">Anzeige</span>
+          <div class="ad-box">Hier könnte deine Werbung stehen</div>
+        </div>
+      </section>
+      <section class="quick-examples" id="beispiele" aria-label="Beispiele">
+        <div class="section-heading">
+          <h2>Bürgergeld: drei Beispiele aus dem Leben</h2>
+          <p class="section-sub">Antippen lädt das Beispiel in den Rechner</p>
+        </div>
+        <div class="example-strip">
+          <button class="example-card" type="button" data-example="allein" tabindex="0">
+            <div class="example-icon" aria-hidden="true">🏠</div>
+            <div class="example-body">
+              <h3>Alleinstehend, 520 € Miete</h3>
+              <p>563 € Regelbedarf + 520 € Miete = 1.083 € Bedarf. Ohne Einkommen: 1.083 € Anspruch.</p>
+            </div>
+            <span class="example-result">1.083 €</span>
+          </button>
+          <button class="example-card" type="button" data-example="paar" tabindex="0">
+            <div class="example-icon" aria-hidden="true">👨‍👩‍👧</div>
+            <div class="example-body">
+              <h3>Paar mit Kind (8 Jahre)</h3>
+              <p>1.402 € Regelbedarf + 850 € Miete + 25 € Sofortzuschlag = 2.277 € Bedarf. Minus 259 € Kindergeld: 2.018 € Anspruch.</p>
+            </div>
+            <span class="example-result">2.018 €</span>
+          </button>
+          <button class="example-card" type="button" data-example="allein-kind" tabindex="0">
+            <div class="example-icon" aria-hidden="true">👩‍👧</div>
+            <div class="example-body">
+              <h3>Alleinerziehend, Kind 4 Jahre</h3>
+              <p>563 € + 202,68 € Mehrbedarf + 357 € + 25 € + 620 € Miete = 1.767,68 € Bedarf. Minus 259 € Kindergeld: 1.508,68 € Anspruch.</p>
+            </div>
+            <span class="example-result">1.508,68 €</span>
+          </button>
+        </div>
+      </section>
+      <section class="table-section" id="tabellen">
+        <div class="section-heading">
+          <h2>Regelsätze 2026, Freibetrag und Zuverdienst</h2>
+          <p class="section-sub">Alle Zahlen auf dieser Seite sind die aktuellen Regelsätze 2026</p>
+        </div>
+        <div class="table-wrap">
+          <table class="scale-table">
+            <caption>Regelsätze 2026 · Stand: November 2026</caption>
+            <thead>
+              <tr><th scope="col">Wer</th><th scope="col">Stufe</th><th scope="col">Im Monat</th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">Alleinstehende und Alleinerziehende</th><td>Regelbedarfsstufe 1</td><td>563 €</td></tr>
+              <tr><th scope="row">Paare, je Partner</th><td>Regelbedarfsstufe 2</td><td>506 €</td></tr>
+              <tr><th scope="row">Volljährige in Einrichtungen und 18–24 ohne eigenen Haushalt</th><td>Regelbedarfsstufe 3</td><td>451 €</td></tr>
+              <tr><th scope="row">Jugendliche 14–17 Jahre</th><td>Regelbedarfsstufe 4</td><td>471 €</td></tr>
+              <tr><th scope="row">Kinder 6–13 Jahre</th><td>Regelbedarfsstufe 5</td><td>390 €</td></tr>
+              <tr><th scope="row">Kinder 0–5 Jahre</th><td>Regelbedarfsstufe 6</td><td>357 €</td></tr>
+            </tbody>
+          </table>
+          <p class="table-note">Quelle: Bundesregierung (BMAS). 2026 ist eine Nullrunde — die Sätze sind die gleichen wie 2024 und 2025.</p>
+        </div>
+        <div class="buergergeld-note">
+          <h3>Geplant, noch nicht beschlossen</h3>
+          <p>Für 2027 ist eine Nullrunde geplant: Die Regelsätze sollen am 1. Januar 2027 nicht steigen, die nächste Anpassung folgt erst am 1. Juli 2028. Der Haushaltsausschuss hat sich am 16. November 2026 dafür ausgesprochen. Die endgültige Entscheidung steht noch aus: Der Bundestag stimmt am 27. November 2026 ab, der Bundesrat am 18. Dezember 2026. Diese Seite rechnet bis dahin mit den Regelsätzen 2026.</p>
+        </div>
+        <div class="table-wrap">
+          <table class="scale-table">
+            <caption>Freibetrag bei Arbeit (§ 11b SGB II) · Stand: November 2026</caption>
+            <thead>
+              <tr><th scope="col">Brutto im Monat</th><th scope="col">Davon frei</th><th scope="col">Beispiel</th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">Die ersten 100 €</th><td>100 % frei</td><td>100 € Brutto → 100 € frei</td></tr>
+              <tr><th scope="row">100,01–520 €</th><td>20 % frei</td><td>520 € Brutto → 184 € frei</td></tr>
+              <tr><th scope="row">520,01–1.000 €</th><td>30 % frei</td><td>900 € Brutto → 298 € frei</td></tr>
+              <tr><th scope="row">1.000,01–1.200 €</th><td>10 % frei</td><td>1.200 € Brutto → 348 € frei</td></tr>
+              <tr><th scope="row">1.000,01–1.500 € (mit minderjährigem Kind)</th><td>10 % frei</td><td>1.500 € Brutto → 378 € frei</td></tr>
+            </tbody>
+          </table>
+          <p class="table-note">Maximal sind 348 € frei, mit einem minderjährigen Kind 378 €. Der Rest des Nettos wird vom Bedarf abgezogen.</p>
+        </div>
+        <div class="table-wrap">
+          <table class="scale-table">
+            <caption id="zv-caption">Zuverdienst: Was bleibt bei Arbeit übrig? · Alleinstehend, 1.083 € Bedarf</caption>
+            <thead>
+              <tr><th scope="col">Brutto im Monat</th><th scope="col">Freibetrag</th><th scope="col">Angerechnet</th><th scope="col">Anspruch</th><th scope="col">Verfügbar</th></tr>
+            </thead>
+            <tbody id="zuverdienst-tbody">
+            </tbody>
+          </table>
+          <p class="table-note">Annahme: Brutto = Netto (wie beim Minijob). Ohne sonstiges Einkommen und ohne Kindergeld. Der Anspruch sinkt mit dem Verdienst — aber insgesamt hast du mit Arbeit mehr als ohne.</p>
+        </div>
+        <div class="table-wrap">
+          <table class="scale-table">
+            <caption>Schonvermögen seit Juli 2026 · grob — das Jobcenter prüft den genauen Wert</caption>
+            <thead>
+              <tr><th scope="col">Alter</th><th scope="col">Vermögen, das du behalten darfst</th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">Bis 30 Jahre</th><td>5.000 €</td></tr>
+              <tr><th scope="row">31–40 Jahre</th><td>10.000 €</td></tr>
+              <tr><th scope="row">41–50 Jahre</th><td>12.500 €</td></tr>
+              <tr><th scope="row">Ab 51 Jahren</th><td>20.000 €</td></tr>
+            </tbody>
+          </table>
+          <p class="table-note">Mehr Vermögen musst du erst aufbrauchen, bevor du Anspruch hast. Der Rechner prüft das Vermögen nicht.</p>
+        </div>
+      </section>
+      <section class="guide-section" id="anleitung">
+        <div class="section-heading">
+          <h2>So funktioniert der Bürgergeld-Rechner</h2>
+          <p class="section-sub">Fünf Schritte — dann steht der Richtwert</p>
+        </div>
+        <div class="guide-grid">
+          <article class="guide-step">
+            <span class="step-number" aria-hidden="true">1</span>
+            <h3>Haushalt wählen</h3>
+            <p>Alleinstehend oder mit Partner. Ein Partner zählt mit 506 € Regelbedarf. Eine WG ist keine Bedarfsgemeinschaft — Mitbewohner zählen nicht.</p>
+          </article>
+          <article class="guide-step">
+            <span class="step-number" aria-hidden="true">2</span>
+            <h3>Kinder eintragen</h3>
+            <p>Tippe auf + und −, bis die Kinder nach Alter stimmen. Jedes Kind erhöht den Bedarf — und bringt 25 € Kindersofortzuschlag.</p>
+          </article>
+          <article class="guide-step">
+            <span class="step-number" aria-hidden="true">3</span>
+            <h3>Miete eintragen</h3>
+            <p>Kaltmiete, Nebenkosten und Heizkosten zusammen sind die Kosten der Unterkunft. Das Jobcenter zahlt sie, wenn sie angemessen sind.</p>
+          </article>
+          <article class="guide-step">
+            <span class="step-number" aria-hidden="true">4</span>
+            <h3>Einkommen eintragen</h3>
+            <p>Brutto und Netto aus Arbeit, dazu sonstiges Einkommen wie Unterhalt oder Rente. Der Freibetrag wird automatisch abgezogen.</p>
+          </article>
+          <article class="guide-step">
+            <span class="step-number" aria-hidden="true">5</span>
+            <h3>Anspruch ablesen</h3>
+            <p>Der Rechner zieht das angerechnete Einkommen und das Kindergeld vom Bedarf ab. Was übrig bleibt, ist dein Anspruch — als Richtwert.</p>
+          </article>
+        </div>
+        <div class="formula-card">
+          <h3>Die Formel</h3>
+          <p class="formula">Anspruch = Regelbedarf + Mehrbedarfe + Kindersofortzuschlag + Miete − angerechnetes Einkommen − Kindergeld</p>
+          <p class="formula-example">Alleinstehend, 520 € Warmmiete, kein Einkommen: 563 € + 0 € + 0 € + 520 € − 0 € − 0 € = 1.083 €</p>
+        </div>
+        <div class="buergergeld-note">
+          <h3>Was der Rechner nicht prüft</h3>
+          <p>Der Rechner prüft weder dein Vermögen (Schonvermögen) noch ob deine Miete angemessen ist. Auch einmalige Bedarfe — zum Beispiel eine Erstausstattung — und Mehrbedarfe für kostenaufwändige Ernährung oder Behinderung sind nicht drin. Seit Juli 2026 gilt außerdem: Bei einer Pflichtverletzung wird die Leistung um 30 % für 3 Monate gemindert; ein versäumter Termin bleibt beim ersten Mal ohne Folgen, danach 30 % für 1 Monat.</p>
+        </div>
+      </section>
+      <section class="practice-section" id="ueben">
+        <div class="section-heading">
+          <h2>Üben: vier schnelle Aufgaben</h2>
+          <p class="section-sub">Rechne erst selbst — dann prüfe mit dem Rechner oben</p>
+        </div>
+        <div class="practice-grid">
+          <article class="practice-task">
+            <h3>Aufgabe 1 · Alleinstehend</h3>
+            <p>Du bist alleinstehend, deine Warmmiete ist 600 €, du hast kein Einkommen. Wie hoch ist dein Anspruch?</p>
+            <p class="practice-answer">Antwort: 1.163 € — 563 € Regelbedarf + 600 € Miete.</p>
+          </article>
+          <article class="practice-task">
+            <h3>Aufgabe 2 · Minijob</h3>
+            <p>Du bist alleinstehend, deine Warmmiete ist 600 €, du hast einen Minijob mit 520 € Brutto. Wie viel Anspruch bleibt?</p>
+            <p class="practice-answer">Antwort: 827 € — Bedarf 1.163 € minus 336 € angerechnet (520 € minus 184 € Freibetrag).</p>
+          </article>
+          <article class="practice-task">
+            <h3>Aufgabe 3 · Paar ohne Kinder</h3>
+            <p>Ihr seid ein Paar ohne Kinder, eure Warmmiete ist 700 €, ihr habt kein Einkommen. Wie hoch ist euer Anspruch?</p>
+            <p class="practice-answer">Antwort: 1.712 € — 2 × 506 € Regelbedarf + 700 € Miete.</p>
+          </article>
+          <article class="practice-task">
+            <h3>Aufgabe 4 · Freibetrag</h3>
+            <p>Du bist alleinstehend und verdienst 900 € Brutto im Monat. Wie hoch ist dein Freibetrag?</p>
+            <p class="practice-answer">Antwort: 298 € — 100 € + 20 % von 420 € + 30 % von 380 €.</p>
+          </article>
+        </div>
+      </section>
+      <section class="faq-section" id="faq">
+        <div class="section-heading">
+          <h2>Häufige Fragen zum Bürgergeld</h2>
+          <p class="section-sub">Kurz beantwortet — Stand: November 2026</p>
+        </div>
+        <div class="faq-list">
+          <details class="faq-item">
+            <summary>Was ist Bürgergeld?</summary>
+            <p>Bürgergeld ist die Grundsicherung für Arbeitssuchende nach dem SGB II. Seit 1. Juli 2026 heißt die Leistung offiziell Grundsicherungsgeld — die Höhe hat sich dadurch nicht geändert.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Wie hoch ist der Regelsatz 2026?</summary>
+            <p>Alleinstehende bekommen 563 € im Monat, Partner in einer Bedarfsgemeinschaft je 506 €. Kinder bekommen 357 € (0–5 Jahre), 390 € (6–13 Jahre) oder 471 € (14–17 Jahre); junge Erwachsene von 18–24 Jahren bekommen 451 €.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Steigt das Bürgergeld 2027?</summary>
+            <p>Geplant ist eine Nullrunde: Die Regelsätze sollen am 1. Januar 2027 nicht steigen, die nächste Anpassung folgt erst am 1. Juli 2028. Der Haushaltsausschuss hat sich am 16. November 2026 dafür ausgesprochen. Beschlossen ist das noch nicht: Der Bundestag stimmt am 27. November 2026 ab, der Bundesrat am 18. Dezember 2026.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Wie viel darf ich zum Bürgergeld dazuverdienen?</summary>
+            <p>Die ersten 100 € Brutto im Monat sind frei. Darüber bleiben 20 % von 100 bis 520 €, 30 % von 520 bis 1.000 € und 10 % von 1.000 bis 1.200 € frei — mit einem minderjährigen Kind bis 1.500 €. Maximal sind 348 € frei, mit Kind 378 €. Bei einem Minijob mit 520 € Brutto sind 184 € frei.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Zählt Kindergeld als Einkommen?</summary>
+            <p>Ja. Kindergeld von 259 € je Kind bis 17 Jahre wird als Einkommen des Kindes angerechnet und mindert den Anspruch. Der Kindersofortzuschlag von 25 € je Kind erhöht dagegen den Bedarf.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Was ist eine Bedarfsgemeinschaft?</summary>
+            <p>Eine Bedarfsgemeinschaft ist der Haushalt, der zusammen wirtschaftet: Partner und Kinder, die mit dir leben. Eine WG ist keine Bedarfsgemeinschaft — Mitbewohner zählen nicht zu deinem Bedarf.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Wie viel Vermögen darf ich haben?</summary>
+            <p>Seit Juli 2026 gilt ein altersgestaffeltes Schonvermögen: 5.000 € bis 30 Jahre, 10.000 € von 31 bis 40 Jahren, 12.500 € von 41 bis 50 Jahren und 20.000 € ab 51 Jahren. Der Rechner prüft das Vermögen nicht — das macht das Jobcenter.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Ist das Ergebnis verbindlich?</summary>
+            <p>Nein. Der Rechner gibt nur einen Richtwert zur Orientierung. Verbindlich entscheidet das Jobcenter per Bescheid. Der Rechner prüft weder dein Vermögen noch ob deine Miete angemessen ist.</p>
+          </details>
+        </div>
+      </section>
+      <section class="more-tools" id="mehr-rechner">
+        <div class="section-heading">
+          <h2>Mehr Rechner von maßklar</h2>
+          <p class="section-sub">Kostenlos, ohne Anmeldung — direkt im Browser</p>
+        </div>
+        <div class="tool-grid">
+          <a class="tool-card" href="../massstabsrechner/"><span class="tool-icon" aria-hidden="true">📐</span><span class="tool-text"><span class="tool-title">Maßstabsrechner</span><span class="tool-desc">Längen umrechnen: 1:10 bis 1:1000 und mehr.</span></span><span class="tool-arrow" aria-hidden="true">↗</span></a>
+          <a class="tool-card" href="../prozentrechner/"><span class="tool-icon" aria-hidden="true">%</span><span class="tool-text"><span class="tool-title">Prozentrechner</span><span class="tool-desc">Prozent, Rabatt, Mehrwertsteuer — 8 Modi in einem.</span></span><span class="tool-arrow" aria-hidden="true">↗</span></a>
+          <a class="tool-card" href="../bmi-rechner/"><span class="tool-icon" aria-hidden="true">⚖️</span><span class="tool-text"><span class="tool-title">BMI-Rechner</span><span class="tool-desc">Body-Mass-Index mit WHO-Tabelle und Normalgewicht.</span></span><span class="tool-arrow" aria-hidden="true">↗</span></a>
+          <a class="tool-card" href="../tage-rechner/"><span class="tool-icon" aria-hidden="true">📅</span><span class="tool-text"><span class="tool-title">Tage-Rechner</span><span class="tool-desc">Tage zählen, Fristen prüfen und Wochentage finden.</span></span><span class="tool-arrow" aria-hidden="true">↗</span></a>
+          <a class="tool-card" href="../stunden-rechner/"><span class="tool-icon" aria-hidden="true">⏱️</span><span class="tool-text"><span class="tool-title">Arbeitszeitrechner</span><span class="tool-desc">Arbeitszeit, Überstunden und Pausen im Blick.</span></span><span class="tool-arrow" aria-hidden="true">↗</span></a>
+          <a class="tool-card" href="../indexmiete-rechner/"><span class="tool-icon" aria-hidden="true">🏠</span><span class="tool-text"><span class="tool-title">Indexmiete-Rechner</span><span class="tool-desc">Mieterhöhung nach Verbraucherpreisindex prüfen.</span></span><span class="tool-arrow" aria-hidden="true">↗</span></a>
+          <a class="tool-card" href="../quadratmeter-rechner/"><span class="tool-icon" aria-hidden="true">🧱</span><span class="tool-text"><span class="tool-title">Quadratmeter-Rechner</span><span class="tool-desc">Fläche von Zimmern und Grundstücken — mit Verschnitt und Kosten.</span></span><span class="tool-arrow" aria-hidden="true">↗</span></a>
+          <a class="tool-card" href="../schlafzyklus-rechner/"><span class="tool-icon" aria-hidden="true">🌙</span><span class="tool-text"><span class="tool-title">Schlafzyklus-Rechner</span><span class="tool-desc">Besser aufwachen: Schlafenszeit in 90-Minuten-Schritten planen.</span></span><span class="tool-arrow" aria-hidden="true">↗</span></a>
+          <a class="tool-card" href="../altersrechner/"><span class="tool-icon" aria-hidden="true">🎂</span><span class="tool-text"><span class="tool-title">Altersrechner</span><span class="tool-desc">Alter in Jahren, Monaten und Tagen — genau auf den Tag.</span></span><span class="tool-arrow" aria-hidden="true">↗</span></a>
+          <a class="tool-card" href="../massstabsrechner/modellbau/"><span class="tool-icon" aria-hidden="true">🧩</span><span class="tool-text"><span class="tool-title">Modellbau-Rechner</span><span class="tool-desc">Modellgrößen für Eisenbahn, Autos und Figuren.</span></span><span class="tool-arrow" aria-hidden="true">↗</span></a>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <a class="brand footer-brand" href="../"><span class="brand-mark" aria-hidden="true">mk</span><span>maßklar<span class="brand-period">.</span></span></a>
+      <p>Bürgergeld berechnen — einfach, schnell und ohne Mathe-Stress. Ein Produkt von Hastle.</p>
+      <span>© <span id="current-year"></span> maßklar</span>
+    </footer>
+    <button class="back-to-top" type="button" aria-label="Nach oben">↑</button>
+    <script>
+      document.querySelector("#current-year").textContent = new Date().getFullYear();
+    </script>
+    <script>
+      (function () {
+        var btn = document.querySelector(".back-to-top");
+        if (!btn) return;
+        function onScroll() {
+          if (window.scrollY > 500) btn.classList.add("is-visible");
+          else btn.classList.remove("is-visible");
+        }
+        window.addEventListener("scroll", onScroll, { passive: true });
+        onScroll();
+        btn.addEventListener("click", function () {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+      })();
+    </script>
+    <script src="app.js" defer></script>
+  </body>
+</html>
