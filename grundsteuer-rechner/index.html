@@ -1,0 +1,399 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Grundsteuer Rechner 2026 – Steuer berechnen</title>
+    <meta name="description" content="Grundsteuer Rechner 2026: Jahressteuer aus Grundsteuerwert, Messzahl und Hebesatz berechnen – mit Rechenweg und Beispiel. Kostenlos.">
+    <link rel="canonical" href="https://codeshifter-git.github.io/massklar/grundsteuer-rechner/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Grundsteuer Rechner 2026 – Steuer berechnen">
+    <meta property="og:description" content="Grundsteuer Rechner 2026: Jahressteuer aus Grundsteuerwert, Messzahl und Hebesatz berechnen – mit Rechenweg und Beispiel. Kostenlos.">
+    <meta property="og:url" content="https://codeshifter-git.github.io/massklar/grundsteuer-rechner/">
+    <meta property="og:site_name" content="maßklar">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Grundsteuer Rechner 2026 – Steuer berechnen">
+    <meta name="twitter:description" content="Grundsteuer Rechner 2026: Jahressteuer aus Grundsteuerwert, Messzahl und Hebesatz berechnen – mit Rechenweg und Beispiel. Kostenlos.">
+    <link rel="preload" href="../fonts/bitter-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="../fonts/dm-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="../styles.css">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebApplication",
+            "name": "Grundsteuer-Rechner",
+            "url": "https://codeshifter-git.github.io/massklar/grundsteuer-rechner/",
+            "applicationCategory": "FinanceApplication",
+            "operatingSystem": "Any",
+            "inLanguage": "de",
+            "isAccessibleForFree": true,
+            "description": "Grundsteuer Rechner 2026: Jahressteuer aus Grundsteuerwert, Messzahl und Hebesatz berechnen – mit Rechenweg und Beispiel. Kostenlos.",
+            "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" }
+          },
+          {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              { "@type": "ListItem", "position": 1, "name": "Startseite", "item": "https://codeshifter-git.github.io/massklar/" },
+              { "@type": "ListItem", "position": 2, "name": "Grundsteuer-Rechner", "item": "https://codeshifter-git.github.io/massklar/grundsteuer-rechner/" }
+            ]
+          },
+          {
+            "@type": "HowTo",
+            "name": "Grundsteuer berechnen",
+            "description": "So rechnest du deine Grundsteuer in fünf Schritten aus.",
+            "step": [
+              { "@type": "HowToStep", "name": "Grundsteuerwert finden", "text": "Der Grundsteuerwert steht auf dem Bescheid über den Grundsteuerwert (Feststellungsbescheid) vom Finanzamt." },
+              { "@type": "HowToStep", "name": "Messzahl nach Grundstücksart", "text": "Wohngrundstücke haben 0,31 Promille, unbebaute und andere bebaute Grundstücke 0,34 Promille (§ 15 Grundsteuergesetz)." },
+              { "@type": "HowToStep", "name": "Messbetrag ausrechnen", "text": "Grundsteuerwert mal Messzahl ist der Messbetrag: 250.000 € mal 0,31 Promille sind 77,50 €." },
+              { "@type": "HowToStep", "name": "Hebesatz eintragen", "text": "Der Hebesatz steht auf deinem Grundsteuerbescheid oder auf der Website deiner Gemeinde." },
+              { "@type": "HowToStep", "name": "Jahressteuer ablesen", "text": "Messbetrag mal Hebesatz ist die Grundsteuer im Jahr. Durch 12 geteilt ist der Betrag im Monat." }
+            ]
+          },
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              { "@type": "Question", "name": "Wie berechnet sich die Grundsteuer?", "acceptedAnswer": { "@type": "Answer", "text": "In drei Schritten: Grundsteuerwert mal Messzahl ist der Messbetrag, Messbetrag mal Hebesatz ist die Grundsteuer im Jahr. Beispiel: 250.000 € mal 0,31 Promille sind 77,50 € Messbetrag, mal 400 % Hebesatz sind 310 € Grundsteuer im Jahr." } },
+              { "@type": "Question", "name": "Was ist der Grundsteuerwert?", "acceptedAnswer": { "@type": "Answer", "text": "Der Grundsteuerwert ist der Steuerwert deines Grundstücks, den das Finanzamt feststellt. Er ist nicht der Marktwert: Er liegt meist unter dem Preis, für den du das Grundstück verkaufen könntest." } },
+              { "@type": "Question", "name": "Wo steht mein Grundsteuerwert?", "acceptedAnswer": { "@type": "Answer", "text": "Auf dem Bescheid über den Grundsteuerwert — dem Feststellungsbescheid — vom Finanzamt. Der Messbetrag steht auf dem Bescheid über die Festsetzung des Grundsteuermessbetrags." } },
+              { "@type": "Question", "name": "Was ist die Messzahl?", "acceptedAnswer": { "@type": "Answer", "text": "Die Messzahl ist der Faktor aus § 15 Grundsteuergesetz: 0,31 Promille für Wohngrundstücke (Ein- und Zweifamilienhäuser, Mietwohngrundstücke, Wohnungseigentum), 0,34 Promille für unbebaute und andere bebaute Grundstücke." } },
+              { "@type": "Question", "name": "Was ist der Hebesatz?", "acceptedAnswer": { "@type": "Answer", "text": "Der Hebesatz ist der Prozentwert, den deine Gemeinde festlegt. Er steht auf deinem Grundsteuerbescheid oder auf der Website deiner Gemeinde und kann sich jedes Jahr ändern." } },
+              { "@type": "Question", "name": "Gilt der Rechner auch in Bayern?", "acceptedAnswer": { "@type": "Answer", "text": "Nein. Bayern rechnet nach einem eigenen Flächenmodell: Grundstücks- und Gebäudefläche mal Äquivalenzzahl, nicht nach dem Grundsteuerwert. Auch Hamburg, Hessen, Baden-Württemberg und Niedersachsen haben eigene Modelle. Der Rechner hier rechnet nur das Bundesmodell." } },
+              { "@type": "Question", "name": "Was ist Grundsteuer A?", "acceptedAnswer": { "@type": "Answer", "text": "Grundsteuer A gilt für Betriebe der Land- und Forstwirtschaft. Ihre Messzahl ist 0,55 Promille (§ 14 Grundsteuergesetz). Dieser Rechner ist für Grundsteuer B — Grundstücke — gebaut." } },
+              { "@type": "Question", "name": "Ist das Ergebnis verbindlich?", "acceptedAnswer": { "@type": "Answer", "text": "Nein. Der Rechner gibt nur einen Richtwert. Verbindlich ist der Bescheid deines Finanzamts und deiner Gemeinde. Der Hebesatz kann sich jedes Jahr ändern." } }
+            ]
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body class="tool-page grundsteuer-page">
+    <a class="skip-link" href="#rechner">Zum Rechner springen</a>
+    <header class="site-header">
+      <a class="brand" href="../"><span class="brand-mark" aria-hidden="true">mk</span><span>maßklar<span class="brand-period">.</span></span></a>
+      <nav class="site-nav" aria-label="Hauptnavigation">
+        <a href="../">Alle Rechner</a>
+        <a href="#rechner">Rechner</a>
+        <a href="#beispiele">Beispiele</a>
+        <a href="#tabellen">Tabelle</a>
+        <a href="#anleitung">So geht's</a>
+      </nav>
+      <a class="header-cta" href="../#rechner">Zum Rechner ↓</a>
+    </header>
+    <main>
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="hero-eyebrow">Der einfache Grundsteuer-Rechner</p>
+          <h1>Grundsteuer-Rechner.<br><span>Was kostet dein Grundstück im Jahr?</span></h1>
+          <p class="hero-description">Ein Wohngrundstück mit 250.000 € Grundsteuerwert kostet bei 400 % Hebesatz 310 € Grundsteuer im Jahr: 250.000 € × 0,31 ‰ = 77,50 € Messbetrag, mal 400 % Hebesatz. Rechne hier deine Grundsteuer aus Grundsteuerwert, Messzahl und Hebesatz — kostenlos und ohne Anmeldung.</p>
+        </div>
+        <div class="hero-visual">
+          <div class="gs-card" aria-hidden="true">
+            <div class="gs-card-top"><span>WOHNGRUNDSTÜCK · 250.000 €</span><span class="gs-badge">NUR EIN RICHTWERT</span></div>
+            <div class="gs-card-value">310 €</div>
+            <div class="gs-card-cat">Grundsteuer im Jahr</div>
+            <p class="gs-card-note">77,50 € Messbetrag × 400 % Hebesatz.</p>
+          </div>
+          <span class="hero-index">12 / 12</span>
+        </div>
+      </section>
+      <section class="calculator-section" id="rechner">
+        <div class="section-heading">
+          <h2>Grundsteuer-Rechner</h2>
+          <p class="section-sub">Grundsteuerwert, Messzahl und Hebesatz — kostenlos</p>
+        </div>
+        <div class="calculator">
+          <div class="calc-main">
+            <div class="calc-toolbar">
+              <span class="live-indicator"><span class="live-dot" aria-hidden="true"></span>Live gerechnet · Stand: November 2026</span>
+              <button class="reset-button" id="grundsteuer-reset" type="button">Zurücksetzen ⟲</button>
+            </div>
+            <form id="grundsteuer-form" novalidate>
+              <div class="field">
+                <label for="grundsteuer-wert">Grundsteuerwert</label>
+                <div class="input-with-unit"><input id="grundsteuer-wert" inputmode="decimal" autocomplete="off" value="250.000"><span class="unit-suffix">€</span></div>
+                <p class="field-hint">Der Grundsteuerwert steht auf dem Bescheid über den Grundsteuerwert (Feststellungsbescheid) vom Finanzamt.</p>
+              </div>
+              <div class="field">
+                <label id="art-label">Grundstücksart — sie legt die Messzahl fest</label>
+                <div class="mode-grid" id="art-grid" role="group" aria-labelledby="art-label">
+                  <button class="mode-btn" type="button" data-art="wohnen" aria-pressed="true">Wohnen · 0,31 ‰</button>
+                  <button class="mode-btn" type="button" data-art="gewerbe" aria-pressed="false">Gewerbe · 0,34 ‰</button>
+                  <button class="mode-btn" type="button" data-art="unbebaut" aria-pressed="false">Unbebaut · 0,34 ‰</button>
+                </div>
+                <p class="field-hint">Wohnen: Ein- und Zweifamilienhaus, Mietwohngrundstück, Wohnungseigentum. Gewerbe: Geschäftsgrundstück, gemischt genutzt, Teileigentum. Unbebaut: Grundstück ohne Gebäude.</p>
+              </div>
+              <div class="field">
+                <label for="grundsteuer-hebesatz">Hebesatz deiner Gemeinde</label>
+                <div class="input-with-unit"><input id="grundsteuer-hebesatz" inputmode="decimal" autocomplete="off" value="400"><span class="unit-suffix">%</span></div>
+                <p class="field-hint">Typisch sind 300–600 %, in Großstädten oft mehr. Der Hebesatz steht auf deinem Grundsteuerbescheid oder auf der Website deiner Gemeinde. Was Prozent bedeuten, erklärt der <a href="../prozentrechner/">Prozentrechner</a>.</p>
+              </div>
+              <p class="form-error" id="grundsteuer-error" role="alert" hidden></p>
+              <button class="calculate-button" id="grundsteuer-calc-btn" type="submit">Grundsteuer berechnen ↗</button>
+              <p class="live-hint">Schon beim Tippen neu gerechnet. Kein Konto, keine Anmeldung.</p>
+            </form>
+            <div class="result-panel" id="grundsteuer-result">
+              <p class="result-label">DEINE GRUNDSTEUER (RICHTWERT)</p>
+              <p class="result-value" id="result-value">310 €</p>
+              <p class="result-context" id="result-context">Wohngrundstück, 250.000 € Grundsteuerwert, 400 % Hebesatz: 77,50 € Messbetrag mal 400 % — das sind 310 € Grundsteuer im Jahr.</p>
+              <p class="result-also" id="result-also">Das sind 25,83 € im Monat.</p>
+              <div class="result-extra" id="result-extra"></div>
+              <p class="result-formula" id="result-formula">250.000 € × 0,31 ‰ = 77,50 € × 400 % = 310 €</p>
+              <button class="copy-button" id="grundsteuer-copy" type="button">Ergebnis kopieren</button>
+            </div>
+            <p class="calc-note">Nur ein Richtwert — der Bescheid deines Finanzamts und deiner Gemeinde ist verbindlich. Der Hebesatz kann sich jedes Jahr ändern. Stand: November 2026.</p>
+            <div class="preset-chips" aria-label="Beispiele laden">
+              <span class="preset-label">Beispiele:</span>
+              <button class="preset-chip" type="button" data-example="wohnhaus">Einfamilienhaus: 310 €</button>
+              <button class="preset-chip" type="button" data-example="gewerbe">Geschäftsgrundstück: 510 €</button>
+              <button class="preset-chip" type="button" data-example="unbebaut">Unbebaut: 136 €</button>
+            </div>
+            <div class="grundsteuer-note">
+              <h3>Wo steht mein Grundsteuerwert?</h3>
+              <p>Der Grundsteuerwert steht auf dem Bescheid über den Grundsteuerwert — dem Feststellungsbescheid — vom Finanzamt. Den Messbetrag findest du auf dem Bescheid über die Festsetzung des Grundsteuermessbetrags. Der Grundsteuerwert ist nicht der Marktwert: Er ist ein Steuerwert und liegt meist unter dem Preis, für den du das Grundstück verkaufen könntest. Für die Fläche deines Grundstücks hilft dir der <a href="../quadratmeter-rechner/">Quadratmeter-Rechner</a>.</p>
+            </div>
+          </div>
+          <aside class="calc-aside">
+            <h2>Gut zu wissen</h2>
+            <p>Der Rechner rechnet nur das Bundesmodell — das gilt in 11 von 16 Ländern. In Bayern, Hamburg, Hessen, Baden-Württemberg und Niedersachsen gilt ein eigenes Modell. Unten steht, was sie anders machen.</p>
+            <a class="text-link" href="#anleitung">So funktioniert die Rechnung ↓</a>
+          </aside>
+        </div>
+        <div class="ad-slot" role="complementary" aria-label="Werbung">
+          <span class="ad-label">Anzeige</span>
+          <div class="ad-box">Hier könnte deine Werbung stehen</div>
+        </div>
+      </section>
+      <section class="quick-examples" id="beispiele" aria-label="Beispiele">
+        <div class="section-heading">
+          <h2>Grundsteuer: drei Beispiele aus dem Leben</h2>
+          <p class="section-sub">Antippen lädt das Beispiel in den Rechner</p>
+        </div>
+        <div class="example-strip">
+          <button class="example-card" type="button" data-example="wohnhaus" tabindex="0">
+            <div class="example-icon" aria-hidden="true">🏠</div>
+            <div class="example-body">
+              <h3>Einfamilienhaus, 400 % Hebesatz</h3>
+              <p>250.000 € × 0,31 ‰ = 77,50 € Messbetrag. Mal 400 % Hebesatz: 310 € Grundsteuer im Jahr.</p>
+            </div>
+            <span class="example-result">310 €</span>
+          </button>
+          <button class="example-card" type="button" data-example="gewerbe" tabindex="0">
+            <div class="example-icon" aria-hidden="true">🏢</div>
+            <div class="example-body">
+              <h3>Geschäftsgrundstück, 500 % Hebesatz</h3>
+              <p>300.000 € × 0,34 ‰ = 102 € Messbetrag. Mal 500 % Hebesatz: 510 € Grundsteuer im Jahr.</p>
+            </div>
+            <span class="example-result">510 €</span>
+          </button>
+          <button class="example-card" type="button" data-example="unbebaut" tabindex="0">
+            <div class="example-icon" aria-hidden="true">🌱</div>
+            <div class="example-body">
+              <h3>Unbebautes Grundstück, 400 % Hebesatz</h3>
+              <p>100.000 € × 0,34 ‰ = 34 € Messbetrag. Mal 400 % Hebesatz: 136 € Grundsteuer im Jahr.</p>
+            </div>
+            <span class="example-result">136 €</span>
+          </button>
+        </div>
+      </section>
+      <section class="table-section" id="tabellen">
+        <div class="section-heading">
+          <h2>Messzahl, Hebesatz und die anderen Länder</h2>
+          <p class="section-sub">Alle Zahlen auf dieser Seite sind der Stand November 2026</p>
+        </div>
+        <div class="table-wrap">
+          <table class="scale-table">
+            <caption>Messzahl nach Grundstücksart (§ 15 Grundsteuergesetz) · Stand: November 2026</caption>
+            <thead>
+              <tr><th scope="col">Grundstücksart</th><th scope="col">Messzahl</th><th scope="col">Gilt für</th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">Wohngrundstücke</th><td>0,31 ‰</td><td>Ein- und Zweifamilienhäuser, Mietwohngrundstücke, Wohnungseigentum</td></tr>
+              <tr><th scope="row">Unbebaute Grundstücke</th><td>0,34 ‰</td><td>Grundstücke ohne Gebäude</td></tr>
+              <tr><th scope="row">Andere bebaute Grundstücke</th><td>0,34 ‰</td><td>Geschäftsgrundstücke, gemischt genutzte Grundstücke, Teileigentum, sonstige bebaute Grundstücke</td></tr>
+            </tbody>
+          </table>
+          <p class="table-note">Quelle: § 15 Grundsteuergesetz. Für Betriebe der Land- und Forstwirtschaft gilt 0,55 ‰ (§ 14) — das ist die Grundsteuer A. In Berlin, Bremen, Saarland und Sachsen gelten andere Messzahlen — der Bescheid zählt. Geförderter Wohnraum: Messzahl 25 % niedriger, Baudenkmäler: 10 % niedriger — beides nur auf Antrag.</p>
+        </div>
+        <div class="table-wrap">
+          <table class="scale-table">
+            <caption id="hebesatz-caption">Hebesatz: Was ändert sich? · Messbetrag 77,50 €</caption>
+            <thead>
+              <tr><th scope="col">Hebesatz</th><th scope="col">Grundsteuer im Jahr</th><th scope="col">Im Monat</th></tr>
+            </thead>
+            <tbody id="hebesatz-tbody">
+            </tbody>
+          </table>
+          <p class="table-note">Tipp eine Zeile an — der Rechner oben rechnet mit diesem Hebesatz weiter. In Großstädten liegt der Hebesatz 2026 oft viel höher als 400 %: München 824 %, Hamburg 975 % (Flächenmodell), Hagen 1.176 %. Der Hebesatz deiner Gemeinde steht auf deinem Bescheid.</p>
+        </div>
+        <div class="table-wrap">
+          <table class="scale-table">
+            <caption>Bundesmodell und die fünf eigenen Modelle · Stand: November 2026</caption>
+            <thead>
+              <tr><th scope="col">Modell</th><th scope="col">Wie wird gerechnet?</th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">Bundesmodell (11 Länder)</th><td>Grundsteuerwert × Messzahl (0,31 / 0,34 ‰) × Hebesatz — so rechnet dieser Rechner.</td></tr>
+              <tr><th scope="row">Bayern</th><td>Flächenmodell: Grundstücksfläche × 0,04 €/m² und Gebäudefläche × 0,50 €/m², Messzahl 100 % (Wohnflächen 70 %), mal Hebesatz.</td></tr>
+              <tr><th scope="row">Hamburg</th><td>Flächenmodell mit Lagewert: Grundstücks- und Gebäudefläche mal Lagewert, mal Hebesatz.</td></tr>
+              <tr><th scope="row">Hessen</th><td>Flächenfaktor-Modell: Fläche mal Flächenfaktor, mal Hebesatz.</td></tr>
+              <tr><th scope="row">Baden-Württemberg</th><td>Flächenmodell mit Bodenrichtwert: Grundstücksfläche mal Bodenrichtwert, Gebäudefläche pauschal, mal Hebesatz.</td></tr>
+              <tr><th scope="row">Niedersachsen</th><td>Flächen-Lage-Modell: Fläche mal Lage-Faktor, mal Hebesatz.</td></tr>
+            </tbody>
+          </table>
+          <p class="table-note">Die fünf Länder rechnen ohne Grundsteuerwert — der Rechner oben passt für sie nicht. Mehr dazu in den <a href="https://www.bundesfinanzministerium.de/Content/DE/FAQ/faq-die-neue-grundsteuer.html" rel="noopener">Fragen und Antworten des Bundesfinanzministeriums zur neuen Grundsteuer</a> und in <a href="http://www.gesetze-im-internet.de/grstg_1973/__15.html" rel="noopener">§ 15 Grundsteuergesetz</a>.</p>
+        </div>
+      </section>
+      <section class="guide-section" id="anleitung">
+        <div class="section-heading">
+          <h2>So funktioniert der Grundsteuer-Rechner</h2>
+          <p class="section-sub">Fünf Schritte — dann steht der Richtwert</p>
+        </div>
+        <div class="guide-grid">
+          <article class="guide-step">
+            <span class="step-number" aria-hidden="true">1</span>
+            <h3>Grundsteuerwert finden</h3>
+            <p>Der Wert steht auf dem Bescheid über den Grundsteuerwert (Feststellungsbescheid) vom Finanzamt. Er ist ein Steuerwert — nicht der Preis, für den du das Grundstück verkaufen könntest.</p>
+          </article>
+          <article class="guide-step">
+            <span class="step-number" aria-hidden="true">2</span>
+            <h3>Messzahl nach Grundstücksart</h3>
+            <p>Wohngrundstücke haben 0,31 Promille, unbebaute und andere bebaute Grundstücke 0,34 Promille. Das steht in § 15 Grundsteuergesetz.</p>
+          </article>
+          <article class="guide-step">
+            <span class="step-number" aria-hidden="true">3</span>
+            <h3>Messbetrag ausrechnen</h3>
+            <p>Grundsteuerwert mal Messzahl ist der Messbetrag: 250.000 € mal 0,31 Promille sind 77,50 €. Der Messbetrag steht auch auf deinem Bescheid.</p>
+          </article>
+          <article class="guide-step">
+            <span class="step-number" aria-hidden="true">4</span>
+            <h3>Hebesatz eintragen</h3>
+            <p>Der Hebesatz ist der Prozentwert deiner Gemeinde. Er steht auf deinem Grundsteuerbescheid oder auf der Website deiner Gemeinde — und er kann sich jedes Jahr ändern.</p>
+          </article>
+          <article class="guide-step">
+            <span class="step-number" aria-hidden="true">5</span>
+            <h3>Jahressteuer ablesen</h3>
+            <p>Messbetrag mal Hebesatz ist die Grundsteuer im Jahr. Durch 12 geteilt ist der Betrag im Monat — so viel zahlst du in vier Raten im Jahr.</p>
+          </article>
+        </div>
+        <div class="formula-card">
+          <h3>Die Formel</h3>
+          <p class="formula">Grundsteuer = Grundsteuerwert × Messzahl × Hebesatz</p>
+          <p class="formula-example">Wohngrundstück, 250.000 €, 400 % Hebesatz: 250.000 € × 0,31 ‰ = 77,50 € × 400 % = 310 €</p>
+        </div>
+        <div class="grundsteuer-note">
+          <h3>Was der Rechner nicht rechnet</h3>
+          <p>Der Rechner rechnet nur das Bundesmodell — nicht die Modelle von Bayern, Hamburg, Hessen, Baden-Württemberg und Niedersachsen. Er rechnet auch keinen Grundsteuerwert aus (dafür braucht es Bodenrichtwert, Fläche und mehr) und keine Grundsteuer A für Land- und Forstwirtschaft. Ermäßigungen für geförderten Wohnraum und Baudenkmäler sind nicht drin. Diese Seite ist ein Rechner, keine Steuerberatung.</p>
+        </div>
+      </section>
+      <section class="practice-section" id="ueben">
+        <div class="section-heading">
+          <h2>Üben: drei schnelle Aufgaben</h2>
+          <p class="section-sub">Rechne erst selbst — dann prüfe mit dem Rechner oben</p>
+        </div>
+        <div class="practice-grid">
+          <article class="practice-task">
+            <h3>Aufgabe 1 · Wohnhaus</h3>
+            <p>Dein Wohnhaus hat 200.000 € Grundsteuerwert, die Messzahl ist 0,31 ‰, der Hebesatz 400 %. Wie hoch ist die Grundsteuer im Jahr?</p>
+            <p class="practice-answer">Antwort: 248 € — 200.000 € × 0,31 ‰ = 62 € Messbetrag, mal 400 % = 248 €.</p>
+          </article>
+          <article class="practice-task">
+            <h3>Aufgabe 2 · Geschäftsgrundstück</h3>
+            <p>Ein Geschäftsgrundstück hat 300.000 € Grundsteuerwert, die Messzahl ist 0,34 ‰, der Hebesatz 500 %. Wie hoch ist die Grundsteuer im Jahr?</p>
+            <p class="practice-answer">Antwort: 510 € — 300.000 € × 0,34 ‰ = 102 € Messbetrag, mal 500 % = 510 €.</p>
+          </article>
+          <article class="practice-task">
+            <h3>Aufgabe 3 · Unbebaut</h3>
+            <p>Ein unbebautes Grundstück hat 80.000 € Grundsteuerwert, die Messzahl ist 0,34 ‰, der Hebesatz 350 %. Wie hoch ist die Grundsteuer im Jahr?</p>
+            <p class="practice-answer">Antwort: 95,20 € — 80.000 € × 0,34 ‰ = 27,20 € Messbetrag, mal 350 % = 95,20 €.</p>
+          </article>
+        </div>
+      </section>
+      <section class="faq-section" id="faq">
+        <div class="section-heading">
+          <h2>Häufige Fragen zur Grundsteuer</h2>
+          <p class="section-sub">Kurz beantwortet — Stand: November 2026</p>
+        </div>
+        <div class="faq-list">
+          <details class="faq-item">
+            <summary>Wie berechnet sich die Grundsteuer?</summary>
+            <p>In drei Schritten: Grundsteuerwert mal Messzahl ist der Messbetrag, Messbetrag mal Hebesatz ist die Grundsteuer im Jahr. Beispiel: 250.000 € mal 0,31 Promille sind 77,50 € Messbetrag, mal 400 % Hebesatz sind 310 € Grundsteuer im Jahr.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Was ist der Grundsteuerwert?</summary>
+            <p>Der Grundsteuerwert ist der Steuerwert deines Grundstücks, den das Finanzamt feststellt. Er ist nicht der Marktwert: Er liegt meist unter dem Preis, für den du das Grundstück verkaufen könntest.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Wo steht mein Grundsteuerwert?</summary>
+            <p>Auf dem Bescheid über den Grundsteuerwert — dem Feststellungsbescheid — vom Finanzamt. Der Messbetrag steht auf dem Bescheid über die Festsetzung des Grundsteuermessbetrags.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Was ist die Messzahl?</summary>
+            <p>Die Messzahl ist der Faktor aus § 15 Grundsteuergesetz: 0,31 Promille für Wohngrundstücke (Ein- und Zweifamilienhäuser, Mietwohngrundstücke, Wohnungseigentum), 0,34 Promille für unbebaute und andere bebaute Grundstücke.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Was ist der Hebesatz?</summary>
+            <p>Der Hebesatz ist der Prozentwert, den deine Gemeinde festlegt. Er steht auf deinem Grundsteuerbescheid oder auf der Website deiner Gemeinde und kann sich jedes Jahr ändern.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Gilt der Rechner auch in Bayern?</summary>
+            <p>Nein. Bayern rechnet nach einem eigenen Flächenmodell: Grundstücks- und Gebäudefläche mal Äquivalenzzahl, nicht nach dem Grundsteuerwert. Auch Hamburg, Hessen, Baden-Württemberg und Niedersachsen haben eigene Modelle. Der Rechner hier rechnet nur das Bundesmodell.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Was ist Grundsteuer A?</summary>
+            <p>Grundsteuer A gilt für Betriebe der Land- und Forstwirtschaft. Ihre Messzahl ist 0,55 Promille (§ 14 Grundsteuergesetz). Dieser Rechner ist für Grundsteuer B — Grundstücke — gebaut.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Ist das Ergebnis verbindlich?</summary>
+            <p>Nein. Der Rechner gibt nur einen Richtwert. Verbindlich ist der Bescheid deines Finanzamts und deiner Gemeinde. Der Hebesatz kann sich jedes Jahr ändern.</p>
+          </details>
+        </div>
+      </section>
+      <section class="more-tools" id="mehr-rechner">
+        <div class="section-heading">
+          <h2>Mehr Rechner von maßklar</h2>
+          <p class="section-sub">Kostenlos, ohne Anmeldung — direkt im Browser</p>
+        </div>
+        <div class="tool-grid">
+          <a class="tool-card" href="../massstabsrechner/"><span class="tool-icon" aria-hidden="true">📐</span><span class="tool-text"><span class="tool-title">Maßstabsrechner</span><span class="tool-desc">Längen umrechnen: 1:10 bis 1:1000 und mehr.</span></span><span class="tool-arrow" aria-hidden="true">↗</span></a>
+          <a class="tool-card" href="../prozentrechner/"><span class="tool-icon" aria-hidden="true">%</span><span class="tool-text"><span class="tool-title">Prozentrechner</span><span class="tool-desc">Prozent, Rabatt, Mehrwertsteuer — 8 Modi in einem.</span></span><span class="tool-arrow" aria-hidden="true">↗</span></a>
+          <a class="tool-card" href="../bmi-rechner/"><span class="tool-icon" aria-hidden="true">⚖️</span><span class="tool-text"><span class="tool-title">BMI-Rechner</span><span class="tool-desc">Body-Mass-Index mit WHO-Tabelle und Normalgewicht.</span></span><span class="tool-arrow" aria-hidden="true">↗</span></a>
+          <a class="tool-card" href="../tage-rechner/"><span class="tool-icon" aria-hidden="true">📅</span><span class="tool-text"><span class="tool-title">Tage-Rechner</span><span class="tool-desc">Tage zählen, Fristen prüfen und Wochentage finden.</span></span><span class="tool-arrow" aria-hidden="true">↗</span></a>
+          <a class="tool-card" href="../stunden-rechner/"><span class="tool-icon" aria-hidden="true">⏱️</span><span class="tool-text"><span class="tool-title">Arbeitszeitrechner</span><span class="tool-desc">Arbeitszeit, Überstunden und Pausen im Blick.</span></span><span class="tool-arrow" aria-hidden="true">↗</span></a>
+          <a class="tool-card" href="../indexmiete-rechner/"><span class="tool-icon" aria-hidden="true">🏠</span><span class="tool-text"><span class="tool-title">Indexmiete-Rechner</span><span class="tool-desc">Mieterhöhung nach Verbraucherpreisindex prüfen.</span></span><span class="tool-arrow" aria-hidden="true">↗</span></a>
+          <a class="tool-card" href="../quadratmeter-rechner/"><span class="tool-icon" aria-hidden="true">🧱</span><span class="tool-text"><span class="tool-title">Quadratmeter-Rechner</span><span class="tool-desc">Fläche von Zimmern und Grundstücken — mit Verschnitt und Kosten.</span></span><span class="tool-arrow" aria-hidden="true">↗</span></a>
+          <a class="tool-card" href="../schlafzyklus-rechner/"><span class="tool-icon" aria-hidden="true">🌙</span><span class="tool-text"><span class="tool-title">Schlafzyklus-Rechner</span><span class="tool-desc">Besser aufwachen: Schlafenszeit in 90-Minuten-Schritten planen.</span></span><span class="tool-arrow" aria-hidden="true">↗</span></a>
+          <a class="tool-card" href="../buergergeld-rechner/"><span class="tool-icon" aria-hidden="true">🧾</span><span class="tool-text"><span class="tool-title">Bürgergeld-Rechner</span><span class="tool-desc">Regelbedarf, Miete und Einkommen — schätze deinen Anspruch.</span></span><span class="tool-arrow" aria-hidden="true">↗</span></a>
+          <a class="tool-card" href="../altersrechner/"><span class="tool-icon" aria-hidden="true">🎂</span><span class="tool-text"><span class="tool-title">Altersrechner</span><span class="tool-desc">Alter in Jahren, Monaten und Tagen — genau auf den Tag.</span></span><span class="tool-arrow" aria-hidden="true">↗</span></a>
+          <a class="tool-card" href="../massstabsrechner/modellbau/"><span class="tool-icon" aria-hidden="true">🧩</span><span class="tool-text"><span class="tool-title">Modellbau-Rechner</span><span class="tool-desc">Modellgrößen für Eisenbahn, Autos und Figuren.</span></span><span class="tool-arrow" aria-hidden="true">↗</span></a>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <a class="brand footer-brand" href="../"><span class="brand-mark" aria-hidden="true">mk</span><span>maßklar<span class="brand-period">.</span></span></a>
+      <p>Grundsteuer berechnen — einfach, schnell und ohne Mathe-Stress. Ein Produkt von Hastle.</p>
+      <span>© <span id="current-year"></span> maßklar</span>
+    </footer>
+    <button class="back-to-top" type="button" aria-label="Nach oben">↑</button>
+    <script>
+      document.querySelector("#current-year").textContent = new Date().getFullYear();
+    </script>
+    <script>
+      (function () {
+        var btn = document.querySelector(".back-to-top");
+        if (!btn) return;
+        function onScroll() {
+          if (window.scrollY > 500) btn.classList.add("is-visible");
+          else btn.classList.remove("is-visible");
+        }
+        window.addEventListener("scroll", onScroll, { passive: true });
+        onScroll();
+        btn.addEventListener("click", function () {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+      })();
+    </script>
+    <script src="app.js" defer></script>
+  </body>
+</html>

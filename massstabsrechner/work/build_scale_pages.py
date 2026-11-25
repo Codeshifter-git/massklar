@@ -364,6 +364,7 @@ MORE_TOOLS = [
     ("🧱", "Quadratmeter-Rechner", "Fläche von Zimmern und Grundstücken — mit Verschnitt und Kosten.", "../../quadratmeter-rechner/"),
     ("🌙", "Schlafzyklus-Rechner", "Besser aufwachen: Schlafenszeit in 90-Minuten-Schritten planen.", "../../schlafzyklus-rechner/"),
     ("🧾", "Bürgergeld-Rechner", "Regelbedarf, Miete und Einkommen — schätze deinen Anspruch.", "../../buergergeld-rechner/"),
+    ("🏛️", "Grundsteuer-Rechner", "Grundsteuer im Jahr aus Grundsteuerwert, Messzahl und Hebesatz — mit Rechenweg.", "../../grundsteuer-rechner/"),
 ]
 
 
