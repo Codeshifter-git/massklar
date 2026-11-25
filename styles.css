@@ -624,6 +624,33 @@ a.tool-card:active { transform: scale(.98); }
 .stunden-note { margin: 24px auto 0; max-width: 1050px; padding: 18px 20px; border-radius: 8px; background: #fffefa; box-shadow: 0 2px 10px #293e300d; }
 .stunden-note h3 { margin: 0 0 8px; color: var(--green-dark); font: 700 18px var(--display); }
 .stunden-note p { margin: 0; color: var(--ink); font-size: 15px; line-height: 1.65; }
+/* Indexmiete-Rechner: Monats-Auswahl und Datumseingaben wie die
+   Datums-/Uhrzeitfelder der anderen Rechner. */
+.indexmiete-page .field select { width: 100%; height: 48px; padding: 0 12px; border: 1px solid var(--line); border-radius: 5px; background: var(--white); color: var(--ink); font: 500 15px var(--sans); }
+.indexmiete-page .field select:focus { border-color: var(--green); outline: none; }
+.indexmiete-page .field.has-error select,
+.indexmiete-page .field.has-error input { border-color: var(--error); }
+.indexmiete-page input[type="date"] { width: 100%; height: 48px; padding: 0 12px; border: 1px solid var(--line); border-radius: 5px; background: var(--white); color: var(--ink); font: 500 15px var(--sans); }
+.indexmiete-page input[type="date"]:focus { border-color: var(--green); outline: none; }
+/* Eigene VPI-Werte: Das .input-grid-Display würde sonst das hidden-Attribut
+   schlagen (gleiche Falle wie .trap-hint beim Stunden-Rechner). */
+.indexmiete-page #eigen-felder[hidden] { display: none; }
+/* Indexmiete-Rechner — Hero-Karte (reines CSS, kein Bild): neue Miete groß. */
+.indexmiete-card { width: min(340px, 100%); padding: 26px 26px 22px; border-radius: 10px; background: var(--white); box-shadow: 0 18px 48px #293e3010; }
+.indexmiete-card-top { display: flex; align-items: center; justify-content: space-between; color: #8d9991; font: 9px var(--mono); letter-spacing: .5px; }
+.indexmiete-badge { padding: 4px 8px; border-radius: 4px; background: var(--orange); color: var(--green-dark); font: 700 13px var(--sans); }
+.indexmiete-card-value { margin: 20px 0 4px; color: var(--green-dark); font: 700 34px var(--display); letter-spacing: -0.5px; }
+.indexmiete-card-cat { color: var(--green); font: 600 15px var(--display); }
+.indexmiete-card-note { margin-top: 10px; color: var(--muted); font-size: 14px; }
+/* Geplant, noch nicht beschlossen: der Mietrechts-Entwurf (BT-Drucks. 21/6807). */
+.indexmiete-note { margin: 24px auto 0; max-width: 1050px; padding: 18px 20px; border-radius: 8px; background: #fffefa; box-shadow: 0 2px 10px #293e300d; }
+.indexmiete-note h3 { margin: 0 0 8px; color: var(--green-dark); font: 700 18px var(--display); }
+.indexmiete-note p { margin: 0; color: var(--ink); font-size: 15px; line-height: 1.65; }
+/* VPI-Tabelle: Monatswerte sind antippbar und füllen den Rechner. */
+.vpi-cell { cursor: pointer; }
+.vpi-cell:hover { background: #eef3e3; }
+.vpi-cell.is-latest { background: #e4edcf; font-weight: 700; }
+.vpi-cell.is-you { outline: 2px solid var(--green); outline-offset: -2px; }
 @media (max-width: 680px) {
   /* Stunden-Rechner: Modus-Raster auf dem Handy 2-spaltig (die 3-spaltige
      .stunden-page-Regel oben würde sonst wegen der höheren Spezifität gewinnen). */
@@ -638,4 +665,7 @@ a.tool-card:active { transform: scale(.98); }
   .stunden-page .example-card { flex-wrap: wrap; }
   .stunden-page .example-card h3 { font-size: 16px; }
   .stunden-page .example-result { flex-basis: 100%; }
+  /* Indexmiete-Rechner: Eingabefelder untereinander — drei Spalten sind auf
+     dem Handy zu eng (gleiche Falle wie bei Tage und Stunden). */
+  .indexmiete-page .input-grid { grid-template-columns: 1fr; }
 }

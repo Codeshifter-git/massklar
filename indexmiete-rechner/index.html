@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indexmiete Rechner – neue Miete 2026 berechnen</title>
+    <meta name="description" content="Indexmiete Rechner 2026: Neue Miete aus dem Verbraucherpreisindex berechnen – mit Rechenweg, Jahresfrist und Wirksamkeitsdatum. Kostenlos.">
+    <link rel="canonical" href="https://codeshifter-git.github.io/massklar/indexmiete-rechner/">
+    <meta property="og:title" content="Indexmiete Rechner – neue Miete 2026 berechnen">
+    <meta property="og:description" content="Indexmiete Rechner 2026: Neue Miete aus dem Verbraucherpreisindex berechnen – mit Rechenweg, Jahresfrist und Wirksamkeitsdatum. Kostenlos.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://codeshifter-git.github.io/massklar/indexmiete-rechner/">
+    <meta property="og:locale" content="de_DE">
+    <script>
+      document.documentElement.classList.add('js');
+    </script>
+    <link rel="preload" href="../fonts/bitter-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="../fonts/dm-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="../styles.css?v=11">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebApplication",
+          "name": "Indexmiete-Rechner",
+          "url": "https://codeshifter-git.github.io/massklar/indexmiete-rechner/",
+          "applicationCategory": "UtilitiesApplication",
+          "operatingSystem": "Web",
+          "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
+          "description": "Indexmiete Rechner 2026: Neue Miete aus dem Verbraucherpreisindex berechnen – mit Rechenweg, Jahresfrist und Wirksamkeitsdatum. Kostenlos.",
+          "inLanguage": "de"
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "maßklar", "item": "https://codeshifter-git.github.io/massklar/" },
+            { "@type": "ListItem", "position": 2, "name": "Indexmiete-Rechner", "item": "https://codeshifter-git.github.io/massklar/indexmiete-rechner/" }
+          ]
+        },
+        {
+          "@type": "HowTo",
+          "name": "Neue Miete aus dem Verbraucherpreisindex berechnen",
+          "description": "So rechnest du die neue Nettokaltmiete aus dem Index — mit Rechenweg, Jahresfrist und Wirksamkeitsdatum.",
+          "step": [
+            { "@type": "HowToStep", "position": 1, "name": "Die Formel", "text": "Neue Miete = alte Miete × neuer Index ÷ alter Index. Von 800 €, Index 122,6 auf 126,6: 800 × 126,6 ÷ 122,6 = 826,10 €." },
+            { "@type": "HowToStep", "position": 2, "name": "Die Rundungsfalle", "text": "Rechne nie mit der gerundeten Prozentzahl. 850 €, Index 122,6 auf 126,6: Der genaue Weg gibt 877,73 €. Mit den gerundeten 3,26 % rechnest du 877,71 € — 2 Cent weniger." },
+            { "@type": "HowToStep", "position": 3, "name": "Jahresfrist und Wirksamkeit", "text": "Die Miete muss ein Jahr unverändert bleiben. Die Erhöhung gilt ab Beginn des übernächsten Monats nach Zugang der Erklärung. Beispiel: Erklärung am 20.11.2026 angekommen — neue Miete ab 01.01.2027." },
+            { "@type": "HowToStep", "position": 4, "name": "Wenn der Index fällt", "text": "Fällt der Index, sinkt die Miete. 900 €, Index 113,7 auf 113,2: 900 × 113,2 ÷ 113,7 = 896,04 € — 3,96 € weniger im Monat." },
+            { "@type": "HowToStep", "position": 5, "name": "Nur die Nettokaltmiete", "text": "Die Indexmiete gilt nur für die Nettokaltmiete — Betriebs- und Heizkosten bleiben außen vor. Die Kappungsgrenze aus § 558 gilt für Indexmieten nicht." }
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            { "@type": "Question", "name": "Was ist eine Indexmiete?", "acceptedAnswer": { "@type": "Answer", "text": "Eine Vereinbarung im Mietvertrag: Die Miete steigt und fällt mit dem Verbraucherpreisindex (§ 557b BGB). Steigt der Index, darf der Vermieter die Miete anpassen — ohne dass du zustimmen musst. Die Erklärung muss in Textform kommen, mit der Indexänderung und der neuen Miete in Euro." } },
+            { "@type": "Question", "name": "Wie berechne ich die neue Miete?", "acceptedAnswer": { "@type": "Answer", "text": "Alte Miete mal neuer Index, geteilt durch alten Index. Beispiel: 800 € × 126,6 ÷ 122,6 = 826,10 €. Nimm die Indexwerte aus der Tabelle oben — beide auf Basis 2020 = 100." } },
+            { "@type": "Question", "name": "Gilt die Kappungsgrenze auch für Indexmieten?", "acceptedAnswer": { "@type": "Answer", "text": "Nein. Die Kappungsgrenze aus § 558 (15 oder 20 % in drei Jahren) gilt nur für Erhöhungen auf die ortsübliche Vergleichsmiete. Bei einer Indexmiete ist eine Erhöhung nach § 558 ausgeschlossen — und damit auch die Kappung." } },
+            { "@type": "Question", "name": "Muss ich der Erhöhung zustimmen?", "acceptedAnswer": { "@type": "Answer", "text": "Nein. Bei der Indexmiete reicht die Erklärung des Vermieters in Textform — deine Zustimmung ist nicht nötig. Die Erhöhung gilt ab Beginn des übernächsten Monats nach Zugang." } },
+            { "@type": "Question", "name": "Wann gilt die neue Miete?", "acceptedAnswer": { "@type": "Answer", "text": "Ab Beginn des übernächsten Monats nach Zugang der Erklärung. Kam die Erklärung am 20.11.2026 an, gilt die neue Miete ab 01.01.2027. Und: Die Miete muss vorher ein Jahr unverändert geblieben sein." } },
+            { "@type": "Question", "name": "Was ist der Verbraucherpreisindex?", "acceptedAnswer": { "@type": "Answer", "text": "Der Preisindex für die Lebenshaltung aller privaten Haushalte in Deutschland — gemessen vom Statistischen Bundesamt (Destatis), Basis 2020 = 100. Er kommt jeden Monat neu. Der neueste endgültige Wert ist Oktober 2026: 126,5." } },
+            { "@type": "Question", "name": "Was, wenn der Index fällt?", "acceptedAnswer": { "@type": "Answer", "text": "Dann sinkt die Miete. Als Mieter kannst du eine Senkung verlangen — der Vermieter muss sie umsetzen. Beispiel: 900 €, Index 113,7 auf 113,2 — neue Miete 896,04 €." } },
+            { "@type": "Question", "name": "Mein Vertrag nennt Basis 2015 = 100 — was nun?", "acceptedAnswer": { "@type": "Answer", "text": "Nimm trotzdem die Werte auf Basis 2020 = 100 für beide Monate — das Verhältnis bleibt (fast) gleich, und die neue Miete auch. Die Basisjahre kürzen sich in der Formel raus." } }
+          ]
+        }
+      ]
+    }
+    </script>
+  </head>
+  <body class="tool-page indexmiete-page">
+    <a class="skip-link" href="#rechner">Zum Rechner springen</a>
+
+    <header class="site-header">
+      <a class="brand" href="../"><span class="brand-mark" aria-hidden="true">mk</span><span>maßklar<span class="brand-period">.</span></span></a>
+      <nav class="site-nav" aria-label="Hauptnavigation">
+        <a href="../">Alle Rechner</a>
+        <a href="#rechner">Rechner</a>
+        <a href="#beispiele">Beispiele</a>
+        <a href="#tabelle">Tabelle</a>
+        <a href="#anleitung">So geht's</a>
+      </nav>
+      <a class="header-cta" href="../#rechner">Zum Rechner ↓</a>
+    </header>
+
+    <main>
+      <section class="tool-hero">
+        <div class="hero-copy">
+          <p class="hero-eyebrow">Der einfache Indexmiete-Rechner</p>
+          <h1>Indexmiete-Rechner.<br><span>Die neue Miete aus dem Index.</span></h1>
+          <p class="hero-description">800 € Miete, Index von 122,6 auf 126,5: Die neue Miete ist 825,45 €. Du rechnest: alte Miete mal neuer Index, geteilt durch alten Index. Hier rechnest du die neue Nettokaltmiete aus — mit Rechenweg, Jahresfrist und Wirksamkeitsdatum. Kostenlos und ohne Anmeldung.</p>
+          <div class="hero-actions">
+            <a class="button-primary" href="#rechner">Neue Miete berechnen ↓</a>
+            <a class="text-link" href="#tabelle">VPI-Tabelle ansehen ↓</a>
+          </div>
+        </div>
+        <div class="hero-visual" aria-label="Beispiel: 800 Euro Miete, neue Miete 825,45 Euro">
+          <div class="indexmiete-card">
+            <div class="indexmiete-card-top"><span>MIETE · 800 €</span><span class="indexmiete-badge">825,45 €</span></div>
+            <p class="indexmiete-card-value">825,45 €</p>
+            <p class="indexmiete-card-cat">Neue Nettokaltmiete</p>
+            <p class="indexmiete-card-note">+25,45 € im Monat</p>
+          </div>
+          <div class="floating-note"><span class="note-icon">↗</span><span><strong>800,00 €</strong><small>alte Miete</small></span><span class="note-equals">×</span><span><strong>126,5 ÷ 122,6</strong><small>Index</small></span><span class="note-equals">=</span><span><strong>825,45 €</strong><small>neue Miete</small></span></div>
+          <span class="visual-orbit orbit-one"></span>
+          <span class="visual-orbit orbit-two"></span>
+          <span class="hero-index">08 / 08</span>
+        </div>
+      </section>
+
+      <section class="calculator-section" id="rechner">
+        <div class="calculator">
+          <div class="calc-main">
+            <div class="calc-toolbar">
+              <span class="live-indicator"><span class="live-dot" aria-hidden="true"></span>Bereit — leg los</span>
+              <button class="reset-button" id="indexmiete-reset" type="button">Zurück zum Start ↺</button>
+            </div>
+
+            <form id="indexmiete-form" novalidate>
+              <div class="input-grid">
+                <div class="field">
+                  <label for="indexmiete-miete">Bisherige Nettokaltmiete</label>
+                  <div class="input-with-unit">
+                    <input type="text" inputmode="decimal" id="indexmiete-miete" name="miete" value="800" autocomplete="off" aria-describedby="miete-hint">
+                    <span class="unit" aria-hidden="true">€</span>
+                  </div>
+                  <span class="field-hint" id="miete-hint">Nur die Nettokaltmiete — ohne Betriebs- und Heizkosten.</span>
+                </div>
+                <div class="field">
+                  <label for="indexmiete-alt">Alter Indexmonat</label>
+                  <select id="indexmiete-alt" name="alt" aria-describedby="alt-hint"></select>
+                  <span class="field-hint" id="alt-hint">Der Monat der letzten Anpassung — oder der Mietbeginn.</span>
+                </div>
+                <div class="field">
+                  <label for="indexmiete-neu">Neuer Indexmonat</label>
+                  <select id="indexmiete-neu" name="neu" aria-describedby="neu-hint"></select>
+                  <span class="field-hint" id="neu-hint">Der jüngste veröffentlichte Monat.</span>
+                </div>
+              </div>
+
+              <label class="check-row"><input type="checkbox" id="indexmiete-eigen"> <span>Eigenen VPI-Wert eingeben <span class="field-optional">(optional)</span></span></label>
+              <div class="input-grid input-grid--two" id="eigen-felder" hidden>
+                <div class="field">
+                  <label for="indexmiete-alt-wert">Alter Index — eigener Wert</label>
+                  <div class="input-with-unit">
+                    <input type="text" inputmode="decimal" id="indexmiete-alt-wert" name="alt-wert" value="" placeholder="z. B. 122,6" autocomplete="off">
+                  </div>
+                  <span class="field-hint">Aus der Tabelle unten — Basis 2020 = 100.</span>
+                </div>
+                <div class="field">
+                  <label for="indexmiete-neu-wert">Neuer Index — eigener Wert</label>
+                  <div class="input-with-unit">
+                    <input type="text" inputmode="decimal" id="indexmiete-neu-wert" name="neu-wert" value="" placeholder="z. B. 126,5" autocomplete="off">
+                  </div>
+                  <span class="field-hint">Aus der Tabelle unten — Basis 2020 = 100.</span>
+                </div>
+              </div>
+
+              <div class="input-grid input-grid--two">
+                <div class="field">
+                  <label for="indexmiete-seit">Miete gilt seit <span class="field-optional">(optional)</span></label>
+                  <div class="input-with-unit">
+                    <input type="date" id="indexmiete-seit" name="seit" autocomplete="off" aria-describedby="seit-hint">
+                  </div>
+                  <span class="field-hint" id="seit-hint">Seit wann gilt die jetzige Miete unverändert?</span>
+                </div>
+                <div class="field">
+                  <label for="indexmiete-zugang">Zugang der Erklärung <span class="field-optional">(optional)</span></label>
+                  <div class="input-with-unit">
+                    <input type="date" id="indexmiete-zugang" name="zugang" autocomplete="off" aria-describedby="zugang-hint">
+                  </div>
+                  <span class="field-hint" id="zugang-hint">Wann kam die Erhöhungserklärung an?</span>
+                </div>
+              </div>
+
+              <p class="form-error" id="indexmiete-error" role="alert" hidden></p>
+              <button class="calculate-button" type="submit" id="indexmiete-calc-btn">Neue Miete berechnen ↗</button>
+              <p class="live-hint">Du musst gar nicht erst auf den Knopf drücken: Sobald du tippst, steht das Ergebnis schon da.</p>
+            </form>
+
+            <div class="result-panel" id="indexmiete-result" aria-live="polite">
+              <p class="result-topline">DEIN ERGEBNIS ✓</p>
+              <p class="result-value" id="result-value">825,45 €</p>
+              <p class="result-context" id="result-context">Von 800,00 € auf 825,45 €: Die Miete steigt um 25,45 € im Monat — das sind 305,40 € im Jahr.</p>
+              <p class="result-also" id="result-also">Index: 122,6 → 126,5 · +3,9 Punkte · +3,18 %</p>
+              <div class="result-extra" id="result-extra"></div>
+              <div class="result-meta">
+                <span class="result-formula" id="result-formula">800,00 € × 126,5 ÷ 122,6 = 825,45 €</span>
+                <button class="copy-button" id="indexmiete-copy" type="button">Ergebnis kopieren</button>
+              </div>
+            </div>
+
+            <div class="preset-chips" role="group" aria-label="Beispiele zum Ausprobieren">
+              <button class="preset-chip" type="button" data-miete="800" data-alt="2025-09" data-neu="2026-09">800 € · Sep 2025 → Sep 2026 = 826,10 €</button>
+              <button class="preset-chip" type="button" data-miete="850" data-alt="2025-09" data-neu="2026-09">850 € · Sep 2025 → Sep 2026 = 877,73 €</button>
+              <button class="preset-chip" type="button" data-miete="900" data-alt="2022-11" data-neu="2022-12">900 € · Index gefallen = 896,04 €</button>
+            </div>
+          </div>
+
+          <aside class="calc-aside">
+            <p class="aside-eyebrow">GUT ZU WISSEN</p>
+            <div class="aside-art" aria-hidden="true">
+              <span class="art-label">126,5</span>
+              <span class="art-short"></span>
+              <span class="art-long"></span>
+            </div>
+            <h2>Der Index ändert sich jeden Monat.</h2>
+            <p>Der Verbraucherpreisindex kommt jeden Monat neu — der neueste endgültige Wert ist Oktober 2026: 126,5. Diese Seite nutzt immer den jüngsten endgültigen Wert von Destatis.</p>
+            <a class="aside-link" href="#tabelle">Zur VPI-Tabelle →</a>
+          </aside>
+        </div>
+
+        <div class="ad-slot" aria-hidden="true">
+          <span class="ad-slot-label">Anzeige</span>
+          <div class="ad-slot-box">Werbeplatz</div>
+        </div>
+      </section>
+
+      <section class="quick-examples" id="beispiele">
+        <p class="section-eyebrow">Drei Beispiele zum Ausprobieren</p>
+        <h2>Drei Zahlen, drei<br><span>Antworten.</span></h2>
+        <p class="section-intro">Tipp eine Karte an — der Rechner oben rechnet mit genau diesen Werten weiter.</p>
+        <div class="example-grid">
+          <article class="example-card" data-miete="800" data-alt="2025-09" data-neu="2026-09" tabindex="0" role="button" aria-label="Beispiel laden: 800 Euro, September 2025 bis September 2026">
+            <span class="example-symbol" aria-hidden="true">🏠</span>
+            <h3>800 € Miete</h3>
+            <p>Sep 2025 → Sep 2026</p>
+            <p class="example-result">826,10 € · +26,10 €/Monat</p>
+          </article>
+          <article class="example-card" data-miete="850" data-alt="2025-09" data-neu="2026-09" tabindex="0" role="button" aria-label="Beispiel laden: 850 Euro, September 2025 bis September 2026 — die Rundungsfalle">
+            <span class="example-symbol" aria-hidden="true">🧮</span>
+            <h3>850 € Miete</h3>
+            <p>Sep 2025 → Sep 2026</p>
+            <p class="example-result">877,73 € · die Rundungsfalle</p>
+          </article>
+          <article class="example-card" data-miete="900" data-alt="2022-11" data-neu="2022-12" tabindex="0" role="button" aria-label="Beispiel laden: 900 Euro, Index gefallen — November 2022 bis Dezember 2022">
+            <span class="example-symbol" aria-hidden="true">📉</span>
+            <h3>900 € Miete</h3>
+            <p>Nov 2022 → Dez 2022</p>
+            <p class="example-result">896,04 € · Miete sinkt</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="table-section" id="tabelle">
+        <p class="section-eyebrow">Die VPI-Tabelle</p>
+        <h2>Der Verbraucherpreisindex<br><span>2021 bis 2026.</span></h2>
+        <p class="table-intro" style="margin-bottom: 16px;">Alle Monatswerte, Basis 2020 = 100. Tipp einen Monat an — der Rechner nimmt ihn als neuen Index. Stand: 17. November 2026, Quelle: Destatis.</p>
+        <div class="table-wrap">
+          <table class="scale-table" id="vpi-table">
+            <caption>Verbraucherpreisindex für Deutschland (2020 = 100)</caption>
+            <thead>
+              <tr>
+                <th scope="col">Jahr</th>
+                <th scope="col">Jan</th>
+                <th scope="col">Feb</th>
+                <th scope="col">Mär</th>
+                <th scope="col">Apr</th>
+                <th scope="col">Mai</th>
+                <th scope="col">Jun</th>
+                <th scope="col">Jul</th>
+                <th scope="col">Aug</th>
+                <th scope="col">Sep</th>
+                <th scope="col">Okt</th>
+                <th scope="col">Nov</th>
+                <th scope="col">Dez</th>
+                <th scope="col">Ø</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">2021</th><td class="vpi-cell" data-month="2021-01" data-value="101.0">101,0</td><td class="vpi-cell" data-month="2021-02" data-value="101.6">101,6</td><td class="vpi-cell" data-month="2021-03" data-value="102.1">102,1</td><td class="vpi-cell" data-month="2021-04" data-value="102.4">102,4</td><td class="vpi-cell" data-month="2021-05" data-value="102.6">102,6</td><td class="vpi-cell" data-month="2021-06" data-value="102.9">102,9</td><td class="vpi-cell" data-month="2021-07" data-value="103.4">103,4</td><td class="vpi-cell" data-month="2021-08" data-value="103.5">103,5</td><td class="vpi-cell" data-month="2021-09" data-value="103.8">103,8</td><td class="vpi-cell" data-month="2021-10" data-value="104.3">104,3</td><td class="vpi-cell" data-month="2021-11" data-value="104.5">104,5</td><td class="vpi-cell" data-month="2021-12" data-value="104.7">104,7</td><td>103,1</td></tr>
+              <tr><th scope="row">2022</th><td class="vpi-cell" data-month="2022-01" data-value="105.2">105,2</td><td class="vpi-cell" data-month="2022-02" data-value="106.0">106,0</td><td class="vpi-cell" data-month="2022-03" data-value="108.1">108,1</td><td class="vpi-cell" data-month="2022-04" data-value="108.8">108,8</td><td class="vpi-cell" data-month="2022-05" data-value="109.8">109,8</td><td class="vpi-cell" data-month="2022-06" data-value="109.8">109,8</td><td class="vpi-cell" data-month="2022-07" data-value="110.3">110,3</td><td class="vpi-cell" data-month="2022-08" data-value="110.7">110,7</td><td class="vpi-cell" data-month="2022-09" data-value="112.7">112,7</td><td class="vpi-cell" data-month="2022-10" data-value="113.5">113,5</td><td class="vpi-cell" data-month="2022-11" data-value="113.7">113,7</td><td class="vpi-cell" data-month="2022-12" data-value="113.2">113,2</td><td>110,2</td></tr>
+              <tr><th scope="row">2023</th><td class="vpi-cell" data-month="2023-01" data-value="114.3">114,3</td><td class="vpi-cell" data-month="2023-02" data-value="115.2">115,2</td><td class="vpi-cell" data-month="2023-03" data-value="116.1">116,1</td><td class="vpi-cell" data-month="2023-04" data-value="116.6">116,6</td><td class="vpi-cell" data-month="2023-05" data-value="116.5">116,5</td><td class="vpi-cell" data-month="2023-06" data-value="116.8">116,8</td><td class="vpi-cell" data-month="2023-07" data-value="117.1">117,1</td><td class="vpi-cell" data-month="2023-08" data-value="117.5">117,5</td><td class="vpi-cell" data-month="2023-09" data-value="117.8">117,8</td><td class="vpi-cell" data-month="2023-10" data-value="117.8">117,8</td><td class="vpi-cell" data-month="2023-11" data-value="117.3">117,3</td><td class="vpi-cell" data-month="2023-12" data-value="117.4">117,4</td><td>116,7</td></tr>
+              <tr><th scope="row">2024</th><td class="vpi-cell" data-month="2024-01" data-value="117.6">117,6</td><td class="vpi-cell" data-month="2024-02" data-value="118.1">118,1</td><td class="vpi-cell" data-month="2024-03" data-value="118.6">118,6</td><td class="vpi-cell" data-month="2024-04" data-value="119.2">119,2</td><td class="vpi-cell" data-month="2024-05" data-value="119.3">119,3</td><td class="vpi-cell" data-month="2024-06" data-value="119.4">119,4</td><td class="vpi-cell" data-month="2024-07" data-value="119.8">119,8</td><td class="vpi-cell" data-month="2024-08" data-value="119.7">119,7</td><td class="vpi-cell" data-month="2024-09" data-value="119.7">119,7</td><td class="vpi-cell" data-month="2024-10" data-value="120.2">120,2</td><td class="vpi-cell" data-month="2024-11" data-value="119.9">119,9</td><td class="vpi-cell" data-month="2024-12" data-value="120.5">120,5</td><td>119,3</td></tr>
+              <tr><th scope="row">2025</th><td class="vpi-cell" data-month="2025-01" data-value="120.3">120,3</td><td class="vpi-cell" data-month="2025-02" data-value="120.8">120,8</td><td class="vpi-cell" data-month="2025-03" data-value="121.2">121,2</td><td class="vpi-cell" data-month="2025-04" data-value="121.7">121,7</td><td class="vpi-cell" data-month="2025-05" data-value="121.8">121,8</td><td class="vpi-cell" data-month="2025-06" data-value="121.8">121,8</td><td class="vpi-cell" data-month="2025-07" data-value="122.2">122,2</td><td class="vpi-cell" data-month="2025-08" data-value="122.3">122,3</td><td class="vpi-cell" data-month="2025-09" data-value="122.6">122,6</td><td class="vpi-cell" data-month="2025-10" data-value="123.0">123,0</td><td class="vpi-cell" data-month="2025-11" data-value="122.7">122,7</td><td class="vpi-cell" data-month="2025-12" data-value="122.7">122,7</td><td>121,9</td></tr>
+              <tr><th scope="row">2026</th><td class="vpi-cell" data-month="2026-01" data-value="122.8">122,8</td><td class="vpi-cell" data-month="2026-02" data-value="123.1">123,1</td><td class="vpi-cell" data-month="2026-03" data-value="124.5">124,5</td><td class="vpi-cell" data-month="2026-04" data-value="125.2">125,2</td><td class="vpi-cell" data-month="2026-05" data-value="125.0">125,0</td><td class="vpi-cell" data-month="2026-06" data-value="124.6">124,6</td><td class="vpi-cell" data-month="2026-07" data-value="125.6">125,6</td><td class="vpi-cell" data-month="2026-08" data-value="125.8">125,8</td><td class="vpi-cell" data-month="2026-09" data-value="126.6">126,6</td><td class="vpi-cell is-latest" data-month="2026-10" data-value="126.5">126,5</td><td>—</td><td>—</td><td>125,0 *</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="table-note">* Ø 2026: nur Januar bis Oktober. Der November-Wert kommt als vorläufige Zahl am 30. November 2026, der endgültige Mitte Dezember. Quellen: <a href="https://www.destatis.de/DE/Themen/Wirtschaft/Konjunkturindikatoren/Basisdaten/vpi001a.html?view=main%5BPrint%5D" target="_blank" rel="noopener">Destatis — Verbraucherpreisindex</a> (Stand 17. November 2026, Pressemitteilung Nr. 392, korrigiert) · <a href="https://www.gesetze-im-internet.de/bgb/__557b.html" target="_blank" rel="noopener">§ 557b BGB</a>.</p>
+
+        <p class="section-eyebrow" style="margin-top: 40px;">Index, Staffel oder Vergleich?</p>
+        <h2>Welche Miete<br><span>steigt wie?</span></h2>
+        <p class="table-intro" style="margin-bottom: 16px;">Drei Wege, wie eine Miete steigen darf — nur einer davon ist die Indexmiete.</p>
+        <div class="table-wrap">
+          <table class="scale-table" id="vergleich-table">
+            <caption>Indexmiete, Staffelmiete und Vergleichsmiete im Vergleich</caption>
+            <thead>
+              <tr>
+                <th scope="col"></th>
+                <th scope="col">Indexmiete</th>
+                <th scope="col">Staffelmiete</th>
+                <th scope="col">Vergleichsmiete</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">Wie steigt die Miete?</th><td>Mit dem Verbraucherpreisindex</td><td>In festen Stufen, die im Vertrag stehen</td><td>Bis zur ortsüblichen Vergleichsmiete</td></tr>
+              <tr><th scope="row">Zustimmung nötig?</th><td>Nein — Erklärung reicht</td><td>Nein — steht schon im Vertrag</td><td>Ja — oder der Vermieter klagt</td></tr>
+              <tr><th scope="row">Rechtsgrundlage</th><td>§ 557b BGB</td><td>§ 557a BGB</td><td>§ 558 BGB</td></tr>
+              <tr><th scope="row">Kappungsgrenze?</th><td>Nein — gilt hier nicht</td><td>Nein</td><td>Ja: 20 % — in angespannten Märkten 15 %</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="guide-section" id="anleitung">
+        <p class="guide-eyebrow">Kurz erklärt</p>
+        <h2>Indexmiete berechnen:<br><span>so funktioniert’s.</span></h2>
+        <p class="guide-intro">Eine Formel reicht für fast jede Indexmiete. Die fünf Sachen unten zeigen dir, worauf es ankommt.</p>
+        <div class="guide-grid">
+          <article class="guide-step">
+            <p class="guide-step-number">Schritt 01</p>
+            <h3>Die Formel</h3>
+            <p>Neue Miete = alte Miete × neuer Index ÷ alter Index. Von 800 €, Index 122,6 auf 126,6: 800 × 126,6 ÷ 122,6 = 826,10 €. Das sind 26,10 € mehr im Monat.</p>
+            <p class="guide-equation">800,00 € × 126,6 ÷ 122,6 = 826,10 €</p>
+          </article>
+          <article class="guide-step">
+            <p class="guide-step-number">Schritt 02</p>
+            <h3>Die Rundungsfalle</h3>
+            <p>Rechne nie mit der gerundeten Prozentzahl. 850 €, Index 122,6 auf 126,6: Der genaue Weg gibt 877,73 €. Mit den gerundeten 3,26 % rechnest du 877,71 € — 2 Cent weniger. Der genaue Weg zählt.</p>
+            <p class="guide-equation">850 × 126,6 ÷ 122,6 = 877,73 € · nicht 850 × 1,0326 = 877,71 €</p>
+          </article>
+          <article class="guide-step">
+            <p class="guide-step-number">Schritt 03</p>
+            <h3>Jahresfrist und Wirksamkeit</h3>
+            <p>Die Miete muss ein Jahr unverändert bleiben (§ 557b Abs. 2). Die Erhöhung gilt ab Beginn des übernächsten Monats nach Zugang der Erklärung (§ 557b Abs. 3). Beispiel: Miete gilt seit 01.03.2025, Erklärung kam am 20.11.2026 an — die neue Miete gilt ab 01.01.2027.</p>
+            <p class="guide-equation">Zugang 20.11.2026 → wirksam ab 01.01.2027</p>
+          </article>
+          <article class="guide-step">
+            <p class="guide-step-number">Schritt 04</p>
+            <h3>Wenn der Index fällt</h3>
+            <p>Fällt der Index, sinkt die Miete — du kannst als Mieter eine Senkung verlangen. 900 €, Index 113,7 auf 113,2: 900 × 113,2 ÷ 113,7 = 896,04 €. Das sind 3,96 € weniger im Monat.</p>
+            <p class="guide-equation">900,00 € × 113,2 ÷ 113,7 = 896,04 €</p>
+          </article>
+          <article class="guide-step">
+            <p class="guide-step-number">Schritt 05</p>
+            <h3>Nur die Nettokaltmiete</h3>
+            <p>Die Indexmiete gilt nur für die Nettokaltmiete — Betriebs- und Heizkosten bleiben außen vor. Die Kappungsgrenze aus § 558 (15 oder 20 % in 3 Jahren) gilt für Indexmieten nicht. Die Mietpreisbremse gilt nur für die Ausgangsmiete.</p>
+            <p class="guide-equation">Indexmiete = Nettokaltmiete × Index ÷ alter Index</p>
+          </article>
+        </div>
+        <aside class="formula-card">
+          <p class="formula-eyebrow">Die Formel, die du brauchst</p>
+          <p class="formula-main">Neue Miete = alte Miete × neuer Index ÷ alter Index</p>
+          <p>Beide Indexwerte auf Basis 2020 = 100 — nimm sie aus der Tabelle oben. Die Erhöhung in Euro: neue Miete minus alte Miete.</p>
+          <p class="formula-small">Kein Anwalt, keine Beratung — nur die Rechnung. Bei Streit frag einen Fachmann.</p>
+        </aside>
+
+        <div class="indexmiete-note">
+          <h3>Geplant, noch nicht beschlossen — Stand 25. November 2026</h3>
+          <p>Der Regierungsentwurf zur Mietrechtsreform (Bundestags-Drucksache 21/6807) will Indexsteigerungen über 3 % im Jahr nur zur Hälfte zählen lassen — und nur in Gebieten, die das Land per Verordnung bestimmt. Im Februar 2026 stand noch eine feste Grenze von 3,5 % im Entwurf — sie wurde durch dieses Halbierungsmodell ersetzt. Beschlossen ist das nicht: Der Bundestag hat den Entwurf am 09.07.2026 in erster Lesung beraten, die Anhörung war am 14.10.2026. Bis ein Gesetz verkündet ist, gilt § 557b ohne Kappung. Beispiel: Steigt der Index um 5 %, dürfte die Miete heute um 5 % steigen — nach dem Entwurf nur um 4 % (3 % voll, von den übrigen 2 % die Hälfte). Bei 1.000 € Miete wären das 1.040 € statt 1.050 €.</p>
+        </div>
+      </section>
+
+      <section class="practice-section" id="ueben">
+        <p class="section-eyebrow">Vier Aufgaben zum Üben</p>
+        <h2>Jetzt bist du<br><span>dran.</span></h2>
+        <p class="section-intro">Vier Aufgaben — die Lösungen stehen direkt darunter. Probier es zuerst selbst und klick dann auf „Lösung“.</p>
+        <div class="practice-grid">
+          <details class="practice-task">
+            <summary><span class="practice-number">Aufgabe 1</span>Miete 750 €, Index 122,6 → 126,6 — neue Miete?</summary>
+            <p>774,47 €: 750 × 126,6 ÷ 122,6 = 774,47 €. Das sind 24,47 € mehr im Monat.</p>
+          </details>
+          <details class="practice-task">
+            <summary><span class="practice-number">Aufgabe 2</span>Miete 650 €, Index 123,0 → 126,5 — neue Miete?</summary>
+            <p>668,50 €: 650 × 126,5 ÷ 123,0 = 668,50 €. Das sind 18,50 € mehr im Monat.</p>
+          </details>
+          <details class="practice-task">
+            <summary><span class="practice-number">Aufgabe 3</span>Miete 1.200 €, Index 117,6 → 122,8 — neue Miete?</summary>
+            <p>1.253,06 €: 1.200 × 122,8 ÷ 117,6 = 1.253,06 €. Das sind 53,06 € mehr im Monat.</p>
+          </details>
+          <details class="practice-task">
+            <summary><span class="practice-number">Aufgabe 4</span>Miete 1.100 €, Index 116,1 → 124,5 — neue Miete?</summary>
+            <p>1.179,59 €: 1.100 × 124,5 ÷ 116,1 = 1.179,59 €. Das sind 79,59 € mehr im Monat.</p>
+          </details>
+        </div>
+      </section>
+
+      <section class="faq-section" id="faq">
+        <p class="section-eyebrow">Häufige Fragen</p>
+        <h2>Was du noch<br><span>wissen solltest.</span></h2>
+        <div class="faq-list">
+          <details class="faq-item">
+            <summary>Was ist eine Indexmiete?</summary>
+            <p>Eine Vereinbarung im Mietvertrag: Die Miete steigt und fällt mit dem Verbraucherpreisindex (§ 557b BGB). Steigt der Index, darf der Vermieter die Miete anpassen — ohne dass du zustimmen musst. Die Erklärung muss in Textform kommen, mit der Indexänderung und der neuen Miete in Euro.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Wie berechne ich die neue Miete?</summary>
+            <p>Alte Miete mal neuer Index, geteilt durch alten Index. Beispiel: 800 € × 126,6 ÷ 122,6 = 826,10 €. Nimm die Indexwerte aus der Tabelle oben — beide auf Basis 2020 = 100.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Gilt die Kappungsgrenze auch für Indexmieten?</summary>
+            <p>Nein. Die Kappungsgrenze aus § 558 (15 oder 20 % in drei Jahren) gilt nur für Erhöhungen auf die ortsübliche Vergleichsmiete. Bei einer Indexmiete ist eine Erhöhung nach § 558 ausgeschlossen — und damit auch die Kappung. Geplant ist eine eigene Begrenzung (siehe der Kasten oben), beschlossen ist sie nicht.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Muss ich der Erhöhung zustimmen?</summary>
+            <p>Nein. Bei der Indexmiete reicht die Erklärung des Vermieters in Textform — deine Zustimmung ist nicht nötig. Die Erhöhung gilt ab Beginn des übernächsten Monats nach Zugang. Prüfen kannst du sie trotzdem: Stimmen Indexwerte und Rechnung?</p>
+          </details>
+          <details class="faq-item">
+            <summary>Wann gilt die neue Miete?</summary>
+            <p>Ab Beginn des übernächsten Monats nach Zugang der Erklärung. Kam die Erklärung am 20.11.2026 an, gilt die neue Miete ab 01.01.2027. Und: Die Miete muss vorher ein Jahr unverändert geblieben sein.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Was ist der Verbraucherpreisindex?</summary>
+            <p>Der Preisindex für die Lebenshaltung aller privaten Haushalte in Deutschland — gemessen vom Statistischen Bundesamt (Destatis), Basis 2020 = 100. Er kommt jeden Monat neu. Der neueste endgültige Wert ist Oktober 2026: 126,5. Nimm nie die Inflationsrate in Prozent — die Formel braucht die Indexpunkte.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Was, wenn der Index fällt?</summary>
+            <p>Dann sinkt die Miete. Als Mieter kannst du eine Senkung verlangen — der Vermieter muss sie umsetzen. Beispiel: 900 €, Index 113,7 auf 113,2 — neue Miete 896,04 €.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Mein Vertrag nennt Basis 2015 = 100 — was nun?</summary>
+            <p>Nimm trotzdem die Werte auf Basis 2020 = 100 für beide Monate — das Verhältnis bleibt (fast) gleich, und die neue Miete auch. Die Basisjahre kürzen sich in der Formel raus.</p>
+          </details>
+        </div>
+      </section>
+
+      <section class="more-tools">
+        <div class="quick-title"><span class="eyebrow">Mehr Rechner</span><h2>Das gibt es noch bei maßklar.</h2></div>
+        <div class="tool-grid">
+          <a class="tool-card" href="../massstabsrechner/"><span class="tool-icon" aria-hidden="true">🗺</span><span class="tool-text"><span class="tool-title">Maßstabsrechner</span><span class="tool-desc">Karten, Grundrisse, Modellbau: echte Länge und Plan-Länge umrechnen.</span></span><span class="tool-arrow" aria-hidden="true">↗</span></a>
+          <a class="tool-card" href="../altersrechner/"><span class="tool-icon" aria-hidden="true">🎂</span><span class="tool-text"><span class="tool-title">Altersrechner</span><span class="tool-desc">Wie alt bist du in Jahren, Monaten und Tagen? Mit Geburtstag-Countdown.</span></span><span class="tool-arrow" aria-hidden="true">↗</span></a>
+          <a class="tool-card" href="../massstabsrechner/modellbau/"><span class="tool-icon" aria-hidden="true">🚂</span><span class="tool-text"><span class="tool-title">Modellbau-Maßstab</span><span class="tool-desc">H0, Spur N, 1:72: echte Länge in Modell-Länge umrechnen.</span></span><span class="tool-arrow" aria-hidden="true">↗</span></a>
+          <a class="tool-card" href="../prozentrechner/"><span class="tool-icon" aria-hidden="true">%</span><span class="tool-text"><span class="tool-title">Prozentrechner</span><span class="tool-desc">Prozentwert, Rabatt oder Erhöhung — in Sekunden.</span></span><span class="tool-arrow" aria-hidden="true">↗</span></a>
+          <a class="tool-card" href="../bmi-rechner/"><span class="tool-icon" aria-hidden="true">⚖</span><span class="tool-text"><span class="tool-title">BMI-Rechner</span><span class="tool-desc">Body-Mass-Index ausrechnen und einordnen.</span></span><span class="tool-arrow" aria-hidden="true">↗</span></a>
+          <a class="tool-card" href="../tage-rechner/"><span class="tool-icon" aria-hidden="true">📅</span><span class="tool-text"><span class="tool-title">Tage-Rechner</span><span class="tool-desc">Tage zwischen zwei Daten zählen — mit Wochen, Arbeitstagen und Wochentag.</span></span><span class="tool-arrow" aria-hidden="true">↗</span></a>
+          <a class="tool-card" href="../stunden-rechner/"><span class="tool-icon" aria-hidden="true">🕐</span><span class="tool-text"><span class="tool-title">Stunden-Rechner</span><span class="tool-desc">Arbeitszeit und Stunden zwischen zwei Uhrzeiten — mit Pause und Nachtschicht.</span></span><span class="tool-arrow" aria-hidden="true">↗</span></a>
+        </div>
+        <p class="more-tools-link"><a href="../">Alle Rechner ansehen <span aria-hidden="true">→</span></a></p>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <a class="brand footer-brand" href="../"><span class="brand-mark" aria-hidden="true">mk</span><span>maßklar<span class="brand-period">.</span></span></a>
+      <p>Indexmiete berechnen — einfach, schnell und ohne Mathe-Stress. Ein Produkt von Hastle.</p>
+      <span>© <span id="current-year"></span> maßklar</span>
+    </footer>
+
+    <button class="back-to-top" id="back-to-top" type="button" aria-label="Nach oben scrollen">↑</button>
+    <script>
+      document.querySelector("#current-year").textContent = new Date().getFullYear();
+    </script>
+    <script>
+      (function () {
+        var button = document.getElementById("back-to-top");
+        var SHOW_AFTER = 500;
+        var footer = document.querySelector(".site-footer");
+        function updateVisibility() {
+          button.classList.toggle("is-visible", window.scrollY > SHOW_AFTER);
+          if (!footer) return;
+          var footerRect = footer.getBoundingClientRect();
+          var overlap = Math.max(0, window.innerHeight - footerRect.top);
+          button.style.bottom = overlap > 0 ? (overlap + 16) + "px" : "";
+        }
+        window.addEventListener("scroll", updateVisibility, { passive: true });
+        window.addEventListener("resize", updateVisibility);
+        button.addEventListener("click", function () {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+        updateVisibility();
+      })();
+    </script>
+    <script src="app.js" defer></script>
+  </body>
+</html>
