@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tage-Rechner: Tage zwischen zwei Daten zählen</title>
+    <meta name="description" content="Tage zwischen zwei Daten zählen oder ein Datum plus Tage rechnen – mit Wochen, Arbeitstagen und Wochentag. Kostenlos, ohne Anmeldung.">
+    <link rel="canonical" href="https://codeshifter-git.github.io/massklar/tage-rechner/">
+    <meta property="og:title" content="Tage-Rechner: Tage zwischen zwei Daten zählen">
+    <meta property="og:description" content="Tage zwischen zwei Daten zählen oder ein Datum plus Tage rechnen – mit Wochen, Arbeitstagen und Wochentag. Kostenlos, ohne Anmeldung.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://codeshifter-git.github.io/massklar/tage-rechner/">
+    <meta property="og:locale" content="de_DE">
+    <script>
+      document.documentElement.classList.add('js');
+    </script>
+    <link rel="preload" href="../fonts/bitter-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="../fonts/dm-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="../styles.css?v=11">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebApplication",
+          "name": "Tage-Rechner",
+          "url": "https://codeshifter-git.github.io/massklar/tage-rechner/",
+          "applicationCategory": "UtilitiesApplication",
+          "operatingSystem": "Web",
+          "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
+          "description": "Tage zwischen zwei Daten zählen oder ein Datum plus Tage rechnen – mit Wochen, Arbeitstagen und Wochentag. Kostenlos, ohne Anmeldung.",
+          "inLanguage": "de"
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "maßklar", "item": "https://codeshifter-git.github.io/massklar/" },
+            { "@type": "ListItem", "position": 2, "name": "Tage-Rechner", "item": "https://codeshifter-git.github.io/massklar/tage-rechner/" }
+          ]
+        },
+        {
+          "@type": "HowTo",
+          "name": "Tage zwischen zwei Daten zählen",
+          "description": "So rechnest du die Tage zwischen zwei Daten — mit oder ohne Enddatum, in Wochen und in Arbeitstagen.",
+          "step": [
+            { "@type": "HowToStep", "position": 1, "name": "Die Rechnung", "text": "Enddatum minus Startdatum. Der 30.07.2027 minus der 12.07.2027 sind 18 Tage." },
+            { "@type": "HowToStep", "position": 2, "name": "Mit oder ohne Enddatum?", "text": "Ohne Enddatum sind es 18 Tage dazwischen, mit beiden Tagen 19. Der Rechner zeigt beides." },
+            { "@type": "HowToStep", "position": 3, "name": "Nächte und Tage", "text": "Im Hotel zählst du Nächte, nicht Tage: Anreise 13.08., Abreise 16.08. sind 3 Nächte, aber 4 Tage mit beiden Tagen." },
+            { "@type": "HowToStep", "position": 4, "name": "Arbeitstage", "text": "Arbeitstage sind Montag bis Freitag. Vom 12.07. bis zum 30.07.2027 sind es 14 Arbeitstage, 15 mit Enddatum." },
+            { "@type": "HowToStep", "position": 5, "name": "Monate sind keine festen Tage", "text": "Monate zählen wir als Kalendermonate. Vom 15.01.2026 bis zum 20.03.2027 sind es 1 Jahr, 2 Monate und 5 Tage — und '2 Monate' können 59 bis 62 Tage sein." }
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            { "@type": "Question", "name": "Zählt das Enddatum mit?", "acceptedAnswer": { "@type": "Answer", "text": "Normalerweise nicht: Vom 12.07. bis zum 30.07.2027 sind es 18 Tage dazwischen. Mit beiden Tagen sind es 19. Der Rechner zeigt beide Zahlen, damit du nicht raten musst." } },
+            { "@type": "Question", "name": "Wie viele Tage hat ein Jahr?", "acceptedAnswer": { "@type": "Answer", "text": "365 Tage — außer in einem Schaltjahr, dann 366. Das nächste Schaltjahr ist 2028. Ein Schaltjahr gibt es fast alle vier Jahre, damit der Kalender zum Sonnenjahr passt." } },
+            { "@type": "Question", "name": "Warum zeigt ein anderer Rechner einen Tag mehr?", "acceptedAnswer": { "@type": "Answer", "text": "Fast immer liegt es am Enddatum: Der eine Rechner zählt es mit, der andere nicht. Der Unterschied ist genau ein Tag — beide Rechner rechnen richtig, sie zählen nur anders." } },
+            { "@type": "Question", "name": "Was ist der Unterschied zwischen Werktagen und Arbeitstagen?", "acceptedAnswer": { "@type": "Answer", "text": "Werktage sind Montag bis Samstag — so steht es im Gesetz. Arbeitstage sind Montag bis Freitag, also die übliche Arbeitswoche. Dieser Rechner zählt Arbeitstage (Montag bis Freitag)." } },
+            { "@type": "Question", "name": "Werden Feiertage abgezogen?", "acceptedAnswer": { "@type": "Answer", "text": "Nur wenn du 'Nur Arbeitstage' anhakst — und nur die Feiertage, die du einträgst. Mit einem Klick trägst du die 9 bundesweiten Feiertage für 2026 und 2027 ein. Regionale Feiertage je nach Bundesland kommen dazu." } },
+            { "@type": "Question", "name": "Kann ich Monate ausgeben?", "acceptedAnswer": { "@type": "Answer", "text": "Ja. Der Rechner zeigt Jahre, Monate und Tage als Kalendermonate — zum Beispiel 1 Jahr, 2 Monate und 5 Tage. Ein Monat ist nicht immer 30 Tage lang, deshalb steht die Tageszahl immer dabei." } }
+          ]
+        }
+      ]
+    }
+    </script>
+  </head>
+  <body class="tool-page tage-page">
+    <a class="skip-link" href="#rechner">Zum Rechner springen</a>
+
+    <header class="site-header">
+      <a class="brand" href="../"><span class="brand-mark" aria-hidden="true">mk</span><span>maßklar<span class="brand-period">.</span></span></a>
+      <nav class="site-nav" aria-label="Hauptnavigation">
+        <a href="../">Alle Rechner</a>
+        <a href="#rechner">Rechner</a>
+        <a href="#beispiele">Beispiele</a>
+        <a href="#tabelle">Tabelle</a>
+        <a href="#anleitung">So geht's</a>
+      </nav>
+      <a class="header-cta" href="../#rechner">Zum Rechner ↓</a>
+    </header>
+
+    <main>
+      <section class="tool-hero">
+        <div class="hero-copy">
+          <p class="hero-eyebrow">Der einfache Tage-Rechner</p>
+          <h1>Tage-Rechner.<br><span>Tage zwischen zwei Daten zählen.</span></h1>
+          <p class="hero-description">Vom 12. Juli bis zum 30. Juli 2027 sind es 18 Tage — 19, wenn du beide Tage mitzählst. Hier rechnest du Tage zwischen zwei Daten, addierst Tage zu einem Datum oder zählst die Tage bis zu einem Termin — mit Wochen, Arbeitstagen und Wochentag. Kostenlos und ohne Anmeldung.</p>
+          <div class="hero-actions">
+            <a class="button-primary" href="#rechner">Tage zählen ↓</a>
+            <a class="text-link" href="#tabelle">Tabelle ansehen ↓</a>
+          </div>
+        </div>
+        <div class="hero-visual" aria-label="Beispiel: Urlaub im Juli 2027">
+          <div class="tage-card">
+            <div class="tage-card-top"><span>URLAUB · JULI 2027</span><span class="tage-badge">18 TAGE</span></div>
+            <p class="tage-card-value">18 Tage</p>
+            <p class="tage-card-cat">12.07. → 30.07.2027</p>
+            <p class="tage-card-note">19 Tage, wenn du beide Tage mitzählst</p>
+          </div>
+          <div class="floating-note"><span class="note-icon">↗</span><span><strong>2 Wochen</strong><small>+ 4 Tage</small></span><span class="note-equals">=</span><span><strong>18</strong><small>Tage</small></span></div>
+          <span class="visual-orbit orbit-one"></span>
+          <span class="visual-orbit orbit-two"></span>
+          <span class="hero-index">06 / 06</span>
+        </div>
+      </section>
+
+      <section class="calculator-section" id="rechner">
+        <div class="calculator">
+          <div class="calc-main">
+            <div class="calc-toolbar">
+              <span class="live-indicator"><span class="live-dot" aria-hidden="true"></span>Bereit — leg los</span>
+              <button class="reset-button" id="tage-reset" type="button">Zurück zum Start ↺</button>
+            </div>
+
+            <form id="tage-form" novalidate>
+              <span class="target-label" id="mode-label">Ich will wissen:</span>
+              <div class="mode-grid" role="group" aria-labelledby="mode-label" id="mode-grid">
+                <button type="button" class="mode-btn" aria-pressed="true" data-mode="zwischen">Tage zwischen zwei Daten</button>
+                <button type="button" class="mode-btn" aria-pressed="false" data-mode="plus">Datum plus Tage</button>
+                <button type="button" class="mode-btn" aria-pressed="false" data-mode="bis">Tage bis …</button>
+              </div>
+
+              <div class="mode-fields is-active" data-mode="zwischen">
+                <div class="input-grid">
+                  <div class="field">
+                    <label for="tage-start">Startdatum</label>
+                    <div class="date-row">
+                      <input type="date" id="tage-start" name="start" value="2027-07-12" autocomplete="off">
+                      <button type="button" class="today-btn" data-target="tage-start">Heute</button>
+                    </div>
+                    <span class="field-hint">Der erste Tag — z. B. der Urlaubsbeginn.</span>
+                  </div>
+                  <div class="field">
+                    <label for="tage-end">Enddatum</label>
+                    <div class="date-row">
+                      <input type="date" id="tage-end" name="end" value="2027-07-30" autocomplete="off">
+                      <button type="button" class="today-btn" data-target="tage-end">Heute</button>
+                    </div>
+                    <span class="field-hint">Der letzte Tag — z. B. das Urlaubsende.</span>
+                  </div>
+                </div>
+                <label class="check-row"><input type="checkbox" id="tage-inclusive"> <span>Enddatum mitzählen <span class="field-optional">(+1 Tag)</span></span></label>
+                <label class="check-row"><input type="checkbox" id="tage-workdays"> <span>Nur Arbeitstage <span class="field-optional">(Mo–Fr)</span></span></label>
+                <div class="holiday-box" id="holiday-box" hidden>
+                  <label for="tage-holidays">Eigene Feiertage <span class="field-optional">(optional)</span></label>
+                  <textarea id="tage-holidays" rows="3" placeholder="Ein Datum pro Zeile, z. B. 25.12.2026" autocomplete="off"></textarea>
+                  <div class="holiday-actions">
+                    <button type="button" class="preset-chip" id="holiday-preset">Bundesweite Feiertage 2026 und 2027 eintragen</button>
+                    <span class="field-hint" id="holiday-count">Feiertage werden nur bei „Nur Arbeitstage“ abgezogen.</span>
+                  </div>
+                  <p class="field-hint">Das sind die 9 Feiertage, die es in ganz Deutschland gibt. Regionale Feiertage je nach Bundesland kommen dazu — trag sie einfach unten dazu.</p>
+                </div>
+              </div>
+
+              <div class="mode-fields" data-mode="plus">
+                <div class="input-grid">
+                  <div class="field">
+                    <label for="tage-plus-start">Startdatum</label>
+                    <div class="date-row">
+                      <input type="date" id="tage-plus-start" name="plus-start" value="2027-02-01" autocomplete="off">
+                      <button type="button" class="today-btn" data-target="tage-plus-start">Heute</button>
+                    </div>
+                    <span class="field-hint">Ab welchem Tag zählst du?</span>
+                  </div>
+                  <div class="field">
+                    <label for="tage-plus-days">Anzahl Tage</label>
+                    <div class="input-with-unit">
+                      <input type="text" inputmode="numeric" id="tage-plus-days" name="plus-days" value="90" autocomplete="off" aria-describedby="plus-days-hint">
+                      <span class="unit" aria-hidden="true">Tage</span>
+                    </div>
+                    <span class="field-hint" id="plus-days-hint">Minus geht auch: −14 rechnet 14 Tage zurück.</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mode-fields" data-mode="bis">
+                <div class="input-grid">
+                  <div class="field">
+                    <label for="tage-target">Zieldatum</label>
+                    <div class="date-row">
+                      <input type="date" id="tage-target" name="target" value="2026-12-24" autocomplete="off">
+                      <button type="button" class="today-btn" data-target="tage-target">Heute</button>
+                    </div>
+                    <span class="field-hint">Bis zu welchem Tag zählst du?</span>
+                  </div>
+                  <div class="field">
+                    <label>Beliebte Ziele</label>
+                    <div class="preset-chips" role="group" aria-label="Beliebte Zieldaten">
+                      <button class="preset-chip" type="button" data-target-date="12-24" data-target-name="Weihnachten">Weihnachten · 24.12.</button>
+                      <button class="preset-chip" type="button" data-target-date="12-31" data-target-name="Silvester">Silvester · 31.12.</button>
+                      <button class="preset-chip" type="button" data-target-date="01-01" data-target-name="Neujahr">1. Januar</button>
+                    </div>
+                    <span class="field-hint">Tippen genügt — der Rechner nimmt das nächste Mal, an dem der Tag kommt.</span>
+                  </div>
+                </div>
+              </div>
+
+              <p class="form-error" id="tage-error" role="alert" hidden></p>
+              <button class="calculate-button" type="submit" id="tage-calc-btn">Tage zählen ↗</button>
+              <p class="live-hint">Du musst gar nicht erst auf den Knopf drücken: Sobald du tippst, steht das Ergebnis schon da.</p>
+            </form>
+
+            <div class="result-panel" id="tage-result" aria-live="polite">
+              <p class="result-topline">DEIN ERGEBNIS ✓</p>
+              <p class="result-value" id="result-value">18 Tage</p>
+              <p class="result-context" id="result-context">Vom 12.07.2027 bis zum 30.07.2027 sind es 18 Tage — 19 Tage, wenn du beide Tage mitzählst.</p>
+              <p class="result-also" id="result-also">2 Wochen und 4 Tage · 0 Jahre, 0 Monate, 18 Tage · 432 Stunden</p>
+              <div class="result-extra" id="result-extra"></div>
+              <div class="result-meta">
+                <span class="result-formula" id="result-formula">30.07.2027 − 12.07.2027 = 18 Tage</span>
+                <button class="copy-button" id="tage-copy" type="button">Ergebnis kopieren</button>
+              </div>
+            </div>
+
+            <div class="preset-chips" role="group" aria-label="Beispiele zum Ausprobieren">
+              <button class="preset-chip" type="button" data-mode="zwischen" data-start="2027-07-12" data-end="2027-07-30">Urlaub 12.07.–30.07.2027 → 18 Tage</button>
+              <button class="preset-chip" type="button" data-mode="zwischen" data-start="2027-03-01" data-end="2027-03-31">01.03.–31.03.2027 → 30 Tage</button>
+              <button class="preset-chip" type="button" data-mode="plus" data-start="2027-01-15" data-days="30">15.01.2027 + 30 Tage → 14.02.2027</button>
+            </div>
+          </div>
+
+          <aside class="calc-aside">
+            <p class="aside-eyebrow">GUT ZU WISSEN</p>
+            <div class="aside-art" aria-hidden="true">
+              <span class="art-label">18</span>
+              <span class="art-short"></span>
+              <span class="art-long"></span>
+            </div>
+            <h2>Ein Tag mehr oder weniger?</h2>
+            <p>Zwei Rechner, zwei Antworten? Fast immer liegt es am Enddatum: Der eine zählt es mit, der andere nicht. Hier siehst du beide Zahlen — 18 Tage dazwischen, 19 mit beiden Tagen.</p>
+            <a class="aside-link" href="#anleitung">Warum das so ist →</a>
+          </aside>
+        </div>
+
+        <div class="ad-slot" aria-hidden="true">
+          <span class="ad-slot-label">Anzeige</span>
+          <div class="ad-slot-box">Werbeplatz</div>
+        </div>
+      </section>
+
+      <section class="quick-examples" id="beispiele">
+        <p class="section-eyebrow">Drei Beispiele zum Ausprobieren</p>
+        <h2>Drei Zahlen, drei<br><span>Antworten.</span></h2>
+        <p class="section-intro">Tipp eine Karte an — der Rechner oben rechnet mit genau diesen Daten weiter.</p>
+        <div class="example-grid">
+          <article class="example-card" data-mode="zwischen" data-start="2027-07-12" data-end="2027-07-30" tabindex="0" role="button" aria-label="Beispiel laden: Urlaub 12.07. bis 30.07.2027">
+            <span class="example-symbol" aria-hidden="true">☀</span>
+            <h3>Urlaub</h3>
+            <p>12.07. · 30.07.2027</p>
+            <p class="example-result">18 Tage · 19 mit beiden</p>
+          </article>
+          <article class="example-card" data-mode="plus" data-start="2027-03-15" data-days="14" tabindex="0" role="button" aria-label="Beispiel laden: Frist 14 Tage ab 15.03.2027">
+            <span class="example-symbol" aria-hidden="true">§</span>
+            <h3>Frist</h3>
+            <p>15.03.2027 + 14 Tage</p>
+            <p class="example-result">29.03.2027 · Montag</p>
+          </article>
+          <article class="example-card" data-mode="plus" data-start="2027-01-01" data-days="100" tabindex="0" role="button" aria-label="Beispiel laden: 100 Tage ab 01.01.2027">
+            <span class="example-symbol" aria-hidden="true">→</span>
+            <h3>100 Tage</h3>
+            <p>01.01.2027 + 100 Tage</p>
+            <p class="example-result">11.04.2027 · Sonntag</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="table-section" id="tabelle">
+        <p class="section-eyebrow">Die Tage-Tabelle</p>
+        <h2>So viele Tage<br><span>hat ein Jahr.</span></h2>
+        <p class="table-intro" style="margin-bottom: 16px;">Arbeitstage sind Montag bis Freitag, ohne Feiertage. 2028 ist ein Schaltjahr — der 29. Februar kommt dazu.</p>
+        <div class="table-wrap">
+          <table class="scale-table scale-table--static" id="year-table">
+            <caption>Tage und Arbeitstage pro Jahr</caption>
+            <thead>
+              <tr>
+                <th scope="col">Jahr</th>
+                <th scope="col">Tage</th>
+                <th scope="col">Arbeitstage (Mo–Fr)</th>
+                <th scope="col">Schaltjahr?</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">2026</th>
+                <td>365</td>
+                <td>261</td>
+                <td>Nein</td>
+              </tr>
+              <tr>
+                <th scope="row">2027</th>
+                <td>365</td>
+                <td>261</td>
+                <td>Nein</td>
+              </tr>
+              <tr>
+                <th scope="row">2028</th>
+                <td>366</td>
+                <td>260</td>
+                <td>Ja — 29. Februar</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p class="section-eyebrow" style="margin-top: 40px;">Beispiele, die du kennst</p>
+        <h2>Wie lange ist<br><span>das wirklich?</span></h2>
+        <p class="table-intro" style="margin-bottom: 16px;">Tipp eine Zeile an — der Rechner oben rechnet mit genau diesen Daten weiter.</p>
+        <div class="table-wrap">
+          <table class="scale-table" id="span-table">
+            <caption>Beispiel-Zeiträume — Tage ohne und mit Enddatum</caption>
+            <thead>
+              <tr>
+                <th scope="col">Zeitraum</th>
+                <th scope="col">Dazwischen</th>
+                <th scope="col">Mit beiden Tagen</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="span-row" data-start="2027-07-12" data-end="2027-07-30"><th scope="row">Urlaub: 12.07. – 30.07.2027</th><td>18 Tage</td><td>19 Tage</td></tr>
+              <tr class="span-row" data-start="2027-03-01" data-end="2027-03-31"><th scope="row">März: 01.03. – 31.03.2027</th><td>30 Tage</td><td>31 Tage</td></tr>
+              <tr class="span-row" data-start="2027-08-13" data-end="2027-08-16"><th scope="row">Hotel: 13.08. – 16.08.2027</th><td>3 Nächte</td><td>4 Tage</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="guide-section" id="anleitung">
+        <p class="guide-eyebrow">Kurz erklärt</p>
+        <h2>Tage zählen:<br><span>so funktioniert’s.</span></h2>
+        <p class="guide-intro">Tage zählen ist einfach — wenn man weiß, ob das Enddatum mitzählt. Die fünf Sachen unten reichen für fast jede Frage.</p>
+        <div class="guide-grid">
+          <article class="guide-step">
+            <p class="guide-step-number">Schritt 01</p>
+            <h3>Die Rechnung</h3>
+            <p>Enddatum minus Startdatum. So einfach ist die Rechnung — der Rest ist nur die Frage, ob das Enddatum mitzählt.</p>
+            <p class="guide-equation">30.07.2027 − 12.07.2027 = 18 Tage</p>
+          </article>
+          <article class="guide-step">
+            <p class="guide-step-number">Schritt 02</p>
+            <h3>Mit oder ohne Enddatum?</h3>
+            <p>Ohne Enddatum sind es 18 Tage dazwischen, mit beiden Tagen 19. Die meisten Rechner zählen das Enddatum nicht mit — der Rechner hier zeigt dir beides, damit du nicht raten musst.</p>
+            <p class="guide-equation">18 Tage dazwischen · 19 Tage mit beiden</p>
+          </article>
+          <article class="guide-step">
+            <p class="guide-step-number">Schritt 03</p>
+            <h3>Nächte und Tage</h3>
+            <p>Im Hotel zählst du Nächte, nicht Tage. Anreise 13.08., Abreise 16.08.: Du schläfst 3 Nächte dort — aber es sind 4 Tage, wenn du beide Tage mitzählst.</p>
+            <p class="guide-equation">16.08. − 13.08. = 3 Nächte · 4 Tage mit beiden</p>
+          </article>
+          <article class="guide-step">
+            <p class="guide-step-number">Schritt 04</p>
+            <h3>Arbeitstage</h3>
+            <p>Arbeitstage sind Montag bis Freitag. Vom 12.07. bis zum 30.07.2027 sind es 14 Arbeitstage — 15 mit Enddatum. Feiertage zieht der Rechner nur ab, wenn du sie einträgst.</p>
+            <p class="guide-equation">12.07.–30.07.2027: 14 Arbeitstage · 15 mit Enddatum</p>
+          </article>
+          <article class="guide-step">
+            <p class="guide-step-number">Schritt 05</p>
+            <h3>Monate sind keine festen Tage</h3>
+            <p>Monate zählen wir als Kalendermonate. Vom 15.01.2026 bis zum 20.03.2027 sind es 1 Jahr, 2 Monate und 5 Tage. „2 Monate“ können 59 bis 62 Tage sein — je nachdem, welche Monate es sind.</p>
+            <p class="guide-equation">15.01.2026 → 20.03.2027 = 1 Jahr, 2 Monate, 5 Tage</p>
+          </article>
+        </div>
+        <aside class="formula-card">
+          <p class="formula-eyebrow">Die Formeln, die du brauchst</p>
+          <p class="formula-main">Tage = Enddatum − Startdatum</p>
+          <p>Mit Enddatum: + 1 Tag · Arbeitstage = Mo–Fr minus Feiertage · Wochen = Tage ÷ 7</p>
+          <p class="formula-small">Monate zählen wir als Kalendermonate — ein Monat ist nicht immer 30 Tage lang.</p>
+        </aside>
+
+        <div class="tage-note">
+          <h3>Fristen: §§ 187, 188, 193 BGB</h3>
+          <p>Bei einer Frist zählt der Tag des Ereignisses nicht mit (<a href="https://www.gesetze-im-internet.de/bgb/__187.html" target="_blank" rel="noopener">§ 187 BGB</a>): Eine Frist von 14 Tagen ab dem 15.03.2027 endet am 29.03.2027 (<a href="https://www.gesetze-im-internet.de/bgb/__188.html" target="_blank" rel="noopener">§ 188 BGB</a>). Fällt das Ende auf einen Samstag, Sonntag oder Feiertag, endet die Frist erst am nächsten Werktag (<a href="https://www.gesetze-im-internet.de/bgb/__193.html" target="_blank" rel="noopener">§ 193 BGB</a>) — der 29.03.2027 ist Ostermontag, also endet diese Frist am 30.03.2027. Das ist keine Rechtsberatung, nur die Rechnung.</p>
+        </div>
+      </section>
+
+      <section class="practice-section" id="ueben">
+        <p class="section-eyebrow">Vier Aufgaben zum Üben</p>
+        <h2>Jetzt bist du<br><span>dran.</span></h2>
+        <p class="section-intro">Vier Aufgaben — die Lösungen stehen direkt darunter. Probier es zuerst selbst und klick dann auf „Lösung“.</p>
+        <div class="practice-grid">
+          <details class="practice-task">
+            <summary><span class="practice-number">Aufgabe 1</span>01.03.2027 bis 31.03.2027 — wie viele Tage? Und mit Enddatum?</summary>
+            <p>30 Tage dazwischen, 31 Tage mit beiden Tagen: 31.03. minus 01.03. sind 30 Tage, plus 1 Tag für das Enddatum sind 31.</p>
+          </details>
+          <details class="practice-task">
+            <summary><span class="practice-number">Aufgabe 2</span>15.01.2027 plus 30 Tage — welches Datum, welcher Wochentag?</summary>
+            <p>14.02.2027, ein Sonntag: Der Januar hat 31 Tage, also sind 15.01. plus 16 Tage der 31.01. — und 14 Tage weiter ist der 14.02.</p>
+          </details>
+          <details class="practice-task">
+            <summary><span class="practice-number">Aufgabe 3</span>12.07. bis 30.07.2027 — wie viele Arbeitstage (Mo–Fr)? Und mit Enddatum?</summary>
+            <p>14 Arbeitstage, 15 mit Enddatum: Der 12.07. ist ein Montag, der 30.07. ein Freitag. Zwei volle Wochen sind 10 Arbeitstage, dazu kommen 26.07.–29.07. (4 Tage) — und mit dem Freitag, 30.07., sind es 15.</p>
+          </details>
+          <details class="practice-task">
+            <summary><span class="practice-number">Aufgabe 4</span>01.01.2027 plus 100 Tage — welches Datum, welcher Wochentag?</summary>
+            <p>11.04.2027, ein Sonntag: 01.01. plus 30 Tage ist der 31.01., plus 28 Tage der 28.02., plus 31 Tage der 31.03. — und 11 Tage weiter ist der 11.04.</p>
+          </details>
+        </div>
+      </section>
+
+      <section class="faq-section" id="faq">
+        <p class="section-eyebrow">Häufige Fragen</p>
+        <h2>Was du noch<br><span>wissen solltest.</span></h2>
+        <div class="faq-list">
+          <details class="faq-item">
+            <summary>Zählt das Enddatum mit?</summary>
+            <p>Normalerweise nicht: Vom 12.07. bis zum 30.07.2027 sind es 18 Tage dazwischen. Mit beiden Tagen sind es 19. Der Rechner zeigt beide Zahlen, damit du nicht raten musst. Mit dem Haken „Enddatum mitzählen“ wird die zweite Zahl zur Hauptzahl.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Wie viele Tage hat ein Jahr?</summary>
+            <p>365 Tage — außer in einem Schaltjahr, dann 366. Das nächste Schaltjahr ist 2028. Ein Schaltjahr gibt es fast alle vier Jahre, damit der Kalender zum Sonnenjahr passt.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Warum zeigt ein anderer Rechner einen Tag mehr?</summary>
+            <p>Fast immer liegt es am Enddatum: Der eine Rechner zählt es mit, der andere nicht. Der Unterschied ist genau ein Tag — beide Rechner rechnen richtig, sie zählen nur anders.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Was ist der Unterschied zwischen Werktagen und Arbeitstagen?</summary>
+            <p>Werktage sind Montag bis Samstag — so steht es im Gesetz. Arbeitstage sind Montag bis Freitag, also die übliche Arbeitswoche. Dieser Rechner zählt Arbeitstage (Montag bis Freitag).</p>
+          </details>
+          <details class="faq-item">
+            <summary>Werden Feiertage abgezogen?</summary>
+            <p>Nur wenn du „Nur Arbeitstage“ anhakst — und nur die Feiertage, die du einträgst. Mit einem Klick trägst du die 9 bundesweiten Feiertage für 2026 und 2027 ein. Regionale Feiertage je nach Bundesland kommen dazu.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Kann ich Monate ausgeben?</summary>
+            <p>Ja. Der Rechner zeigt Jahre, Monate und Tage als Kalendermonate — zum Beispiel 1 Jahr, 2 Monate und 5 Tage. Ein Monat ist nicht immer 30 Tage lang, deshalb steht die Tageszahl immer dabei.</p>
+          </details>
+        </div>
+      </section>
+
+      <section class="more-tools">
+        <div class="more-tools-head">
+          <h2>Mehr Rechner <span>von maßklar.</span></h2>
+          <a class="more-tools-link" href="../">Alle Rechner ansehen →</a>
+        </div>
+        <div class="more-tools-grid">
+          <a class="more-tool-card" href="../altersrechner/">
+            <span class="more-tool-icon" aria-hidden="true">🎂</span>
+            <span class="more-tool-title">Altersrechner</span>
+            <span class="more-tool-desc">Wie alt bist du — auf den Tag genau.</span>
+          </a>
+          <a class="more-tool-card" href="../prozentrechner/">
+            <span class="more-tool-icon" aria-hidden="true">%</span>
+            <span class="more-tool-title">Prozentrechner</span>
+            <span class="more-tool-desc">Rabatt, Erhöhung, Prozentsatz — in Sekunden.</span>
+          </a>
+          <a class="more-tool-card" href="../bmi-rechner/">
+            <span class="more-tool-icon" aria-hidden="true">⚖</span>
+            <span class="more-tool-title">BMI-Rechner</span>
+            <span class="more-tool-desc">Body-Mass-Index ausrechnen und einordnen.</span>
+          </a>
+          <a class="more-tool-card" href="../massstabsrechner/">
+            <span class="more-tool-icon" aria-hidden="true">🗺</span>
+            <span class="more-tool-title">Maßstabsrechner</span>
+            <span class="more-tool-desc">Vom Plan zur Wirklichkeit — und zurück.</span>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <a class="brand footer-brand" href="../"><span class="brand-mark" aria-hidden="true">mk</span><span>maßklar<span class="brand-period">.</span></span></a>
+      <p>Tage berechnen — einfach, schnell und ohne Mathe-Stress. Ein Produkt von Hastle.</p>
+      <span>© <span id="current-year"></span> maßklar</span>
+    </footer>
+
+    <button class="back-to-top" id="back-to-top" type="button" aria-label="Nach oben scrollen">↑</button>
+    <script>
+      document.querySelector("#current-year").textContent = new Date().getFullYear();
+    </script>
+    <script>
+      (function () {
+        var button = document.getElementById("back-to-top");
+        var SHOW_AFTER = 500;
+        var footer = document.querySelector(".site-footer");
+        function updateVisibility() {
+          button.classList.toggle("is-visible", window.scrollY > SHOW_AFTER);
+          if (!footer) return;
+          var footerRect = footer.getBoundingClientRect();
+          var overlap = Math.max(0, window.innerHeight - footerRect.top);
+          button.style.bottom = overlap > 0 ? (overlap + 16) + "px" : "";
+        }
+        window.addEventListener("scroll", updateVisibility, { passive: true });
+        window.addEventListener("resize", updateVisibility);
+        button.addEventListener("click", function () {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+        updateVisibility();
+      })();
+    </script>
+    <script src="app.js" defer></script>
+  </body>
+</html>
