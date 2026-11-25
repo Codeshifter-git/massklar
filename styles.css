@@ -266,7 +266,7 @@ h1, h2, h3, p { margin-top: 0; }
   .length-tables { grid-template-columns: 1fr; }
 }
 @media (max-width: 680px) {
-  html { scroll-padding-top: 68px; }.site-header { min-height: 60px; }.top-nav { display: none; }.header-cta { padding: 10px 12px; font-size: 12px; }
+  html { scroll-padding-top: 68px; }.site-header { min-height: 60px; }.top-nav, .site-nav { display: none; }.header-cta { padding: 10px 12px; font-size: 12px; }
   .target-segmented button { font-size: 12px; }
   .hero { display: block; min-height: auto; padding: 40px 7% 30px; }.hero h1 { font-size: clamp(43px, 12vw, 58px); letter-spacing: -2px; }.hero-description { font-size: 16px; line-height: 1.8; }
   .hero-visual { height: 310px; margin: 22px 0 0; }.map-card { width: min(390px, 89%); }.floating-note { left: -3px; bottom: 0; }.orbit-one { width: 320px; height: 320px; }.orbit-two { width: 270px; height: 270px; }.hero-index { right: 12px; bottom: 3px; }
