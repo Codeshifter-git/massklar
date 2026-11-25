@@ -363,5 +363,33 @@
       <span>© <span id="current-year"></span> maßklar</span>
     </footer>
     <script>document.querySelector("#current-year").textContent = new Date().getFullYear();</script>
+    <button class="back-to-top" type="button" id="back-to-top" aria-label="Nach oben scrollen"><span aria-hidden="true">↑</span></button>
+    <script>
+    // Back to top (2026-11-25): fixed button, appears after 500 px of scroll.
+    (function () {
+      var btn = document.getElementById('back-to-top');
+      var footer = document.querySelector('.site-footer');
+      var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      var ticking = false;
+      function update() {
+        ticking = false;
+        var y = window.scrollY || window.pageYOffset;
+        btn.classList.toggle('is-visible', y > 500);
+        if (footer) {
+          var lift = Math.max(16, window.innerHeight - footer.getBoundingClientRect().top + 16);
+          btn.style.bottom = lift + 'px';
+        }
+      }
+      function onScroll() {
+        if (!ticking) { ticking = true; requestAnimationFrame(update); }
+      }
+      window.addEventListener('scroll', onScroll, { passive: true });
+      window.addEventListener('resize', onScroll);
+      btn.addEventListener('click', function () {
+        window.scrollTo({ top: 0, behavior: reduce ? 'auto' : 'smooth' });
+      });
+      update();
+    })();
+    </script>
   </body>
 </html>

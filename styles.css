@@ -413,7 +413,7 @@ a.tool-card:active { transform: scale(.98); }
 }
 /* Drucken: nur der Rechner mit Ergebnis */
 @media print {
-  .site-header, .hero, .quick-examples, .table-section, .scale-links-section, .guide-section, .practice-section, .compare-section, .area-section, .ruler-section, .faq-section, .more-tools, .site-footer, .calc-aside, .preset-chips, .ad-slot { display: none !important; }
+  .site-header, .hero, .quick-examples, .table-section, .scale-links-section, .guide-section, .practice-section, .compare-section, .area-section, .ruler-section, .faq-section, .more-tools, .site-footer, .calc-aside, .preset-chips, .ad-slot, .back-to-top { display: none !important; }
   body { background: #fff; }
   .calculator-section { padding: 0; background: none; }
   .calculator { box-shadow: none; }
@@ -431,4 +431,18 @@ a.tool-card:active { transform: scale(.98); }
 @media (max-width: 680px) {
   .ad-slot { margin-top: 24px; }
   .ad-slot-box { min-height: 250px; }
+}
+/* Back-to-top button (2026-11-25) — fixed bottom-right, appears after
+   500 px of scroll (JS toggles .is-visible). Orange button, dark-green
+   arrow — same language as the calculate button. JS lifts it above the
+   footer so it never covers footer text. Hidden in print (see print list).
+   Tokens are shared with concretecalc.: build_styles.py swaps green->slate
+   and orange->amber, so this block flows through unchanged in shape. */
+.back-to-top { position: fixed; right: 16px; bottom: 16px; z-index: 50; display: grid; place-items: center; width: 48px; height: 48px; padding: 0; border: 0; border-radius: 50%; background: var(--orange); color: var(--green-dark); font-size: 22px; line-height: 1; cursor: pointer; box-shadow: 0 8px 20px #293e301f; opacity: 0; visibility: hidden; transform: translateY(8px); transition: opacity .25s ease, transform .25s ease, visibility .25s, background .2s; }
+.back-to-top:hover { background: var(--orange-dark); }
+.back-to-top:focus-visible { outline: 3px solid var(--green); outline-offset: 2px; }
+.back-to-top.is-visible { opacity: 1; visibility: visible; transform: translateY(0); }
+.back-to-top.is-visible:active { transform: scale(.96); }
+@media (max-width: 680px) {
+  .back-to-top { right: 12px; width: 44px; height: 44px; font-size: 20px; }
 }
