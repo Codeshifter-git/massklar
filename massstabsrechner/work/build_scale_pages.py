@@ -361,6 +361,7 @@ MORE_TOOLS = [
     ("📅", "Tage-Rechner", "Tage zwischen zwei Daten zählen — mit Wochen, Arbeitstagen und Wochentag.", "../../tage-rechner/"),
     ("🕐", "Stunden-Rechner", "Arbeitszeit und Stunden zwischen zwei Uhrzeiten — mit Pause und Nachtschicht.", "../../stunden-rechner/"),
     ("🏠", "Indexmiete-Rechner", "Neue Nettokaltmiete aus dem Verbraucherpreisindex — mit Rechenweg und Fristen.", "../../indexmiete-rechner/"),
+    ("🧱", "Quadratmeter-Rechner", "Fläche von Zimmern und Grundstücken — mit Verschnitt und Kosten.", "../../quadratmeter-rechner/"),
 ]
 
 

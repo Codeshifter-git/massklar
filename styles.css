@@ -669,3 +669,73 @@ a.tool-card:active { transform: scale(.98); }
      dem Handy zu eng (gleiche Falle wie bei Tage und Stunden). */
   .indexmiete-page .input-grid { grid-template-columns: 1fr; }
 }
+
+/* Quadratmeter-Rechner: Form-Auswahl als 3er-Raster (6 Formen), zwei
+   Eingabefelder nebeneinander. Eigenständige <select>s (Form, Wohnfläche,
+   Verschnitt) bekommen die 48-px-Box — nur direkte .field-Kinder, damit
+   die Einheiten-Auswahl in .input-with-unit ihre eigene Regel behält. */
+.quadratmeter-page .mode-grid { grid-template-columns: repeat(3, 1fr); }
+.quadratmeter-page .input-grid { grid-template-columns: 1fr 1fr; }
+.quadratmeter-page .field > select { width: 100%; height: 48px; padding: 0 12px; border: 1px solid var(--line); border-radius: 5px; background: var(--white); color: var(--ink); font: 500 15px var(--sans); }
+.quadratmeter-page .field > select:focus { border-color: var(--green); outline: none; }
+.quadratmeter-page .field.has-error select,
+.quadratmeter-page .field.has-error input { border-color: var(--error); }
+/* [hidden] muss gegen .input-grid-Display gewinnen (gleiche Falle wie
+   #eigen-felder beim Indexmiete-Rechner). */
+.quadratmeter-page #boden-felder[hidden],
+.quadratmeter-page #qm-gewicht-feld[hidden],
+.quadratmeter-page #verschnitt-eigen-feld[hidden] { display: none; }
+/* Quadratmeter-Rechner — Hero-Karte (reines CSS, kein Bild): 14,4 m² groß. */
+.quadratmeter-card { width: min(340px, 100%); padding: 26px 26px 22px; border-radius: 10px; background: var(--white); box-shadow: 0 18px 48px #293e3010; }
+.quadratmeter-card-top { display: flex; align-items: center; justify-content: space-between; color: #8d9991; font: 9px var(--mono); letter-spacing: .5px; }
+.quadratmeter-badge { padding: 4px 8px; border-radius: 4px; background: var(--orange); color: var(--green-dark); font: 700 13px var(--sans); }
+.quadratmeter-card-value { margin: 20px 0 4px; color: var(--green-dark); font: 700 34px var(--display); letter-spacing: -0.5px; }
+.quadratmeter-card-cat { color: var(--green); font: 600 15px var(--display); }
+.quadratmeter-card-note { margin-top: 10px; color: var(--muted); font-size: 14px; }
+/* Checkbox-Zeilen (Wohnfläche, Bodenbelag): Kasten mit Haken links. */
+.check-row { display: flex; align-items: flex-start; gap: 10px; margin-top: 18px; padding: 14px 16px; border: 1px solid #e2e7dc; border-radius: 8px; background: #fffefa; }
+.check-row input[type="checkbox"] { flex-shrink: 0; width: 20px; height: 20px; margin-top: 2px; accent-color: var(--green); cursor: pointer; }
+.check-label { display: block; color: var(--ink); font-size: 14px; line-height: 1.6; cursor: pointer; }
+.check-label strong { color: var(--green-dark); }
+.check-label span { display: block; color: #5a6a62; font-size: 13px; }
+/* Weitere Räume: eine Karte je Raum, min-width: 0 überall, damit auf dem
+   Handy nichts aus der Karte läuft (gleiche Falle wie beim Tage-Rechner
+   am 390px-Bildschirm). */
+.room-list { display: flex; flex-direction: column; gap: 12px; margin-top: 16px; }
+.room-row { min-width: 0; padding: 16px; border: 1px solid #e2e7dc; border-radius: 8px; background: #fffefa; }
+.room-row-top { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) 44px; gap: 10px; align-items: end; min-width: 0; }
+.room-row-top .field { min-width: 0; }
+.room-delete { width: 44px; }
+.room-measure { margin-top: 14px; min-width: 0; }
+.room-measure-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; min-width: 0; }
+.room-measure-grid .field { min-width: 0; }
+.room-foot { display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: 10px; margin-top: 14px; min-width: 0; }
+.room-foot .field { min-width: 0; flex: 1 1 200px; }
+.room-area { margin: 0; color: var(--green); font: 600 14px var(--mono); white-space: nowrap; }
+.room-area:empty { display: none; }
+#add-room { width: 100%; min-height: 48px; margin-top: 12px; padding: 8px 14px; border: 1px dashed #cbd6c3; border-radius: 8px; background: transparent; color: var(--green); font: 600 14px var(--sans); cursor: pointer; transition: border-color .2s, background .2s; }
+#add-room:hover { border-color: var(--green); background: #f1f5e9; }
+#add-room:disabled { border-color: #e2e7dc; color: #9aa39b; cursor: default; background: transparent; }
+/* Zimmer-Tabelle: Zeilen sind antippbar und füllen den Rechner. */
+.zimmer-row:focus-visible { outline: 2px solid var(--green); outline-offset: -2px; }
+/* Ehrlicher Kasten unter der Anleitung: Fläche auf dem Plan. */
+.quadratmeter-note { margin: 24px auto 0; max-width: 1050px; padding: 18px 20px; border-radius: 8px; background: #fffefa; box-shadow: 0 2px 10px #293e300d; }
+.quadratmeter-note h3 { margin: 0 0 8px; color: var(--green-dark); font: 700 18px var(--display); }
+.quadratmeter-note p { margin: 0; color: var(--ink); font-size: 15px; line-height: 1.65; }
+@media (max-width: 680px) {
+  /* Quadratmeter-Rechner: Modus-Raster auf dem Handy 2-spaltig, Eingaben
+     untereinander — zwei Spalten sind auf dem Handy zu eng (gleiche Falle
+     wie bei Tage und Stunden). */
+  .quadratmeter-page .mode-grid { grid-template-columns: 1fr 1fr; }
+  .quadratmeter-page .input-grid { grid-template-columns: 1fr; }
+  .quadratmeter-page .room-measure-grid { grid-template-columns: 1fr; }
+  /* Raumkopf auf dem Handy: Name + Löschen oben, Form darunter. */
+  .quadratmeter-page .room-row-top { grid-template-columns: minmax(0, 1fr) 44px; }
+  .quadratmeter-page .room-shape-field { grid-column: 1 / -1; }
+  /* Quadratmeter-Rechner: Beispielkarten brechen auf dem Handy um — die
+     Ergebniszeile geht auf eine eigene Zeile (gleiche Falle wie bei BMI,
+     Tage und Stunden). */
+  .quadratmeter-page .example-card { flex-wrap: wrap; }
+  .quadratmeter-page .example-card h3 { font-size: 16px; }
+  .quadratmeter-page .example-result { flex-basis: 100%; }
+}

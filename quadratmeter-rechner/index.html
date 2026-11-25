@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quadratmeter-Rechner: m² für Zimmer &amp; Boden</title>
+    <meta name="description" content="Quadratmeter berechnen: Länge mal Breite für Zimmer, L-Räume und Grundstücke – mit Verschnitt und Kosten je m². Kostenlos, ohne Anmeldung.">
+    <link rel="canonical" href="https://codeshifter-git.github.io/massklar/quadratmeter-rechner/">
+    <meta property="og:title" content="Quadratmeter-Rechner: m² für Zimmer &amp; Boden">
+    <meta property="og:description" content="Quadratmeter berechnen: Länge mal Breite für Zimmer, L-Räume und Grundstücke – mit Verschnitt und Kosten je m². Kostenlos, ohne Anmeldung.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://codeshifter-git.github.io/massklar/quadratmeter-rechner/">
+    <meta property="og:locale" content="de_DE">
+    <script>
+      document.documentElement.classList.add('js');
+    </script>
+    <link rel="preload" href="../fonts/bitter-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="../fonts/dm-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="../styles.css?v=11">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebApplication",
+          "name": "Quadratmeter-Rechner",
+          "url": "https://codeshifter-git.github.io/massklar/quadratmeter-rechner/",
+          "applicationCategory": "UtilitiesApplication",
+          "operatingSystem": "Web",
+          "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
+          "description": "Quadratmeter berechnen: Länge mal Breite für Zimmer, L-Räume und Grundstücke – mit Verschnitt und Kosten je m². Kostenlos, ohne Anmeldung.",
+          "inLanguage": "de"
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "maßklar", "item": "https://codeshifter-git.github.io/massklar/" },
+            { "@type": "ListItem", "position": 2, "name": "Quadratmeter-Rechner", "item": "https://codeshifter-git.github.io/massklar/quadratmeter-rechner/" }
+          ]
+        },
+        {
+          "@type": "HowTo",
+          "name": "Quadratmeter berechnen",
+          "description": "So rechnest du die Fläche eines Zimmers, eines L-Raums oder eines Grundstücks aus — mit Verschnitt und Kosten.",
+          "step": [
+            { "@type": "HowToStep", "position": 1, "name": "Die Formel", "text": "Fläche = Länge × Breite. Von 4,5 m × 3,2 m: 4,5 × 3,2 = 14,4 m²." },
+            { "@type": "HowToStep", "position": 2, "name": "Die Zentimeter-Falle", "text": "80 × 120 cm sind 0,96 m² — nicht 9.600. Stell die Einheit auf cm, dann rechnet der Rechner richtig." },
+            { "@type": "HowToStep", "position": 3, "name": "L-förmiger Raum", "text": "Teil den Raum in zwei Rechtecke: 4 m × 5 m + 2 m × 3 m = 26 m²." },
+            { "@type": "HowToStep", "position": 4, "name": "Kreis und andere Formen", "text": "Kreis: π × Radius². Ein Beet mit 3 m Durchmesser hat 7,07 m². Dreieck: Grundseite × Höhe ÷ 2. Trapez: (Seite a + Seite b) ÷ 2 × Höhe." },
+            { "@type": "HowToStep", "position": 5, "name": "Wohnfläche ist nicht Fläche", "text": "Balkon zählt meist zu einem Viertel, Dachschräge von 1 bis 2 m zur Hälfte. Die Wohnfläche hier ist eine grobe Schätzung, keine Messung für den Mietvertrag." }
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            { "@type": "Question", "name": "Wie rechnet man Quadratmeter aus?", "acceptedAnswer": { "@type": "Answer", "text": "Länge mal Breite. Ein Zimmer mit 4,5 m × 3,2 m hat 14,4 m²: 4,5 × 3,2 = 14,4." } },
+            { "@type": "Question", "name": "Wie rechne ich aus Zentimetern?", "acceptedAnswer": { "@type": "Answer", "text": "Erst in Meter umrechnen: 80 cm sind 0,8 m, 120 cm sind 1,2 m. 0,8 × 1,2 = 0,96 m². Oder stell die Einheit im Rechner auf cm — er rechnet es um." } },
+            { "@type": "Question", "name": "Wie rechne ich cm² in m² um?", "acceptedAnswer": { "@type": "Answer", "text": "Durch 10.000 teilen: 9.600 cm² sind 0,96 m². Ein Quadratmeter hat 10.000 Quadratzentimeter." } },
+            { "@type": "Question", "name": "Kann man Quadratmeter in Meter umrechnen?", "acceptedAnswer": { "@type": "Answer", "text": "Nein. Quadratmeter messen eine Fläche, Meter eine Länge — das sind verschiedene Größen. Aus 14,4 m² allein kommt man nicht auf eine Länge, ohne die andere Seite zu kennen." } },
+            { "@type": "Question", "name": "Wie berechne ich einen L-förmigen Raum?", "acceptedAnswer": { "@type": "Answer", "text": "Teil ihn in zwei Rechtecke und zähl beide Flächen zusammen: 4 m × 5 m + 2 m × 3 m = 20 + 6 = 26 m²." } },
+            { "@type": "Question", "name": "Wie viel Verschnitt brauche ich?", "acceptedAnswer": { "@type": "Answer", "text": "Gerade verlegt 10 %, diagonal oder Fischgrät 15 %. Bei Fliesen hängt es vom Format ab: 5 bis 20 %. Der Rechner schlägt dir 10 % für gerade und 15 % für diagonal vor." } },
+            { "@type": "Question", "name": "Zählen Balkon und Dachschräge zur Wohnfläche?", "acceptedAnswer": { "@type": "Answer", "text": "Meist nur zum Teil: Der Balkon zählt oft zu einem Viertel, eine Dachschräge mit 1 bis 2 m Höhe zur Hälfte. Das steht in der Wohnflächenverordnung (WoFlV). Der Rechner rechnet es grob mit, wenn du den Haken setzt." } },
+            { "@type": "Question", "name": "Ist das Ergebnis die Wohnfläche?", "acceptedAnswer": { "@type": "Answer", "text": "Nein. Der Rechner gibt die geometrische Fläche — Länge mal Breite. Die Wohnfläche nach WoFlV bekommst du nur mit dem Haken oben, und auch die ist eine grobe Schätzung, keine Messung für Mietvertrag oder Kauf." } },
+            { "@type": "Question", "name": "Wie messe ich richtig?", "acceptedAnswer": { "@type": "Answer", "text": "Miss die lichten Maße — also ab der fertigen Wandoberfläche, nicht ab der Rohwand. Nimm das längste Maß, und miss jede Wand an der längsten Stelle." } }
+          ]
+        }
+      ]
+    }
+    </script>
+  </head>
+  <body class="tool-page quadratmeter-page">
+    <a class="skip-link" href="#rechner">Zum Rechner springen</a>
+
+    <header class="site-header">
+      <a class="brand" href="../"><span class="brand-mark" aria-hidden="true">mk</span><span>maßklar<span class="brand-period">.</span></span></a>
+      <nav class="site-nav" aria-label="Hauptnavigation">
+        <a href="../">Alle Rechner</a>
+        <a href="#rechner">Rechner</a>
+        <a href="#beispiele">Beispiele</a>
+        <a href="#tabelle">Tabelle</a>
+        <a href="#anleitung">So geht's</a>
+      </nav>
+      <a class="header-cta" href="../#rechner">Zum Rechner ↓</a>
+    </header>
+
+    <main>
+      <section class="tool-hero">
+        <div class="hero-copy">
+          <p class="hero-eyebrow">Der einfache Quadratmeter-Rechner</p>
+          <h1>Quadratmeter-Rechner.<br><span>Die Fläche in Sekunden.</span></h1>
+          <p class="hero-description">Ein Zimmer 4,5 m lang und 3,2 m breit hat 14,4 m² — du rechnest Länge mal Breite. Hier berechnest du die Fläche für Zimmer, L-Räume und Grundstücke, mit Verschnitt und Kosten für den Boden. Kostenlos und ohne Anmeldung.</p>
+          <div class="hero-actions">
+            <a class="button-primary" href="#rechner">Fläche berechnen ↓</a>
+            <a class="text-link" href="#tabelle">Tabelle ansehen ↓</a>
+          </div>
+        </div>
+        <div class="hero-visual" aria-label="Beispiel: Zimmer 4,5 mal 3,2 Meter, 14,4 Quadratmeter">
+          <div class="quadratmeter-card">
+            <div class="quadratmeter-card-top"><span>ZIMMER · 4,5 × 3,2 M</span><span class="quadratmeter-badge">14,4 m²</span></div>
+            <p class="quadratmeter-card-value">14,4 m²</p>
+            <p class="quadratmeter-card-cat">Grundfläche</p>
+            <p class="quadratmeter-card-note">4,5 m × 3,2 m</p>
+          </div>
+          <div class="floating-note"><span class="note-icon">↗</span><span><strong>4,5 m</strong><small>Länge</small></span><span class="note-equals">×</span><span><strong>3,2 m</strong><small>Breite</small></span><span class="note-equals">=</span><span><strong>14,4 m²</strong><small>Fläche</small></span></div>
+          <span class="visual-orbit orbit-one"></span>
+          <span class="visual-orbit orbit-two"></span>
+          <span class="hero-index">09 / 09</span>
+        </div>
+      </section>
+
+      <section class="calculator-section" id="rechner">
+        <div class="calculator">
+          <div class="calc-main">
+            <div class="calc-toolbar">
+              <span class="live-indicator"><span class="live-dot" aria-hidden="true"></span>Bereit — leg los</span>
+              <button class="reset-button" id="quadratmeter-reset" type="button">Zurück zum Start ↺</button>
+            </div>
+
+            <form id="quadratmeter-form" novalidate>
+              <span class="target-label" id="shape-label">Welche Form hat der Raum?</span>
+              <div class="mode-grid" role="group" aria-labelledby="shape-label" id="mode-grid">
+                <button type="button" class="mode-btn" aria-pressed="true" data-shape="rechteck">Rechteck</button>
+                <button type="button" class="mode-btn" aria-pressed="false" data-shape="quadrat">Quadrat</button>
+                <button type="button" class="mode-btn" aria-pressed="false" data-shape="kreis">Kreis</button>
+                <button type="button" class="mode-btn" aria-pressed="false" data-shape="dreieck">Dreieck</button>
+                <button type="button" class="mode-btn" aria-pressed="false" data-shape="trapez">Trapez</button>
+                <button type="button" class="mode-btn" aria-pressed="false" data-shape="lform">L-Form</button>
+              </div>
+
+              <div class="mode-fields is-active" data-shape="rechteck">
+                <div class="input-grid">
+                  <div class="field">
+                    <label for="qm-laenge">Länge</label>
+                    <div class="input-with-unit">
+                      <input type="text" inputmode="decimal" id="qm-laenge" name="laenge" value="4,5" autocomplete="off">
+                      <select id="qm-laenge-einheit" aria-label="Einheit für die Länge"><option value="m" selected>m</option><option value="cm">cm</option></select>
+                    </div>
+                    <span class="field-hint">Die längere Seite — z. B. 4,5.</span>
+                  </div>
+                  <div class="field">
+                    <label for="qm-breite">Breite</label>
+                    <div class="input-with-unit">
+                      <input type="text" inputmode="decimal" id="qm-breite" name="breite" value="3,2" autocomplete="off">
+                      <select id="qm-breite-einheit" aria-label="Einheit für die Breite"><option value="m" selected>m</option><option value="cm">cm</option></select>
+                    </div>
+                    <span class="field-hint">Die kürzere Seite — z. B. 3,2.</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mode-fields" data-shape="quadrat">
+                <div class="input-grid">
+                  <div class="field">
+                    <label for="qm-seite">Seitenlänge</label>
+                    <div class="input-with-unit">
+                      <input type="text" inputmode="decimal" id="qm-seite" name="seite" value="3,5" autocomplete="off">
+                      <select id="qm-seite-einheit" aria-label="Einheit für die Seitenlänge"><option value="m" selected>m</option><option value="cm">cm</option></select>
+                    </div>
+                    <span class="field-hint">Alle vier Seiten sind gleich lang.</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mode-fields" data-shape="kreis">
+                <div class="input-grid">
+                  <div class="field">
+                    <label for="qm-kreis-art">Was misst du?</label>
+                    <select id="qm-kreis-art" name="kreis-art" data-art-select>
+                      <option value="durchmesser" selected>Durchmesser</option>
+                      <option value="radius">Radius</option>
+                    </select>
+                    <span class="field-hint">Der Durchmesser geht einmal quer durch — der Radius ist die Hälfte davon.</span>
+                  </div>
+                  <div class="field">
+                    <label for="qm-kreis-wert" data-wert-label>Durchmesser</label>
+                    <div class="input-with-unit">
+                      <input type="text" inputmode="decimal" id="qm-kreis-wert" name="kreis-wert" value="3" autocomplete="off">
+                      <select id="qm-kreis-wert-einheit" data-wert-einheit aria-label="Einheit für den Durchmesser"><option value="m" selected>m</option><option value="cm">cm</option></select>
+                    </div>
+                    <span class="field-hint">Z. B. 3 für ein rundes Beet mit 3 m Durchmesser.</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mode-fields" data-shape="dreieck">
+                <div class="input-grid">
+                  <div class="field">
+                    <label for="qm-grund">Grundseite</label>
+                    <div class="input-with-unit">
+                      <input type="text" inputmode="decimal" id="qm-grund" name="grund" value="4" autocomplete="off">
+                      <select id="qm-grund-einheit" aria-label="Einheit für die Grundseite"><option value="m" selected>m</option><option value="cm">cm</option></select>
+                    </div>
+                    <span class="field-hint">Die untere Seite des Dreiecks.</span>
+                  </div>
+                  <div class="field">
+                    <label for="qm-hoehe">Höhe</label>
+                    <div class="input-with-unit">
+                      <input type="text" inputmode="decimal" id="qm-hoehe" name="hoehe" value="3" autocomplete="off">
+                      <select id="qm-hoehe-einheit" aria-label="Einheit für die Höhe"><option value="m" selected>m</option><option value="cm">cm</option></select>
+                    </div>
+                    <span class="field-hint">Senkrecht von der Grundseite bis zur Spitze.</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mode-fields" data-shape="trapez">
+                <div class="input-grid">
+                  <div class="field">
+                    <label for="qm-a">Seite a (parallel)</label>
+                    <div class="input-with-unit">
+                      <input type="text" inputmode="decimal" id="qm-a" name="a" value="4" autocomplete="off">
+                      <select id="qm-a-einheit" aria-label="Einheit für Seite a"><option value="m" selected>m</option><option value="cm">cm</option></select>
+                    </div>
+                    <span class="field-hint">Eine der beiden parallelen Seiten.</span>
+                  </div>
+                  <div class="field">
+                    <label for="qm-b">Seite b (parallel)</label>
+                    <div class="input-with-unit">
+                      <input type="text" inputmode="decimal" id="qm-b" name="b" value="6" autocomplete="off">
+                      <select id="qm-b-einheit" aria-label="Einheit für Seite b"><option value="m" selected>m</option><option value="cm">cm</option></select>
+                    </div>
+                    <span class="field-hint">Die andere parallele Seite.</span>
+                  </div>
+                  <div class="field">
+                    <label for="qm-thoehe">Höhe</label>
+                    <div class="input-with-unit">
+                      <input type="text" inputmode="decimal" id="qm-thoehe" name="thoehe" value="3" autocomplete="off">
+                      <select id="qm-thoehe-einheit" aria-label="Einheit für die Höhe"><option value="m" selected>m</option><option value="cm">cm</option></select>
+                    </div>
+                    <span class="field-hint">Der Abstand zwischen den beiden Seiten.</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mode-fields" data-shape="lform">
+                <div class="input-grid">
+                  <div class="field">
+                    <label for="qm-a-laenge">Teil A: Länge</label>
+                    <div class="input-with-unit">
+                      <input type="text" inputmode="decimal" id="qm-a-laenge" name="a-laenge" value="4" autocomplete="off">
+                      <select id="qm-a-laenge-einheit" aria-label="Einheit für Teil A Länge"><option value="m" selected>m</option><option value="cm">cm</option></select>
+                    </div>
+                    <span class="field-hint">Das größere Rechteck.</span>
+                  </div>
+                  <div class="field">
+                    <label for="qm-a-breite">Teil A: Breite</label>
+                    <div class="input-with-unit">
+                      <input type="text" inputmode="decimal" id="qm-a-breite" name="a-breite" value="5" autocomplete="off">
+                      <select id="qm-a-breite-einheit" aria-label="Einheit für Teil A Breite"><option value="m" selected>m</option><option value="cm">cm</option></select>
+                    </div>
+                    <span class="field-hint">Z. B. 5 für 4 m × 5 m.</span>
+                  </div>
+                  <div class="field">
+                    <label for="qm-b-laenge">Teil B: Länge</label>
+                    <div class="input-with-unit">
+                      <input type="text" inputmode="decimal" id="qm-b-laenge" name="b-laenge" value="2" autocomplete="off">
+                      <select id="qm-b-laenge-einheit" aria-label="Einheit für Teil B Länge"><option value="m" selected>m</option><option value="cm">cm</option></select>
+                    </div>
+                    <span class="field-hint">Das kleinere Rechteck.</span>
+                  </div>
+                  <div class="field">
+                    <label for="qm-b-breite">Teil B: Breite</label>
+                    <div class="input-with-unit">
+                      <input type="text" inputmode="decimal" id="qm-b-breite" name="b-breite" value="3" autocomplete="off">
+                      <select id="qm-b-breite-einheit" aria-label="Einheit für Teil B Breite"><option value="m" selected>m</option><option value="cm">cm</option></select>
+                    </div>
+                    <span class="field-hint">Z. B. 3 für 2 m × 3 m.</span>
+                  </div>
+                </div>
+              </div>
+
+              <p class="field-hint">Maße in cm? Stell die Einheit auf cm — 80 × 120 cm sind 0,96 m², nicht 9.600.</p>
+
+              <div class="field" id="qm-gewicht-feld" hidden>
+                <label for="qm-gewicht">Zählt zur Wohnfläche</label>
+                <select id="qm-gewicht" name="gewicht">
+                  <option value="1" selected>Voll</option>
+                  <option value="0.5">Zur Hälfte</option>
+                  <option value="0.25">Zu einem Viertel</option>
+                </select>
+                <span class="field-hint">Balkon meist zu einem Viertel, Dachschräge von 1 bis 2 m zur Hälfte.</span>
+              </div>
+
+              <div class="room-list" id="room-list"></div>
+              <button type="button" class="preset-chip" id="add-room">+ Weiterer Raum (bis zu 8 Räume)</button>
+              <p class="field-hint">Jeder Raum bekommt Form und Maße — der Rechner zählt alles zusammen und zeigt dir den Anteil jedes Raums.</p>
+
+              <label class="check-row"><input type="checkbox" id="qm-woflv"> <span>Wohnfläche nach WoFlV grob berechnen <span class="field-optional">(Balkon, Dachschräge)</span></span></label>
+              <p class="field-hint">Balkon zählt meist zu einem Viertel, Dachschräge von 1 bis 2 m zur Hälfte. Das Ergebnis ist eine grobe Schätzung — für Mietvertrag oder Kauf bitte eine Fachstelle fragen.</p>
+
+              <label class="check-row"><input type="checkbox" id="qm-boden"> <span>Bodenbelag mitrechnen <span class="field-optional">(Verschnitt, Preis, Pakete)</span></span></label>
+              <div id="boden-felder" hidden>
+                <div class="input-grid input-grid--two">
+                  <div class="field">
+                    <label for="qm-verschnitt">Verschnitt</label>
+                    <select id="qm-verschnitt" name="verschnitt">
+                      <option value="10" selected>Gerade verlegt — 10 %</option>
+                      <option value="15">Diagonal verlegt — 15 %</option>
+                      <option value="15-fisch">Fischgrät — 15 %</option>
+                      <option value="eigene">Eigene Angabe</option>
+                    </select>
+                    <span class="field-hint">Gerade 10 %, diagonal oder Fischgrät 15 %.</span>
+                  </div>
+                  <div class="field" id="verschnitt-eigen-feld" hidden>
+                    <label for="qm-verschnitt-eigen">Verschnitt selbst</label>
+                    <div class="input-with-unit">
+                      <input type="text" inputmode="decimal" id="qm-verschnitt-eigen" name="verschnitt-eigen" value="12" autocomplete="off">
+                      <span class="unit-suffix" aria-hidden="true">%</span>
+                    </div>
+                    <span class="field-hint">Z. B. 12 für 12 % Verschnitt.</span>
+                  </div>
+                </div>
+                <div class="input-grid input-grid--two">
+                  <div class="field">
+                    <label for="qm-preis">Preis je m² <span class="field-optional">(optional)</span></label>
+                    <div class="input-with-unit">
+                      <input type="text" inputmode="decimal" id="qm-preis" name="preis" value="" placeholder="z. B. 39,90" autocomplete="off">
+                      <span class="unit" aria-hidden="true">€</span>
+                    </div>
+                    <span class="field-hint">Leer lassen, wenn du keine Kosten brauchst.</span>
+                  </div>
+                  <div class="field">
+                    <label for="qm-paket">Paketinhalt <span class="field-optional">(optional)</span></label>
+                    <div class="input-with-unit">
+                      <input type="text" inputmode="decimal" id="qm-paket" name="paket" value="" placeholder="z. B. 2" autocomplete="off">
+                      <span class="unit-suffix" aria-hidden="true">m²</span>
+                    </div>
+                    <span class="field-hint">Wie viel m² sind in einem Paket? Leer lassen, wenn du keine Pakete brauchst.</span>
+                  </div>
+                </div>
+              </div>
+
+              <p class="form-error" id="quadratmeter-error" role="alert" hidden></p>
+              <button class="calculate-button" type="submit" id="quadratmeter-calc-btn">Fläche berechnen ↗</button>
+              <p class="live-hint">Du musst gar nicht erst auf den Knopf drücken: Sobald du tippst, steht das Ergebnis schon da.</p>
+            </form>
+
+            <div class="result-panel" id="quadratmeter-result" aria-live="polite">
+              <p class="result-topline">DEIN ERGEBNIS ✓</p>
+              <p class="result-value" id="result-value">14,4 m²</p>
+              <p class="result-context" id="result-context">Ein Zimmer mit 4,5 m × 3,2 m hat 14,4 m².</p>
+              <p class="result-also" id="result-also">Das sind auch: 144.000 cm² · 0,00144 ha</p>
+              <div class="result-extra" id="result-extra"></div>
+              <div class="result-meta">
+                <span class="result-formula" id="result-formula">4,5 m × 3,2 m = 14,4 m²</span>
+                <button class="copy-button" id="quadratmeter-copy" type="button">Ergebnis kopieren</button>
+              </div>
+            </div>
+
+            <div class="preset-chips" role="group" aria-label="Beispiele zum Ausprobieren">
+              <button class="preset-chip" type="button" data-example="zimmer">Zimmer 4,5 × 3,2 m → 14,4 m²</button>
+              <button class="preset-chip" type="button" data-example="lform">L-Raum 4×5 + 2×3 → 26 m²</button>
+              <button class="preset-chip" type="button" data-example="beet">Beet Ø 3 m → 7,07 m²</button>
+            </div>
+          </div>
+
+          <aside class="calc-aside">
+            <p class="aside-eyebrow">GUT ZU WISSEN</p>
+            <div class="aside-art" aria-hidden="true">
+              <span class="art-label">0,96</span>
+              <span class="art-short"></span>
+              <span class="art-long"></span>
+            </div>
+            <h2>Die Zentimeter-Falle</h2>
+            <p>80 × 120 cm sind 0,96 m² — nicht 9.600. Wer die Zahlen als Meter tippt, rechnet 80 × 120 = 9.600 m². Stell die Einheit auf cm, dann rechnet der Rechner richtig.</p>
+            <a class="aside-link" href="#anleitung">Warum das so ist →</a>
+          </aside>
+        </div>
+
+        <div class="ad-slot" aria-hidden="true">
+          <span class="ad-slot-label">Anzeige</span>
+          <div class="ad-slot-box">Werbeplatz</div>
+        </div>
+      </section>
+
+      <section class="quick-examples" id="beispiele">
+        <p class="section-eyebrow">Drei Beispiele zum Ausprobieren</p>
+        <h2>Drei Zahlen, drei<br><span>Antworten.</span></h2>
+        <p class="section-intro">Tipp eine Karte an — der Rechner oben rechnet mit genau diesen Werten weiter.</p>
+        <div class="example-grid">
+          <article class="example-card" data-example="zimmer" tabindex="0" role="button" aria-label="Beispiel laden: Zimmer 4,5 mal 3,2 Meter">
+            <span class="example-symbol" aria-hidden="true">🏠</span>
+            <h3>Zimmer</h3>
+            <p>4,5 × 3,2 m</p>
+            <p class="example-result">14,4 m² · Rechteck</p>
+          </article>
+          <article class="example-card" data-example="lform" tabindex="0" role="button" aria-label="Beispiel laden: L-förmiger Raum 4 mal 5 plus 2 mal 3 Meter">
+            <span class="example-symbol" aria-hidden="true">🧩</span>
+            <h3>L-Raum</h3>
+            <p>4×5 m + 2×3 m</p>
+            <p class="example-result">26 m² · zwei Rechtecke</p>
+          </article>
+          <article class="example-card" data-example="beet" tabindex="0" role="button" aria-label="Beispiel laden: rundes Beet mit 3 Meter Durchmesser">
+            <span class="example-symbol" aria-hidden="true">🌻</span>
+            <h3>Rundes Beet</h3>
+            <p>Ø 3 m</p>
+            <p class="example-result">7,07 m² · Kreis</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="table-section" id="tabelle">
+        <p class="section-eyebrow">Die Zimmer-Tabelle</p>
+        <h2>Quadratmeter üblicher<br><span>Zimmergrößen.</span></h2>
+        <p class="table-intro" style="margin-bottom: 16px;">Tipp eine Zeile an — der Rechner nimmt Länge und Breite direkt. Die Kaufmenge rechnet schon 10 % Verschnitt dazu.</p>
+        <div class="table-wrap">
+          <table class="scale-table" id="zimmer-table">
+            <caption>Quadratmeter und Kaufmenge bei 10 % Verschnitt</caption>
+            <thead>
+              <tr>
+                <th scope="col">Länge</th>
+                <th scope="col">Breite</th>
+                <th scope="col">Fläche</th>
+                <th scope="col">Kaufmenge (+10 %)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="zimmer-row" data-laenge="3" data-breite="3"><th scope="row">3 m</th><td>3 m</td><td>9 m²</td><td>9,9 m²</td></tr>
+              <tr class="zimmer-row" data-laenge="3" data-breite="4"><th scope="row">3 m</th><td>4 m</td><td>12 m²</td><td>13,2 m²</td></tr>
+              <tr class="zimmer-row" data-laenge="4" data-breite="4"><th scope="row">4 m</th><td>4 m</td><td>16 m²</td><td>17,6 m²</td></tr>
+              <tr class="zimmer-row" data-laenge="4" data-breite="5"><th scope="row">4 m</th><td>5 m</td><td>20 m²</td><td>22,0 m²</td></tr>
+              <tr class="zimmer-row" data-laenge="5" data-breite="5"><th scope="row">5 m</th><td>5 m</td><td>25 m²</td><td>27,5 m²</td></tr>
+              <tr class="zimmer-row" data-laenge="5" data-breite="6"><th scope="row">5 m</th><td>6 m</td><td>30 m²</td><td>33,0 m²</td></tr>
+              <tr class="zimmer-row" data-laenge="6" data-breite="6"><th scope="row">6 m</th><td>6 m</td><td>36 m²</td><td>39,6 m²</td></tr>
+              <tr class="zimmer-row" data-laenge="6" data-breite="8"><th scope="row">6 m</th><td>8 m</td><td>48 m²</td><td>52,8 m²</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p class="section-eyebrow" style="margin-top: 40px;">Flächeneinheiten</p>
+        <h2>Wie viel ist ein<br><span>Quadratmeter?</span></h2>
+        <p class="table-intro" style="margin-bottom: 16px;">Ein Quadratmeter ist ein Quadrat von 1 m × 1 m. So hängen die Einheiten zusammen.</p>
+        <div class="table-wrap">
+          <table class="scale-table" id="einheiten-table">
+            <caption>Flächeneinheiten in Quadratmetern</caption>
+            <thead>
+              <tr>
+                <th scope="col">Einheit</th>
+                <th scope="col">1 Einheit sind … m²</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">Quadratzentimeter (cm²)</th><td>0,0001 m²</td></tr>
+              <tr><th scope="row">Quadratmeter (m²)</th><td>1 m²</td></tr>
+              <tr><th scope="row">Ar</th><td>100 m²</td></tr>
+              <tr><th scope="row">Hektar (ha)</th><td>10.000 m²</td></tr>
+              <tr><th scope="row">Quadratkilometer (km²)</th><td>1.000.000 m²</td></tr>
+              <tr><th scope="row">Quadratfuß (ft²)</th><td>≈ 0,0929 m²</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="table-note">Andersrum: 1 m² sind etwa 10,76 ft². Ein Ar sind 100 m² — ein Hektar 10.000 m².</p>
+      </section>
+
+      <section class="guide-section" id="anleitung">
+        <p class="guide-eyebrow">Kurz erklärt</p>
+        <h2>Quadratmeter berechnen:<br><span>so funktioniert’s.</span></h2>
+        <p class="guide-intro">Eine Formel reicht für fast jede Fläche. Die fünf Sachen unten zeigen dir, worauf es ankommt.</p>
+        <div class="guide-grid">
+          <article class="guide-step">
+            <p class="guide-step-number">Schritt 01</p>
+            <h3>Die Formel</h3>
+            <p>Fläche = Länge × Breite. Ein Zimmer mit 4,5 m × 3,2 m: 4,5 × 3,2 = 14,4 m². Das gilt für jedes Rechteck — Zimmer, Wand oder Grundstück.</p>
+            <p class="guide-equation">4,5 m × 3,2 m = 14,4 m²</p>
+          </article>
+          <article class="guide-step">
+            <p class="guide-step-number">Schritt 02</p>
+            <h3>Die Zentimeter-Falle</h3>
+            <p>Maße in cm geben eine Fläche in cm²: 80 × 120 cm sind 9.600 cm² — und das sind 0,96 m², nicht 9.600 m². Teil die cm² durch 10.000, oder stell die Einheit im Rechner auf cm.</p>
+            <p class="guide-equation">80 cm × 120 cm = 9.600 cm² = 0,96 m²</p>
+          </article>
+          <article class="guide-step">
+            <p class="guide-step-number">Schritt 03</p>
+            <h3>L-förmiger Raum</h3>
+            <p>Teil den Raum in zwei Rechtecke und zähl beide Flächen zusammen. Ein L-Raum aus 4 m × 5 m und 2 m × 3 m: 20 + 6 = 26 m².</p>
+            <p class="guide-equation">4 m × 5 m + 2 m × 3 m = 26 m²</p>
+          </article>
+          <article class="guide-step">
+            <p class="guide-step-number">Schritt 04</p>
+            <h3>Kreis und andere Formen</h3>
+            <p>Kreis: π × Radius². Ein rundes Beet mit 3 m Durchmesser hat 1,5 m Radius: 3,14 × 1,5² = 7,07 m². Dreieck: Grundseite × Höhe ÷ 2. Trapez: (Seite a + Seite b) ÷ 2 × Höhe.</p>
+            <p class="guide-equation">π × 1,5 m × 1,5 m = 7,07 m²</p>
+          </article>
+          <article class="guide-step">
+            <p class="guide-step-number">Schritt 05</p>
+            <h3>Wohnfläche ist nicht Fläche</h3>
+            <p>Der Rechner gibt die geometrische Fläche. Die Wohnfläche nach der Wohnflächenverordnung (WoFlV) zählt Balkon und Dachschräge nur zum Teil: 6 Zimmer mit 68,98 m² plus ein Balkon von 6 m² zu einem Viertel (1,5 m²) sind 70,48 m² — rund 70,5 m² Wohnfläche, grob gerechnet.</p>
+            <p class="guide-equation">68,98 m² + 6 m² ÷ 4 = 70,48 m² ≈ 70,5 m²</p>
+          </article>
+        </div>
+        <aside class="formula-card">
+          <p class="formula-eyebrow">Die Formeln, die du brauchst</p>
+          <p class="formula-main">Fläche = Länge × Breite</p>
+          <p>Rechteck: Länge × Breite. Kreis: π × Radius². Dreieck: Grundseite × Höhe ÷ 2. Trapez: (Seite a + Seite b) ÷ 2 × Höhe.</p>
+          <p class="formula-small">Alle Maße in Metern — oder die Einheit im Rechner auf cm stellen.</p>
+        </aside>
+
+        <div class="quadratmeter-note">
+          <h3>Fläche auf dem Plan?</h3>
+          <p>Auf dem Plan rechnest du die Fläche mit dem Maßstab zum Quadrat: Ein Zimmer mit 12 cm² auf einem Plan im Maßstab 1:100 ist in echt 12 m² groß — denn 100² sind 10.000, und 12 cm² × 10.000 = 120.000 cm² = 12 m². <a href="../massstabsrechner/#flaeche">Fläche auf dem Plan berechnen →</a></p>
+        </div>
+      </section>
+
+      <section class="practice-section" id="ueben">
+        <p class="section-eyebrow">Vier Aufgaben zum Üben</p>
+        <h2>Jetzt bist du<br><span>dran.</span></h2>
+        <p class="section-intro">Vier Aufgaben — die Lösungen stehen direkt darunter. Probier es zuerst selbst und klick dann auf „Lösung“.</p>
+        <div class="practice-grid">
+          <details class="practice-task">
+            <summary><span class="practice-number">Aufgabe 1</span>Zimmer 4 × 3,5 m — wie viele m²?</summary>
+            <p>14 m²: 4 × 3,5 = 14.</p>
+          </details>
+          <details class="practice-task">
+            <summary><span class="practice-number">Aufgabe 2</span>80 × 120 cm — wie viele m²?</summary>
+            <p>0,96 m²: 80 cm sind 0,8 m, 120 cm sind 1,2 m. 0,8 × 1,2 = 0,96.</p>
+          </details>
+          <details class="practice-task">
+            <summary><span class="practice-number">Aufgabe 3</span>20 m² mit 10 % Verschnitt — wie viel bestellen?</summary>
+            <p>22 m²: 20 × 1,1 = 22. Bei 39,90 € je m² wären das 877,80 €.</p>
+          </details>
+          <details class="practice-task">
+            <summary><span class="practice-number">Aufgabe 4</span>Grundstück 20 × 30 m — wie viele m² und Hektar?</summary>
+            <p>600 m² = 0,06 ha: 20 × 30 = 600. 600 ÷ 10.000 = 0,06.</p>
+          </details>
+        </div>
+      </section>
+
+      <section class="faq-section" id="faq">
+        <p class="section-eyebrow">Häufige Fragen</p>
+        <h2>Was du noch<br><span>wissen solltest.</span></h2>
+        <div class="faq-list">
+          <details class="faq-item">
+            <summary>Wie rechnet man Quadratmeter aus?</summary>
+            <p>Länge mal Breite. Ein Zimmer mit 4,5 m × 3,2 m hat 14,4 m²: 4,5 × 3,2 = 14,4.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Wie rechne ich aus Zentimetern?</summary>
+            <p>Erst in Meter umrechnen: 80 cm sind 0,8 m, 120 cm sind 1,2 m. 0,8 × 1,2 = 0,96 m². Oder stell die Einheit im Rechner auf cm — er rechnet es um.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Wie rechne ich cm² in m² um?</summary>
+            <p>Durch 10.000 teilen: 9.600 cm² sind 0,96 m². Ein Quadratmeter hat 10.000 Quadratzentimeter.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Kann man Quadratmeter in Meter umrechnen?</summary>
+            <p>Nein. Quadratmeter messen eine Fläche, Meter eine Länge — das sind verschiedene Größen. Aus 14,4 m² allein kommt man nicht auf eine Länge, ohne die andere Seite zu kennen.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Wie berechne ich einen L-förmigen Raum?</summary>
+            <p>Teil ihn in zwei Rechtecke und zähl beide Flächen zusammen: 4 m × 5 m + 2 m × 3 m = 20 + 6 = 26 m².</p>
+          </details>
+          <details class="faq-item">
+            <summary>Wie viel Verschnitt brauche ich?</summary>
+            <p>Gerade verlegt 10 %, diagonal oder Fischgrät 15 %. Bei Fliesen hängt es vom Format ab: 5 bis 20 %. Der Rechner schlägt dir 10 % für gerade und 15 % für diagonal vor.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Zählen Balkon und Dachschräge zur Wohnfläche?</summary>
+            <p>Meist nur zum Teil: Der Balkon zählt oft zu einem Viertel, eine Dachschräge mit 1 bis 2 m Höhe zur Hälfte. Das steht in der Wohnflächenverordnung (WoFlV). Der Rechner rechnet es grob mit, wenn du den Haken setzt.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Ist das Ergebnis die Wohnfläche?</summary>
+            <p>Nein. Der Rechner gibt die geometrische Fläche — Länge mal Breite. Die Wohnfläche nach WoFlV bekommst du nur mit dem Haken oben, und auch die ist eine grobe Schätzung, keine Messung für Mietvertrag oder Kauf.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Wie messe ich richtig?</summary>
+            <p>Miss die lichten Maße — also ab der fertigen Wandoberfläche, nicht ab der Rohwand. Nimm das längste Maß, und miss jede Wand an der längsten Stelle.</p>
+          </details>
+        </div>
+      </section>
+
+      <section class="more-tools">
+        <div class="quick-title"><span class="eyebrow">Mehr Rechner</span><h2>Das gibt es noch bei maßklar.</h2></div>
+        <div class="tool-grid">
+          <a class="tool-card" href="../massstabsrechner/"><span class="tool-icon" aria-hidden="true">🗺</span><span class="tool-text"><span class="tool-title">Maßstabsrechner</span><span class="tool-desc">Karten, Grundrisse, Modellbau: echte Länge und Plan-Länge umrechnen.</span></span><span class="tool-arrow" aria-hidden="true">↗</span></a>
+          <a class="tool-card" href="../altersrechner/"><span class="tool-icon" aria-hidden="true">🎂</span><span class="tool-text"><span class="tool-title">Altersrechner</span><span class="tool-desc">Wie alt bist du in Jahren, Monaten und Tagen? Mit Geburtstag-Countdown.</span></span><span class="tool-arrow" aria-hidden="true">↗</span></a>
+          <a class="tool-card" href="../massstabsrechner/modellbau/"><span class="tool-icon" aria-hidden="true">🚂</span><span class="tool-text"><span class="tool-title">Modellbau-Maßstab</span><span class="tool-desc">H0, Spur N, 1:72: echte Länge in Modell-Länge umrechnen.</span></span><span class="tool-arrow" aria-hidden="true">↗</span></a>
+          <a class="tool-card" href="../prozentrechner/"><span class="tool-icon" aria-hidden="true">%</span><span class="tool-text"><span class="tool-title">Prozentrechner</span><span class="tool-desc">Prozentwert, Rabatt oder Erhöhung — in Sekunden.</span></span><span class="tool-arrow" aria-hidden="true">↗</span></a>
+          <a class="tool-card" href="../bmi-rechner/"><span class="tool-icon" aria-hidden="true">⚖</span><span class="tool-text"><span class="tool-title">BMI-Rechner</span><span class="tool-desc">Body-Mass-Index ausrechnen und einordnen.</span></span><span class="tool-arrow" aria-hidden="true">↗</span></a>
+          <a class="tool-card" href="../tage-rechner/"><span class="tool-icon" aria-hidden="true">📅</span><span class="tool-text"><span class="tool-title">Tage-Rechner</span><span class="tool-desc">Tage zwischen zwei Daten zählen — mit Wochen, Arbeitstagen und Wochentag.</span></span><span class="tool-arrow" aria-hidden="true">↗</span></a>
+          <a class="tool-card" href="../stunden-rechner/"><span class="tool-icon" aria-hidden="true">🕐</span><span class="tool-text"><span class="tool-title">Stunden-Rechner</span><span class="tool-desc">Arbeitszeit und Stunden zwischen zwei Uhrzeiten — mit Pause und Nachtschicht.</span></span><span class="tool-arrow" aria-hidden="true">↗</span></a>
+          <a class="tool-card" href="../indexmiete-rechner/"><span class="tool-icon" aria-hidden="true">🏠</span><span class="tool-text"><span class="tool-title">Indexmiete-Rechner</span><span class="tool-desc">Neue Nettokaltmiete aus dem Verbraucherpreisindex — mit Rechenweg und Fristen.</span></span><span class="tool-arrow" aria-hidden="true">↗</span></a>
+        </div>
+        <p class="more-tools-link"><a href="../">Alle Rechner ansehen <span aria-hidden="true">→</span></a></p>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <a class="brand footer-brand" href="../"><span class="brand-mark" aria-hidden="true">mk</span><span>maßklar<span class="brand-period">.</span></span></a>
+      <p>Quadratmeter berechnen — einfach, schnell und ohne Mathe-Stress. Ein Produkt von Hastle.</p>
+      <span>© <span id="current-year"></span> maßklar</span>
+    </footer>
+
+    <button class="back-to-top" id="back-to-top" type="button" aria-label="Nach oben scrollen">↑</button>
+    <script>
+      document.querySelector("#current-year").textContent = new Date().getFullYear();
+    </script>
+    <script>
+      (function () {
+        var button = document.getElementById("back-to-top");
+        var SHOW_AFTER = 500;
+        var footer = document.querySelector(".site-footer");
+        function updateVisibility() {
+          button.classList.toggle("is-visible", window.scrollY > SHOW_AFTER);
+          if (!footer) return;
+          var footerRect = footer.getBoundingClientRect();
+          var overlap = Math.max(0, window.innerHeight - footerRect.top);
+          button.style.bottom = overlap > 0 ? (overlap + 16) + "px" : "";
+        }
+        window.addEventListener("scroll", updateVisibility, { passive: true });
+        window.addEventListener("resize", updateVisibility);
+        button.addEventListener("click", function () {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+        updateVisibility();
+      })();
+    </script>
+    <script src="app.js" defer></script>
+  </body>
+</html>
