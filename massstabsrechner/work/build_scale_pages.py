@@ -346,6 +346,23 @@ FAQ_KEEP = [
 ]
 
 
+# More-tools grid for the generated scale pages: every tool that is live NOW
+# as a live link (hrefs relative to a scale page, one level deeper than the
+# template). Tools still "Bald da" are NOT listed here — when one goes live,
+# add its card here and re-run; the grid below replaces the template's grid
+# wholesale, so the template's own card set never leaks stale "Bald da"
+# entries into the scale pages.
+MORE_TOOLS = [
+    ("🗺", "Maßstabsrechner", "Karten, Grundrisse, Modellbau: echte Länge und Plan-Länge umrechnen.", "../"),
+    ("🎂", "Altersrechner", "Wie alt bist du in Jahren, Monaten und Tagen? Mit Geburtstag-Countdown.", "../../altersrechner/"),
+    ("🚂", "Modellbau-Maßstab", "H0, Spur N, 1:72: echte Länge in Modell-Länge umrechnen.", "../modellbau/"),
+    ("%", "Prozentrechner", "Prozentwert, Rabatt oder Erhöhung — in Sekunden.", "../../prozentrechner/"),
+    ("⚖", "BMI-Rechner", "Body-Mass-Index ausrechnen und einordnen.", "../../bmi-rechner/"),
+    ("📅", "Tage-Rechner", "Tage zwischen zwei Daten zählen — mit Wochen, Arbeitstagen und Wochentag.", "../../tage-rechner/"),
+    ("🕐", "Stunden-Rechner", "Arbeitszeit und Stunden zwischen zwei Uhrzeiten — mit Pause und Nachtschicht.", "../../stunden-rechner/"),
+]
+
+
 def fmt_de(n):
     """Mimic Intl.NumberFormat('de-DE', {maximumSignificantDigits: 8})."""
     if n == 0:
@@ -465,10 +482,19 @@ def build_page(scale):
     html = rep(html, '<a class="brand footer-brand" href="../">',
                '<a class="brand footer-brand" href="../../">')
     html = rep(html, '<a href="../">Alle Rechner</a>', '<a href="../../">Alle Rechner</a>')
-    html = rep(html, '<a class="tool-card" href="../altersrechner/">',
-               '<a class="tool-card" href="../../altersrechner/">')
-    html = rep(html, '<a class="tool-card" href="modellbau/">',
-               '<a class="tool-card" href="../modellbau/">')
+    # --- more-tools grid: rebuild it from MORE_TOOLS (all live tools as live
+    # links). The template's own grid is stale for scale pages — it once listed
+    # Prozent/BMI as "Bald da" and lacks Tage/Stunden — so it is replaced
+    # wholesale instead of patching individual hrefs.
+    grid = ('        <div class="tool-grid">\n' + "\n".join(
+        f'          <a class="tool-card" href="{href}"><span class="tool-icon" aria-hidden="true">{icon}</span><span class="tool-text"><span class="tool-title">{esc(title)}</span><span class="tool-desc">{esc(desc)}</span></span><span class="tool-arrow" aria-hidden="true">↗</span></a>'
+        for icon, title, desc, href in MORE_TOOLS) + '\n        </div>')
+    html, n = re.subn(r'        <div class="tool-grid">.*?</div>',
+                      grid.replace("\\", "\\\\"), html, count=1, flags=re.DOTALL)
+    assert n == 1, "more-tools grid not replaced"
+    assert "tool-card--soon" not in html and "Bald da" not in html, "stale Bald da survived grid replacement"
+    for _, _, _, href in MORE_TOOLS:
+        assert f'href="{href}"' in html, f"more-tools link missing: {href}"
     html = rep(html, '<p class="more-tools-link"><a href="../">Alle Rechner ansehen',
                '<p class="more-tools-link"><a href="../../">Alle Rechner ansehen')
     # Ratgeber text-links in more-tools: one level deeper on scale pages.
