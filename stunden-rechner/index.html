@@ -380,55 +380,30 @@
       </section>
 
       <section class="guide-section" id="anleitung">
-        <p class="guide-eyebrow">Kurz erklärt</p>
-        <h2>Stunden rechnen:<br><span>so funktioniert’s.</span></h2>
-        <p class="guide-intro">Stunden rechnen ist einfach — wenn man weiß, dass eine Stunde 60 Minuten hat und nicht 100. Die fünf Sachen unten reichen für fast jede Frage.</p>
-        <div class="guide-grid">
-          <article class="guide-step">
-            <p class="guide-step-number">Schritt 01</p>
-            <h3>Die Rechnung</h3>
-            <p>Endzeit minus Startzeit, dann die Pause abziehen. Von 08:00 bis 16:30 sind es 8:30 Stunden brutto — minus 30 Minuten Pause bleiben 8:00 Stunden netto.</p>
-            <p class="guide-equation">16:30 − 08:00 − 0:30 = 8:00</p>
-          </article>
-          <article class="guide-step">
-            <p class="guide-step-number">Schritt 02</p>
-            <h3>Nachtschicht</h3>
-            <p>Geht die Schicht über Mitternacht, zählst du bis 24:00 Uhr und dann weiter. Von 22:00 bis 06:00 sind es 8:00 Stunden brutto — minus 30 Minuten Pause bleiben 7:30 Stunden netto.</p>
-            <p class="guide-equation">22:00 → 24:00 → 06:00 = 8:00 − 0:30 = 7:30</p>
-          </article>
-          <article class="guide-step">
-            <p class="guide-step-number">Schritt 03</p>
-            <h3>Dezimalstunden</h3>
-            <p>Minuten geteilt durch 60 — so werden aus Minuten Dezimalstunden. 45 Minuten sind 0,75 Stunden, 30 Minuten sind 0,50. 7:45 sind also 7,75 Stunden.</p>
-            <p class="guide-equation">45 ÷ 60 = 0,75 · 7:45 = 7,75 Stunden</p>
-          </article>
-          <article class="guide-step">
-            <p class="guide-step-number">Schritt 04</p>
-            <h3>Die 60er-Falle</h3>
-            <p>7,45 Stunden sind nicht 7 Stunden und 45 Minuten. 0,45 Stunden sind nur 27 Minuten (0,45 × 60). Wer 7:45 meint, muss 7,75 schreiben — der Rechner zeigt dir den Unterschied an, sobald du tippst.</p>
-            <p class="guide-equation">7,45 h = 7:27 · 7:45 = 7,75 h</p>
-          </article>
-          <article class="guide-step">
-            <p class="guide-step-number">Schritt 05</p>
-            <h3>Stunden in Excel</h3>
-            <p>In Excel rechnest du mit der Uhrzeit direkt: Ende minus Anfang, mal 24 — so werden aus Uhrzeiten Dezimalstunden. Das Format [h]:mm zeigt auch mehr als 24 Stunden an.</p>
-            <p class="guide-equation">=(Ende − Anfang) * 24 · Format: [h]:mm</p>
-          </article>
+        <div class="guide-intro">
+          <p class="eyebrow">Kurz erklärt</p>
+          <h2>Stunden rechnen:<br><span>so funktioniert’s.</span></h2>
+          <p>Stunden rechnen ist einfach — wenn man weiß, dass eine Stunde 60 Minuten hat und nicht 100. Die fünf Sachen unten reichen für fast jede Frage.</p>
+          <aside class="formula-card">
+            <p class="formula-eyebrow">Die Formeln, die du brauchst</p>
+            <p class="formula-main">Netto = Ende − Anfang − Pause</p>
+            <p>Dezimal = Minuten ÷ 60 · Industrieminuten = Dezimal × 100 · Monat: Woche × 52 ÷ 12 — 40 Stunden pro Woche sind 173,33 Stunden im Monat.</p>
+            <p class="formula-small">Die Pause zählt nie zur Arbeitszeit. Nur die Netto-Zeit kommt auf den Stundenzettel.</p>
+          </aside>
+          <aside class="formula-card">
+            <p class="formula-eyebrow">So rechnest du das in Excel</p>
+            <p class="formula-main">=(Ende − Anfang) * 24</p>
+            <p>Zwei Zellen mit Uhrzeiten — z. B. A2 = Anfang, B2 = Ende — die Formel kommt in C2. C2 im Format [h]:mm, damit auch 40:30 richtig dasteht.</p>
+            <p class="formula-small"><button class="preset-chip" id="excel-copy" type="button">Formel kopieren</button></p>
+          </aside>
         </div>
-        <aside class="formula-card">
-          <p class="formula-eyebrow">Die Formeln, die du brauchst</p>
-          <p class="formula-main">Netto = Ende − Anfang − Pause</p>
-          <p>Dezimal = Minuten ÷ 60 · Industrieminuten = Dezimal × 100 · Monat: Woche × 52 ÷ 12 — 40 Stunden pro Woche sind 173,33 Stunden im Monat.</p>
-          <p class="formula-small">Die Pause zählt nie zur Arbeitszeit. Nur die Netto-Zeit kommt auf den Stundenzettel.</p>
-        </aside>
-
-        <aside class="formula-card">
-          <p class="formula-eyebrow">So rechnest du das in Excel</p>
-          <p class="formula-main">=(Ende − Anfang) * 24</p>
-          <p>Zwei Zellen mit Uhrzeiten — z. B. A2 = Anfang, B2 = Ende — die Formel kommt in C2. C2 im Format [h]:mm, damit auch 40:30 richtig dasteht.</p>
-          <p class="formula-small"><button class="preset-chip" id="excel-copy" type="button">Formel kopieren</button></p>
-        </aside>
-
+        <div class="guide-steps">
+          <article class="guide-step"><span class="step-number">Schritt 01</span><div><h3>Die Rechnung</h3><p>Endzeit minus Startzeit, dann die Pause abziehen. Von 08:00 bis 16:30 sind es 8:30 Stunden brutto — minus 30 Minuten Pause bleiben 8:00 Stunden netto.</p><span class="step-equation">16:30 − 08:00 − 0:30 = 8:00</span></div></article>
+          <article class="guide-step"><span class="step-number">Schritt 02</span><div><h3>Nachtschicht</h3><p>Geht die Schicht über Mitternacht, zählst du bis 24:00 Uhr und dann weiter. Von 22:00 bis 06:00 sind es 8:00 Stunden brutto — minus 30 Minuten Pause bleiben 7:30 Stunden netto.</p><span class="step-equation">22:00 → 24:00 → 06:00 = 8:00 − 0:30 = 7:30</span></div></article>
+          <article class="guide-step"><span class="step-number">Schritt 03</span><div><h3>Dezimalstunden</h3><p>Minuten geteilt durch 60 — so werden aus Minuten Dezimalstunden. 45 Minuten sind 0,75 Stunden, 30 Minuten sind 0,50. 7:45 sind also 7,75 Stunden.</p><span class="step-equation">45 ÷ 60 = 0,75 · 7:45 = 7,75 Stunden</span></div></article>
+          <article class="guide-step"><span class="step-number">Schritt 04</span><div><h3>Die 60er-Falle</h3><p>7,45 Stunden sind nicht 7 Stunden und 45 Minuten. 0,45 Stunden sind nur 27 Minuten (0,45 × 60). Wer 7:45 meint, muss 7,75 schreiben — der Rechner zeigt dir den Unterschied an, sobald du tippst.</p><span class="step-equation">7,45 h = 7:27 · 7:45 = 7,75 h</span></div></article>
+          <article class="guide-step"><span class="step-number">Schritt 05</span><div><h3>Stunden in Excel</h3><p>In Excel rechnest du mit der Uhrzeit direkt: Ende minus Anfang, mal 24 — so werden aus Uhrzeiten Dezimalstunden. Das Format [h]:mm zeigt auch mehr als 24 Stunden an.</p><span class="step-equation">=(Ende − Anfang) * 24 · Format: [h]:mm</span></div></article>
+        </div>
         <div class="stunden-note">
           <h3>Zeitumstellung: eine Stunde mehr oder weniger</h3>
           <p>In der Nacht der Zeitumstellung dauert eine Schicht eine Stunde länger oder kürzer. Die Sommerzeit beginnt am letzten Sonntag im März (29.03.2026, 28.03.2027) und endet am letzten Sonntag im Oktober (25.10.2026, 31.10.2027). Der Rechner rechnet mit der Uhrzeit, die du eintippst — die eine Stunde siehst du hier nicht.</p>
