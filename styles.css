@@ -82,6 +82,30 @@ button, a, select { -webkit-tap-highlight-color: transparent; }
 .button-primary { min-height: 44px; display: inline-flex; align-items: center; padding: 10px 17px; border: 1px solid transparent; border-radius: 6px; background: var(--orange); color: var(--green-dark); font-size: 14px; font-weight: 700; transition: background .2s, transform .15s; }
 .button-primary:hover { background: var(--orange-dark); }
 .button-primary:active { transform: scale(.97); }
+/* Light-blue Kontakt button: sits beside the orange primary action. */
+.btn-kontakt { min-height: 44px; display: inline-flex; align-items: center; justify-content: center; padding: 10px 20px; border: 1px solid #b9d4e8; border-radius: 6px; background: #d9e9f5; color: var(--green-dark); font-size: 14px; font-weight: 700; transition: background .2s, transform .15s; }
+.btn-kontakt:hover { background: #c4dcf0; }
+.btn-kontakt:active { transform: scale(.97); }
+/* Primary + Kontakt side by side (calculator form, result panel, hero). */
+.calc-actions, .copy-actions { display: flex; gap: 12px; align-items: stretch; }
+.calc-actions { margin-top: 24px; }
+.calc-actions .calculate-button { flex: 1; min-width: 0; width: auto; margin-top: 0; }
+.calc-actions .btn-kontakt { flex-shrink: 0; height: 60px; padding: 0 22px; border-radius: 8px; font-size: 15px; }
+.copy-actions { margin-top: 12px; }
+.copy-actions .copy-button { flex: 1; min-width: 0; margin-top: 0; }
+.copy-actions .btn-kontakt { flex-shrink: 0; }
+.hero-actions { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+/* Visible keyboard focus on every interactive element. */
+:focus-visible { outline: 3px solid var(--green); outline-offset: 2px; }
+/* BMI category scale (visual): WHO ranges as a colour bar, real text (no image). */
+\.bmi-cat-scale { margin: 0 0 20px; }
+.bmi-cat-scale-bar { display: flex; height: 48px; border-radius: 8px; overflow: hidden; font-size: 11px; font-weight: 700; }
+.bmi-cat-scale-bar span { display: flex; align-items: center; justify-content: center; padding: 4px 3px; line-height: 1.25; text-align: center; overflow: hidden; }
+.bmi-cat-unter { width: 14%; background: #d9e9f5; color: var(--green-dark); }
+.bmi-cat-normal { width: 26%; background: var(--green); color: #fffefa; }
+.bmi-cat-ueber { width: 20%; background: var(--orange); color: var(--green-dark); }
+.bmi-cat-adipositas { width: 40%; background: var(--orange-dark); color: #fffefa; }
+.bmi-cat-scale figcaption { margin-top: 8px; color: var(--muted); font-size: 13px; line-height: 1.6; }
 .header-cta span { padding-left: 8px; color: var(--green-dark); }
 
 .hero { position: relative; min-height: 480px; display: grid; grid-template-columns: 1fr 1fr; align-items: center; padding: 48px 12.2% 60px 14%; overflow: hidden; }
@@ -163,9 +187,9 @@ h1, h2, h3, p { margin-top: 0; }
 .result-meta button { flex-shrink: 0; min-height: 44px; padding: 0 6px; border: 0; background: transparent; color: var(--green); font: 600 13px var(--sans); cursor: pointer; transition: background .2s, color .2s; border-radius: 4px; }
 .result-meta button.copied { background: var(--green); color: #fff; }
 .result-label { margin: 0 0 6px; color: #5a6a62; font: 12px var(--mono); letter-spacing: .75px; }
-.result-panel > .copy-button { display: block; width: 100%; min-height: 48px; margin-top: 12px; padding: 10px 16px; border: 1px solid #cfd8c8; border-radius: 8px; background: #fffefa; color: var(--green); font: 600 14px var(--sans); cursor: pointer; transition: background .2s, border-color .2s, color .2s; }
-.result-panel > .copy-button:hover { border-color: var(--green); background: #eef1e6; }
-.result-panel > .copy-button.copied { background: var(--green); border-color: var(--green); color: #fffefa; }
+.result-panel .copy-button { display: block; width: 100%; min-height: 48px; margin-top: 12px; padding: 10px 16px; border: 1px solid #cfd8c8; border-radius: 8px; background: #fffefa; color: var(--green); font: 600 14px var(--sans); cursor: pointer; transition: background .2s, border-color .2s, color .2s; }
+.result-panel .copy-button:hover { border-color: var(--green); background: #eef1e6; }
+.result-panel .copy-button.copied { background: var(--green); border-color: var(--green); color: #fffefa; }
 .calc-aside { padding: 30px 26px; background: #f3f5ec; }
 .aside-number { color: #849283; font: 9px var(--mono); letter-spacing: .8px; }
 .aside-art { position: relative; height: 112px; margin: 20px 0 16px; overflow: hidden; border-radius: 5px; background: #e6ecdc; }
@@ -332,6 +356,10 @@ h1, h2, h3, p { margin-top: 0; }
   .input-grid { grid-template-columns: 1fr 1fr; gap: 13px 10px; }.scale-field { grid-column: 1 / -1; }
   .length-tables { grid-template-columns: 1fr; }
   .footer-main { grid-template-columns: 1fr 1fr; gap: 32px; padding: 48px 5% 32px; }
+  /* Header nav does not fit next to brand + CTA at tablet width (it pushed
+     the CTA past the right edge) — hide it here like on phones; the footer
+     carries the full navigation. */
+  .top-nav, .site-nav { display: none; }
 }
 @media (max-width: 680px) {
   html { scroll-padding-top: 68px; }.site-header { min-height: 60px; }.top-nav, .site-nav { display: none; }.header-cta { padding: 10px 12px; font-size: 12px; }
@@ -349,6 +377,9 @@ h1, h2, h3, p { margin-top: 0; }
   .footer-main { grid-template-columns: 1fr; gap: 32px; padding: 48px 6% 32px; }
   .footer-bottom { flex-direction: column; align-items: flex-start; gap: 8px; padding: 18px 6%; }
   .footer-note { padding: 0 6% 24px; }
+  /* Primary + Kontakt stack full-width on phones. */
+  .calc-actions, .copy-actions { flex-direction: column; }
+  .calc-actions .calculate-button, .calc-actions .btn-kontakt, .copy-actions .copy-button, .copy-actions .btn-kontakt { width: 100%; height: auto; min-height: 52px; }
 }
 /* Hub — tool grid, categories, why, hub hero visual */
 .tools-section { padding: 56px 11.2% 64px; background: #eaece3; scroll-margin-top: 70px; }
@@ -562,7 +593,7 @@ a.tool-card:active { transform: scale(.98); }
 .bmi-card-note { margin-top: 10px; color: var(--muted); font-size: 14px; }
 /* BMI-Farbskala im Ergebnis: 6 WHO-Klassen über den Bereich 14–42,
    der Marker zeigt den eigenen BMI (JS setzt left in %). */
-.bmi-scale { margin: 14px 0 4px; }
+\.bmi-cat-scale { margin: 14px 0 4px; }
 .bmi-scale-track { position: relative; display: flex; height: 12px; border-radius: 6px; }
 .bmi-seg { height: 100%; }
 .bmi-seg--unter { width: 16.07%; background: #8fb8d8; border-radius: 6px 0 0 6px; }

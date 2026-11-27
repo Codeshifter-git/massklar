@@ -414,7 +414,7 @@ def build_page(scale):
     label = f"1:{scale}"            # keyword form, e.g. 1:1000
     label_de = "1:" + fmt_de(scale)  # de-DE form, e.g. 1:1.000 (what the JS renders)
     slug = f"1-zu-{scale}"
-    canon = f"https://codeshifter-git.github.io/massklar/massstabsrechner/{slug}/"
+    canon = f"https://massklar-rechner.de/massstabsrechner/{slug}/"
 
     title = f"Maßstabsrechner {label} – 1 zu {scale} berechnen | maßklar"
     meta = (f"Maßstab {label} berechnen und umrechnen: 1 cm {d.get('meta_on', 'auf dem Plan')} sind "
@@ -467,7 +467,7 @@ def build_page(scale):
                f"<title>{esc(title)}</title>")
     html = rep(html, '<meta name="description" content="Kostenloser Maßstabsrechner: Maßstab berechnen und umrechnen für Karten, Grundrisse und Baupläne. Zwei Zahlen eintippen, fertig — ohne Anmeldung.">',
                f'<meta name="description" content="{esc(meta)}">')
-    html = rep(html, '<link rel="canonical" href="https://codeshifter-git.github.io/massklar/massstabsrechner/">',
+    html = rep(html, '<link rel="canonical" href="https://massklar-rechner.de/massstabsrechner/">',
                f'<link rel="canonical" href="{canon}">')
     html = rep(html, '<meta property="og:title" content="Maßstabsrechner – Maßstab online berechnen | maßklar">',
                f'<meta property="og:title" content="{esc(title)}">')
@@ -481,7 +481,11 @@ def build_page(scale):
     html = rep(html, '<link rel="preload" href="../fonts/dm-sans-latin.woff2" as="font" type="font/woff2" crossorigin>',
                '<link rel="preload" href="../../fonts/dm-sans-latin.woff2" as="font" type="font/woff2" crossorigin>')
     # Logo + favicon assets are one level deeper on scale pages too.
-    html = rep(html, 'src="../assets/logo-mark.svg"', 'src="../../assets/logo-mark.svg"', count=2)
+    # Header logo only (width=30 — the footer logo is width=26 and is
+    # handled by the footer-block rewrite below; replacing both here
+    # would double-prefix the footer one).
+    html = rep(html, '<img class="brand-img" src="../assets/logo-mark.svg" width="30" height="30" alt="">',
+               '<img class="brand-img" src="../../assets/logo-mark.svg" width="30" height="30" alt="">')
     html = rep(html, '<link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">',
                '<link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg">')
     # (WebApplication + FAQPage + BreadcrumbList + HowTo are rebuilt fresh per
@@ -493,12 +497,20 @@ def build_page(scale):
     # --- footer: the whole block goes one level deeper (every href/src
     # prefix ../ -> ../../). This replaces the old single-link footer rep:
     # the footer now has many links, so the block is rewritten at once.
-    # It runs AFTER the logo rep above (count=2: header + footer logo),
-    # so that rep still sees both ../ logos.
+    # It runs AFTER the logo rep above (count=1: header logo only),
+    # so the footer logo's ../ is still untouched when this runs.
     _fm = re.search(r'    <footer class="site-footer">.*?</footer>', html, flags=re.DOTALL)
     assert _fm, "footer block not found"
     _block = _fm.group(0).replace('href="../', 'href="../../').replace('src="../', 'src="../../')
     html = html[:_fm.start()] + _block + html[_fm.end():]
+    # Kontakt button beside the calculator button: one level deeper too.
+    html = rep(html, '<a class="btn-kontakt" href="../kontakt.html">Kontakt</a>',
+               '<a class="btn-kontakt" href="../../kontakt.html">Kontakt</a>')
+    # Header nav: Ratgeber + Kontakt links, one level deeper too.
+    html = rep(html, '<a href="../ratgeber/">Ratgeber</a>',
+               '<a href="../../ratgeber/">Ratgeber</a>')
+    html = rep(html, '<a href="../kontakt.html">Kontakt</a>',
+               '<a href="../../kontakt.html">Kontakt</a>')
     html = rep(html, '<a href="../">Alle Rechner</a>', '<a href="../../">Alle Rechner</a>')
     # --- more-tools grid: rebuild it from MORE_TOOLS (all live tools as live
     # links). The template's own grid is stale for scale pages — it once listed
@@ -735,9 +747,9 @@ def build_page(scale):
         "@type": "BreadcrumbList",
         "itemListElement": [
             {"@type": "ListItem", "position": 1, "name": "Startseite",
-             "item": "https://codeshifter-git.github.io/massklar/"},
+             "item": "https://massklar-rechner.de/"},
             {"@type": "ListItem", "position": 2, "name": "Maßstabsrechner",
-             "item": "https://codeshifter-git.github.io/massklar/massstabsrechner/"},
+             "item": "https://massklar-rechner.de/massstabsrechner/"},
             {"@type": "ListItem", "position": 3, "name": f"Maßstab {label}",
              "item": canon},
         ],
