@@ -503,14 +503,14 @@ def build_page(scale):
     assert _fm, "footer block not found"
     _block = _fm.group(0).replace('href="../', 'href="../../').replace('src="../', 'src="../../')
     html = html[:_fm.start()] + _block + html[_fm.end():]
-    # Kontakt button beside the calculator button: one level deeper too.
-    html = rep(html, '<a class="btn-kontakt" href="../kontakt.html">Kontakt</a>',
-               '<a class="btn-kontakt" href="../../kontakt.html">Kontakt</a>')
     # Header nav: Ratgeber + Kontakt links, one level deeper too.
     html = rep(html, '<a href="../ratgeber/">Ratgeber</a>',
                '<a href="../../ratgeber/">Ratgeber</a>')
     html = rep(html, '<a href="../kontakt.html">Kontakt</a>',
                '<a href="../../kontakt.html">Kontakt</a>')
+    # Header CTA (Kontakt button): one level deeper too.
+    html = rep(html, '<a class="header-cta" href="../kontakt.html">Kontakt</a>',
+               '<a class="header-cta" href="../../kontakt.html">Kontakt</a>')
     html = rep(html, '<a href="../">Alle Rechner</a>', '<a href="../../">Alle Rechner</a>')
     # --- more-tools grid: rebuild it from MORE_TOOLS (all live tools as live
     # links). The template's own grid is stale for scale pages — it once listed
