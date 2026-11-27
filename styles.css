@@ -78,6 +78,10 @@ button, a, select { -webkit-tap-highlight-color: transparent; }
 .header-cta { min-height: 44px; display: inline-flex; align-items: center; padding: 10px 17px; border: 1px solid transparent; border-radius: 6px; background: var(--orange); color: var(--green-dark); font-size: 14px; font-weight: 700; transition: background .2s, transform .15s; }
 .header-cta:hover { background: var(--orange-dark); }
 .header-cta:active { transform: scale(.97); }
+/* Hero CTA on the tool pages — same orange pill as the header button. */
+.button-primary { min-height: 44px; display: inline-flex; align-items: center; padding: 10px 17px; border: 1px solid transparent; border-radius: 6px; background: var(--orange); color: var(--green-dark); font-size: 14px; font-weight: 700; transition: background .2s, transform .15s; }
+.button-primary:hover { background: var(--orange-dark); }
+.button-primary:active { transform: scale(.97); }
 .header-cta span { padding-left: 8px; color: var(--green-dark); }
 
 .hero { position: relative; min-height: 480px; display: grid; grid-template-columns: 1fr 1fr; align-items: center; padding: 48px 12.2% 60px 14%; overflow: hidden; }
@@ -268,6 +272,11 @@ h1, h2, h3, p { margin-top: 0; }
 .guide-intro > p:not(.eyebrow) { max-width: 360px; margin: 0; color: #c2cec5; font-size: 15px; line-height: 1.8; }
 .formula-card { display: flex; flex-direction: column; gap: 10px; margin-top: 30px; padding: 20px; border: 1px solid #49675c; border-radius: 5px; background: #21483c; }
 .formula-card span { color: #aebfb2; font: 10px var(--mono); text-transform: uppercase; letter-spacing: .8px; }.formula-card strong { color: var(--orange-light); font: 500 14px var(--mono); line-height: 1.5; }.formula-card small { color: #afbeb3; font-size: 12px; line-height: 1.6; }
+/* Same card, <p> children: the 6 tool pages use formula-eyebrow/main/small
+   instead of span/strong/small, so they get the same treatment here. */
+.formula-card .formula-eyebrow { margin: 0; color: #aebfb2; font: 10px var(--mono); text-transform: uppercase; letter-spacing: .8px; }
+.formula-card .formula-main { margin: 0; color: var(--orange-light); font: 500 14px var(--mono); line-height: 1.5; }
+.formula-card .formula-small { margin: 0; color: #afbeb3; font-size: 12px; line-height: 1.6; }
 .guide-steps { display: flex; flex-direction: column; justify-content: center; }
 .guide-step { display: grid; grid-template-columns: 44px 1fr; gap: 18px; padding: 26px 0; border-bottom: 1px solid #426055; }.guide-step:first-child { padding-top: 0; }.guide-step:last-child { padding-bottom: 0; border-bottom: 0; }
 .step-number { color: #98ae9d; font: 12px var(--mono); }.guide-step h3 { margin: 0 0 8px; font: 600 16px var(--display); }.guide-step p { max-width: 460px; margin: 0 0 12px; color: #c0cdc4; font-size: 14px; line-height: 1.8; }
