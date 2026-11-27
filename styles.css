@@ -277,6 +277,21 @@ h1, h2, h3, p { margin-top: 0; }
 .faq-list details { border-bottom: 1px solid #e2e5dc; }.faq-list details:first-child { border-top: 1px solid #e2e5dc; }
 .faq-list summary { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 56px; padding: 16px 0; color: #34443b; font-size: 15px; font-weight: 600; line-height: 1.5; list-style: none; cursor: pointer; }.faq-list summary::-webkit-details-marker { display: none; }.faq-list summary span { color: var(--green); font: 22px var(--sans); transition: transform .2s; }.faq-list details[open] summary span { transform: rotate(45deg); }
 .faq-list details p { max-width: 570px; margin: -4px 35px 20px 0; color: #4f5f56; font-size: 14px; line-height: 1.8; }
+/* Practice tasks (Übungsaufgaben) — styled like the FAQ rows: bordered rows,
+   a + that turns into ×, and a short fade/slide when the answer opens. */
+.practice-task { border-bottom: 1px solid #e2e5dc; }
+.practice-task:first-child { border-top: 1px solid #e2e5dc; }
+.practice-task summary { display: flex; align-items: center; gap: 16px; min-height: 56px; padding: 16px 0; color: #34443b; font-size: 15px; font-weight: 600; line-height: 1.5; list-style: none; cursor: pointer; }
+.practice-task summary::-webkit-details-marker { display: none; }
+.practice-task summary::after { content: "+"; margin-left: auto; color: var(--green); font: 22px var(--sans); transition: transform .2s; }
+.practice-task[open] summary::after { transform: rotate(45deg); }
+.practice-task > p { max-width: 570px; margin: -4px 35px 20px 0; color: #4f5f56; font-size: 14px; line-height: 1.8; }
+/* FAQ rows: the + icon — no page ships a span in the summary, so it comes from CSS. */
+.faq-list summary::after { content: "+"; color: var(--green); font: 22px var(--sans); transition: transform .2s; }
+.faq-list details[open] summary::after { transform: rotate(45deg); }
+/* Dropdown open animation (practice + FAQ): answer fades/slides in, arrow rotates. */
+@keyframes details-open { from { opacity: 0; transform: translateY(-4px); } to { opacity: 1; transform: translateY(0); } }
+.practice-task[open] > p, .faq-list details[open] > p { animation: details-open .25s ease; }
 .site-footer { display: flex; align-items: center; justify-content: space-between; padding: 22px 7.1%; border-top: 1px solid #e4e6dc; color: #5a6a62; font-size: 12px; }.footer-brand { color: var(--ink); font-size: 16px; }.footer-brand .brand-mark { width: 26px; height: 26px; font-size: 10px; }.site-footer p { margin: 0; }.site-footer > span { font: 11px var(--mono); }
 
 @media (max-width: 900px) {
