@@ -470,6 +470,15 @@ def build_page(scale):
                f'<meta property="og:title" content="{esc(title)}">')
     html = rep(html, '<meta property="og:description" content="Kostenloser Maßstabsrechner: Maßstab berechnen und umrechnen für Karten, Grundrisse und Baupläne. Zwei Zahlen eintippen, fertig — ohne Anmeldung.">',
                f'<meta property="og:description" content="{esc(meta)}">')
+    html = rep(html, '<meta property="og:url" content="https://massklar-rechner.de/massstabsrechner/">',
+               f'<meta property="og:url" content="{canon}">')
+    html = rep(html, '<meta name="twitter:title" content="Maßstabsrechner – Maßstab online berechnen | maßklar">',
+               f'<meta name="twitter:title" content="{esc(title)}">')
+    html = rep(html, '<meta name="twitter:description" content="Kostenloser Maßstabsrechner: Maßstab berechnen und umrechnen für Karten, Grundrisse und Baupläne. Zwei Zahlen eintippen, fertig — ohne Anmeldung.">',
+               f'<meta name="twitter:description" content="{esc(meta)}">')
+    # og:image, og:site_name, twitter:card and twitter:image are identical on
+    # every scale page (absolute URL / site name / summary_large_image), so
+    # they ride along from the template unchanged — no rep needed.
     html = rep(html, f'<link rel="stylesheet" href="../styles.css?v={css_version}">',
                f'<link rel="stylesheet" href="../../styles.css?v={css_version}">')
     # Font preloads are one level deeper on scale pages (template uses ../fonts/).
