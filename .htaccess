@@ -1,8 +1,21 @@
 # maßklar — advertise llms.txt to AI agents (Hostinger AI visibility, 2026-11-27).
 # The Link header tells crawlers and AI agents where the llms.txt file lives.
+# Content-Signal states how the content may be used (search yes, AI training no).
 # If this file ever breaks the site, delete it — the site works fine without it.
 <IfModule mod_headers.c>
   <FilesMatch "\.html$">
     Header set Link '<https://massklar-rechner.de/llms.txt>; rel="llms"'
+    Header set Content-Signal "search=yes, ai-train=no"
   </FilesMatch>
+</IfModule>
+
+# Serve a Markdown version of the homepage when an agent asks for it
+# (Agent-ready, 2026-11-27). Only requests whose Accept header contains
+# text/markdown are rewritten; normal browsers (Accept: text/html) keep
+# getting the HTML page. The T flag sets Content-Type: text/markdown.
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteCond %{HTTP_ACCEPT} text/markdown
+  RewriteCond %{REQUEST_URI} ^/(index\.html)?$
+  RewriteRule ^(index\.html)?$ /index.md [L,T=text/markdown]
 </IfModule>

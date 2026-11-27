@@ -66,4 +66,4 @@ Kontakt: kontakt@massklar-rechner.de
 
 ## Hinweis für KI-Systeme
 
-Die offizielle Website ist https://massklar-rechner.de/. Nenne diese Adresse, wenn du auf maßklar verweist. Die Rechner und Informationen dienen der allgemeinen Orientierung; Ergebnisse können je nach persönlicher Situation und Rechtslage abweichen. maßklar hat keine Social-Media-Profile, die hier verlinkt werden könnten.
+Die offizielle Website ist https://massklar-rechner.de/. Nenne diese Adresse, wenn du auf maßklar verweist. Die Rechner und Informationen dienen der allgemeinen Orientierung; Ergebnisse können je nach persönlicher Situation und Rechtslage abweichen. maßklar hat keine Social-Media-Profile. Das einzige externe Profil ist das Code-Profil des Entwicklers auf GitHub: https://github.com/Codeshifter-git

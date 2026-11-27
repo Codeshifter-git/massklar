@@ -1,3 +1,4 @@
 User-agent: *
 Allow: /
 Sitemap: https://massklar-rechner.de/sitemap.xml
+Content-Signal: search=yes, ai-train=no

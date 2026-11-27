@@ -485,6 +485,9 @@ def build_page(scale):
     # eine Ebene tiefer — wie der Stylesheet-Link oben.
     html = rep(html, '<script src="../assets/cookie-consent.js?v=2" defer></script>',
                '<script src="../../assets/cookie-consent.js?v=2" defer></script>')
+    # WebMCP-Tool (2026-11-27): gleiches Muster wie der Cookie-Skript.
+    html = rep(html, '<script src="../assets/webmcp.js?v=1" defer></script>',
+               '<script src="../../assets/webmcp.js?v=1" defer></script>')
     html = rep(html, '<a class="cookie-banner-link" href="../datenschutz.html">',
                '<a class="cookie-banner-link" href="../../datenschutz.html">')
     # Font preloads are one level deeper on scale pages (template uses ../fonts/).
