@@ -12,7 +12,6 @@ const STORAGE_KEY = "massklar_kredit_v1";
 const form = document.getElementById("kredit-form");
 const modusGrid = document.getElementById("modus-grid");
 const modusButtons = Array.prototype.slice.call(modusGrid.querySelectorAll("[data-modus]"));
-const calcButton = document.getElementById("kredit-calc-btn");
 const errorEl = document.getElementById("kredit-error");
 const resultPanel = document.getElementById("kredit-result");
 const resultLabel = document.getElementById("result-label");

@@ -10,7 +10,6 @@ const STORAGE_KEY = "massklar_grund_v1";
 const form = document.getElementById("grundsteuer-form");
 const artGrid = document.getElementById("art-grid");
 const artButtons = Array.prototype.slice.call(artGrid.querySelectorAll("[data-art]"));
-const calcButton = document.getElementById("grundsteuer-calc-btn");
 const errorEl = document.getElementById("grundsteuer-error");
 const resultPanel = document.getElementById("grundsteuer-result");
 const resultValue = document.getElementById("result-value");
