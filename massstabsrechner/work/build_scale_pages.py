@@ -506,8 +506,8 @@ def build_page(scale):
     # Header nav: Ratgeber + Kontakt links, one level deeper too.
     html = rep(html, '<a href="../ratgeber/">Ratgeber</a>',
                '<a href="../../ratgeber/">Ratgeber</a>')
-    html = rep(html, '<a href="../kontakt.html">Kontakt</a>',
-               '<a href="../../kontakt.html">Kontakt</a>')
+    html = rep(html, '<a href="../ueber-massklar.html">Was ist maßklar?</a>',
+               '<a href="../../ueber-massklar.html">Was ist maßklar?</a>')
     # Header CTA (Kontakt button): one level deeper too.
     html = rep(html, '<a class="header-cta" href="../kontakt.html">Kontakt</a>',
                '<a class="header-cta" href="../../kontakt.html">Kontakt</a>')
