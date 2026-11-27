@@ -44,25 +44,25 @@
           "name": "Quadratmeter berechnen",
           "description": "So rechnest du die Fläche eines Zimmers, eines L-Raums oder eines Grundstücks aus — mit Verschnitt und Kosten.",
           "step": [
-            { "@type": "HowToStep", "position": 1, "name": "Die Formel", "text": "Fläche = Länge × Breite. Von 4,5 m × 3,2 m: 4,5 × 3,2 = 14,4 m²." },
-            { "@type": "HowToStep", "position": 2, "name": "Die Zentimeter-Falle", "text": "80 × 120 cm sind 0,96 m² — nicht 9.600. Stell die Einheit auf cm, dann rechnet der Rechner richtig." },
-            { "@type": "HowToStep", "position": 3, "name": "L-förmiger Raum", "text": "Teil den Raum in zwei Rechtecke: 4 m × 5 m + 2 m × 3 m = 26 m²." },
-            { "@type": "HowToStep", "position": 4, "name": "Kreis und andere Formen", "text": "Kreis: π × Radius². Ein Beet mit 3 m Durchmesser hat 7,07 m². Dreieck: Grundseite × Höhe ÷ 2. Trapez: (Seite a + Seite b) ÷ 2 × Höhe." },
-            { "@type": "HowToStep", "position": 5, "name": "Wohnfläche ist nicht Fläche", "text": "Balkon zählt meist zu einem Viertel, Dachschräge von 1 bis 2 m zur Hälfte. Die Wohnfläche hier ist eine grobe Schätzung, keine Messung für den Mietvertrag." }
+            { "@type": "HowToStep", "position": 1, "name": "Die Formel", "text": "Fläche = Länge × Breite. Nimm ein Zimmer mit 4,5 m × 3,2 m — da rechnest du 4,5 × 3,2 = 14,4 m²." },
+            { "@type": "HowToStep", "position": 2, "name": "Die Zentimeter-Falle", "text": "80 × 120 cm sind zwar 9.600 cm², aber das sind 0,96 m² — nicht 9.600 m². Teil die cm² durch 10.000, oder stell die Einheit auf cm, dann rechnet der Rechner richtig." },
+            { "@type": "HowToStep", "position": 3, "name": "L-förmiger Raum", "text": "Teil den Raum in zwei Rechtecke und zähl beide Flächen zusammen: 4 m × 5 m + 2 m × 3 m = 26 m²." },
+            { "@type": "HowToStep", "position": 4, "name": "Kreis und andere Formen", "text": "Beim Kreis rechnest du mit π × Radius²: Ein Beet mit 3 m Durchmesser hat 1,5 m Radius, also 3,14 × 1,5² = 7,07 m². Dreieck: Grundseite × Höhe ÷ 2. Trapez: (Seite a + Seite b) ÷ 2 × Höhe." },
+            { "@type": "HowToStep", "position": 5, "name": "Wohnfläche ist nicht Fläche", "text": "Balkon zählt meist zu einem Viertel, eine Dachschräge von 1 bis 2 m zur Hälfte — und die Wohnfläche hier bleibt eine grobe Schätzung, keine Messung für den Mietvertrag." }
           ]
         },
         {
           "@type": "FAQPage",
           "mainEntity": [
-            { "@type": "Question", "name": "Wie rechnet man Quadratmeter aus?", "acceptedAnswer": { "@type": "Answer", "text": "Länge mal Breite. Ein Zimmer mit 4,5 m × 3,2 m hat 14,4 m²: 4,5 × 3,2 = 14,4." } },
-            { "@type": "Question", "name": "Wie rechne ich aus Zentimetern?", "acceptedAnswer": { "@type": "Answer", "text": "Erst in Meter umrechnen: 80 cm sind 0,8 m, 120 cm sind 1,2 m. 0,8 × 1,2 = 0,96 m². Oder stell die Einheit im Rechner auf cm — er rechnet es um." } },
-            { "@type": "Question", "name": "Wie rechne ich cm² in m² um?", "acceptedAnswer": { "@type": "Answer", "text": "Durch 10.000 teilen: 9.600 cm² sind 0,96 m². Ein Quadratmeter hat 10.000 Quadratzentimeter." } },
-            { "@type": "Question", "name": "Kann man Quadratmeter in Meter umrechnen?", "acceptedAnswer": { "@type": "Answer", "text": "Nein. Quadratmeter messen eine Fläche, Meter eine Länge — das sind verschiedene Größen. Aus 14,4 m² allein kommt man nicht auf eine Länge, ohne die andere Seite zu kennen." } },
-            { "@type": "Question", "name": "Wie berechne ich einen L-förmigen Raum?", "acceptedAnswer": { "@type": "Answer", "text": "Teil ihn in zwei Rechtecke und zähl beide Flächen zusammen: 4 m × 5 m + 2 m × 3 m = 20 + 6 = 26 m²." } },
-            { "@type": "Question", "name": "Wie viel Verschnitt brauche ich?", "acceptedAnswer": { "@type": "Answer", "text": "Gerade verlegt 10 %, diagonal oder Fischgrät 15 %. Bei Fliesen hängt es vom Format ab: 5 bis 20 %. Der Rechner schlägt dir 10 % für gerade und 15 % für diagonal vor." } },
-            { "@type": "Question", "name": "Zählen Balkon und Dachschräge zur Wohnfläche?", "acceptedAnswer": { "@type": "Answer", "text": "Meist nur zum Teil: Der Balkon zählt oft zu einem Viertel, eine Dachschräge mit 1 bis 2 m Höhe zur Hälfte. Das steht in der Wohnflächenverordnung (WoFlV). Der Rechner rechnet es grob mit, wenn du den Haken setzt." } },
-            { "@type": "Question", "name": "Ist das Ergebnis die Wohnfläche?", "acceptedAnswer": { "@type": "Answer", "text": "Nein. Der Rechner gibt die geometrische Fläche — Länge mal Breite. Die Wohnfläche nach WoFlV bekommst du nur mit dem Haken oben, und auch die ist eine grobe Schätzung, keine Messung für Mietvertrag oder Kauf." } },
-            { "@type": "Question", "name": "Wie messe ich richtig?", "acceptedAnswer": { "@type": "Answer", "text": "Miss die lichten Maße — also ab der fertigen Wandoberfläche, nicht ab der Rohwand. Nimm das längste Maß, und miss jede Wand an der längsten Stelle." } }
+            { "@type": "Question", "name": "Wie rechnet man Quadratmeter aus?", "acceptedAnswer": { "@type": "Answer", "text": "Einfach Länge mal Breite: Ein Zimmer mit 4,5 m × 3,2 m hat 14,4 m², denn 4,5 × 3,2 = 14,4." } },
+            { "@type": "Question", "name": "Wie rechne ich aus Zentimetern?", "acceptedAnswer": { "@type": "Answer", "text": "Rechne zuerst in Meter um: 80 cm sind 0,8 m und 120 cm sind 1,2 m, also rechnest du 0,8 × 1,2 = 0,96 m². Oder stell die Einheit im Rechner einfach auf cm — dann rechnet er es für dich um." } },
+            { "@type": "Question", "name": "Wie rechne ich cm² in m² um?", "acceptedAnswer": { "@type": "Answer", "text": "Teil die cm² durch 10.000: 9.600 cm² sind 0,96 m², weil ein Quadratmeter genau 10.000 Quadratzentimeter hat." } },
+            { "@type": "Question", "name": "Kann man Quadratmeter in Meter umrechnen?", "acceptedAnswer": { "@type": "Answer", "text": "Nein, das geht nicht: Quadratmeter messen eine Fläche, Meter dagegen eine Länge — das sind zwei verschiedene Größen. Aus 14,4 m² allein kommst du also nicht auf eine Länge, solange du die andere Seite nicht kennst." } },
+            { "@type": "Question", "name": "Wie berechne ich einen L-förmigen Raum?", "acceptedAnswer": { "@type": "Answer", "text": "Teil ihn in zwei Rechtecke und zähl beide Flächen zusammen — bei einem L-Raum aus 4 m × 5 m und 2 m × 3 m rechnest du 20 + 6 = 26 m²." } },
+            { "@type": "Question", "name": "Wie viel Verschnitt brauche ich?", "acceptedAnswer": { "@type": "Answer", "text": "Wenn du gerade verlegst, reichen 10 %, bei diagonal oder Fischgrät nimm lieber 15 %. Bei Fliesen hängt es vom Format ab — da sind es 5 bis 20 %. Der Rechner schlägt dir 10 % für gerade und 15 % für diagonal vor." } },
+            { "@type": "Question", "name": "Zählen Balkon und Dachschräge zur Wohnfläche?", "acceptedAnswer": { "@type": "Answer", "text": "Meist nur zum Teil: Der Balkon zählt oft zu einem Viertel, und eine Dachschräge mit 1 bis 2 m Höhe zur Hälfte — so steht es in der Wohnflächenverordnung (WoFlV). Der Rechner rechnet das grob mit, wenn du oben den Haken setzt." } },
+            { "@type": "Question", "name": "Ist das Ergebnis die Wohnfläche?", "acceptedAnswer": { "@type": "Answer", "text": "Nein — der Rechner gibt dir die geometrische Fläche, also Länge mal Breite. Die Wohnfläche nach WoFlV bekommst du nur, wenn du oben den Haken setzt, und selbst die bleibt eine grobe Schätzung, keine Messung für Mietvertrag oder Kauf." } },
+            { "@type": "Question", "name": "Wie messe ich richtig?", "acceptedAnswer": { "@type": "Answer", "text": "Miss die lichten Maße, also ab der fertigen Wandoberfläche und nicht ab der Rohwand — und nimm immer das längste Maß, indem du jede Wand an ihrer längsten Stelle misst." } }
           ]
         }
       ]
@@ -91,7 +91,7 @@
         <div class="hero-copy">
           <p class="eyebrow">Der einfache Quadratmeter-Rechner</p>
           <h1>Quadratmeter-Rechner.<br><span>Die Fläche in Sekunden.</span></h1>
-          <p class="hero-description">Ein Zimmer 4,5 m lang und 3,2 m breit hat 14,4 m² — du rechnest Länge mal Breite. Hier berechnest du die Fläche für Zimmer, L-Räume und Grundstücke, mit Verschnitt und Kosten für den Boden. Kostenlos und ohne Anmeldung.</p>
+          <p class="hero-description">Nimm ein Zimmer, das 4,5 m lang und 3,2 m breit ist: Es hat 14,4 m², weil du einfach Länge mal Breite rechnest. Hier berechnest du die Fläche für Zimmer, L-Räume und Grundstücke — und wenn du willst, gleich mit Verschnitt und den Kosten für den Boden dazu. Kostenlos und ohne Anmeldung, wie alle Rechner hier.</p>
           <div class="hero-actions">
             <a class="text-link" href="#rechner">Fläche berechnen ↓</a>
             <a class="text-link" href="#tabelle">Tabelle ansehen ↓</a>
@@ -367,7 +367,7 @@
               <span class="art-long"></span>
             </div>
             <h2>Die Zentimeter-Falle</h2>
-            <p>80 × 120 cm sind 0,96 m² — nicht 9.600. Wer die Zahlen als Meter tippt, rechnet 80 × 120 = 9.600 m². Stell die Einheit auf cm, dann rechnet der Rechner richtig.</p>
+            <p>80 × 120 cm sind 0,96 m² — und eben nicht 9.600. Der Fehler passiert schnell: Wer die Zahlen einfach als Meter eintippt, rechnet 80 × 120 = 9.600 m² und wundert sich über das Ergebnis. Stell die Einheit oben auf cm, dann rechnet der Rechner richtig.</p>
             <a class="aside-link" href="#anleitung">Warum das so ist →</a>
           </aside>
         </div>
@@ -381,7 +381,7 @@
       <section class="quick-examples" id="beispiele">
         <p class="eyebrow">Drei Beispiele zum Ausprobieren</p>
         <h2>Drei Zahlen, drei<br><span>Antworten.</span></h2>
-        <p class="section-intro">Tipp eine Karte an — der Rechner oben rechnet mit genau diesen Werten weiter.</p>
+        <p class="section-intro">Tipp eine der drei Karten an, und der Rechner oben rechnet gleich mit genau diesen Werten weiter — du musst nichts mehr eintippen.</p>
         <div class="example-grid">
           <article class="example-card" data-example="zimmer" tabindex="0" role="button" aria-label="Beispiel laden: Zimmer 4,5 mal 3,2 Meter">
             <span class="example-symbol" aria-hidden="true">🏠</span>
@@ -407,7 +407,7 @@
       <section class="table-section" id="tabelle">
         <p class="eyebrow">Die Zimmer-Tabelle</p>
         <h2>Quadratmeter üblicher<br><span>Zimmergrößen.</span></h2>
-        <p class="table-intro" style="margin-bottom: 16px;">Tipp eine Zeile an — der Rechner nimmt Länge und Breite direkt. Die Kaufmenge rechnet schon 10 % Verschnitt dazu.</p>
+        <p class="table-intro" style="margin-bottom: 16px;">Tipp eine Zeile an, dann übernimmt der Rechner Länge und Breite direkt — und die Kaufmenge in der letzten Spalte rechnet schon 10 % Verschnitt dazu, damit du beim Kauf nicht zu knapp kalkulierst.</p>
         <div class="table-wrap">
           <table class="scale-table" id="zimmer-table">
             <caption>Quadratmeter und Kaufmenge bei 10 % Verschnitt</caption>
@@ -434,7 +434,7 @@
 
         <p class="eyebrow" style="margin-top: 40px;">Flächeneinheiten</p>
         <h2>Wie viel ist ein<br><span>Quadratmeter?</span></h2>
-        <p class="table-intro" style="margin-bottom: 16px;">Ein Quadratmeter ist ein Quadrat von 1 m × 1 m. So hängen die Einheiten zusammen.</p>
+        <p class="table-intro" style="margin-bottom: 16px;">Ein Quadratmeter ist nichts anderes als ein Quadrat von 1 m × 1 m — und von da aus hängen alle anderen Flächeneinheiten zusammen, wie die Tabelle unten zeigt.</p>
         <div class="table-wrap">
           <table class="scale-table" id="einheiten-table">
             <caption>Flächeneinheiten in Quadratmetern</caption>
@@ -454,54 +454,54 @@
             </tbody>
           </table>
         </div>
-        <p class="table-note">Andersrum: 1 m² sind etwa 10,76 ft². Ein Ar sind 100 m² — ein Hektar 10.000 m².</p>
+        <p class="table-note">Andersherum gerechnet sind 1 m² etwa 10,76 ft², falls du mal mit Quadratfuß zu tun hast. Und ein Ar sind 100 m², während ein Hektar gleich 10.000 m² hat.</p>
       </section>
 
       <section class="guide-section" id="anleitung">
         <div class="guide-intro">
           <p class="eyebrow">Kurz erklärt</p>
           <h2>Quadratmeter berechnen:<br><span>so funktioniert’s.</span></h2>
-          <p>Eine Formel reicht für fast jede Fläche. Die fünf Sachen unten zeigen dir, worauf es ankommt.</p>
+          <p>Für fast jede Fläche reicht eine einzige Formel — Länge mal Breite. Die fünf Punkte unten zeigen dir, worauf du trotzdem achten musst, damit am Ende die richtige Zahl herauskommt.</p>
           <aside class="formula-card">
             <p class="formula-eyebrow">Die Formeln, die du brauchst</p>
             <p class="formula-main">Fläche = Länge × Breite</p>
-            <p>Rechteck: Länge × Breite. Kreis: π × Radius². Dreieck: Grundseite × Höhe ÷ 2. Trapez: (Seite a + Seite b) ÷ 2 × Höhe.</p>
-            <p class="formula-small">Alle Maße in Metern — oder die Einheit im Rechner auf cm stellen.</p>
+            <p>Beim Rechteck rechnest du Länge × Breite, beim Kreis nimmst du π × Radius². Ein Dreieck geht mit Grundseite × Höhe ÷ 2, und beim Trapez rechnest du (Seite a + Seite b) ÷ 2 × Höhe.</p>
+            <p class="formula-small">Alle Maße nimmst du am besten in Metern — oder du stellst die Einheit im Rechner einfach auf cm.</p>
           </aside>
         </div>
         <div class="guide-steps">
-          <article class="guide-step"><span class="step-number">Schritt 01</span><div><h3>Die Formel</h3><p>Fläche = Länge × Breite. Ein Zimmer mit 4,5 m × 3,2 m: 4,5 × 3,2 = 14,4 m². Das gilt für jedes Rechteck — Zimmer, Wand oder Grundstück.</p><span class="step-equation">4,5 m × 3,2 m = 14,4 m²</span></div></article>
-          <article class="guide-step"><span class="step-number">Schritt 02</span><div><h3>Die Zentimeter-Falle</h3><p>Maße in cm geben eine Fläche in cm²: 80 × 120 cm sind 9.600 cm² — und das sind 0,96 m², nicht 9.600 m². Teil die cm² durch 10.000, oder stell die Einheit im Rechner auf cm.</p><span class="step-equation">80 cm × 120 cm = 9.600 cm² = 0,96 m²</span></div></article>
-          <article class="guide-step"><span class="step-number">Schritt 03</span><div><h3>L-förmiger Raum</h3><p>Teil den Raum in zwei Rechtecke und zähl beide Flächen zusammen. Ein L-Raum aus 4 m × 5 m und 2 m × 3 m: 20 + 6 = 26 m².</p><span class="step-equation">4 m × 5 m + 2 m × 3 m = 26 m²</span></div></article>
-          <article class="guide-step"><span class="step-number">Schritt 04</span><div><h3>Kreis und andere Formen</h3><p>Kreis: π × Radius². Ein rundes Beet mit 3 m Durchmesser hat 1,5 m Radius: 3,14 × 1,5² = 7,07 m². Dreieck: Grundseite × Höhe ÷ 2. Trapez: (Seite a + Seite b) ÷ 2 × Höhe.</p><span class="step-equation">π × 1,5 m × 1,5 m = 7,07 m²</span></div></article>
-          <article class="guide-step"><span class="step-number">Schritt 05</span><div><h3>Wohnfläche ist nicht Fläche</h3><p>Der Rechner gibt die geometrische Fläche. Die Wohnfläche nach der Wohnflächenverordnung (WoFlV) zählt Balkon und Dachschräge nur zum Teil: 6 Zimmer mit 68,98 m² plus ein Balkon von 6 m² zu einem Viertel (1,5 m²) sind 70,48 m² — rund 70,5 m² Wohnfläche, grob gerechnet.</p><span class="step-equation">68,98 m² + 6 m² ÷ 4 = 70,48 m² ≈ 70,5 m²</span></div></article>
+          <article class="guide-step"><span class="step-number">Schritt 01</span><div><h3>Die Formel</h3><p>Die Formel ist kurz: Fläche = Länge × Breite. Nimm ein Zimmer mit 4,5 m × 3,2 m — da rechnest du 4,5 × 3,2 = 14,4 m². Und das gilt für jedes Rechteck, egal ob Zimmer, Wand oder Grundstück.</p><span class="step-equation">4,5 m × 3,2 m = 14,4 m²</span></div></article>
+          <article class="guide-step"><span class="step-number">Schritt 02</span><div><h3>Die Zentimeter-Falle</h3><p>Wenn du in cm misst, kommt auch eine Fläche in cm² heraus — und genau da passiert der Fehler am häufigsten: 80 × 120 cm sind zwar 9.600 cm², aber das sind 0,96 m² und nicht 9.600 m². Teil die cm² einfach durch 10.000, oder stell die Einheit im Rechner direkt auf cm, dann kann nichts schiefgehen.</p><span class="step-equation">80 cm × 120 cm = 9.600 cm² = 0,96 m²</span></div></article>
+          <article class="guide-step"><span class="step-number">Schritt 03</span><div><h3>L-förmiger Raum</h3><p>Einen L-förmigen Raum teilst du am besten in zwei Rechtecke und zählst beide Flächen zusammen. Stell dir einen L-Raum vor, der aus 4 m × 5 m und 2 m × 3 m besteht — dann rechnest du 20 + 6 = 26 m².</p><span class="step-equation">4 m × 5 m + 2 m × 3 m = 26 m²</span></div></article>
+          <article class="guide-step"><span class="step-number">Schritt 04</span><div><h3>Kreis und andere Formen</h3><p>Beim Kreis rechnest du mit π × Radius² — nimm zum Beispiel ein rundes Beet mit 3 m Durchmesser, das hat 1,5 m Radius, und 3,14 × 1,5² = 7,07 m². Ein Dreieck geht mit Grundseite × Höhe ÷ 2, und beim Trapez rechnest du (Seite a + Seite b) ÷ 2 × Höhe.</p><span class="step-equation">π × 1,5 m × 1,5 m = 7,07 m²</span></div></article>
+          <article class="guide-step"><span class="step-number">Schritt 05</span><div><h3>Wohnfläche ist nicht Fläche</h3><p>Wichtig ist der Unterschied: Der Rechner gibt dir zuerst die geometrische Fläche, also Länge mal Breite. Die Wohnfläche nach der Wohnflächenverordnung (WoFlV) zählt Balkon und Dachschräge dagegen nur zum Teil — stell dir 6 Zimmer mit 68,98 m² vor, dazu ein Balkon von 6 m², der nur zu einem Viertel zählt (1,5 m²): Zusammen sind das 70,48 m², also rund 70,5 m² Wohnfläche, grob gerechnet.</p><span class="step-equation">68,98 m² + 6 m² ÷ 4 = 70,48 m² ≈ 70,5 m²</span></div></article>
         </div>
         <div class="quadratmeter-note">
           <h3>Fläche auf dem Plan?</h3>
-          <p>Auf dem Plan rechnest du die Fläche mit dem Maßstab zum Quadrat: Ein Zimmer mit 12 cm² auf einem Plan im Maßstab 1:100 ist in echt 12 m² groß — denn 100² sind 10.000, und 12 cm² × 10.000 = 120.000 cm² = 12 m². <a href="../massstabsrechner/#flaeche">Fläche auf dem Plan berechnen →</a></p>
+          <p>Auf dem Plan musst du die Fläche mit dem Maßstab zum Quadrat rechnen — das vergisst man leicht: Ein Zimmer, das auf einem Plan im Maßstab 1:100 nur 12 cm² groß ist, hat in echt 12 m², denn 100² sind 10.000, und 12 cm² × 10.000 = 120.000 cm² = 12 m². <a href="../massstabsrechner/#flaeche">Fläche auf dem Plan berechnen →</a></p>
         </div>
       </section>
 
       <section class="practice-section" id="ueben">
         <p class="eyebrow">Vier Aufgaben zum Üben</p>
         <h2>Jetzt bist du<br><span>dran.</span></h2>
-        <p class="section-intro">Vier Aufgaben — die Lösungen stehen direkt darunter. Probier es zuerst selbst und klick dann auf „Lösung“.</p>
+        <p class="section-intro">Vier Aufgaben zum Ausprobieren, und die Lösungen stehen direkt darunter — probier es aber zuerst selbst, und klick erst dann auf „Lösung“, wenn du deine Zahl hast.</p>
         <div class="practice-grid">
           <details class="practice-task">
             <summary><span class="practice-number">Aufgabe 1</span>Zimmer 4 × 3,5 m — wie viele m²?</summary>
-            <p>14 m²: 4 × 3,5 = 14.</p>
+            <p>14 m² — du rechnest einfach 4 × 3,5 = 14.</p>
           </details>
           <details class="practice-task">
             <summary><span class="practice-number">Aufgabe 2</span>80 × 120 cm — wie viele m²?</summary>
-            <p>0,96 m²: 80 cm sind 0,8 m, 120 cm sind 1,2 m. 0,8 × 1,2 = 0,96.</p>
+            <p>0,96 m²: Rechne zuerst in Meter um — 80 cm sind 0,8 m und 120 cm sind 1,2 m — und dann rechnest du 0,8 × 1,2 = 0,96.</p>
           </details>
           <details class="practice-task">
             <summary><span class="practice-number">Aufgabe 3</span>20 m² mit 10 % Verschnitt — wie viel bestellen?</summary>
-            <p>22 m²: 20 × 1,1 = 22. Bei 39,90 € je m² wären das 877,80 €.</p>
+            <p>22 m²: Mit 10 % Verschnitt rechnest du 20 × 1,1 = 22. Und falls der Boden 39,90 € je m² kostet, wären das 877,80 €.</p>
           </details>
           <details class="practice-task">
             <summary><span class="practice-number">Aufgabe 4</span>Grundstück 20 × 30 m — wie viele m² und Hektar?</summary>
-            <p>600 m² = 0,06 ha: 20 × 30 = 600. 600 ÷ 10.000 = 0,06.</p>
+            <p>600 m², also 0,06 ha: Du rechnest 20 × 30 = 600, und dann teilst du 600 ÷ 10.000 = 0,06.</p>
           </details>
         </div>
       </section>
@@ -511,39 +511,39 @@
         <div class="faq-list">
           <details class="faq-item">
             <summary>Wie rechnet man Quadratmeter aus?</summary>
-            <p>Länge mal Breite. Ein Zimmer mit 4,5 m × 3,2 m hat 14,4 m²: 4,5 × 3,2 = 14,4.</p>
+            <p>Einfach Länge mal Breite: Ein Zimmer mit 4,5 m × 3,2 m hat 14,4 m², denn 4,5 × 3,2 = 14,4.</p>
           </details>
           <details class="faq-item">
             <summary>Wie rechne ich aus Zentimetern?</summary>
-            <p>Erst in Meter umrechnen: 80 cm sind 0,8 m, 120 cm sind 1,2 m. 0,8 × 1,2 = 0,96 m². Oder stell die Einheit im Rechner auf cm — er rechnet es um.</p>
+            <p>Rechne zuerst in Meter um: 80 cm sind 0,8 m und 120 cm sind 1,2 m, also rechnest du 0,8 × 1,2 = 0,96 m². Oder stell die Einheit im Rechner einfach auf cm — dann rechnet er es für dich um.</p>
           </details>
           <details class="faq-item">
             <summary>Wie rechne ich cm² in m² um?</summary>
-            <p>Durch 10.000 teilen: 9.600 cm² sind 0,96 m². Ein Quadratmeter hat 10.000 Quadratzentimeter.</p>
+            <p>Teil die cm² durch 10.000: 9.600 cm² sind 0,96 m², weil ein Quadratmeter genau 10.000 Quadratzentimeter hat.</p>
           </details>
           <details class="faq-item">
             <summary>Kann man Quadratmeter in Meter umrechnen?</summary>
-            <p>Nein. Quadratmeter messen eine Fläche, Meter eine Länge — das sind verschiedene Größen. Aus 14,4 m² allein kommt man nicht auf eine Länge, ohne die andere Seite zu kennen.</p>
+            <p>Nein, das geht nicht: Quadratmeter messen eine Fläche, Meter dagegen eine Länge — das sind zwei verschiedene Größen. Aus 14,4 m² allein kommst du also nicht auf eine Länge, solange du die andere Seite nicht kennst.</p>
           </details>
           <details class="faq-item">
             <summary>Wie berechne ich einen L-förmigen Raum?</summary>
-            <p>Teil ihn in zwei Rechtecke und zähl beide Flächen zusammen: 4 m × 5 m + 2 m × 3 m = 20 + 6 = 26 m².</p>
+            <p>Teil ihn in zwei Rechtecke und zähl beide Flächen zusammen — bei einem L-Raum aus 4 m × 5 m und 2 m × 3 m rechnest du 20 + 6 = 26 m².</p>
           </details>
           <details class="faq-item">
             <summary>Wie viel Verschnitt brauche ich?</summary>
-            <p>Gerade verlegt 10 %, diagonal oder Fischgrät 15 %. Bei Fliesen hängt es vom Format ab: 5 bis 20 %. Der Rechner schlägt dir 10 % für gerade und 15 % für diagonal vor.</p>
+            <p>Wenn du gerade verlegst, reichen 10 %, bei diagonal oder Fischgrät nimm lieber 15 %. Bei Fliesen hängt es vom Format ab — da sind es 5 bis 20 %. Der Rechner schlägt dir 10 % für gerade und 15 % für diagonal vor.</p>
           </details>
           <details class="faq-item">
             <summary>Zählen Balkon und Dachschräge zur Wohnfläche?</summary>
-            <p>Meist nur zum Teil: Der Balkon zählt oft zu einem Viertel, eine Dachschräge mit 1 bis 2 m Höhe zur Hälfte. Das steht in der Wohnflächenverordnung (WoFlV). Der Rechner rechnet es grob mit, wenn du den Haken setzt.</p>
+            <p>Meist nur zum Teil: Der Balkon zählt oft zu einem Viertel, und eine Dachschräge mit 1 bis 2 m Höhe zur Hälfte — so steht es in der Wohnflächenverordnung (WoFlV). Der Rechner rechnet das grob mit, wenn du oben den Haken setzt.</p>
           </details>
           <details class="faq-item">
             <summary>Ist das Ergebnis die Wohnfläche?</summary>
-            <p>Nein. Der Rechner gibt die geometrische Fläche — Länge mal Breite. Die Wohnfläche nach WoFlV bekommst du nur mit dem Haken oben, und auch die ist eine grobe Schätzung, keine Messung für Mietvertrag oder Kauf.</p>
+            <p>Nein — der Rechner gibt dir die geometrische Fläche, also Länge mal Breite. Die Wohnfläche nach WoFlV bekommst du nur, wenn du oben den Haken setzt, und selbst die bleibt eine grobe Schätzung, keine Messung für Mietvertrag oder Kauf.</p>
           </details>
           <details class="faq-item">
             <summary>Wie messe ich richtig?</summary>
-            <p>Miss die lichten Maße — also ab der fertigen Wandoberfläche, nicht ab der Rohwand. Nimm das längste Maß, und miss jede Wand an der längsten Stelle.</p>
+            <p>Miss die lichten Maße, also ab der fertigen Wandoberfläche und nicht ab der Rohwand — und nimm immer das längste Maß, indem du jede Wand an ihrer längsten Stelle misst.</p>
           </details>
         </div>
       </section>
@@ -551,19 +551,19 @@
       <section class="more-tools">
         <div class="quick-title"><span class="eyebrow">Mehr Rechner</span><h2>Das gibt es noch bei maßklar.</h2></div>
         <div class="tool-grid">
-          <a class="tool-card" href="../massstabsrechner/"><span class="tool-icon" aria-hidden="true">🗺</span><span class="tool-text"><span class="tool-title">Maßstabsrechner</span><span class="tool-desc">Karten, Grundrisse, Modellbau: echte Länge und Plan-Länge umrechnen.</span></span><span class="tool-arrow" aria-hidden="true">↗</span></a>
-          <a class="tool-card" href="../altersrechner/"><span class="tool-icon" aria-hidden="true">🎂</span><span class="tool-text"><span class="tool-title">Altersrechner</span><span class="tool-desc">Wie alt bist du in Jahren, Monaten und Tagen? Mit Geburtstag-Countdown.</span></span><span class="tool-arrow" aria-hidden="true">↗</span></a>
-          <a class="tool-card" href="../massstabsrechner/modellbau/"><span class="tool-icon" aria-hidden="true">🚂</span><span class="tool-text"><span class="tool-title">Modellbau-Maßstab</span><span class="tool-desc">H0, Spur N, 1:72: echte Länge in Modell-Länge umrechnen.</span></span><span class="tool-arrow" aria-hidden="true">↗</span></a>
-          <a class="tool-card" href="../prozentrechner/"><span class="tool-icon" aria-hidden="true">%</span><span class="tool-text"><span class="tool-title">Prozentrechner</span><span class="tool-desc">Prozentwert, Rabatt oder Erhöhung — in Sekunden.</span></span><span class="tool-arrow" aria-hidden="true">↗</span></a>
-          <a class="tool-card" href="../bmi-rechner/"><span class="tool-icon" aria-hidden="true">⚖</span><span class="tool-text"><span class="tool-title">BMI-Rechner</span><span class="tool-desc">Body-Mass-Index ausrechnen und einordnen.</span></span><span class="tool-arrow" aria-hidden="true">↗</span></a>
-          <a class="tool-card" href="../tage-rechner/"><span class="tool-icon" aria-hidden="true">📅</span><span class="tool-text"><span class="tool-title">Tage-Rechner</span><span class="tool-desc">Tage zwischen zwei Daten zählen — mit Wochen, Arbeitstagen und Wochentag.</span></span><span class="tool-arrow" aria-hidden="true">↗</span></a>
-          <a class="tool-card" href="../stunden-rechner/"><span class="tool-icon" aria-hidden="true">🕐</span><span class="tool-text"><span class="tool-title">Stunden-Rechner</span><span class="tool-desc">Arbeitszeit und Stunden zwischen zwei Uhrzeiten — mit Pause und Nachtschicht.</span></span><span class="tool-arrow" aria-hidden="true">↗</span></a>
-          <a class="tool-card" href="../indexmiete-rechner/"><span class="tool-icon" aria-hidden="true">🏠</span><span class="tool-text"><span class="tool-title">Indexmiete-Rechner</span><span class="tool-desc">Neue Nettokaltmiete aus dem Verbraucherpreisindex — mit Rechenweg und Fristen.</span></span><span class="tool-arrow" aria-hidden="true">↗</span></a>
-          <a class="tool-card" href="../schlafzyklus-rechner/"><span class="tool-icon" aria-hidden="true">🌙</span><span class="tool-text"><span class="tool-title">Schlafzyklus-Rechner</span><span class="tool-desc">Besser aufwachen: Schlafenszeit in 90-Minuten-Schritten planen.</span></span><span class="tool-arrow" aria-hidden="true">↗</span></a>
-          <a class="tool-card" href="../grundsteuer-rechner/"><span class="tool-icon" aria-hidden="true">🏛️</span><span class="tool-text"><span class="tool-title">Grundsteuer-Rechner</span><span class="tool-desc">Grundsteuer im Jahr aus Grundsteuerwert, Messzahl und Hebesatz — mit Rechenweg.</span></span><span class="tool-arrow" aria-hidden="true">↗</span></a>
-          <a class="tool-card" href="../buergergeld-rechner/"><span class="tool-icon" aria-hidden="true">🧾</span><span class="tool-text"><span class="tool-title">Bürgergeld-Rechner</span><span class="tool-desc">Regelbedarf, Miete und Einkommen — schätze deinen Anspruch.</span></span><span class="tool-arrow" aria-hidden="true">↗</span></a>
-                  <a class="tool-card" href="../kreditrechner/"><span class="tool-icon" aria-hidden="true">💳</span><span class="tool-text"><span class="tool-title">Kreditrechner</span><span class="tool-desc">Monatsrate, Zinsen und Gesamtkosten — mit Tilgungsplan.</span></span><span class="tool-arrow" aria-hidden="true">↗</span></a>
-          <a class="tool-card" href="../brutto-netto-rechner/"><span class="tool-icon" aria-hidden="true">💶</span><span class="tool-text"><span class="tool-title">Brutto-Netto-Rechner</span><span class="tool-desc">Was bleibt vom Gehalt übrig? Steuern und Abgaben grob ausrechnen.</span></span><span class="tool-arrow" aria-hidden="true">↗</span></a>
+          <a class="tool-card" href="../massstabsrechner/"><span class="tool-icon" aria-hidden="true">🗺</span><span class="tool-text"><span class="tool-title">Maßstabsrechner</span><span class="tool-desc">Für Karten, Grundrisse und Modellbau: Hier rechnest du echte Länge und Plan-Länge um — in beide Richtungen.</span></span><span class="tool-arrow" aria-hidden="true">↗</span></a>
+          <a class="tool-card" href="../altersrechner/"><span class="tool-icon" aria-hidden="true">🎂</span><span class="tool-text"><span class="tool-title">Altersrechner</span><span class="tool-desc">Wie alt bist du genau — in Jahren, Monaten und Tagen? Dazu gibt es noch einen Countdown bis zum nächsten Geburtstag.</span></span><span class="tool-arrow" aria-hidden="true">↗</span></a>
+          <a class="tool-card" href="../massstabsrechner/modellbau/"><span class="tool-icon" aria-hidden="true">🚂</span><span class="tool-text"><span class="tool-title">Modellbau-Maßstab</span><span class="tool-desc">Ob H0, Spur N oder 1:72: Hier wird aus der echten Länge die Länge für dein Modell.</span></span><span class="tool-arrow" aria-hidden="true">↗</span></a>
+          <a class="tool-card" href="../prozentrechner/"><span class="tool-icon" aria-hidden="true">%</span><span class="tool-text"><span class="tool-title">Prozentrechner</span><span class="tool-desc">Prozentwert, Rabatt oder Erhöhung ausrechnen — das dauert hier nur ein paar Sekunden.</span></span><span class="tool-arrow" aria-hidden="true">↗</span></a>
+          <a class="tool-card" href="../bmi-rechner/"><span class="tool-icon" aria-hidden="true">⚖</span><span class="tool-text"><span class="tool-title">BMI-Rechner</span><span class="tool-desc">Rechne deinen Body-Mass-Index aus und sieh gleich, wo du damit stehst.</span></span><span class="tool-arrow" aria-hidden="true">↗</span></a>
+          <a class="tool-card" href="../tage-rechner/"><span class="tool-icon" aria-hidden="true">📅</span><span class="tool-text"><span class="tool-title">Tage-Rechner</span><span class="tool-desc">Zählt die Tage zwischen zwei Daten — und zeigt dir dazu auch Wochen, Arbeitstage und den Wochentag.</span></span><span class="tool-arrow" aria-hidden="true">↗</span></a>
+          <a class="tool-card" href="../stunden-rechner/"><span class="tool-icon" aria-hidden="true">🕐</span><span class="tool-text"><span class="tool-title">Stunden-Rechner</span><span class="tool-desc">Arbeitszeit und Stunden zwischen zwei Uhrzeiten, mit Pause und Nachtschicht — so behältst du deine Zeiten im Blick.</span></span><span class="tool-arrow" aria-hidden="true">↗</span></a>
+          <a class="tool-card" href="../indexmiete-rechner/"><span class="tool-icon" aria-hidden="true">🏠</span><span class="tool-text"><span class="tool-title">Indexmiete-Rechner</span><span class="tool-desc">Rechnet aus dem Verbraucherpreisindex deine neue Nettokaltmiete aus — mit Rechenweg und den Fristen dazu.</span></span><span class="tool-arrow" aria-hidden="true">↗</span></a>
+          <a class="tool-card" href="../schlafzyklus-rechner/"><span class="tool-icon" aria-hidden="true">🌙</span><span class="tool-text"><span class="tool-title">Schlafzyklus-Rechner</span><span class="tool-desc">Besser aufwachen, indem du deine Schlafenszeit in 90-Minuten-Schritten planst.</span></span><span class="tool-arrow" aria-hidden="true">↗</span></a>
+          <a class="tool-card" href="../grundsteuer-rechner/"><span class="tool-icon" aria-hidden="true">🏛️</span><span class="tool-text"><span class="tool-title">Grundsteuer-Rechner</span><span class="tool-desc">Rechnet deine Grundsteuer fürs Jahr aus Grundsteuerwert, Messzahl und Hebesatz — mit dem Rechenweg dazu.</span></span><span class="tool-arrow" aria-hidden="true">↗</span></a>
+          <a class="tool-card" href="../buergergeld-rechner/"><span class="tool-icon" aria-hidden="true">🧾</span><span class="tool-text"><span class="tool-title">Bürgergeld-Rechner</span><span class="tool-desc">Regelbedarf, Miete und Einkommen: Schätz hier grob ein, was dir zustehen könnte.</span></span><span class="tool-arrow" aria-hidden="true">↗</span></a>
+                  <a class="tool-card" href="../kreditrechner/"><span class="tool-icon" aria-hidden="true">💳</span><span class="tool-text"><span class="tool-title">Kreditrechner</span><span class="tool-desc">Monatsrate, Zinsen und Gesamtkosten auf einen Blick — dazu gibt es einen Tilgungsplan.</span></span><span class="tool-arrow" aria-hidden="true">↗</span></a>
+          <a class="tool-card" href="../brutto-netto-rechner/"><span class="tool-icon" aria-hidden="true">💶</span><span class="tool-text"><span class="tool-title">Brutto-Netto-Rechner</span><span class="tool-desc">Was bleibt von deinem Gehalt wirklich übrig? Der Rechner zieht Steuern und Abgaben ab und zeigt dir das Ergebnis grob an.</span></span><span class="tool-arrow" aria-hidden="true">↗</span></a>
 </div>
         <p class="more-tools-link"><a href="../">Alle Rechner ansehen <span aria-hidden="true">→</span></a></p>
       </section>
