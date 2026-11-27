@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" role="img" aria-label="maßklar Logo">
+  <!-- maßklar mark: deep-green rounded square (same 9/9/9/3 radii as the site's brand-mark) with a white ruler; the middle tick is the orange accent -->
+  <path d="M9 0 H23 A9 9 0 0 1 32 9 V23 A9 9 0 0 1 23 32 H3 A3 3 0 0 1 0 29 V9 A9 9 0 0 1 9 0 Z" fill="#245c48"/>
+  <rect x="6" y="22" width="20" height="2" rx="1" fill="#fffefa"/>
+  <rect x="7" y="17" width="2" height="5" rx="1" fill="#fffefa"/>
+  <rect x="11" y="14" width="2" height="8" rx="1" fill="#fffefa"/>
+  <rect x="15" y="11" width="2" height="11" rx="1" fill="#e79a62"/>
+  <rect x="19" y="14" width="2" height="8" rx="1" fill="#fffefa"/>
+  <rect x="23" y="17" width="2" height="5" rx="1" fill="#fffefa"/>
+</svg>

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" role="img" aria-label="maßklar">
+  <!-- maßklar favicon: chunkier 3-tick version of the mark, readable at 16px -->
+  <path d="M9 0 H23 A9 9 0 0 1 32 9 V23 A9 9 0 0 1 23 32 H3 A3 3 0 0 1 0 29 V9 A9 9 0 0 1 9 0 Z" fill="#245c48"/>
+  <rect x="5" y="21" width="22" height="3" rx="1.5" fill="#fffefa"/>
+  <rect x="7" y="15" width="3" height="6" rx="1.5" fill="#fffefa"/>
+  <rect x="14.5" y="11" width="3" height="10" rx="1.5" fill="#e79a62"/>
+  <rect x="22" y="15" width="3" height="6" rx="1.5" fill="#fffefa"/>
+</svg>

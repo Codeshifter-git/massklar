@@ -66,6 +66,8 @@ button, a, select { -webkit-tap-highlight-color: transparent; }
 .site-header { min-height: 64px; display: flex; align-items: center; justify-content: space-between; padding: 10px 7.1%; border-bottom: 1px solid rgba(29,41,37,.08); }
 .brand { display: inline-flex; align-items: center; gap: 10px; font: 800 20px var(--display); letter-spacing: -.3px; }
 .brand-mark { width: 30px; height: 30px; border-radius: 9px 9px 9px 3px; display: grid; place-items: center; background: var(--orange); color: var(--green-dark); font: 600 12px var(--mono); letter-spacing: -1px; }
+.brand-img { width: 30px; height: 30px; display: block; }
+.footer-brand .brand-img { width: 26px; height: 26px; }
 .brand-period { color: var(--orange); }
 .top-nav { display: flex; align-items: center; gap: 37px; margin-left: 65px; color: #64716c; font-size: 14px; }
 .top-nav a:hover, .text-link:hover { color: var(--green); }

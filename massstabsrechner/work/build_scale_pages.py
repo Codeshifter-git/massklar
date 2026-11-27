@@ -480,6 +480,10 @@ def build_page(scale):
                '<link rel="preload" href="../../fonts/bitter-latin.woff2" as="font" type="font/woff2" crossorigin>')
     html = rep(html, '<link rel="preload" href="../fonts/dm-sans-latin.woff2" as="font" type="font/woff2" crossorigin>',
                '<link rel="preload" href="../../fonts/dm-sans-latin.woff2" as="font" type="font/woff2" crossorigin>')
+    # Logo + favicon assets are one level deeper on scale pages too.
+    html = rep(html, 'src="../assets/logo-mark.svg"', 'src="../../assets/logo-mark.svg"', count=2)
+    html = rep(html, '<link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">',
+               '<link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg">')
     # (WebApplication + FAQPage + BreadcrumbList + HowTo are rebuilt fresh per
     # scale at the end of build_page — the template's blocks were stripped above.)
 
