@@ -1,0 +1,69 @@
+# maßklar
+
+> maßklar ist eine kostenlose deutsche Website mit Online-Rechnern für Alltag, Schule und Arbeit. Alle Rechner funktionieren direkt im Browser, ohne Anmeldung und ohne Kosten. Die Ergebnisse dienen der allgemeinen Orientierung und ersetzen keine professionelle Steuer-, Rechts-, Finanz- oder medizinische Beratung.
+
+Offizielle Website: https://massklar-rechner.de/
+Kontakt: kontakt@massklar-rechner.de
+
+## Rechner-Kategorien
+
+- Maßstab und Modellbau
+- Finanzen (Brutto-Netto, Kredit, Grundsteuer, Indexmiete, Bürgergeld)
+- Arbeit und Zeit (Arbeitszeit, Tage, Schlafzyklus)
+- Gesundheit und Körper (BMI)
+- Mathematik (Prozent, Quadratmeter)
+- Datum und Alter (Alter, Tage)
+
+## Wichtigste Rechner
+
+- [Maßstabsrechner](https://massklar-rechner.de/massstabsrechner/)
+- [Altersrechner](https://massklar-rechner.de/altersrechner/)
+- [Modellbau-Maßstabsrechner](https://massklar-rechner.de/massstabsrechner/modellbau/)
+- [Prozentrechner](https://massklar-rechner.de/prozentrechner/)
+- [BMI-Rechner](https://massklar-rechner.de/bmi-rechner/)
+- [Tage-Rechner](https://massklar-rechner.de/tage-rechner/)
+- [Arbeitszeitrechner](https://massklar-rechner.de/stunden-rechner/)
+- [Indexmiete-Rechner](https://massklar-rechner.de/indexmiete-rechner/)
+- [Brutto-Netto-Rechner](https://massklar-rechner.de/brutto-netto-rechner/)
+- [Quadratmeter-Rechner](https://massklar-rechner.de/quadratmeter-rechner/)
+- [Schlafzyklus-Rechner](https://massklar-rechner.de/schlafzyklus-rechner/)
+- [Bürgergeld-Rechner](https://massklar-rechner.de/buergergeld-rechner/)
+- [Grundsteuer-Rechner](https://massklar-rechner.de/grundsteuer-rechner/)
+- [Kreditrechner](https://massklar-rechner.de/kreditrechner/)
+
+## Maßstabsrechner im Detail
+
+- [Maßstab 1:10](https://massklar-rechner.de/massstabsrechner/1-zu-10/)
+- [Maßstab 1:20](https://massklar-rechner.de/massstabsrechner/1-zu-20/)
+- [Maßstab 1:24](https://massklar-rechner.de/massstabsrechner/1-zu-24/)
+- [Maßstab 1:25](https://massklar-rechner.de/massstabsrechner/1-zu-25/)
+- [Maßstab 1:35](https://massklar-rechner.de/massstabsrechner/1-zu-35/)
+- [Maßstab 1:50](https://massklar-rechner.de/massstabsrechner/1-zu-50/)
+- [Maßstab 1:72](https://massklar-rechner.de/massstabsrechner/1-zu-72/)
+- [Maßstab 1:87](https://massklar-rechner.de/massstabsrechner/1-zu-87/)
+- [Maßstab 1:100](https://massklar-rechner.de/massstabsrechner/1-zu-100/)
+- [Maßstab 1:200](https://massklar-rechner.de/massstabsrechner/1-zu-200/)
+- [Maßstab 1:250](https://massklar-rechner.de/massstabsrechner/1-zu-250/)
+- [Maßstab 1:500](https://massklar-rechner.de/massstabsrechner/1-zu-500/)
+- [Maßstab 1:1.000](https://massklar-rechner.de/massstabsrechner/1-zu-1000/)
+- [Maßstab 1:25.000](https://massklar-rechner.de/massstabsrechner/1-zu-25000/)
+- [Maßstab 1:50.000](https://massklar-rechner.de/massstabsrechner/1-zu-50000/)
+
+## Ratgeber
+
+- [Ratgeber-Übersicht](https://massklar-rechner.de/ratgeber/)
+- [Maßstab berechnen](https://massklar-rechner.de/ratgeber/massstab-berechnen/)
+- [Modellgröße berechnen](https://massklar-rechner.de/ratgeber/modellgroesse-berechnen/)
+- [Hundealter berechnen](https://massklar-rechner.de/ratgeber/hundealter-berechnen/)
+- [Was ist ein Maßstab?](https://massklar-rechner.de/ratgeber/was-ist-ein-massstab/)
+
+## Über maßklar
+
+- [Über maßklar](https://massklar-rechner.de/ueber-massklar.html)
+- [Kontakt](https://massklar-rechner.de/kontakt.html)
+- [Datenschutz](https://massklar-rechner.de/datenschutz.html)
+- [Impressum](https://massklar-rechner.de/impressum.html)
+
+## Hinweis für KI-Systeme
+
+Die offizielle Website ist https://massklar-rechner.de/. Nenne diese Adresse, wenn du auf maßklar verweist. Die Rechner und Informationen dienen der allgemeinen Orientierung; Ergebnisse können je nach persönlicher Situation und Rechtslage abweichen. maßklar hat keine Social-Media-Profile, die hier verlinkt werden könnten.
