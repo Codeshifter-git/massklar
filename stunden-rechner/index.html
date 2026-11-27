@@ -44,23 +44,23 @@
           "name": "Arbeitszeit zwischen zwei Uhrzeiten berechnen",
           "description": "So rechnest du die Zeit zwischen zwei Uhrzeiten — mit Pause, Nachtschicht und Dezimalstunden.",
           "step": [
-            { "@type": "HowToStep", "position": 1, "name": "Die Rechnung", "text": "Endzeit minus Startzeit, dann die Pause abziehen: 16:30 minus 08:00 sind 8:30 Stunden brutto, minus 30 Minuten Pause bleiben 8:00 Stunden netto." },
-            { "@type": "HowToStep", "position": 2, "name": "Nachtschicht", "text": "Geht die Schicht über Mitternacht, zählst du bis 24:00 Uhr und dann weiter: 22:00 bis 06:00 sind 8:00 Stunden brutto, minus 30 Minuten Pause bleiben 7:30 Stunden netto." },
-            { "@type": "HowToStep", "position": 3, "name": "Dezimalstunden", "text": "Minuten geteilt durch 60: 45 Minuten sind 0,75 Stunden. 7:45 sind also 7,75 Stunden." },
-            { "@type": "HowToStep", "position": 4, "name": "Die 60er-Falle", "text": "7,45 Stunden sind nicht 7 Stunden und 45 Minuten: 0,45 Stunden sind nur 27 Minuten. Wer 7:45 meint, muss 7,75 schreiben." },
-            { "@type": "HowToStep", "position": 5, "name": "Stunden in Excel", "text": "In Excel rechnest du =(Ende − Anfang) * 24 — so werden aus Uhrzeiten Dezimalstunden. Das Format [h]:mm zeigt auch mehr als 24 Stunden an." }
+            { "@type": "HowToStep", "position": 1, "name": "Die Rechnung", "text": "Du rechnest Endzeit minus Startzeit und ziehst dann die Pause ab: Von 08:00 bis 16:30 sind es 8:30 Stunden brutto, und wenn du die 30 Minuten Pause abziehst, bleiben 8:00 Stunden netto übrig." },
+            { "@type": "HowToStep", "position": 2, "name": "Nachtschicht", "text": "Geht die Schicht über Mitternacht, zählst du erst bis 24:00 Uhr und dann ab 00:00 Uhr weiter: Von 22:00 bis 06:00 sind es 8:00 Stunden brutto, und nach 30 Minuten Pause bleiben 7:30 Stunden netto übrig." },
+            { "@type": "HowToStep", "position": 3, "name": "Dezimalstunden", "text": "Minuten geteilt durch 60 — so werden aus Minuten Dezimalstunden: 45 Minuten sind 0,75 Stunden und 30 Minuten sind 0,50, also sind 7:45 genau 7,75 Stunden." },
+            { "@type": "HowToStep", "position": 4, "name": "Die 60er-Falle", "text": "7,45 Stunden sind eben nicht 7 Stunden und 45 Minuten, denn 0,45 Stunden sind nur 27 Minuten (0,45 × 60) — da steckt der Fehler, den fast jeder einmal macht. Wer 7:45 meint, muss also 7,75 schreiben, und der Rechner zeigt dir den Unterschied an, sobald du tippst." },
+            { "@type": "HowToStep", "position": 5, "name": "Stunden in Excel", "text": "In Excel rechnest du direkt mit der Uhrzeit, also Ende minus Anfang, mal 24 — mit =(Ende − Anfang) * 24 werden aus Uhrzeiten Dezimalstunden. Stell das Ergebnis noch auf das Format [h]:mm, dann zeigt Excel auch mehr als 24 Stunden richtig an." }
           ]
         },
         {
           "@type": "FAQPage",
           "mainEntity": [
-            { "@type": "Question", "name": "Was sind Dezimalstunden?", "acceptedAnswer": { "@type": "Answer", "text": "Stunden mit Nachkommastellen statt Minuten: 7:45 sind 7,75 Dezimalstunden, weil 45 Minuten drei Viertel einer Stunde sind (45 ÷ 60 = 0,75). Der Stundenzettel und Excel rechnen mit Dezimalstunden." } },
-            { "@type": "Question", "name": "Was sind Industrieminuten?", "acceptedAnswer": { "@type": "Answer", "text": "Minuten im 100er-System: Eine Industrieminute ist ein Hundertstel einer Stunde. 7,75 Stunden sind 775 Industrieminuten, 8,00 Stunden sind 800." } },
-            { "@type": "Question", "name": "Zählt die Pause zur Arbeitszeit?", "acceptedAnswer": { "@type": "Answer", "text": "Nein. Die Pause ziehst du von der Brutto-Zeit ab: Von 08:00 bis 16:30 sind es 8:30 Stunden brutto, mit 30 Minuten Pause bleiben 8:00 Stunden netto. Nur die Netto-Zeit ist Arbeitszeit." } },
-            { "@type": "Question", "name": "Wie rechne ich Stunden in Excel zusammen?", "acceptedAnswer": { "@type": "Answer", "text": "Schreib Anfang und Ende als Uhrzeit in zwei Zellen und rechne =(Ende − Anfang) * 24 — so werden aus Uhrzeiten Dezimalstunden. Für die Summe nimm das Format [h]:mm, damit auch mehr als 24 Stunden richtig dastehen." } },
-            { "@type": "Question", "name": "Was ist eine Nachtschicht im Rechner?", "acceptedAnswer": { "@type": "Answer", "text": "Eine Schicht, die über Mitternacht geht — zum Beispiel 22:00 bis 06:00. Hak „Geht über Mitternacht“ an, dann zählt der Rechner bis 24:00 Uhr und ab 00:00 Uhr weiter." } },
-            { "@type": "Question", "name": "Kann ich Überstunden berechnen?", "acceptedAnswer": { "@type": "Answer", "text": "Ja: Trag im Modus „Zeiten addieren“ deine Woche ein und gib dein Soll an — zum Beispiel 40 Stunden. Der Rechner zeigt dir dann +0:30 Überstunden oder −2:00 unter Soll an." } },
-            { "@type": "Question", "name": "Ist der Rechner kostenlos?", "acceptedAnswer": { "@type": "Answer", "text": "Ja. Der Rechner ist kostenlos und du brauchst keine Anmeldung — rechne so oft du willst, auf dem Handy genauso wie am Computer." } }
+            { "@type": "Question", "name": "Was sind Dezimalstunden?", "acceptedAnswer": { "@type": "Answer", "text": "Stunden mit Nachkommastellen statt Minuten: 7:45 sind 7,75 Dezimalstunden, weil 45 Minuten drei Viertel einer Stunde sind (45 ÷ 60 = 0,75). Der Stundenzettel und Excel rechnen mit Dezimalstunden, nicht mit Minuten — darum brauchst du die Zahl so." } },
+            { "@type": "Question", "name": "Was sind Industrieminuten?", "acceptedAnswer": { "@type": "Answer", "text": "Minuten im 100er-System: Eine Industrieminute ist ein Hundertstel einer Stunde, also sind 7,75 Stunden genau 775 Industrieminuten und 8,00 Stunden genau 800. Auf dem Stundenzettel steht oft nur die Dezimalzahl — die Industrieminuten sind die gleiche Zahl ohne Komma." } },
+            { "@type": "Question", "name": "Zählt die Pause zur Arbeitszeit?", "acceptedAnswer": { "@type": "Answer", "text": "Nein — die Pause ziehst du von der Brutto-Zeit ab: Von 08:00 bis 16:30 sind es 8:30 Stunden brutto, und mit 30 Minuten Pause bleiben 8:00 Stunden netto übrig. Nur die Netto-Zeit ist Arbeitszeit, die Pause gehört nicht dazu." } },
+            { "@type": "Question", "name": "Wie rechne ich Stunden in Excel zusammen?", "acceptedAnswer": { "@type": "Answer", "text": "Schreib Anfang und Ende als Uhrzeit in zwei Zellen und rechne =(Ende − Anfang) * 24 — so werden aus Uhrzeiten Dezimalstunden. Für die Summe nimm das Format [h]:mm, damit auch mehr als 24 Stunden richtig dastehen und aus 40:30 nicht 16:30 wird." } },
+            { "@type": "Question", "name": "Was ist eine Nachtschicht im Rechner?", "acceptedAnswer": { "@type": "Answer", "text": "Eine Schicht, die über Mitternacht geht — zum Beispiel 22:00 bis 06:00. Hak dafür „Geht über Mitternacht“ an, dann zählt der Rechner bis 24:00 Uhr und ab 00:00 Uhr weiter. Ohne den Haken meldet er, dass die Endzeit vor der Startzeit liegt, weil er nicht weiß, dass die Schicht über Nacht geht." } },
+            { "@type": "Question", "name": "Kann ich Überstunden berechnen?", "acceptedAnswer": { "@type": "Answer", "text": "Ja: Trag im Modus „Zeiten addieren“ deine Woche ein und gib dein Soll an — zum Beispiel 40 Stunden. Der Rechner zeigt dir dann an, ob du drüber bist, zum Beispiel +0:30 Überstunden, oder drunter, zum Beispiel −2:00 unter Soll." } },
+            { "@type": "Question", "name": "Ist der Rechner kostenlos?", "acceptedAnswer": { "@type": "Answer", "text": "Ja, der Rechner ist kostenlos und du brauchst keine Anmeldung — rechne also so oft du willst, auf dem Handy genauso wie am Computer." } }
           ]
         }
       ]
@@ -89,7 +89,7 @@
         <div class="hero-copy">
           <p class="eyebrow">Der einfache Arbeitszeitrechner</p>
           <h1>Arbeitszeitrechner.<br><span>Stunden zwischen zwei Uhrzeiten berechnen.</span></h1>
-          <p class="hero-description">Von 08:30 bis 17:15 Uhr sind es 8 Stunden und 45 Minuten — mit 45 Minuten Pause bleiben 8,00 Arbeitsstunden. Hier rechnest du die Zeit zwischen zwei Uhrzeiten, ziehst die Pause ab und siehst das Ergebnis auch in Dezimalstunden — für den Stundenzettel und Excel. Kostenlos und ohne Anmeldung.</p>
+          <p class="hero-description">Von 08:30 bis 17:15 Uhr sind es 8 Stunden und 45 Minuten, und wenn du die 45 Minuten Pause abziehst, bleiben genau 8,00 Arbeitsstunden übrig. Hier rechnest du die Zeit zwischen zwei Uhrzeiten, ziehst die Pause ab und siehst das Ergebnis auch in Dezimalstunden — so, wie es auf dem Stundenzettel und in Excel stehen muss. Kostenlos und ohne Anmeldung.</p>
           <div class="hero-actions">
             <a class="text-link" href="#rechner">Arbeitszeit berechnen ↓</a>
             <a class="text-link" href="#tabelle">Tabelle ansehen ↓</a>
@@ -264,7 +264,7 @@
               <span class="art-long"></span>
             </div>
             <h2>7,45 oder 7:45?</h2>
-            <p>7,45 Stunden sind nicht 7 Stunden und 45 Minuten — 0,45 Stunden sind nur 27 Minuten. 7:45 Uhr sind 7,75 Stunden. Der Rechner zeigt dir den Unterschied, sobald du tippst.</p>
+            <p>7,45 Stunden sind eben nicht 7 Stunden und 45 Minuten, denn 0,45 Stunden sind nur 27 Minuten. 7:45 Uhr dagegen sind 7,75 Stunden — sobald du tippst, zeigt dir der Rechner den Unterschied, damit dir der Fehler nicht auf dem Stundenzettel passiert.</p>
             <a class="aside-link" href="#anleitung">Warum das so ist →</a>
           </aside>
         </div>
@@ -278,7 +278,7 @@
       <section class="quick-examples" id="beispiele">
         <p class="eyebrow">Drei Beispiele zum Ausprobieren</p>
         <h2>Drei Zahlen, drei<br><span>Antworten.</span></h2>
-        <p class="section-intro">Tipp eine Karte an — der Rechner oben rechnet mit genau diesen Zeiten weiter.</p>
+        <p class="section-intro">Tipp eine der drei Karten an, und der Rechner oben rechnet gleich mit genau diesen Zeiten weiter — du musst nichts mehr eintippen.</p>
         <div class="example-grid">
           <article class="example-card" data-mode="vonbis" data-start="08:00" data-end="16:30" data-pause="30" tabindex="0" role="button" aria-label="Beispiel laden: Arbeitstag 08:00 bis 16:30, Pause 30 Minuten">
             <span class="example-symbol" aria-hidden="true">☀</span>
@@ -304,7 +304,7 @@
       <section class="table-section" id="tabelle">
         <p class="eyebrow">Die Stunden-Tabelle</p>
         <h2>Minuten, Dezimal,<br><span>Industrieminuten.</span></h2>
-        <p class="table-intro" style="margin-bottom: 16px;">Tipp eine Zeile an — der Umrechner rechnet mit genau diesem Wert weiter.</p>
+        <p class="table-intro" style="margin-bottom: 16px;">Tipp eine Zeile an, dann rechnet der Umrechner oben gleich mit genau diesem Wert weiter.</p>
         <div class="table-wrap">
           <table class="scale-table" id="conv-table">
             <caption>Stunden und Minuten in Dezimalstunden — in 15-Minuten-Schritten</caption>
@@ -357,7 +357,7 @@
 
         <p class="eyebrow" style="margin-top: 40px;">Minuten im Detail</p>
         <h2>Wie viel sind<br><span>5 Minuten?</span></h2>
-        <p class="table-intro" style="margin-bottom: 16px;">Eine Stunde in 5-Minuten-Schritten — so rechnest du Minuten schnell in Dezimalstunden um. Tipp eine Zeile an.</p>
+        <p class="table-intro" style="margin-bottom: 16px;">Eine Stunde in 5-Minuten-Schritten, damit du Minuten schnell in Dezimalstunden umrechnen kannst — tipp einfach eine Zeile an, und der Umrechner übernimmt den Wert.</p>
         <div class="table-wrap">
           <table class="scale-table" id="min-table">
             <caption>Minuten in Dezimalstunden — in 5-Minuten-Schritten (eine Stunde)</caption>
@@ -388,53 +388,53 @@
         <div class="guide-intro">
           <p class="eyebrow">Kurz erklärt</p>
           <h2>Stunden rechnen:<br><span>so funktioniert’s.</span></h2>
-          <p>Stunden rechnen ist einfach — wenn man weiß, dass eine Stunde 60 Minuten hat und nicht 100. Die fünf Sachen unten reichen für fast jede Frage.</p>
+          <p>Stunden rechnen ist eigentlich einfach, sobald du weißt, dass eine Stunde 60 Minuten hat und eben nicht 100 — da liegt der häufigste Fehler. Die fünf Punkte unten reichen für fast jede Frage, vom normalen Arbeitstag bis zur Nachtschicht.</p>
           <aside class="formula-card">
             <p class="formula-eyebrow">Die Formeln, die du brauchst</p>
             <p class="formula-main">Netto = Ende − Anfang − Pause</p>
-            <p>Dezimal = Minuten ÷ 60 · Industrieminuten = Dezimal × 100 · Monat: Woche × 52 ÷ 12 — 40 Stunden pro Woche sind 173,33 Stunden im Monat.</p>
-            <p class="formula-small">Die Pause zählt nie zur Arbeitszeit. Nur die Netto-Zeit kommt auf den Stundenzettel.</p>
+            <p>Dezimal rechnest du als Minuten ÷ 60, Industrieminuten als Dezimal × 100, und den Monat als Woche × 52 ÷ 12 — so sind 40 Stunden pro Woche genau 173,33 Stunden im Monat.</p>
+            <p class="formula-small">Die Pause zählt nie zur Arbeitszeit — auf den Stundenzettel kommt also immer nur die Netto-Zeit, nie die Brutto-Zeit.</p>
           </aside>
           <aside class="formula-card">
             <p class="formula-eyebrow">So rechnest du das in Excel</p>
             <p class="formula-main">=(Ende − Anfang) * 24</p>
-            <p>Zwei Zellen mit Uhrzeiten — z. B. A2 = Anfang, B2 = Ende — die Formel kommt in C2. C2 im Format [h]:mm, damit auch 40:30 richtig dasteht.</p>
+            <p>Du schreibst Anfang und Ende als Uhrzeiten in zwei Zellen, zum Beispiel A2 = Anfang und B2 = Ende, und die Formel kommt dann in C2. Stell C2 noch auf das Format [h]:mm, damit auch eine Summe wie 40:30 richtig dasteht und nicht als 16:30.</p>
             <p class="formula-small"><button class="preset-chip" id="excel-copy" type="button">Formel kopieren</button></p>
           </aside>
         </div>
         <div class="guide-steps">
-          <article class="guide-step"><span class="step-number">Schritt 01</span><div><h3>Die Rechnung</h3><p>Endzeit minus Startzeit, dann die Pause abziehen. Von 08:00 bis 16:30 sind es 8:30 Stunden brutto — minus 30 Minuten Pause bleiben 8:00 Stunden netto.</p><span class="step-equation">16:30 − 08:00 − 0:30 = 8:00</span></div></article>
-          <article class="guide-step"><span class="step-number">Schritt 02</span><div><h3>Nachtschicht</h3><p>Geht die Schicht über Mitternacht, zählst du bis 24:00 Uhr und dann weiter. Von 22:00 bis 06:00 sind es 8:00 Stunden brutto — minus 30 Minuten Pause bleiben 7:30 Stunden netto.</p><span class="step-equation">22:00 → 24:00 → 06:00 = 8:00 − 0:30 = 7:30</span></div></article>
-          <article class="guide-step"><span class="step-number">Schritt 03</span><div><h3>Dezimalstunden</h3><p>Minuten geteilt durch 60 — so werden aus Minuten Dezimalstunden. 45 Minuten sind 0,75 Stunden, 30 Minuten sind 0,50. 7:45 sind also 7,75 Stunden.</p><span class="step-equation">45 ÷ 60 = 0,75 · 7:45 = 7,75 Stunden</span></div></article>
-          <article class="guide-step"><span class="step-number">Schritt 04</span><div><h3>Die 60er-Falle</h3><p>7,45 Stunden sind nicht 7 Stunden und 45 Minuten. 0,45 Stunden sind nur 27 Minuten (0,45 × 60). Wer 7:45 meint, muss 7,75 schreiben — der Rechner zeigt dir den Unterschied an, sobald du tippst.</p><span class="step-equation">7,45 h = 7:27 · 7:45 = 7,75 h</span></div></article>
-          <article class="guide-step"><span class="step-number">Schritt 05</span><div><h3>Stunden in Excel</h3><p>In Excel rechnest du mit der Uhrzeit direkt: Ende minus Anfang, mal 24 — so werden aus Uhrzeiten Dezimalstunden. Das Format [h]:mm zeigt auch mehr als 24 Stunden an.</p><span class="step-equation">=(Ende − Anfang) * 24 · Format: [h]:mm</span></div></article>
+          <article class="guide-step"><span class="step-number">Schritt 01</span><div><h3>Die Rechnung</h3><p>Du rechnest Endzeit minus Startzeit und ziehst dann die Pause ab: Von 08:00 bis 16:30 sind es 8:30 Stunden brutto, und wenn du die 30 Minuten Pause abziehst, bleiben 8:00 Stunden netto übrig.</p><span class="step-equation">16:30 − 08:00 − 0:30 = 8:00</span></div></article>
+          <article class="guide-step"><span class="step-number">Schritt 02</span><div><h3>Nachtschicht</h3><p>Geht die Schicht über Mitternacht, zählst du erst bis 24:00 Uhr und dann ab 00:00 Uhr weiter: Von 22:00 bis 06:00 sind es 8:00 Stunden brutto, und nach 30 Minuten Pause bleiben 7:30 Stunden netto übrig.</p><span class="step-equation">22:00 → 24:00 → 06:00 = 8:00 − 0:30 = 7:30</span></div></article>
+          <article class="guide-step"><span class="step-number">Schritt 03</span><div><h3>Dezimalstunden</h3><p>Minuten geteilt durch 60 — so werden aus Minuten Dezimalstunden: 45 Minuten sind 0,75 Stunden und 30 Minuten sind 0,50, also sind 7:45 genau 7,75 Stunden.</p><span class="step-equation">45 ÷ 60 = 0,75 · 7:45 = 7,75 Stunden</span></div></article>
+          <article class="guide-step"><span class="step-number">Schritt 04</span><div><h3>Die 60er-Falle</h3><p>7,45 Stunden sind eben nicht 7 Stunden und 45 Minuten, denn 0,45 Stunden sind nur 27 Minuten (0,45 × 60) — da steckt der Fehler, den fast jeder einmal macht. Wer 7:45 meint, muss also 7,75 schreiben, und der Rechner zeigt dir den Unterschied an, sobald du tippst.</p><span class="step-equation">7,45 h = 7:27 · 7:45 = 7,75 h</span></div></article>
+          <article class="guide-step"><span class="step-number">Schritt 05</span><div><h3>Stunden in Excel</h3><p>In Excel rechnest du direkt mit der Uhrzeit, also Ende minus Anfang, mal 24 — mit =(Ende − Anfang) * 24 werden aus Uhrzeiten Dezimalstunden. Stell das Ergebnis noch auf das Format [h]:mm, dann zeigt Excel auch mehr als 24 Stunden richtig an.</p><span class="step-equation">=(Ende − Anfang) * 24 · Format: [h]:mm</span></div></article>
         </div>
         <div class="stunden-note">
           <h3>Zeitumstellung: eine Stunde mehr oder weniger</h3>
-          <p>In der Nacht der Zeitumstellung dauert eine Schicht eine Stunde länger oder kürzer. Die Sommerzeit beginnt am letzten Sonntag im März (29.03.2026, 28.03.2027) und endet am letzten Sonntag im Oktober (25.10.2026, 31.10.2027). Der Rechner rechnet mit der Uhrzeit, die du eintippst — die eine Stunde siehst du hier nicht.</p>
+          <p>In der Nacht der Zeitumstellung dauert eine Schicht eine Stunde länger oder kürzer, je nachdem, ob die Uhr vor- oder zurückgestellt wird: Die Sommerzeit beginnt am letzten Sonntag im März (29.03.2026, 28.03.2027) und endet am letzten Sonntag im Oktober (25.10.2026, 31.10.2027). Der Rechner rechnet nur mit der Uhrzeit, die du eintippst — diese eine Stunde siehst du hier also nicht.</p>
         </div>
       </section>
 
       <section class="practice-section" id="ueben">
         <p class="eyebrow">Vier Aufgaben zum Üben</p>
         <h2>Jetzt bist du<br><span>dran.</span></h2>
-        <p class="section-intro">Vier Aufgaben — die Lösungen stehen direkt darunter. Probier es zuerst selbst und klick dann auf „Lösung“.</p>
+        <p class="section-intro">Vier Aufgaben mit den Lösungen direkt darunter — probier es zuerst selbst, und klick dann auf „Lösung“, um zu prüfen, ob du richtig gerechnet hast.</p>
         <div class="practice-grid">
           <details class="practice-task">
             <summary><span class="practice-number">Aufgabe 1</span>09:00–17:30, Pause 45 — wie viele Netto-Stunden?</summary>
-            <p>7:45 Stunden, also 7,75 Dezimalstunden: Von 09:00 bis 17:30 sind es 8:30 Stunden brutto, minus 45 Minuten Pause bleiben 7:45.</p>
+            <p>7:45 Stunden, also 7,75 Dezimalstunden: Von 09:00 bis 17:30 sind es erst einmal 8:30 Stunden brutto, und wenn du die 45 Minuten Pause abziehst, bleiben 7:45 übrig.</p>
           </details>
           <details class="practice-task">
             <summary><span class="practice-number">Aufgabe 2</span>7:45 + 8:20 — wie viel ist das?</summary>
-            <p>16:05 Stunden — nicht 15,65: 7:45 sind 465 Minuten, 8:20 sind 500 Minuten, zusammen 965 Minuten, das sind 16 Stunden und 5 Minuten.</p>
+            <p>16:05 Stunden — und eben nicht 15,65, wie man beim bloßen Zusammenzählen der Kommazahlen denken könnte: 7:45 sind 465 Minuten und 8:20 sind 500 Minuten, zusammen also 965 Minuten, und das sind 16 Stunden und 5 Minuten.</p>
           </details>
           <details class="practice-task">
             <summary><span class="practice-number">Aufgabe 3</span>480 Minuten — wie viele Dezimalstunden?</summary>
-            <p>8,00 Dezimalstunden: 480 ÷ 60 = 8.</p>
+            <p>8,00 Dezimalstunden, denn 480 ÷ 60 = 8 — teilst du 480 durch 60, kommt genau 8 heraus.</p>
           </details>
           <details class="practice-task">
             <summary><span class="practice-number">Aufgabe 4</span>22:00–06:00, Pause 30 — wie viele Netto-Stunden?</summary>
-            <p>7:30 Stunden: Die Schicht dauert 8:00 Stunden brutto (22:00 bis 24:00 sind 2:00, plus 06:00 sind 8:00), minus 30 Minuten Pause bleiben 7:30.</p>
+            <p>7:30 Stunden: Die Schicht dauert 8:00 Stunden brutto — von 22:00 bis 24:00 sind es 2:00, plus 06:00 sind das 8:00 — und wenn du die 30 Minuten Pause abziehst, bleiben 7:30 übrig.</p>
           </details>
         </div>
       </section>
@@ -444,31 +444,31 @@
         <div class="faq-list">
           <details class="faq-item">
             <summary>Was sind Dezimalstunden?</summary>
-            <p>Stunden mit Nachkommastellen statt Minuten: 7:45 sind 7,75 Dezimalstunden, weil 45 Minuten drei Viertel einer Stunde sind (45 ÷ 60 = 0,75). Der Stundenzettel und Excel rechnen mit Dezimalstunden.</p>
+            <p>Stunden mit Nachkommastellen statt Minuten: 7:45 sind 7,75 Dezimalstunden, weil 45 Minuten drei Viertel einer Stunde sind (45 ÷ 60 = 0,75). Der Stundenzettel und Excel rechnen mit Dezimalstunden, nicht mit Minuten — darum brauchst du die Zahl so.</p>
           </details>
           <details class="faq-item">
             <summary>Was sind Industrieminuten?</summary>
-            <p>Minuten im 100er-System: Eine Industrieminute ist ein Hundertstel einer Stunde. 7,75 Stunden sind 775 Industrieminuten, 8,00 Stunden sind 800. Auf dem Stundenzettel steht oft nur die Dezimalzahl — die Industrieminuten sind die gleiche Zahl ohne Komma.</p>
+            <p>Minuten im 100er-System: Eine Industrieminute ist ein Hundertstel einer Stunde, also sind 7,75 Stunden genau 775 Industrieminuten und 8,00 Stunden genau 800. Auf dem Stundenzettel steht oft nur die Dezimalzahl — die Industrieminuten sind die gleiche Zahl ohne Komma.</p>
           </details>
           <details class="faq-item">
             <summary>Zählt die Pause zur Arbeitszeit?</summary>
-            <p>Nein. Die Pause ziehst du von der Brutto-Zeit ab: Von 08:00 bis 16:30 sind es 8:30 Stunden brutto, mit 30 Minuten Pause bleiben 8:00 Stunden netto. Nur die Netto-Zeit ist Arbeitszeit.</p>
+            <p>Nein — die Pause ziehst du von der Brutto-Zeit ab: Von 08:00 bis 16:30 sind es 8:30 Stunden brutto, und mit 30 Minuten Pause bleiben 8:00 Stunden netto übrig. Nur die Netto-Zeit ist Arbeitszeit, die Pause gehört nicht dazu.</p>
           </details>
           <details class="faq-item">
             <summary>Wie rechne ich Stunden in Excel zusammen?</summary>
-            <p>Schreib Anfang und Ende als Uhrzeit in zwei Zellen und rechne =(Ende − Anfang) * 24 — so werden aus Uhrzeiten Dezimalstunden. Für die Summe nimm das Format [h]:mm, damit auch mehr als 24 Stunden richtig dastehen (40:30 statt 16:30).</p>
+            <p>Schreib Anfang und Ende als Uhrzeit in zwei Zellen und rechne =(Ende − Anfang) * 24 — so werden aus Uhrzeiten Dezimalstunden. Für die Summe nimm das Format [h]:mm, damit auch mehr als 24 Stunden richtig dastehen und aus 40:30 nicht 16:30 wird.</p>
           </details>
           <details class="faq-item">
             <summary>Was ist eine Nachtschicht im Rechner?</summary>
-            <p>Eine Schicht, die über Mitternacht geht — zum Beispiel 22:00 bis 06:00. Hak „Geht über Mitternacht“ an, dann zählt der Rechner bis 24:00 Uhr und ab 00:00 Uhr weiter. Ohne den Haken meldet er, dass die Endzeit vor der Startzeit liegt.</p>
+            <p>Eine Schicht, die über Mitternacht geht — zum Beispiel 22:00 bis 06:00. Hak dafür „Geht über Mitternacht“ an, dann zählt der Rechner bis 24:00 Uhr und ab 00:00 Uhr weiter. Ohne den Haken meldet er, dass die Endzeit vor der Startzeit liegt, weil er nicht weiß, dass die Schicht über Nacht geht.</p>
           </details>
           <details class="faq-item">
             <summary>Kann ich Überstunden berechnen?</summary>
-            <p>Ja: Trag im Modus „Zeiten addieren“ deine Woche ein und gib dein Soll an — zum Beispiel 40 Stunden. Der Rechner zeigt dir dann +0:30 Überstunden oder −2:00 unter Soll an.</p>
+            <p>Ja: Trag im Modus „Zeiten addieren“ deine Woche ein und gib dein Soll an — zum Beispiel 40 Stunden. Der Rechner zeigt dir dann an, ob du drüber bist, zum Beispiel +0:30 Überstunden, oder drunter, zum Beispiel −2:00 unter Soll.</p>
           </details>
           <details class="faq-item">
             <summary>Ist der Rechner kostenlos?</summary>
-            <p>Ja. Der Rechner ist kostenlos und du brauchst keine Anmeldung — rechne so oft du willst, auf dem Handy genauso wie am Computer.</p>
+            <p>Ja, der Rechner ist kostenlos und du brauchst keine Anmeldung — rechne also so oft du willst, auf dem Handy genauso wie am Computer.</p>
           </details>
         </div>
       </section>
@@ -476,19 +476,19 @@
             <section class="more-tools">
         <div class="quick-title"><span class="eyebrow">Mehr Rechner</span><h2>Das gibt es noch bei maßklar.</h2></div>
         <div class="tool-grid">
-          <a class="tool-card" href="../massstabsrechner/"><span class="tool-icon" aria-hidden="true">🗺</span><span class="tool-text"><span class="tool-title">Maßstabsrechner</span><span class="tool-desc">Karten, Grundrisse, Modellbau: echte Länge und Plan-Länge umrechnen.</span></span><span class="tool-arrow" aria-hidden="true">↗</span></a>
-          <a class="tool-card" href="../altersrechner/"><span class="tool-icon" aria-hidden="true">🎂</span><span class="tool-text"><span class="tool-title">Altersrechner</span><span class="tool-desc">Wie alt bist du in Jahren, Monaten und Tagen? Mit Geburtstag-Countdown.</span></span><span class="tool-arrow" aria-hidden="true">↗</span></a>
-          <a class="tool-card" href="../massstabsrechner/modellbau/"><span class="tool-icon" aria-hidden="true">🚂</span><span class="tool-text"><span class="tool-title">Modellbau-Maßstab</span><span class="tool-desc">H0, Spur N, 1:72: echte Länge in Modell-Länge umrechnen.</span></span><span class="tool-arrow" aria-hidden="true">↗</span></a>
-          <a class="tool-card" href="../prozentrechner/"><span class="tool-icon" aria-hidden="true">%</span><span class="tool-text"><span class="tool-title">Prozentrechner</span><span class="tool-desc">Prozentwert, Rabatt oder Erhöhung — in Sekunden.</span></span><span class="tool-arrow" aria-hidden="true">↗</span></a>
-          <a class="tool-card" href="../bmi-rechner/"><span class="tool-icon" aria-hidden="true">⚖</span><span class="tool-text"><span class="tool-title">BMI-Rechner</span><span class="tool-desc">Body-Mass-Index ausrechnen und einordnen.</span></span><span class="tool-arrow" aria-hidden="true">↗</span></a>
-          <a class="tool-card" href="../tage-rechner/"><span class="tool-icon" aria-hidden="true">📅</span><span class="tool-text"><span class="tool-title">Tage-Rechner</span><span class="tool-desc">Tage zwischen zwei Daten zählen — mit Wochen, Arbeitstagen und Wochentag.</span></span><span class="tool-arrow" aria-hidden="true">↗</span></a>
-          <a class="tool-card" href="../indexmiete-rechner/"><span class="tool-icon" aria-hidden="true">🏠</span><span class="tool-text"><span class="tool-title">Indexmiete-Rechner</span><span class="tool-desc">Neue Nettokaltmiete aus dem Verbraucherpreisindex — mit Rechenweg und Fristen.</span></span><span class="tool-arrow" aria-hidden="true">↗</span></a>
-          <a class="tool-card" href="../quadratmeter-rechner/"><span class="tool-icon" aria-hidden="true">🧱</span><span class="tool-text"><span class="tool-title">Quadratmeter-Rechner</span><span class="tool-desc">Fläche von Zimmern und Grundstücken — mit Verschnitt und Kosten.</span></span><span class="tool-arrow" aria-hidden="true">↗</span></a>
-          <a class="tool-card" href="../schlafzyklus-rechner/"><span class="tool-icon" aria-hidden="true">🌙</span><span class="tool-text"><span class="tool-title">Schlafzyklus-Rechner</span><span class="tool-desc">Besser aufwachen: Schlafenszeit in 90-Minuten-Schritten planen.</span></span><span class="tool-arrow" aria-hidden="true">↗</span></a>
-          <a class="tool-card" href="../grundsteuer-rechner/"><span class="tool-icon" aria-hidden="true">🏛️</span><span class="tool-text"><span class="tool-title">Grundsteuer-Rechner</span><span class="tool-desc">Grundsteuer im Jahr aus Grundsteuerwert, Messzahl und Hebesatz — mit Rechenweg.</span></span><span class="tool-arrow" aria-hidden="true">↗</span></a>
-          <a class="tool-card" href="../buergergeld-rechner/"><span class="tool-icon" aria-hidden="true">🧾</span><span class="tool-text"><span class="tool-title">Bürgergeld-Rechner</span><span class="tool-desc">Regelbedarf, Miete und Einkommen — schätze deinen Anspruch.</span></span><span class="tool-arrow" aria-hidden="true">↗</span></a>
-                  <a class="tool-card" href="../kreditrechner/"><span class="tool-icon" aria-hidden="true">💳</span><span class="tool-text"><span class="tool-title">Kreditrechner</span><span class="tool-desc">Monatsrate, Zinsen und Gesamtkosten — mit Tilgungsplan.</span></span><span class="tool-arrow" aria-hidden="true">↗</span></a>
-          <a class="tool-card" href="../brutto-netto-rechner/"><span class="tool-icon" aria-hidden="true">💶</span><span class="tool-text"><span class="tool-title">Brutto-Netto-Rechner</span><span class="tool-desc">Was bleibt vom Gehalt übrig? Steuern und Abgaben grob ausrechnen.</span></span><span class="tool-arrow" aria-hidden="true">↗</span></a>
+          <a class="tool-card" href="../massstabsrechner/"><span class="tool-icon" aria-hidden="true">🗺</span><span class="tool-text"><span class="tool-title">Maßstabsrechner</span><span class="tool-desc">Karten, Grundrisse oder Modellbau — rechne echte Länge und Plan-Länge in beide Richtungen um.</span></span><span class="tool-arrow" aria-hidden="true">↗</span></a>
+          <a class="tool-card" href="../altersrechner/"><span class="tool-icon" aria-hidden="true">🎂</span><span class="tool-text"><span class="tool-title">Altersrechner</span><span class="tool-desc">Wie alt bist du genau, in Jahren, Monaten und Tagen — mit Countdown bis zu deinem nächsten Geburtstag.</span></span><span class="tool-arrow" aria-hidden="true">↗</span></a>
+          <a class="tool-card" href="../massstabsrechner/modellbau/"><span class="tool-icon" aria-hidden="true">🚂</span><span class="tool-text"><span class="tool-title">Modellbau-Maßstab</span><span class="tool-desc">H0, Spur N oder 1:72 — rechne echte Länge in Modell-Länge um und andersherum.</span></span><span class="tool-arrow" aria-hidden="true">↗</span></a>
+          <a class="tool-card" href="../prozentrechner/"><span class="tool-icon" aria-hidden="true">%</span><span class="tool-text"><span class="tool-title">Prozentrechner</span><span class="tool-desc">Prozentwert, Rabatt oder Erhöhung: Gib zwei Werte ein und sieh den dritten in Sekunden.</span></span><span class="tool-arrow" aria-hidden="true">↗</span></a>
+          <a class="tool-card" href="../bmi-rechner/"><span class="tool-icon" aria-hidden="true">⚖</span><span class="tool-text"><span class="tool-title">BMI-Rechner</span><span class="tool-desc">Body-Mass-Index ausrechnen und gleich sehen, wo du damit einzuordnen bist.</span></span><span class="tool-arrow" aria-hidden="true">↗</span></a>
+          <a class="tool-card" href="../tage-rechner/"><span class="tool-icon" aria-hidden="true">📅</span><span class="tool-text"><span class="tool-title">Tage-Rechner</span><span class="tool-desc">Tage zwischen zwei Daten zählen — mit Wochen, Arbeitstagen und dem Wochentag dazu.</span></span><span class="tool-arrow" aria-hidden="true">↗</span></a>
+          <a class="tool-card" href="../indexmiete-rechner/"><span class="tool-icon" aria-hidden="true">🏠</span><span class="tool-text"><span class="tool-title">Indexmiete-Rechner</span><span class="tool-desc">Neue Nettokaltmiete aus dem Verbraucherpreisindex — mit Rechenweg und den Fristen, die du einhalten musst.</span></span><span class="tool-arrow" aria-hidden="true">↗</span></a>
+          <a class="tool-card" href="../quadratmeter-rechner/"><span class="tool-icon" aria-hidden="true">🧱</span><span class="tool-text"><span class="tool-title">Quadratmeter-Rechner</span><span class="tool-desc">Fläche von Zimmern und Grundstücken — mit Verschnitt und den Kosten für den Boden dazu.</span></span><span class="tool-arrow" aria-hidden="true">↗</span></a>
+          <a class="tool-card" href="../schlafzyklus-rechner/"><span class="tool-icon" aria-hidden="true">🌙</span><span class="tool-text"><span class="tool-title">Schlafzyklus-Rechner</span><span class="tool-desc">Besser aufwachen: Plane deine Schlafenszeit in 90-Minuten-Schritten, damit der Wecker am Zyklusende klingelt.</span></span><span class="tool-arrow" aria-hidden="true">↗</span></a>
+          <a class="tool-card" href="../grundsteuer-rechner/"><span class="tool-icon" aria-hidden="true">🏛️</span><span class="tool-text"><span class="tool-title">Grundsteuer-Rechner</span><span class="tool-desc">Grundsteuer im Jahr aus Grundsteuerwert, Messzahl und Hebesatz — mit Rechenweg, Schritt für Schritt.</span></span><span class="tool-arrow" aria-hidden="true">↗</span></a>
+          <a class="tool-card" href="../buergergeld-rechner/"><span class="tool-icon" aria-hidden="true">🧾</span><span class="tool-text"><span class="tool-title">Bürgergeld-Rechner</span><span class="tool-desc">Regelbedarf, Miete und Einkommen: Schätze, was dir als Bürgergeld zustehen könnte.</span></span><span class="tool-arrow" aria-hidden="true">↗</span></a>
+                  <a class="tool-card" href="../kreditrechner/"><span class="tool-icon" aria-hidden="true">💳</span><span class="tool-text"><span class="tool-title">Kreditrechner</span><span class="tool-desc">Monatsrate, Zinsen und Gesamtkosten — mit Tilgungsplan, damit du siehst, was der Kredit wirklich kostet.</span></span><span class="tool-arrow" aria-hidden="true">↗</span></a>
+          <a class="tool-card" href="../brutto-netto-rechner/"><span class="tool-icon" aria-hidden="true">💶</span><span class="tool-text"><span class="tool-title">Brutto-Netto-Rechner</span><span class="tool-desc">Was bleibt vom Gehalt übrig? Rechne Steuern und Abgaben grob aus und sieh deinen Nettolohn.</span></span><span class="tool-arrow" aria-hidden="true">↗</span></a>
 </div>
         <p class="more-tools-link"><a href="../">Alle Rechner ansehen <span aria-hidden="true">→</span></a></p>
       </section>
