@@ -83,7 +83,7 @@
     </header>
 
     <main>
-      <section class="tool-hero">
+      <section class="hero">
         <div class="hero-copy">
           <p class="hero-eyebrow">Der einfache BMI-Rechner</p>
           <h1>BMI-Rechner.<br><span>Ist dein Gewicht okay? Die Antwort in Sekunden.</span></h1>
@@ -121,7 +121,7 @@
                   <label for="bmi-height">Körpergröße</label>
                   <div class="input-with-unit">
                     <input type="text" inputmode="decimal" id="bmi-height" name="height" value="175" autocomplete="off" aria-describedby="height-hint">
-                    <span class="unit" aria-hidden="true">cm</span>
+                    <span class="unit-suffix" aria-hidden="true">cm</span>
                   </div>
                   <span class="field-hint" id="height-hint">In Zentimetern, z. B. 175.</span>
                 </div>
@@ -129,7 +129,7 @@
                   <label for="bmi-weight">Gewicht</label>
                   <div class="input-with-unit">
                     <input type="text" inputmode="decimal" id="bmi-weight" name="weight" value="70" autocomplete="off" aria-describedby="weight-hint">
-                    <span class="unit" aria-hidden="true">kg</span>
+                    <span class="unit-suffix" aria-hidden="true">kg</span>
                   </div>
                   <span class="field-hint" id="weight-hint">In Kilo, z. B. 70.</span>
                 </div>
@@ -137,7 +137,7 @@
                   <label for="bmi-age">Alter <span class="field-optional">(optional)</span></label>
                   <div class="input-with-unit">
                     <input type="text" inputmode="numeric" id="bmi-age" name="age" value="" placeholder="z. B. 45" autocomplete="off" aria-describedby="age-hint">
-                    <span class="unit" aria-hidden="true">Jahre</span>
+                    <span class="unit-suffix" aria-hidden="true">Jahre</span>
                   </div>
                   <span class="field-hint" id="age-hint">Nur für den Hinweis ab 65 und die Warnung unter 18.</span>
                 </div>
@@ -145,7 +145,7 @@
                   <label for="bmi-waist">Taillenumfang <span class="field-optional">(optional)</span></label>
                   <div class="input-with-unit">
                     <input type="text" inputmode="decimal" id="bmi-waist" name="waist" value="" placeholder="z. B. 80" autocomplete="off" aria-describedby="waist-hint">
-                    <span class="unit" aria-hidden="true">cm</span>
+                    <span class="unit-suffix" aria-hidden="true">cm</span>
                   </div>
                   <span class="field-hint" id="waist-hint">Für das Taille-Größe-Verhältnis — miss an der schmalsten Stelle.</span>
                 </div>
