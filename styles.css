@@ -558,8 +558,15 @@ a.tool-card:active { transform: scale(.98); }
    (body.has-cookie-banner) und gibt dem Seitenfuß unten Luft, damit
    der Banner nichts verdeckt. "Ablehnen" und "Alle akzeptieren" sind
    gleich groß und gleich leicht zu tippen — kein dunkles Muster. */
-.cookie-banner { position: fixed; left: 0; right: 0; bottom: 0; z-index: 60; display: flex; align-items: center; gap: 16px; padding: 14px 5%; background: var(--green-dark); color: #fffefa; box-shadow: 0 -4px 20px #1d292533; }
+/* Cookie-Banner-Animation (2026-11-27): gleitet von unten herein und
+   wieder heraus, statt einfach aufzutauchen. Wer "weniger Bewegung"
+   eingestellt hat (prefers-reduced-motion), bekommt keine Animation. */
+.cookie-banner { position: fixed; left: 0; right: 0; bottom: 0; z-index: 60; display: flex; align-items: center; gap: 16px; padding: 14px 5%; background: var(--green-dark); color: #fffefa; box-shadow: 0 -4px 20px #1d292533; transform: translateY(102%); opacity: 0; transition: transform .38s cubic-bezier(.2,.7,.25,1), opacity .38s ease; }
+.cookie-banner--visible { transform: translateY(0); opacity: 1; }
 .cookie-banner[hidden] { display: none; }
+@media (prefers-reduced-motion: reduce) {
+  .cookie-banner { transition: none; }
+}
 .cookie-banner-text { margin: 0; flex: 1 1 auto; font-size: 14px; line-height: 1.55; }
 .cookie-banner-link { color: var(--orange-light); text-decoration: underline; text-underline-offset: 2px; }
 .cookie-banner-link:hover { color: var(--orange); }

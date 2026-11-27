@@ -483,8 +483,8 @@ def build_page(scale):
                f'<link rel="stylesheet" href="../../styles.css?v={css_version}">')
     # Cookie-Banner (2026-11-27): Skript und Datenschutz-Link im Banner
     # eine Ebene tiefer — wie der Stylesheet-Link oben.
-    html = rep(html, '<script src="../assets/cookie-consent.js" defer></script>',
-               '<script src="../../assets/cookie-consent.js" defer></script>')
+    html = rep(html, '<script src="../assets/cookie-consent.js?v=2" defer></script>',
+               '<script src="../../assets/cookie-consent.js?v=2" defer></script>')
     html = rep(html, '<a class="cookie-banner-link" href="../datenschutz.html">',
                '<a class="cookie-banner-link" href="../../datenschutz.html">')
     # Font preloads are one level deeper on scale pages (template uses ../fonts/).

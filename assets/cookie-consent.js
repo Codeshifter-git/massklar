@@ -4,6 +4,10 @@
  * "Alle akzeptieren" oder "Ablehnen" tippt, und merkt sich die Auswahl
  * im localStorage (Schlüssel "massklar-cookie-consent").
  *
+ * Der Banner gleitet von unten herein und wieder heraus (CSS-Übergang
+ * in styles.css, Klasse "cookie-banner--visible"); wer "weniger
+ * Bewegung" eingestellt hat, bekommt keine Animation.
+ *
  * Ehrlich ist das so: Die Seite setzt im Moment KEINE Cookies für
  * Werbung oder Statistik und lädt KEINE Tracker. Was sie nutzt, ist
  * lokaler Speicher, damit die Rechner Eingaben merken — und diese
@@ -71,12 +75,29 @@
     banner.hidden = false;
     document.body.classList.add('has-cookie-banner');
     syncPadding();
+    // Den Browser zwingen, den Banner erst in seiner Startposition
+    // (unter dem Bildschirm) zu malen, bevor wir ihn hochgleiten
+    // lassen — sonst wird die Animation übersprungen.
+    void banner.offsetHeight;
+    banner.classList.add('cookie-banner--visible');
   }
 
   function hide() {
-    banner.hidden = true;
+    banner.classList.remove('cookie-banner--visible');
     document.body.classList.remove('has-cookie-banner');
     document.body.style.paddingBottom = '';
+    // Erst nach dem Herausgleiten aus dem Layout nehmen (hidden),
+    // sonst würde der Banner sofort verschwinden.
+    var done = false;
+    function finish() {
+      if (done) return;
+      done = true;
+      banner.hidden = true;
+    }
+    banner.addEventListener('transitionend', finish, { once: true });
+    // Falls transitionend nie feuert (z. B. reduzierte Bewegung),
+    // nach kurzer Zeit trotzdem ausblenden.
+    setTimeout(finish, 400);
   }
 
   function choose(value) {
