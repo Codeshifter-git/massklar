@@ -490,8 +490,15 @@ def build_page(scale):
     # --- nav / footer links: one level deeper ---
     html = rep(html, '<a class="brand" href="../" aria-label="Maßklar Startseite">',
                '<a class="brand" href="../../" aria-label="Maßklar Startseite">')
-    html = rep(html, '<a class="brand footer-brand" href="../">',
-               '<a class="brand footer-brand" href="../../">')
+    # --- footer: the whole block goes one level deeper (every href/src
+    # prefix ../ -> ../../). This replaces the old single-link footer rep:
+    # the footer now has many links, so the block is rewritten at once.
+    # It runs AFTER the logo rep above (count=2: header + footer logo),
+    # so that rep still sees both ../ logos.
+    _fm = re.search(r'    <footer class="site-footer">.*?</footer>', html, flags=re.DOTALL)
+    assert _fm, "footer block not found"
+    _block = _fm.group(0).replace('href="../', 'href="../../').replace('src="../', 'src="../../')
+    html = html[:_fm.start()] + _block + html[_fm.end():]
     html = rep(html, '<a href="../">Alle Rechner</a>', '<a href="../../">Alle Rechner</a>')
     # --- more-tools grid: rebuild it from MORE_TOOLS (all live tools as live
     # links). The template's own grid is stale for scale pages — it once listed

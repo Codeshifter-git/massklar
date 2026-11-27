@@ -301,7 +301,24 @@ h1, h2, h3, p { margin-top: 0; }
 /* Dropdown open animation (practice + FAQ): answer fades/slides in, arrow rotates. */
 @keyframes details-open { from { opacity: 0; transform: translateY(-4px); } to { opacity: 1; transform: translateY(0); } }
 .practice-task[open] > p, .faq-list details[open] > p { animation: details-open .25s ease; }
-.site-footer { display: flex; align-items: center; justify-content: space-between; padding: 22px 7.1%; border-top: 1px solid #e4e6dc; color: #5a6a62; font-size: 12px; }.footer-brand { color: var(--ink); font-size: 16px; }.footer-brand .brand-mark { width: 26px; height: 26px; font-size: 10px; }.site-footer p { margin: 0; }.site-footer > span { font: 11px var(--mono); }
+/* Rich footer: dark green, 4 columns, bottom bar + disclaimer note. */
+.site-footer { background: var(--green-dark); color: #d8e4dc; }
+.footer-main { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 40px; padding: 56px 7.1% 40px; }
+.site-footer .footer-brand { color: #fffefa; font-size: 20px; }
+.footer-brand-col > p { margin: 16px 0; color: #b9cec2; font-size: 14px; line-height: 1.7; }
+.footer-mail { color: #fffefa; font-size: 14px; font-weight: 600; }
+.footer-mail:hover { text-decoration: underline; }
+.footer-col h3 { margin: 0 0 18px; color: #fffefa; font: 600 15px var(--display); }
+.footer-col h3::after { content: ""; display: block; width: 24px; height: 2px; margin-top: 8px; background: var(--orange); }
+.footer-col ul { margin: 0; padding: 0; list-style: none; }
+.footer-col li { margin-bottom: 10px; }
+.footer-col a { color: #c4d6cb; font-size: 14px; }
+.footer-col a:hover { color: #fffefa; text-decoration: underline; }
+.footer-bottom { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 20px 7.1%; border-top: 1px solid #ffffff1f; color: #a9bdb1; font: 12px var(--mono); }
+.footer-bottom a { color: #d8e4dc; }
+.footer-bottom a:hover { color: #fffefa; }
+.footer-bottom-links { display: flex; gap: 24px; }
+.footer-note { margin: 0; padding: 0 7.1% 28px; border-top: 1px solid #ffffff14; color: #93a89c; font-size: 12px; line-height: 1.7; }
 
 @media (max-width: 900px) {
   .site-header { padding: 0 5%; }.hero { padding: 52px 7% 66px; }.calculator-section, .quick-examples, .table-section { padding-right: 7%; padding-left: 7%; }
@@ -314,6 +331,7 @@ h1, h2, h3, p { margin-top: 0; }
   .calc-aside { display: grid; grid-template-columns: 1fr 1.3fr; align-items: center; gap: 4px 18px; padding: 20px 24px; }.aside-number { grid-column: 1 / -1; }.aside-art { grid-row: span 3; height: 105px; margin: 8px 0 0; }.calc-aside .aside-title { margin: 6px 0 0; }.calc-aside p { margin: 0; }.calc-aside a { align-self: start; }
   .input-grid { grid-template-columns: 1fr 1fr; gap: 13px 10px; }.scale-field { grid-column: 1 / -1; }
   .length-tables { grid-template-columns: 1fr; }
+  .footer-main { grid-template-columns: 1fr 1fr; gap: 32px; padding: 48px 5% 32px; }
 }
 @media (max-width: 680px) {
   html { scroll-padding-top: 68px; }.site-header { min-height: 60px; }.top-nav, .site-nav { display: none; }.header-cta { padding: 10px 12px; font-size: 12px; }
@@ -328,7 +346,9 @@ h1, h2, h3, p { margin-top: 0; }
   .practice-section { padding: 48px 5%; }
   .compare-section { padding: 48px 5%; }.compare-grid { grid-template-columns: 1fr; }
   .guide-section, .faq-section { grid-template-columns: 1fr; gap: 33px; padding: 56px 8%; }.guide-intro h2 { font-size: 31px; }.formula-card { margin-top: 19px; }.faq-section { gap: 26px; }.faq-heading h2 { font-size: 28px; }
-  .site-footer { flex-wrap: wrap; gap: 10px; padding: 20px 6%; }.site-footer p { order: 3; width: 100%; }
+  .footer-main { grid-template-columns: 1fr; gap: 32px; padding: 48px 6% 32px; }
+  .footer-bottom { flex-direction: column; align-items: flex-start; gap: 8px; padding: 18px 6%; }
+  .footer-note { padding: 0 6% 24px; }
 }
 /* Hub — tool grid, categories, why, hub hero visual */
 .tools-section { padding: 56px 11.2% 64px; background: #eaece3; scroll-margin-top: 70px; }
