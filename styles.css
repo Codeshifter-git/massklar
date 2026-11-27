@@ -238,6 +238,20 @@ h1, h2, h3, p { margin-top: 0; }
 .diagram-real { margin: 12px 0 0; color: #4f5f56; font-size: 15px; }
 /* Statische Tabellen (Rechenbeispiele, Vergleich) — keine Klick-Zeilen. */
 .scale-table--static tbody tr { cursor: default; }
+/* Leserfreundliche Tabellen (nur Brutto-Netto): Zellen umbrechen statt
+   seitlich zu scrollen, Geldbeträge rechtsbündig, Überschrift und Hinweis
+   mit Abstand, Karten mit Abstand zueinander. */
+.table-wrap.table-wrap--reader { margin: 0 auto 32px; padding: 0 20px 20px; }
+.table-wrap--reader .scale-table caption { caption-side: top; padding: 14px 0 6px; text-align: left; color: var(--green); font: 600 12px var(--mono); text-transform: uppercase; letter-spacing: .8px; }
+.table-wrap--reader .scale-table th,
+.table-wrap--reader .scale-table td { white-space: normal; line-height: 1.5; }
+.table-wrap--reader .scale-table td:last-child,
+.table-wrap--reader .scale-table th:last-child { text-align: right; }
+.table-wrap--reader .table-note { margin: 16px 0 4px; color: #4f5f56; font-size: 14px; line-height: 1.65; }
+.table-wrap--reader .grenze-sub { display: block; margin-top: 2px; color: #7a8a80; font-size: 12px; }
+@media (max-width: 900px) {
+  .table-wrap.table-wrap--reader { padding: 0 12px 16px; }
+}
 
 .practice-section { padding: 48px 11.2% 24px; }
 .practice-section .faq-list { max-width: 1050px; margin: 0 auto; }
