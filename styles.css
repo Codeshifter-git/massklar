@@ -527,6 +527,8 @@ a.tool-card:active { transform: scale(.98); }
    The label is "Anzeige" on this site; concretecalc. uses "Advertisement"
    in its own slot markup — the class is shared, the text is per-site. */
 .ad-slot { max-width: 728px; margin: 32px auto 0; padding: 20px 20px 16px; border: 1px dashed var(--line); border-radius: 8px; background: var(--white); text-align: center; }
+/* Ad placeholders hidden until real AdSense goes live (2026-11-27) — remove this rule when ads go live. */
+.ad-slot { display: none; }
 .ad-slot-label { display: block; margin-bottom: 10px; color: var(--muted); font: 500 10px var(--mono); text-transform: uppercase; letter-spacing: 1.5px; }
 .ad-slot-box { display: grid; place-items: center; min-height: 90px; color: var(--muted); font-size: 13px; }
 @media (max-width: 680px) {
