@@ -481,6 +481,12 @@ def build_page(scale):
     # they ride along from the template unchanged — no rep needed.
     html = rep(html, f'<link rel="stylesheet" href="../styles.css?v={css_version}">',
                f'<link rel="stylesheet" href="../../styles.css?v={css_version}">')
+    # Cookie-Banner (2026-11-27): Skript und Datenschutz-Link im Banner
+    # eine Ebene tiefer — wie der Stylesheet-Link oben.
+    html = rep(html, '<script src="../assets/cookie-consent.js" defer></script>',
+               '<script src="../../assets/cookie-consent.js" defer></script>')
+    html = rep(html, '<a class="cookie-banner-link" href="../datenschutz.html">',
+               '<a class="cookie-banner-link" href="../../datenschutz.html">')
     # Font preloads are one level deeper on scale pages (template uses ../fonts/).
     html = rep(html, '<link rel="preload" href="../fonts/bitter-latin.woff2" as="font" type="font/woff2" crossorigin>',
                '<link rel="preload" href="../../fonts/bitter-latin.woff2" as="font" type="font/woff2" crossorigin>')
@@ -645,14 +651,14 @@ def build_page(scale):
         assert n == 1, f"guide step {num} not found once (found {n})"
 
     # --- FAQ 1 & 2 rewritten ---
-    faq1_old = ('<details><summary>Was bedeutet ein Maßstab von 1:100? <span aria-hidden="true">+</span></summary>'
+    faq1_old = ('<details><summary>Was bedeutet ein Maßstab von 1:100?</summary>'
                 '<p>1 cm auf dem Plan sind 100 cm in echt — also 1 m. Stell dir vor: Alles auf dem Papier ist 100-mal kleiner als in echt.</p></details>')
-    faq1_new = (f'<details><summary>{faq1_q} <span aria-hidden="true">+</span></summary>'
+    faq1_new = (f'<details><summary>{faq1_q}</summary>'
                 f'<p>{faq1_a}</p></details>')
     html = rep(html, faq1_old, faq1_new)
-    faq2_old = ('<details><summary>Wie rechne ich 1:25.000 auf einer Karte um? <span aria-hidden="true">+</span></summary>'
+    faq2_old = ('<details><summary>Wie rechne ich 1:25.000 auf einer Karte um?</summary>'
                 '<p>Nimm die Strecke auf der Karte mal 25.000. 4 cm auf der Karte sind 100.000 cm — das sind 1.000 m, also 1 km. Der Rechner macht das für dich.</p></details>')
-    faq2_new = (f'<details><summary>{faq2_q} <span aria-hidden="true">+</span></summary>'
+    faq2_new = (f'<details><summary>{faq2_q}</summary>'
                 f'<p>{faq2_a}</p></details>')
     html = rep(html, faq2_old, faq2_new)
 
@@ -735,7 +741,7 @@ def build_page(scale):
     # FAQPage must match the VISIBLE FAQ section (Google requires schema ==
     # visible content): extract all 14 questions/answers from the built page.
     faq_section = re.search(r'<section class="faq-section">(.*?)</section>', html, re.DOTALL).group(1)
-    faq_re = re.compile(r'<details><summary>(.*?) <span aria-hidden="true">\+</span></summary><p>(.*?)</p></details>', re.DOTALL)
+    faq_re = re.compile(r'<details><summary>(.*?)</summary><p>(.*?)</p></details>', re.DOTALL)
     visible_faqs = [(re.sub(r"<[^>]+>", "", m.group(1)).strip(),
                      re.sub(r"<[^>]+>", "", m.group(2)).strip())
                     for m in faq_re.finditer(faq_section)]

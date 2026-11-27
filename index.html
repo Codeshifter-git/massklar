@@ -54,7 +54,7 @@
       @keyframes sk-shimmer { to { transform: translateX(100%); } }
       @media (prefers-reduced-motion: reduce) { .sk-bar::after, .sk-card::after { animation: none; } }
     </style>
-    <link rel="stylesheet" href="styles.css?v=14">
+    <link rel="stylesheet" href="styles.css?v=15">
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -88,8 +88,22 @@
       "@type": "Organization",
       "name": "maßklar",
       "url": "https://massklar-rechner.de/",
+      "logo": "https://massklar-rechner.de/assets/logo-mark.svg",
       "email": "kontakt@massklar-rechner.de",
-      "description": "Kostenlose Online-Rechner für Alltag, Schule und Arbeit — einfach erklärt, ohne Anmeldung."
+      "description": "Kostenlose Online-Rechner für Alltag, Schule und Arbeit — einfach erklärt, ohne Anmeldung.",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Kehkashan Street no. 2, New Gulgasht Colony",
+        "addressLocality": "Multan",
+        "postalCode": "60700",
+        "addressCountry": "PK"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "customer service",
+        "email": "kontakt@massklar-rechner.de",
+        "availableLanguage": ["de", "en"]
+      }
     },
     {
       "@type": "WebPage",
@@ -326,11 +340,11 @@
       <section class="faq-section" id="fragen">
         <div class="faq-heading"><p class="eyebrow">Noch eine Frage?</p><h2>Fragst du dich<br>das auch?</h2></div>
         <div class="faq-list">
-          <details><summary>Sind die Rechner wirklich kostenlos? <span aria-hidden="true">+</span></summary><p>Ja, wirklich. Alle Rechner auf maßklar sind dauerhaft kostenlos, und du brauchst dafür weder ein Konto noch musst du mit versteckten Kosten rechnen.</p></details>
-          <details><summary>Muss ich mich anmelden? <span aria-hidden="true">+</span></summary><p>Nein, musst du nicht. Du öffnest einfach einen Rechner, tippst deine Zahlen ein — und schon hast du das Ergebnis. Wir fragen weder nach einer E-Mail-Adresse noch nach deinem Namen.</p></details>
-          <details><summary>Werden meine Zahlen gespeichert? <span aria-hidden="true">+</span></summary><p>Nein, deine Zahlen bleiben bei dir. Alles wird direkt in deinem Browser gerechnet, nichts geht an einen Server, und was du eintippst, verlässt dein Gerät nicht.</p></details>
-          <details><summary>Stimmen die Ergebnisse genau? <span aria-hidden="true">+</span></summary><p>Die Rechner rechnen exakt mit den Zahlen, die du eingibst — das Ergebnis stimmt also, solange deine Eingaben stimmen. Nur: Eine Beratung ersetzen sie nicht, also frag bei Geld oder Gesundheit im Zweifel lieber einen Fachmann.</p></details>
-          <details><summary>Funktionieren die Rechner auf dem Handy? <span aria-hidden="true">+</span></summary><p>Ja, alle Rechner sind fürs Handy gebaut — mit großen Knöpfen und gut lesbarem Text, damit nichts verrutscht, wenn du unterwegs rechnest.</p></details>
+          <details><summary>Sind die Rechner wirklich kostenlos?</summary><p>Ja, wirklich. Alle Rechner auf maßklar sind dauerhaft kostenlos, und du brauchst dafür weder ein Konto noch musst du mit versteckten Kosten rechnen.</p></details>
+          <details><summary>Muss ich mich anmelden?</summary><p>Nein, musst du nicht. Du öffnest einfach einen Rechner, tippst deine Zahlen ein — und schon hast du das Ergebnis. Wir fragen weder nach einer E-Mail-Adresse noch nach deinem Namen.</p></details>
+          <details><summary>Werden meine Zahlen gespeichert?</summary><p>Nein, deine Zahlen bleiben bei dir. Alles wird direkt in deinem Browser gerechnet, nichts geht an einen Server, und was du eintippst, verlässt dein Gerät nicht.</p></details>
+          <details><summary>Stimmen die Ergebnisse genau?</summary><p>Die Rechner rechnen exakt mit den Zahlen, die du eingibst — das Ergebnis stimmt also, solange deine Eingaben stimmen. Nur: Eine Beratung ersetzen sie nicht, also frag bei Geld oder Gesundheit im Zweifel lieber einen Fachmann.</p></details>
+          <details><summary>Funktionieren die Rechner auf dem Handy?</summary><p>Ja, alle Rechner sind fürs Handy gebaut — mit großen Knöpfen und gut lesbarem Text, damit nichts verrutscht, wenn du unterwegs rechnest.</p></details>
         </div>
       </section>
     </main>
@@ -371,6 +385,7 @@
             <li><a href="kontakt.html">Kontakt</a></li>
             <li><a href="ueber-massklar.html">Über maßklar</a></li>
             <li><a href="datenschutz.html">Datenschutz</a></li>
+            <li><a href="#" data-cookie-settings>Cookie-Einstellungen</a></li>
             <li><a href="impressum.html">Impressum</a></li>
           </ul>
         </nav>
@@ -410,5 +425,13 @@
       update();
     })();
     </script>
+    <div class="cookie-banner" id="cookie-banner" role="region" aria-live="polite" aria-label="Cookie-Hinweis" hidden>
+      <p class="cookie-banner-text">Wir nutzen Cookies nur, wenn sie nötig sind — zum Beispiel, damit die Rechner deine Eingaben merken und diese Auswahl hier gespeichert wird. Werbung und Statistik gibt es im Moment nicht. <a class="cookie-banner-link" href="datenschutz.html">Mehr in der Datenschutzerklärung</a></p>
+      <div class="cookie-banner-actions">
+        <button type="button" class="cookie-btn cookie-btn-accept" data-cookie-accept>Alle akzeptieren</button>
+        <button type="button" class="cookie-btn cookie-btn-reject" data-cookie-reject>Ablehnen</button>
+      </div>
+    </div>
+    <script src="assets/cookie-consent.js" defer></script>
   </body>
 </html>

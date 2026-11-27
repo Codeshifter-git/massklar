@@ -54,7 +54,7 @@
       @keyframes sk-shimmer { to { transform: translateX(100%); } }
       @media (prefers-reduced-motion: reduce) { .sk-bar::after, .sk-card::after { animation: none; } }
     </style>
-    <link rel="stylesheet" href="styles.css?v=14">
+    <link rel="stylesheet" href="styles.css?v=15">
     <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -164,6 +164,7 @@
             <li><a href="kontakt.html">Kontakt</a></li>
             <li><a href="ueber-massklar.html">Über maßklar</a></li>
             <li><a href="datenschutz.html">Datenschutz</a></li>
+            <li><a href="#" data-cookie-settings>Cookie-Einstellungen</a></li>
             <li><a href="impressum.html">Impressum</a></li>
           </ul>
         </nav>
@@ -203,5 +204,13 @@
       update();
     })();
     </script>
+    <div class="cookie-banner" id="cookie-banner" role="region" aria-live="polite" aria-label="Cookie-Hinweis" hidden>
+      <p class="cookie-banner-text">Wir nutzen Cookies nur, wenn sie nötig sind — zum Beispiel, damit die Rechner deine Eingaben merken und diese Auswahl hier gespeichert wird. Werbung und Statistik gibt es im Moment nicht. <a class="cookie-banner-link" href="datenschutz.html">Mehr in der Datenschutzerklärung</a></p>
+      <div class="cookie-banner-actions">
+        <button type="button" class="cookie-btn cookie-btn-accept" data-cookie-accept>Alle akzeptieren</button>
+        <button type="button" class="cookie-btn cookie-btn-reject" data-cookie-reject>Ablehnen</button>
+      </div>
+    </div>
+    <script src="assets/cookie-consent.js" defer></script>
   </body>
 </html>

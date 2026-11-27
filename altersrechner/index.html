@@ -54,7 +54,7 @@
       @keyframes sk-shimmer { to { transform: translateX(100%); } }
       @media (prefers-reduced-motion: reduce) { .sk-bar::after, .sk-card::after { animation: none; } }
     </style>
-    <link rel="stylesheet" href="../styles.css?v=14">
+    <link rel="stylesheet" href="../styles.css?v=15">
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -274,11 +274,11 @@
       <section class="faq-section" id="fragen">
         <div class="faq-heading"><p class="eyebrow">Noch eine Frage?</p><h2>Fragst du dich<br>das auch?</h2></div>
         <div class="faq-list">
-          <details><summary>Wie genau ist das Alter hier? <span aria-hidden="true">+</span></summary><p>Auf den Tag genau: Der Rechner zählt erst die vollen Jahre, dann die Monate seit deinem letzten Geburtstag und dann die Tage — mit echten Monatslängen und Schaltjahren, nicht mit einem groben Schnitt.</p></details>
-          <details><summary>Was ist, wenn ich am 29. Februar geboren bin? <span aria-hidden="true">+</span></summary><p>Dann hast du nur alle vier Jahre einen echten Geburtstag. In den Jahren dazwischen rechnet der Rechner mit dem 1. März als deinem Geburtstag — so, wie die meisten es auch feiern.</p></details>
-          <details><summary>Kann ich auch ein anderes Datum als heute nehmen? <span aria-hidden="true">+</span></summary><p>Ja: Beim Stichtag kannst du jedes Datum eintippen — zum Beispiel, um zu sehen, wie alt du an einem bestimmten Tag warst oder sein wirst. Stell dir vor, du willst wissen, wie alt du an deinem ersten Schultag warst — genau dafür ist der Stichtag da.</p></details>
-          <details><summary>Wie alt ist mein Baby in Monaten? <span aria-hidden="true">+</span></summary><p>Trag einfach das Geburtsdatum ein: Das Ergebnis zeigt das Alter in Jahren, Monaten und Tagen, und darunter stehen die Tage und Wochen insgesamt. Bei einem Baby liest du die Monate direkt ab — das ist oft praktischer, als nur die Jahre zu sehen.</p></details>
-          <details><summary>Woher weiß der Rechner mein Sternzeichen? <span aria-hidden="true">+</span></summary><p>Aus deinem Geburtsdatum: Jedes Sternzeichen gehört zu einem festen Zeitraum im Jahr — Steinbock gilt zum Beispiel vom 22. Dezember bis 19. Januar, und wer in diese Zeit fällt, bekommt Steinbock angezeigt.</p></details>
+          <details><summary>Wie genau ist das Alter hier?</summary><p>Auf den Tag genau: Der Rechner zählt erst die vollen Jahre, dann die Monate seit deinem letzten Geburtstag und dann die Tage — mit echten Monatslängen und Schaltjahren, nicht mit einem groben Schnitt.</p></details>
+          <details><summary>Was ist, wenn ich am 29. Februar geboren bin?</summary><p>Dann hast du nur alle vier Jahre einen echten Geburtstag. In den Jahren dazwischen rechnet der Rechner mit dem 1. März als deinem Geburtstag — so, wie die meisten es auch feiern.</p></details>
+          <details><summary>Kann ich auch ein anderes Datum als heute nehmen?</summary><p>Ja: Beim Stichtag kannst du jedes Datum eintippen — zum Beispiel, um zu sehen, wie alt du an einem bestimmten Tag warst oder sein wirst. Stell dir vor, du willst wissen, wie alt du an deinem ersten Schultag warst — genau dafür ist der Stichtag da.</p></details>
+          <details><summary>Wie alt ist mein Baby in Monaten?</summary><p>Trag einfach das Geburtsdatum ein: Das Ergebnis zeigt das Alter in Jahren, Monaten und Tagen, und darunter stehen die Tage und Wochen insgesamt. Bei einem Baby liest du die Monate direkt ab — das ist oft praktischer, als nur die Jahre zu sehen.</p></details>
+          <details><summary>Woher weiß der Rechner mein Sternzeichen?</summary><p>Aus deinem Geburtsdatum: Jedes Sternzeichen gehört zu einem festen Zeitraum im Jahr — Steinbock gilt zum Beispiel vom 22. Dezember bis 19. Januar, und wer in diese Zeit fällt, bekommt Steinbock angezeigt.</p></details>
         </div>
       </section>
 
@@ -340,6 +340,7 @@
             <li><a href="../kontakt.html">Kontakt</a></li>
             <li><a href="../ueber-massklar.html">Über maßklar</a></li>
             <li><a href="../datenschutz.html">Datenschutz</a></li>
+            <li><a href="#" data-cookie-settings>Cookie-Einstellungen</a></li>
             <li><a href="../impressum.html">Impressum</a></li>
           </ul>
         </nav>
@@ -379,5 +380,13 @@
       update();
     })();
     </script>
+    <div class="cookie-banner" id="cookie-banner" role="region" aria-live="polite" aria-label="Cookie-Hinweis" hidden>
+      <p class="cookie-banner-text">Wir nutzen Cookies nur, wenn sie nötig sind — zum Beispiel, damit die Rechner deine Eingaben merken und diese Auswahl hier gespeichert wird. Werbung und Statistik gibt es im Moment nicht. <a class="cookie-banner-link" href="../datenschutz.html">Mehr in der Datenschutzerklärung</a></p>
+      <div class="cookie-banner-actions">
+        <button type="button" class="cookie-btn cookie-btn-accept" data-cookie-accept>Alle akzeptieren</button>
+        <button type="button" class="cookie-btn cookie-btn-reject" data-cookie-reject>Ablehnen</button>
+      </div>
+    </div>
+    <script src="../assets/cookie-consent.js" defer></script>
   </body>
 </html>
