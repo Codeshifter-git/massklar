@@ -1,0 +1,8 @@
+# maßklar — advertise llms.txt to AI agents (Hostinger AI visibility, 2026-11-27).
+# The Link header tells crawlers and AI agents where the llms.txt file lives.
+# If this file ever breaks the site, delete it — the site works fine without it.
+<IfModule mod_headers.c>
+  <FilesMatch "\.html$">
+    Header set Link '<https://massklar-rechner.de/llms.txt>; rel="llms"'
+  </FilesMatch>
+</IfModule>
