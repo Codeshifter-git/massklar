@@ -60,6 +60,8 @@ body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(
 main { animation: page-in .5s ease both; }
 @keyframes page-in { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
 a { color: inherit; text-decoration: none; }
+/* Email addresses in page content stand out: orange + underlined. */
+main a[href^="mailto:"] { color: var(--orange); text-decoration: underline; }
 button, input, select { font: inherit; }
 button, a, select { -webkit-tap-highlight-color: transparent; }
 
