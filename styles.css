@@ -73,8 +73,8 @@ button, a, select { -webkit-tap-highlight-color: transparent; }
 .skip-link { position: absolute; left: 16px; top: -60px; z-index: 100; padding: 10px 16px; border-radius: 8px; background: var(--green); color: #fffefa; font: 600 14px var(--sans); text-decoration: none; transition: top .2s ease; }
 .skip-link:focus-visible { top: 12px; outline: 2px solid var(--orange); outline-offset: 2px; }
 .brand-period { color: var(--orange); }
-.top-nav { display: flex; align-items: center; gap: 37px; margin-left: 65px; color: #64716c; font-size: 14px; }
-.top-nav a:hover, .text-link:hover { color: var(--green); }
+.top-nav, .site-nav { display: flex; align-items: center; gap: 37px; margin-left: 65px; color: #64716c; font-size: 14px; }
+.top-nav a:hover, .site-nav a:hover, .text-link:hover { color: var(--green); }
 .header-cta { min-height: 44px; display: inline-flex; align-items: center; padding: 10px 17px; border: 1px solid transparent; border-radius: 6px; background: var(--orange); color: var(--green-dark); font-size: 14px; font-weight: 700; transition: background .2s, transform .15s; }
 .header-cta:hover { background: var(--orange-dark); }
 .header-cta:active { transform: scale(.97); }
