@@ -457,7 +457,7 @@ def build_page(scale):
     # per-scale blocks are rebuilt fresh at the end of build_page.
     html = re.sub(r'    <script type="application/ld\+json">.*?</script>\n', '', html, flags=re.DOTALL)
     assert 'application/ld+json' not in html, "JSON-LD strip failed"
-    css_version = re.search(r'href="\.\./styles\.css\?v=(\d+)"', html).group(1)
+    css_version = re.search(r'href="\.\./styles\.min\.css\?v=(\d+)"', html).group(1)
 
     # --- head: title / meta / canonical / og / JSON-LD ---
     html = rep(html, "<title>Maßstabsrechner – Maßstab online berechnen | maßklar</title>",
@@ -479,15 +479,15 @@ def build_page(scale):
     # og:image, og:site_name, twitter:card and twitter:image are identical on
     # every scale page (absolute URL / site name / summary_large_image), so
     # they ride along from the template unchanged — no rep needed.
-    html = rep(html, f'<link rel="stylesheet" href="../styles.css?v={css_version}">',
-               f'<link rel="stylesheet" href="../../styles.css?v={css_version}">')
+    html = rep(html, f'<link rel="stylesheet" href="../styles.min.css?v={css_version}">',
+               f'<link rel="stylesheet" href="../../styles.min.css?v={css_version}">')
     # Cookie-Banner (2026-11-27): Skript und Datenschutz-Link im Banner
     # eine Ebene tiefer — wie der Stylesheet-Link oben.
-    html = rep(html, '<script src="../assets/cookie-consent.js?v=2" defer></script>',
-               '<script src="../../assets/cookie-consent.js?v=2" defer></script>')
+    html = rep(html, '<script src="../assets/cookie-consent.min.js?v=3" defer></script>',
+               '<script src="../../assets/cookie-consent.min.js?v=3" defer></script>')
     # WebMCP-Tool (2026-11-27): gleiches Muster wie der Cookie-Skript.
-    html = rep(html, '<script src="../assets/webmcp.js?v=1" defer></script>',
-               '<script src="../../assets/webmcp.js?v=1" defer></script>')
+    html = rep(html, '<script src="../assets/webmcp.min.js?v=2" defer></script>',
+               '<script src="../../assets/webmcp.min.js?v=2" defer></script>')
     html = rep(html, '<a class="cookie-banner-link" href="../datenschutz.html">',
                '<a class="cookie-banner-link" href="../../datenschutz.html">')
     # Font preloads are one level deeper on scale pages (template uses ../fonts/).
@@ -503,8 +503,8 @@ def build_page(scale):
                '<img class="brand-img" src="../../assets/logo-mark.svg" width="30" height="30" alt="">')
     html = rep(html, '<link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">',
                '<link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg">')
-    # (WebApplication + FAQPage + BreadcrumbList + HowTo are rebuilt fresh per
-    # scale at the end of build_page — the template's blocks were stripped above.)
+    # (FAQPage + BreadcrumbList + HowTo are rebuilt fresh per scale at the
+    # end of build_page — the template's blocks were stripped above.)
 
     # --- nav / footer links: one level deeper ---
     html = rep(html, '<a class="brand" href="../" aria-label="Maßklar Startseite">',
@@ -727,20 +727,15 @@ def build_page(scale):
     # The only "25000" left must be the compare tool's generic example (Karte A);
     # on the 1:25.000 page the main input legitimately reads 25000 too.
     assert html.count('value="25000"') == (2 if scale == 25000 else 1) and 'id="compare-scale-a"' in html, "unexpected 25000 leftovers"
-    # --- JSON-LD: rebuild fresh per scale page (WebApplication + FAQPage +
-    # BreadcrumbList + HowTo), inserted before the app.js script tag. HowTo
-    # steps are extracted from the built page, so they match the rewritten
+    # --- JSON-LD: rebuild fresh per scale page (FAQPage + BreadcrumbList +
+    # HowTo), inserted before the app.js script tag. HowTo steps are
+    # extracted from the built page, so they match the rewritten
     # scale-specific steps 1-3 plus the kept Fläche/Volumen steps 4-5.
-    webapp = {
-        "@context": "https://schema.org",
-        "@type": "WebApplication",
-        "name": f"Maßstabsrechner {label}",
-        "applicationCategory": "EducationalApplication",
-        "operatingSystem": "Any",
-        "inLanguage": "de",
-        "description": meta,
-        "url": canon,
-    }
+    # NOTE (2026-11-28, Semrush audit): NO WebApplication node — Google's
+    # SoftwareApplication rich result requires a real review/aggregateRating,
+    # which this free tool site does not have, so Semrush flagged all 116
+    # WebApplication items as invalid. The pages keep FAQPage, BreadcrumbList
+    # and HowTo, which need no reviews.
     # FAQPage must match the VISIBLE FAQ section (Google requires schema ==
     # visible content): extract all 14 questions/answers from the built page.
     faq_section = re.search(r'<section class="faq-section">(.*?)</section>', html, re.DOTALL).group(1)
@@ -787,13 +782,13 @@ def build_page(scale):
         "step": howto_steps,
     }
     ld_blocks = ""
-    for block in (webapp, faq_ld, breadcrumb, howto):
+    for block in (faq_ld, breadcrumb, howto):
         ld_blocks += ("    <script type=\"application/ld+json\">\n"
                       + "\n".join("      " + line for line in json.dumps(block, ensure_ascii=False, indent=2).split("\n"))
                       + "\n    </script>\n")
     html = rep(html, '    <script src="app.js" defer></script>',
                ld_blocks + '    <script src="app.js" defer></script>')
-    assert html.count('application/ld+json') == 4, "expected 4 JSON-LD blocks"
+    assert html.count('application/ld+json') == 3, "expected 3 JSON-LD blocks"
     assert "massklar_v1" not in html  # storage key lives in app.js only
     return html, len(meta)
 

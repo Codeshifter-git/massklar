@@ -7,6 +7,9 @@
     Header set Link '<https://massklar-rechner.de/llms.txt>; rel="llms"'
     Header set Content-Signal "search=yes, ai-train=no"
   </FilesMatch>
+  # HSTS (Semrush audit 2026-11-27): tell browsers to use HTTPS only, for
+  # the apex and www. max-age 1 year, includeSubDomains.
+  Header set Strict-Transport-Security "max-age=31536000; includeSubDomains"
 </IfModule>
 
 # Serve a Markdown version of the homepage when an agent asks for it
