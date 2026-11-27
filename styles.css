@@ -68,6 +68,10 @@ button, a, select { -webkit-tap-highlight-color: transparent; }
 .brand-mark { width: 30px; height: 30px; border-radius: 9px 9px 9px 3px; display: grid; place-items: center; background: var(--orange); color: var(--green-dark); font: 600 12px var(--mono); letter-spacing: -1px; }
 .brand-img { width: 30px; height: 30px; display: block; }
 .footer-brand .brand-img { width: 26px; height: 26px; }
+/* Skip link: hidden until keyboard focus, then a green pill at the top.
+   Without this it renders as stray text at the top-left of the page. */
+.skip-link { position: absolute; left: 16px; top: -60px; z-index: 100; padding: 10px 16px; border-radius: 8px; background: var(--green); color: #fffefa; font: 600 14px var(--sans); text-decoration: none; transition: top .2s ease; }
+.skip-link:focus-visible { top: 12px; outline: 2px solid var(--orange); outline-offset: 2px; }
 .brand-period { color: var(--orange); }
 .top-nav { display: flex; align-items: center; gap: 37px; margin-left: 65px; color: #64716c; font-size: 14px; }
 .top-nav a:hover, .text-link:hover { color: var(--green); }
@@ -154,6 +158,10 @@ h1, h2, h3, p { margin-top: 0; }
 .result-meta { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-top: 10px; border-top: 1px solid #e1e9d8; color: #4f5f56; font: 12px var(--mono); }
 .result-meta button { flex-shrink: 0; min-height: 44px; padding: 0 6px; border: 0; background: transparent; color: var(--green); font: 600 13px var(--sans); cursor: pointer; transition: background .2s, color .2s; border-radius: 4px; }
 .result-meta button.copied { background: var(--green); color: #fff; }
+.result-label { margin: 0 0 6px; color: #5a6a62; font: 12px var(--mono); letter-spacing: .75px; }
+.result-panel > .copy-button { display: block; width: 100%; min-height: 48px; margin-top: 12px; padding: 10px 16px; border: 1px solid #cfd8c8; border-radius: 8px; background: #fffefa; color: var(--green); font: 600 14px var(--sans); cursor: pointer; transition: background .2s, border-color .2s, color .2s; }
+.result-panel > .copy-button:hover { border-color: var(--green); background: #eef1e6; }
+.result-panel > .copy-button.copied { background: var(--green); border-color: var(--green); color: #fffefa; }
 .calc-aside { padding: 30px 26px; background: #f3f5ec; }
 .aside-number { color: #849283; font: 9px var(--mono); letter-spacing: .8px; }
 .aside-art { position: relative; height: 112px; margin: 20px 0 16px; overflow: hidden; border-radius: 5px; background: #e6ecdc; }
@@ -453,10 +461,10 @@ a.tool-card:active { transform: scale(.98); }
 /* Prozentrechner (2026-11-25) — Modus-Auswahl mit 8 Modi. Kein Schiebe-Pill
    wie beim Maßstab (3 Modi), sondern ein Raster aus Schaltflächen: 4 Spalten
    auf dem Computer, 2 auf dem Handy. Aktiver Modus ist grün. */
-.mode-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-bottom: 21px; }
-.mode-btn { min-height: 48px; padding: 8px 6px; border: 1px solid #e2e7dc; border-radius: 8px; background: #fffefa; color: var(--muted); font: 600 13px var(--sans); cursor: pointer; transition: background .2s, color .2s, border-color .2s; }
-.mode-btn:hover { border-color: var(--green); color: var(--green); }
-.mode-btn[aria-pressed="true"] { background: var(--green); border-color: var(--green); color: #fffefa; }
+.mode-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 4px; margin-bottom: 21px; padding: 4px; border-radius: 12px; background: #eef1e6; }
+.mode-btn { min-height: 44px; padding: 8px 6px; border: 0; border-radius: 8px; background: transparent; color: var(--muted); font: 600 13px var(--sans); cursor: pointer; transition: background .2s, color .2s, box-shadow .2s; }
+.mode-btn:hover { background: #fffefa; color: var(--green); }
+.mode-btn[aria-pressed="true"] { background: var(--green); color: #fffefa; box-shadow: 0 2px 8px #245c4833; }
 /* Nur die Felder des aktiven Modus sind sichtbar; display: contents lässt
    die .field-Kinder direkt im .input-grid liegen. */
 .mode-fields { display: none; }
