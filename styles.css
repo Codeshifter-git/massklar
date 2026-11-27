@@ -326,7 +326,7 @@ h1, h2, h3, p { margin-top: 0; }
 @keyframes details-open { from { opacity: 0; transform: translateY(-4px); } to { opacity: 1; transform: translateY(0); } }
 .practice-task[open] > p, .faq-list details[open] > p { animation: details-open .25s ease; }
 /* Rich footer: dark green, 4 columns, bottom bar + disclaimer note. */
-.site-footer { background: var(--green-dark); color: #d8e4dc; }
+.site-footer { background: #1a1a1a; color: #d8e4dc; }
 .footer-main { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 40px; padding: 56px 7.1% 40px; }
 .site-footer .footer-brand { color: #fffefa; font-size: 20px; }
 .footer-brand-col > p { margin: 16px 0; color: #b9cec2; font-size: 14px; line-height: 1.7; }
